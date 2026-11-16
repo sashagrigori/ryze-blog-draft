@@ -19,6 +19,9 @@
     --ink-3: #8E8E8E;
     --line: #E8E8E8;
     --gray: #D6D6D6;
+    --orange: #FF5A1F;
+    --green: #1F7A3D;
+    --spring: cubic-bezier(.34, 1.56, .64, 1);
     --cta: #F04E14;
     --cta-hover: #D8430E;
     /* Ryze radius system: buttons and fields stay almost square, like the header button */
@@ -241,6 +244,159 @@
   .vs-col.ryze li span { color: rgba(255,255,255,.65); }
   .vs-col li b { font-weight: 700; text-align: right; }
 
+  /* animated CTAs from the CTA lab */
+  .cta { position: relative; overflow: hidden; border-radius: var(--r-card); background: var(--card); }
+  .lbl { font-size: 13px; font-weight: 500; color: var(--ink-3); }
+  .cta h3 { margin: 8px 0 0; font-size: 28px; line-height: 1.18; letter-spacing: -.02em; font-weight: 500; }
+  .cta p { margin: 10px 0 0; font-size: 15.5px; line-height: 1.55; color: var(--ink-2); }
+  .small { display: block; margin-top: 8px; font-size: 12.5px; color: var(--ink-3); }
+
+  .btn-dark { background: var(--ink); outline-color: var(--ink); }
+  .btn-dark:hover { background: #2a2a2a; }
+
+  /* shared entrance: the card rises, then its parts come in one by one */
+  .cta { opacity: 0; transform: translateY(28px) scale(.985); transition: opacity .7s var(--ease), transform .8s var(--ease); }
+  .play .cta { opacity: 1; transform: none; }
+  .in-el { opacity: 0; transform: translateY(14px); transition: opacity .6s var(--ease), transform .7s var(--ease); transition-delay: calc(var(--d, 0) * 1ms + 200ms); }
+  .play .in-el { opacity: 1; transform: none; }
+  @keyframes nudge { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-4px); } 40% { transform: translateX(4px); } 60% { transform: translateX(-2px); } 80% { transform: translateX(2px); } }
+  .nudge { animation: nudge .6s ease 1; }
+
+  /* ---------- A: money leak counter ---------- */
+  .A { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 40px; padding: 38px 40px; background: var(--ink); color: #fff; }
+  .A .lbl { color: rgba(255,255,255,.6); }
+  .a-num { margin-top: 8px; font-size: 76px; line-height: 1; letter-spacing: -.03em; font-weight: 500; color: var(--orange); }
+  .a-sub { display: block; margin-top: 12px; max-width: 520px; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,.7); }
+  .A .small { color: rgba(255,255,255,.5); text-align: center; }
+  .a-tick { display: inline-block; transition: transform .18s var(--ease); }
+  .a-tick.bump { transform: translateY(-3px); }
+
+  /* ---------- B: Ryze at work ---------- */
+  .B { display: grid; grid-template-columns: 380px 1fr; gap: 10px; padding: 10px; }
+  .b-l { padding: 28px 22px 24px 28px; display: flex; flex-direction: column; }
+  .b-l .btn-cta { align-self: flex-start; margin-top: auto; }
+  .b-ui { position: relative; padding: 16px; border-radius: var(--r-card); background: var(--inner); }
+  .b-top { display: flex; justify-content: space-between; align-items: center; padding: 2px 6px 12px; font-size: 13px; font-weight: 500; color: var(--ink-3); }
+  .b-roas { display: flex; align-items: baseline; gap: 8px; }
+  .b-roas b { font-size: 26px; letter-spacing: -.02em; color: var(--ink); transition: color .3s; }
+  .b-roas b.up { color: var(--green); }
+  .b-row { display: grid; grid-template-columns: 1fr 70px 56px 96px; gap: 10px; align-items: center; margin-top: 6px; padding: 11px 14px; border-radius: var(--r-btn); background: #fff; font-size: 14px; transition: background .3s, box-shadow .3s; }
+  .b-row.head { margin-top: 0; padding-top: 0; padding-bottom: 6px; background: none; font-size: 12px; color: var(--ink-3); }
+  .b-row.focus { box-shadow: inset 0 0 0 1.5px var(--ink); }
+  .b-row .sp { font-variant-numeric: tabular-nums; transition: color .3s; }
+  .b-row.off .sp { color: var(--ink-3); text-decoration: line-through; }
+  .b-row .st { justify-self: end; padding: 4px 10px; border-radius: 999px; background: var(--inner); font-size: 12px; font-weight: 500; transition: background .3s, color .3s; }
+  .b-row .st.bad { background: #FDECE6; color: var(--cta); }
+  .b-row .st.done { background: #E3F5E8; color: var(--green); }
+  .b-budget { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; margin-top: 10px; padding: 12px 14px; border-radius: var(--r-btn); background: #fff; font-size: 13.5px; }
+  .b-budget .b-bar { height: 6px; border-radius: 2px; background: var(--inner); overflow: hidden; }
+  .b-budget .b-bar i { display: block; height: 100%; width: 40%; border-radius: 2px; background: var(--ink); transition: width 1s var(--ease); }
+  .b-budget b { font-variant-numeric: tabular-nums; }
+  .b-cursor { position: absolute; left: 0; top: 0; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: var(--orange); box-shadow: 0 6px 16px -6px rgba(0,0,0,.4); transition: transform .8s var(--ease), opacity .3s; opacity: 0; pointer-events: none; }
+  .b-cursor img { width: 16px; height: 16px; filter: invert(1); }
+  .b-cursor.click { animation: click .35s ease; }
+  @keyframes click { 50% { scale: .8; } }
+
+  /* ---------- C: face and messages ---------- */
+  .C { display: grid; grid-template-columns: 240px 1fr; gap: 10px; padding: 10px; }
+  .c-photo { position: relative; border-radius: var(--r-card); overflow: hidden; min-height: 330px; }
+  .c-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .c-photo span { position: absolute; left: 10px; right: 10px; bottom: 10px; padding: 8px 10px; border-radius: var(--r-btn); background: rgba(255,255,255,.9); font-size: 12.5px; font-weight: 500; }
+  .c-chat { display: flex; flex-direction: column; gap: 8px; padding: 26px 24px; border-radius: var(--r-card); background: var(--inner); }
+  .msg { max-width: 72%; padding: 12px 16px; border-radius: var(--r-card); background: #fff; font-size: 16px; line-height: 1.45; opacity: 0; transform: translateY(10px) scale(.96); transform-origin: left bottom; animation: pop .45s var(--spring) forwards; }
+  .msg.ryze { align-self: flex-end; background: var(--ink); color: #fff; transform-origin: right bottom; }
+  .msg.ryze .btn-cta { margin: 12px 6px 6px; }
+  .msg b { font-weight: 700; }
+  .typing { display: inline-flex; gap: 4px; padding: 14px 16px; border-radius: var(--r-card); background: #fff; align-self: flex-start; }
+  .typing.ryze { align-self: flex-end; background: var(--ink); }
+  .typing i { width: 6px; height: 6px; border-radius: 50%; background: var(--ink-3); animation: dot 1s infinite; }
+  .typing i:nth-child(2) { animation-delay: .15s; } .typing i:nth-child(3) { animation-delay: .3s; }
+  @keyframes dot { 0%, 60%, 100% { opacity: .3; transform: translateY(0); } 30% { opacity: 1; transform: translateY(-3px); } }
+  @keyframes pop { to { opacity: 1; transform: none; } }
+
+  /* ---------- D: flip and reveal ---------- */
+  .D { padding: 32px 36px 30px; }
+  .d-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 22px; }
+  .flip { position: relative; height: 170px; border: 0; padding: 0; background: none; cursor: pointer; transition: transform .26s ease-in; font: inherit; text-align: left; }
+  .flip.half { transform: scaleX(0); }
+  .flip.open { transition: transform .45s var(--spring); }
+  .flip > span { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: space-between; padding: 20px 22px; border-radius: var(--r-card); }
+  .flip .front { background: var(--ink); color: #fff; }
+  .flip .front img { width: 26px; height: 26px; filter: invert(1); }
+  .flip .front em { font-style: normal; font-size: 14px; color: rgba(255,255,255,.6); }
+  .flip .front b { font-size: 40px; font-weight: 500; letter-spacing: -.02em; }
+  .flip:hover:not(.open):not(.half) { transform: translateY(-4px); }
+  .flip.open .front { display: none; }
+  .flip:not(.open) .back { display: none; }
+  .flip .back { background: #FFF1EA; }
+  .flip .back b { font-size: 34px; line-height: 1; letter-spacing: -.02em; font-weight: 500; color: var(--cta); }
+  .flip .back span { font-size: 15px; line-height: 1.45; color: var(--ink); }
+  .d-cta { display: flex; align-items: center; gap: 16px; margin-top: 20px; opacity: 0; transform: translateY(10px); transition: opacity .5s var(--ease), transform .6s var(--spring); }
+  .d-cta.show { opacity: 1; transform: none; }
+
+  /* ---------- E: price drop ---------- */
+  .E { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 40px; padding: 34px 40px; background: var(--orange); }
+  .E .lbl { color: rgba(17,17,17,.6); }
+  .e-prices { display: flex; align-items: flex-end; gap: 44px; margin-top: 10px; }
+  .e-old, .e-new { position: relative; }
+  .e-old span, .e-new span.t { display: block; font-size: 14px; font-weight: 500; color: rgba(17,17,17,.65); }
+  .e-old b { font-size: 40px; font-weight: 500; letter-spacing: -.02em; color: rgba(17,17,17,.55); }
+  .e-old .strike { position: absolute; left: -4px; right: -4px; top: 58%; height: 3px; background: var(--ink); transform: scaleX(0); transform-origin: left; transition: transform .6s var(--ease) .6s; }
+  .play .e-old .strike { transform: scaleX(1); }
+  .e-new b { font-size: 84px; line-height: .9; font-weight: 700; letter-spacing: -.04em; }
+  .e-new small, .e-old small { font-size: .4em; font-weight: 500; }
+  .E p { max-width: 520px; color: rgba(17,17,17,.75); }
+  .E .small { color: rgba(17,17,17,.6); text-align: center; }
+
+  /* ---------- F: before / after curve ---------- */
+  .F { display: grid; grid-template-columns: 330px 1fr; gap: 10px; padding: 10px; }
+  .f-l { display: flex; flex-direction: column; padding: 28px 22px 24px 28px; }
+  .f-l .btn-cta { align-self: flex-start; margin-top: auto; }
+  .f-chart { position: relative; padding: 18px 20px 12px; border-radius: var(--r-card); background: var(--inner); }
+  .f-chart svg { display: block; width: 100%; height: auto; }
+  .f-line { fill: none; stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1000; stroke-dashoffset: 1000; transition: stroke-dashoffset 1.6s var(--ease); }
+  .f-before { stroke: #BDBDBD; transition-delay: .3s; }
+  .f-after { stroke: var(--cta); transition-delay: 1.4s; transition-duration: 1.4s; }
+  .play .f-line { stroke-dashoffset: 0; }
+  .f-mark { opacity: 0; transition: opacity .4s 1.2s; }
+  .play .f-mark { opacity: 1; }
+  .f-end { opacity: 0; transform: scale(.4); transform-box: fill-box; transform-origin: center; transition: opacity .3s 2.7s, transform .5s var(--spring) 2.7s; }
+  .play .f-end { opacity: 1; transform: none; }
+  .f-val { position: absolute; right: 26px; top: 18px; text-align: right; font-size: 13px; font-weight: 500; color: var(--ink-3); }
+  .f-val b { display: block; font-size: 40px; line-height: 1; letter-spacing: -.02em; color: var(--ink); }
+
+  /* ---------- G: logos in motion ---------- */
+  .G { padding: 30px 0 26px; }
+  .g-top { display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 0 36px; }
+  .g-top h3 { margin: 0; max-width: 620px; }
+  .g-rows { display: flex; flex-direction: column; gap: 10px; margin-top: 24px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+  .g-row { display: flex; gap: 10px; width: max-content; animation: slide 40s linear infinite; }
+  .g-row.rev { animation-direction: reverse; animation-duration: 46s; }
+  .G:hover .g-row { animation-play-state: paused; }
+  .g-row div { display: grid; place-items: center; width: 170px; height: 72px; border-radius: var(--r-card); background: var(--inner); }
+  .g-row img { max-width: 62%; max-height: 22px; object-fit: contain; filter: grayscale(1) contrast(1.15); opacity: .8; }
+  @keyframes slide { to { transform: translateX(-50%); } }
+  .g-count { display: inline-block; min-width: 2.6em; }
+
+  /* ---------- H: slide-up toast ---------- */
+  .H { height: 300px; padding: 30px 36px; background: #fff; }
+  .skel div { height: 12px; margin-top: 14px; border-radius: 2px; background: var(--inner); }
+  .skel div:nth-child(1) { width: 60%; height: 22px; margin-top: 0; }
+  .skel div:nth-child(3) { width: 92%; } .skel div:nth-child(4) { width: 80%; } .skel div:nth-child(6) { width: 70%; }
+  .toast { position: fixed; z-index: 60; left: 50%; bottom: 22px; width: 640px; display: grid; grid-template-columns: auto 1fr auto auto; gap: 16px; align-items: center; padding: 14px 14px 14px 18px; border-radius: var(--r-card); background: var(--ink); color: #fff; box-shadow: 0 20px 40px -18px rgba(0,0,0,.5); transform: translate(-50%, 140%); transition: transform .7s var(--spring); }
+  .toast.show { transform: translate(-50%, 0); }
+  .toast .ico { width: 36px; height: 36px; display: grid; place-items: center; border-radius: var(--r-btn); background: var(--orange); }
+  .toast .ico img { width: 18px; height: 18px; filter: invert(1); }
+  .toast b { display: block; font-size: 15px; }
+  .toast .prog { margin-top: 8px; height: 4px; border-radius: 2px; background: rgba(255,255,255,.15); overflow: hidden; }
+  .toast .prog i { display: block; height: 100%; width: 0; border-radius: 2px; background: var(--orange); transition: width 2.2s var(--ease) .5s; }
+  .toast.show .prog i { width: 100%; }
+  .toast .count { font-size: 12.5px; color: rgba(255,255,255,.6); }
+  .toast .btn-cta { margin: 6px; padding: 11px 16px; font-size: 14.5px; }
+  .toast .x { width: 32px; height: 32px; border: 0; border-radius: var(--r-btn); background: transparent; color: rgba(255,255,255,.6); font-size: 18px; cursor: pointer; }
+
+  .cta-wrap + .cta-wrap, .cta-wrap + .card, .card + .cta-wrap { margin-top: 0; }
+
   /* CTA 2: review */
   .review { display: grid; grid-template-columns: 300px 1fr; gap: 10px; padding: 10px; }
   .review-photo { border-radius: var(--r-inner); overflow: hidden; background: var(--inner); }
@@ -418,24 +574,26 @@
         <p class="body-text" style="margin-top:36px; max-width:880px">Ryze AI takes the top slot because it decides what to change, applies it and re-measures, where the others execute rules you wrote or wait for your click. OptyAds is the deepest hands-on platform, Adalysis owns ad testing, and Scripts are the free floor for technical teams.</p>
       </section>
 
-      <!-- CTA A: product preview -->
-      <section class="card pad reveal preview">
-        <div>
-          <span class="label">#1 in this ranking</span>
-          <h3>See what Ryze would change on your account today</h3>
-          <p>Ryze reads your Google Ads account, suggests changes and applies the ones you approve. Try it on the rows on the right.</p>
-          <div class="cta-row">
-            <a class="btn-cta" href="#">Connect Google Ads <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            <a class="btn-2" href="#">Watch a demo</a>
-          </div>
-        </div>
-        <div class="ui">
-          <div class="ui-head"><b><img src="assets/logo.webp" alt="">Suggested changes</b><span>Today, 3 of 12</span></div>
-          <div class="ui-row"><span class="k">Budget</span><span>Move $40/day from Display to Search<span class="v">Search ROAS 4.3x vs Display 0.9x</span></span><span class="ui-act"><button type="button">Deny</button><button class="ok" type="button">Apply</button></span><span class="applied">Applied</span></div>
-          <div class="ui-row"><span class="k">Keywords</span><span>Pause 4 keywords with no orders<span class="v">$212 spent in the last 14 days</span></span><span class="ui-act"><button type="button">Deny</button><button class="ok" type="button">Apply</button></span><span class="applied">Applied</span></div>
-          <div class="ui-row"><span class="k">Bids</span><span>Raise bids 15% on "running shoes"<span class="v">Lost 38% impressions to rank</span></span><span class="ui-act"><button type="button">Deny</button><button class="ok" type="button">Apply</button></span><span class="applied">Applied</span></div>
-        </div>
-      </section>
+      <div class="cta-wrap" data-v="B">
+    <div class="cta B">
+      <div class="b-l">
+        <span class="lbl in-el" style="--d:0">Live demo</span>
+        <h3 class="in-el" style="--d:100">Watch Ryze fix an account in 8 seconds</h3>
+        <p class="in-el" style="--d:200">The same changes it makes every day: pause keywords that don’t sell, raise bids that do, move budget to winners.</p>
+        <a class="btn-cta in-el" style="--d:320" href="#">Run it on my account <svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="b-ui in-el" style="--d:150" id="b-ui">
+        <div class="b-top"><span>Google Ads · Spring sale</span><span class="b-roas">ROAS <b id="b-roas">2.4x</b></span></div>
+        <div class="b-row head"><span>Keyword</span><span>Spend</span><span>Orders</span><span style="justify-self:end">Status</span></div>
+        <div class="b-row" data-i="0"><span>cheap running shoes</span><span class="sp">$412</span><span>0</span><span class="st bad">Wasting</span></div>
+        <div class="b-row" data-i="1"><span>running shoes women</span><span class="sp">$380</span><span>41</span><span class="st">Limited</span></div>
+        <div class="b-row" data-i="2"><span>free shoes</span><span class="sp">$188</span><span>0</span><span class="st bad">Wasting</span></div>
+        <div class="b-row" data-i="3"><span>trail shoes sale</span><span class="sp">$96</span><span>12</span><span class="st">OK</span></div>
+        <div class="b-budget"><span>Search budget</span><span class="b-bar"><i id="b-bar"></i></span><b id="b-budget">$40/day</b></div>
+        <div class="b-cursor" id="b-cursor"><img src="assets/logo.webp" alt=""></div>
+      </div>
+    </div>
+      </div>
 
       <!-- 3. short answer + chart -->
       <section class="card pad reveal" id="short-answer">
@@ -445,6 +603,20 @@
         <div class="label disc">Disclosure: Ryze AI publishes this blog.</div>
       </section>
 
+      <div class="cta-wrap" data-v="A">
+    <div class="cta A">
+      <div>
+        <span class="lbl in-el" style="--d:0">While you were reading this article, advertisers wasted</span>
+        <div class="a-num in-el" style="--d:120">$<span id="a-count">0</span></div>
+        <span class="a-sub in-el" style="--d:240">on Google Ads keywords that never bring a single order. Across the accounts Ryze audits.</span>
+      </div>
+      <div class="in-el" style="--d:400">
+        <a class="btn-cta" href="#">Stop the leak on my account <svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <span class="small">Free audit in 60 seconds</span>
+      </div>
+    </div>
+      </div>
+
       <section class="card pad reveal" id="chart">
         <div class="chart-head">
           <div><span class="label">Editorial score, out of 10</span><h3>The top 10 AI tools for Google Ads</h3></div>
@@ -453,6 +625,88 @@
         <div class="bars" id="bars"></div>
         <div class="chart-note">Ryze AI scores 9.6/10 by applying bid, budget and negative keyword changes itself; OptyAds follows at 8.9/10. Weights: features ×3, automation ×3, value ×2, ease ×2.</div>
       </section>
+
+      <div class="cta-wrap" data-v="F">
+    <div class="cta F">
+      <div class="f-l">
+        <span class="lbl in-el" style="--d:0">Sarah K.’s account, ROAS by week</span>
+        <h3 class="in-el" style="--d:100">This is what the first six weeks look like</h3>
+        <p class="in-el" style="--d:200">Flat for months, then Ryze takes over bids and budgets.</p>
+        <a class="btn-cta in-el" style="--d:320" href="#">Get this curve <svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="f-chart">
+        <div class="f-val">ROAS<b id="f-val">2.4x</b></div>
+        <svg viewBox="0 0 660 260" aria-label="ROAS by week: flat at 2.4x, then rising to 4.1x six weeks after connecting Ryze">
+          <g stroke="#E2E2E2" stroke-width="1"><line x1="20" y1="60" x2="640" y2="60"/><line x1="20" y1="130" x2="640" y2="130"/><line x1="20" y1="200" x2="640" y2="200"/></g>
+          <g fill="#9A9A9A" font-size="12" font-family="Satoshi, sans-serif"><text x="20" y="250">−4 wk</text><text x="290" y="250">Ryze connected</text><text x="600" y="250">+6 wk</text></g>
+          <path class="f-line f-before" d="M20 186 L80 182 L140 188 L200 184 L260 186 L310 185"/>
+          <line class="f-mark" x1="310" y1="40" x2="310" y2="230" stroke="#111" stroke-width="1.5" stroke-dasharray="4 5"/>
+          <path class="f-line f-after" d="M310 185 L365 168 L420 140 L475 118 L530 92 L585 76 L630 64"/>
+          <circle class="f-end" cx="630" cy="64" r="8" fill="#F04E14"/>
+        </svg>
+      </div>
+    </div>
+      </div>
+
+      <section class="card pad reveal">
+        <p class="body-text" style="font-size:24px; line-height:1.45; color:var(--ink); max-width:880px">For most advertisers, Ryze AI is the best AI tool for Google Ads in 2026. Four reasons, each with a caveat.</p>
+        <div class="reasons">
+          <div class="reason"><span class="label">Reason 01</span><h3>It applies the changes.</h3><p>Bids, budgets, negatives and pauses are made by the agent, and approval settings decide which ones wait for you. Opteo, Adalysis and Adzooma recommend and wait for a click.</p><div class="caveat"><div><span class="label">Caveat</span>You need to be comfortable reading a change log instead of making each change.</div></div></div>
+          <div class="reason"><span class="label">Reason 02</span><h3>One flat price.</h3><p>Paid Ads Autopilot is $89 a month at any spend, with a 7-day free trial. OptyAds starts at $209 and Opteo at $129, and both rise with the spend they manage.</p><div class="caveat"><div><span class="label">Caveat</span>Agencies that want their own rule logic get more control from OptyAds.</div></div></div>
+          <div class="reason"><span class="label">Reason 03</span><h3>More than Google.</h3><p>The same agent covers Meta, TikTok and LinkedIn, which matters when the budget question is between channels.</p><div class="caveat"><div><span class="label">Caveat</span>Adalysis goes deeper on RSA testing, and Opteo on Google-only one-click fixes.</div></div></div>
+          <div class="reason"><span class="label">Reason 04</span><h3>It also answers questions.</h3><p>The free Google Ads MCP connector lets Claude or ChatGPT query the account in plain language.</p><div class="caveat"><div><span class="label">Caveat</span>Ryze AI is a younger company than OptyAds or WordStream, which have a decade of track record.</div></div></div>
+        </div>
+        <!-- CTA 3: inside the text -->
+        <div class="inline-cta"><p>Want these changes applied on your account tonight?</p><a href="#">Try Ryze free for 7 days <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        <div class="more-row">
+          <p class="body-text" style="max-width:640px">If you want rules you write yourself, <b>OptyAds</b>. If ad copy testing is the bottleneck, <b>Adalysis</b>. If you want a daily list of one-click fixes, <b>Opteo</b>.</p>
+          <a class="see-also" href="#">Top AI tools for Meta Ads <span class="a"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        </div>
+      </section>
+
+      <div class="cta-wrap" data-v="C">
+    <div class="cta C">
+      <div class="c-photo in-el" style="--d:0"><img src="assets/sarah.webp" alt="Sarah K."><span>Sarah K. · Paid Media Manager</span></div>
+      <div class="c-chat" id="c-chat"></div>
+    </div>
+      </div>
+
+      <div class="cta-wrap" data-v="D">
+    <div class="cta D">
+      <span class="lbl in-el" style="--d:0">Tap a card</span>
+      <h3 class="in-el" style="--d:100">Three leaks Ryze finds in almost every Google Ads account</h3>
+      <div class="d-cards in-el" style="--d:200" id="d-cards">
+        <button class="flip" type="button"><span class="front"><img src="assets/logo.webp" alt=""><b>01</b><em>Tap to reveal</em></span><span class="back"><b>$1,240/mo</b><span>spent on keywords with zero orders</span></span></button>
+        <button class="flip" type="button"><span class="front"><img src="assets/logo.webp" alt=""><b>02</b><em>Tap to reveal</em></span><span class="back"><b>4 campaigns</b><span>that sell well but stop at noon because the budget runs out</span></span></button>
+        <button class="flip" type="button"><span class="front"><img src="assets/logo.webp" alt=""><b>03</b><em>Tap to reveal</em></span><span class="back"><b>38%</b><span>of impressions lost on your best keyword because the bid is too low</span></span></button>
+      </div>
+      <div class="d-cta" id="d-cta"><a class="btn-cta" href="#">Find them in my account <svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="lbl">Takes 60 seconds. No credit card.</span></div>
+    </div>
+      </div>
+
+      <div class="cta-wrap" data-v="G">
+    <div class="cta G">
+      <div class="g-top">
+        <h3 class="in-el" style="--d:0">Join <span class="g-count" id="g-count">0</span>+ marketers who let Ryze run their ads</h3>
+        <div class="in-el" style="--d:200"><a class="btn-cta" href="#">Start free trial <svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </div>
+      <div class="g-rows in-el" style="--d:300"><div class="g-row" id="g-r1"></div><div class="g-row rev" id="g-r2"></div></div>
+    </div>
+      </div>
+
+      <div class="cta-wrap" data-v="E">
+    <div class="cta E">
+      <div>
+        <span class="lbl in-el" style="--d:0">Price check</span>
+        <div class="e-prices">
+          <div class="e-old in-el" style="--d:100"><span>Agency</span><b>$2,500<small>/mo</small></b><i class="strike"></i></div>
+          <div class="e-new in-el" style="--d:200"><span class="t">Ryze AI</span><b>$<span id="e-price">2,500</span><small>/mo</small></b></div>
+        </div>
+        <p class="in-el" style="--d:300">The same work: bids, budgets, keywords and reports. Every hour instead of once a week.</p>
+      </div>
+      <div class="in-el" style="--d:400"><a class="btn-cta btn-dark" id="e-btn" href="#">Start free trial <svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="small">7 days free. No credit card.</span></div>
+    </div>
+      </div>
 
       <!-- CTA B: savings calculator -->
       <section class="card calc reveal">
@@ -471,104 +725,6 @@
             <a class="btn-cta wide" href="#">Find my wasted spend <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
             <div class="small" style="margin-top:8px; text-align:center">Estimate uses an average of 12.4% wasted spend. Placeholder figure.</div>
           </div>
-        </div>
-      </section>
-
-      <!-- CTA 2: review -->
-      <section class="card review reveal">
-        <div class="review-photo"><img src="assets/sarah.webp" alt="Sarah K."></div>
-        <div class="review-body">
-          <span class="label"><span class="stars">★★★★★</span> &nbsp;Review</span>
-          <blockquote>“We went from spending 10 hours a week on bid management to maybe 30 minutes reviewing Ryze’s recommendations. Our ROAS went from 2.4x to 4.1x in six weeks.”</blockquote>
-          <cite><b>Sarah K.</b>, Paid Media Manager, e-commerce agency</cite>
-          <div class="stats">
-            <div class="stat"><b><span data-roll="4.1">4.1</span>x</b><span>ROAS achieved</span></div>
-            <div class="stat"><b><span data-roll="6">6</span> weeks</b><span>Time to result</span></div>
-            <div class="stat"><b><span data-roll="95">95</span>%</b><span>Less manual work</span></div>
-          </div>
-          <div class="review-cta">
-            <a class="btn-cta" href="#">Get the same results <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            <a class="g2" href="#"><img src="assets/clients/g2.webp" alt="G2">More reviews on G2</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="card pad reveal">
-        <p class="body-text" style="font-size:24px; line-height:1.45; color:var(--ink); max-width:880px">For most advertisers, Ryze AI is the best AI tool for Google Ads in 2026. Four reasons, each with a caveat.</p>
-        <div class="reasons">
-          <div class="reason"><span class="label">Reason 01</span><h3>It applies the changes.</h3><p>Bids, budgets, negatives and pauses are made by the agent, and approval settings decide which ones wait for you. Opteo, Adalysis and Adzooma recommend and wait for a click.</p><div class="caveat"><div><span class="label">Caveat</span>You need to be comfortable reading a change log instead of making each change.</div></div></div>
-          <div class="reason"><span class="label">Reason 02</span><h3>One flat price.</h3><p>Paid Ads Autopilot is $89 a month at any spend, with a 7-day free trial. OptyAds starts at $209 and Opteo at $129, and both rise with the spend they manage.</p><div class="caveat"><div><span class="label">Caveat</span>Agencies that want their own rule logic get more control from OptyAds.</div></div></div>
-          <div class="reason"><span class="label">Reason 03</span><h3>More than Google.</h3><p>The same agent covers Meta, TikTok and LinkedIn, which matters when the budget question is between channels.</p><div class="caveat"><div><span class="label">Caveat</span>Adalysis goes deeper on RSA testing, and Opteo on Google-only one-click fixes.</div></div></div>
-          <div class="reason"><span class="label">Reason 04</span><h3>It also answers questions.</h3><p>The free Google Ads MCP connector lets Claude or ChatGPT query the account in plain language.</p><div class="caveat"><div><span class="label">Caveat</span>Ryze AI is a younger company than OptyAds or WordStream, which have a decade of track record.</div></div></div>
-        </div>
-        <!-- CTA 3: inside the text -->
-        <div class="inline-cta"><p>Want these changes applied on your account tonight?</p><a href="#">Try Ryze free for 7 days <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        <div class="more-row">
-          <p class="body-text" style="max-width:640px">If you want rules you write yourself, <b>OptyAds</b>. If ad copy testing is the bottleneck, <b>Adalysis</b>. If you want a daily list of one-click fixes, <b>Opteo</b>.</p>
-          <a class="see-also" href="#">Top AI tools for Meta Ads <span class="a"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-        </div>
-      </section>
-
-      <!-- CTA 4: logo wall -->
-      <section class="card pad reveal">
-        <div class="wall-head">
-          <h3>Trusted by <span data-roll="2,000">2,000</span>+ marketers, from startups to Uber Eats and adidas</h3>
-          <span class="label"><span class="stars">★★★★★</span> 4.8 on G2</span>
-        </div>
-        <div class="wall" id="wall"></div>
-        <div class="wall-cta">
-          <a class="btn-cta" href="#">Start free trial <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <a class="btn-2" href="#">Book a call</a>
-        </div>
-      </section>
-
-      <!-- CTA C: manual vs Ryze -->
-      <section class="card pad reveal vs">
-        <span class="label">Your week with Google Ads</span>
-        <h3>Ten hours of bid work, or thirty minutes of review</h3>
-        <div class="vs-grid">
-          <div class="vs-col">
-            <h4>By hand</h4>
-            <ul>
-              <li><span>Time on bids and budgets</span><b>10 h/week</b></li>
-              <li><span>Budget pacing checked</span><b>Weekly</b></li>
-              <li><span>Negative keywords</span><b>Added by hand</b></li>
-              <li><span>Price</span><b>Your hours</b></li>
-            </ul>
-          </div>
-          <div class="vs-col ryze">
-            <h4><img src="assets/logo.webp" alt="">With Ryze</h4>
-            <ul>
-              <li><span>Time on bids and budgets</span><b>30 min/week</b></li>
-              <li><span>Budget pacing checked</span><b>Every hour</b></li>
-              <li><span>Negative keywords</span><b>Added for you</b></li>
-              <li><span>Price</span><b>$89/mo flat</b></li>
-            </ul>
-          </div>
-        </div>
-        <div class="cta-row">
-          <a class="btn-cta" href="#">Switch to autopilot <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <span class="label">7 days free. No credit card.</span>
-        </div>
-      </section>
-
-      <!-- CTA 5: lead magnet -->
-      <section class="card pad reveal">
-        <div class="magnet">
-          <div>
-            <span class="label">Free download</span>
-            <h3>10 Claude prompts we use to audit Google Ads</h3>
-            <div class="prompts">
-              <div>Which ad groups spent money last week with zero conversions?</div>
-              <div>Where is my budget capping campaigns that convert?</div>
-              <div>Which search terms should be negatives this week?</div>
-            </div>
-          </div>
-          <form onsubmit="return false">
-            <input class="field" type="email" placeholder="Work email" aria-label="Work email">
-            <button class="btn-cta wide" type="submit">Send me the prompts <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            <div class="small">One email with the prompts. No spam.</div>
-          </form>
         </div>
       </section>
 
@@ -600,6 +756,13 @@
 
 </main>
 
+<div class="toast" id="toast">
+        <span class="ico"><img src="assets/logo.webp" alt=""></span>
+        <div><b>Ryze found 3 fixes for accounts like yours</b><div class="prog"><i></i></div></div>
+        <a class="btn-cta" href="#">Apply fixes <svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <button class="x" type="button" aria-label="Close">×</button>
+      </div>
+
 <script>
   const TOOLS = [
     { name: 'Ryze AI', logo: 'ryze.webp', score: 9.6, best: 'Autonomous management, flat fee', price: '$89/mo flat', ours: true },
@@ -628,7 +791,6 @@
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   document.getElementById('logo-set').innerHTML = CLIENTS.map(c => `<img src="assets/clients/${c}.svg" alt="${c.replace(/-/g, ' ')} logo">`).join('');
-  document.getElementById('wall').innerHTML = WALL.map(c => `<div><img src="assets/clients/${c}.svg" alt="${c.replace(/-/g, ' ')} logo"></div>`).join('');
 
   // contents in the sticky sidebar
   const SECTION_IDS = { 0: 'comparison', 1: 'short-answer' };
@@ -760,6 +922,151 @@
     for (let i = 0; i < 3; i++) setTimeout(addEntry, 300 + i * 500);
     if (!reduce) setInterval(addEntry, 2800);
   }
+</script>
+<script>
+{
+
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const wait = ms => new Promise(r => setTimeout(r, ms));
+  const money = n => Math.round(n).toLocaleString('en-US');
+  const countTo = (el, from, to, ms, fmt = money) => {
+    const t0 = performance.now();
+    const step = t => {
+      const k = Math.min(1, (t - t0) / ms), e = 1 - Math.pow(1 - k, 3);
+      el.textContent = fmt(from + (to - from) * e);
+      if (k < 1 && el.isConnected) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+
+  // each variant: start() runs its inner animation, stop() clears timers
+  const V = {};
+  let runs = {};
+
+  V.A = run => {
+    const el = document.getElementById('a-count');
+    let total = 0;
+    el.textContent = '0';
+    const id = setInterval(() => {
+      if (runs.A !== run) return clearInterval(id);
+      total += 31 + Math.random() * 18;
+      el.textContent = money(total);
+    }, 140);
+  };
+
+  V.B = async run => {
+    const ui = document.getElementById('b-ui'), cur = document.getElementById('b-cursor');
+    const roas = document.getElementById('b-roas'), bar = document.getElementById('b-bar'), bud = document.getElementById('b-budget');
+    const rows = [...ui.querySelectorAll('.b-row[data-i]')];
+    const reset = () => {
+      rows.forEach(r => { r.classList.remove('off', 'focus'); });
+      rows[0].querySelector('.st').className = 'st bad'; rows[0].querySelector('.st').textContent = 'Wasting';
+      rows[1].querySelector('.st').className = 'st'; rows[1].querySelector('.st').textContent = 'Limited';
+      rows[2].querySelector('.st').className = 'st bad'; rows[2].querySelector('.st').textContent = 'Wasting';
+      roas.textContent = '2.4x'; roas.classList.remove('up'); bar.style.width = '40%'; bud.textContent = '$40/day'; cur.style.opacity = 0;
+    };
+    const moveTo = el => { cur.style.opacity = 1; cur.style.transform = `translate(${el.offsetLeft + el.offsetWidth - 120}px, ${el.offsetTop + el.offsetHeight / 2 - 15}px)`; };
+    const tap = () => { cur.classList.remove('click'); void cur.offsetWidth; cur.classList.add('click'); };
+    const setRoas = v => { roas.textContent = v.toFixed(1) + 'x'; roas.classList.add('up'); };
+    while (runs.B === run) {
+      reset(); await wait(900);
+      const steps = [
+        [rows[0], r => { r.classList.add('off'); r.querySelector('.st').className = 'st done'; r.querySelector('.st').textContent = 'Paused'; }, 2.9],
+        [rows[2], r => { r.classList.add('off'); r.querySelector('.st').className = 'st done'; r.querySelector('.st').textContent = 'Negative'; }, 3.3],
+        [rows[1], r => { r.querySelector('.st').className = 'st done'; r.querySelector('.st').textContent = 'Bid +15%'; }, 3.7],
+        [ui.querySelector('.b-budget'), () => { bar.style.width = '72%'; bud.textContent = '$70/day'; }, 4.1],
+      ];
+      for (const [el, act, v] of steps) {
+        if (runs.B !== run) return;
+        moveTo(el); await wait(850);
+        el.classList.add('focus'); tap(); act(el); setRoas(v); await wait(700);
+        el.classList.remove('focus');
+      }
+      cur.style.opacity = 0; await wait(2600);
+    }
+  };
+
+  V.C = async run => {
+    const chat = document.getElementById('c-chat');
+    chat.innerHTML = '';
+    const msgs = [
+      ['sarah', 'Our ROAS was stuck at <b>2.4x</b> for months.'],
+      ['sarah', 'We connected Ryze on a Monday and let it run bids and budgets.'],
+      ['sarah', 'Six weeks later: <b>4.1x</b>. I spend 30 minutes a week reviewing it.'],
+      ['ryze', 'Want the same on your account?<br><a class="btn-cta" href="#">Start free trial <svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>'],
+    ];
+    await wait(500);
+    for (const [who, html] of msgs) {
+      if (runs.C !== run) return;
+      const t = document.createElement('div'); t.className = 'typing' + (who === 'ryze' ? ' ryze' : ''); t.innerHTML = '<i></i><i></i><i></i>';
+      chat.append(t); await wait(reduce ? 0 : 900); t.remove();
+      if (runs.C !== run) return;
+      const m = document.createElement('div'); m.className = 'msg' + (who === 'ryze' ? ' ryze' : ''); m.innerHTML = html;
+      chat.append(m); await wait(reduce ? 0 : 500);
+    }
+  };
+
+  V.D = async run => {
+    const cards = [...document.querySelectorAll('#d-cards .flip')], cta = document.getElementById('d-cta');
+    cards.forEach(c => c.classList.remove('open', 'half')); cta.classList.remove('show');
+    const check = () => { if (cards.every(c => c.classList.contains('open'))) cta.classList.add('show'); };
+    const flip = async c => {
+      if (c.classList.contains('open') || c.classList.contains('half')) return;
+      c.classList.add('half'); await wait(260);
+      c.classList.add('open'); c.classList.remove('half'); check();
+    };
+    cards.forEach(c => c.onclick = () => flip(c));
+    await wait(1100);
+    for (const c of cards) { if (runs.D !== run) return; flip(c); await wait(700); }
+  };
+
+  V.E = async run => {
+    const p = document.getElementById('e-price'), btn = document.getElementById('e-btn');
+    p.textContent = '2,500';
+    await wait(1200); if (runs.E !== run) return;
+    countTo(p, 2500, 89, 1300);
+    await wait(1700); if (runs.E !== run) return;
+    btn.classList.remove('nudge'); void btn.offsetWidth; btn.classList.add('nudge');
+  };
+
+  V.F = async run => {
+    const v = document.getElementById('f-val');
+    v.textContent = '2.4x';
+    await wait(1400); if (runs.F !== run) return;
+    countTo(v, 2.4, 4.1, 1400, n => n.toFixed(1) + 'x');
+  };
+
+  const CLIENTS = ['uber-eats', 'adidas', 'duolingo', 'mgm-resorts', 'wharton', 'lendingclub', 'norton', 'eventbrite', 'huel', 'together-ai', 'ghd', 'hack-the-box'];
+  const tiles = list => [...list, ...list].map(c => `<div><img src="assets/clients/${c}.svg" alt="${c.replace(/-/g, ' ')} logo"></div>`).join('');
+  document.getElementById('g-r1').innerHTML = tiles(CLIENTS.slice(0, 6));
+  document.getElementById('g-r2').innerHTML = tiles(CLIENTS.slice(6));
+  V.G = async run => { const c = document.getElementById('g-count'); c.textContent = '0'; await wait(400); countTo(c, 0, 2000, 1600); };
+
+  V.H = async run => {
+    const t = document.getElementById('toast');
+    t.classList.remove('show');
+    t.querySelector('.x').onclick = () => t.classList.remove('show');
+    await wait(1200); if (runs.H !== run) return;
+    t.classList.add('show');
+  };
+
+  function start(item) {
+    const v = item.dataset.v;
+    runs[v] = Symbol();
+    item.classList.remove('play'); void item.offsetWidth; item.classList.add('play');
+    V[v] && V[v](runs[v]);
+  }
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { start(e.target); io.unobserve(e.target); } }), { threshold: .35 });
+  document.querySelectorAll('.cta-wrap').forEach(item => io.observe(item));
+  // H: the toast slides up once the reader is past 40% of the page
+  const toastEl = document.getElementById('toast');
+  toastEl.querySelector('.x').onclick = () => { toastEl.classList.remove('show'); toastEl.dataset.closed = 1; };
+  addEventListener('scroll', () => {
+    if (toastEl.dataset.closed || toastEl.classList.contains('show')) return;
+    if (scrollY > (document.body.scrollHeight - innerHeight) * .4) toastEl.classList.add('show');
+  }, { passive: true });
+
+}
 </script>
 </body>
 </html>

@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Best AI Tools for Google Ads Management 2026: Top 10 — Ryze blog redesign, draft by Aleksandra Zianchurina (v8)</title>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Best AI Tools for Google Ads Management 2026: Top 10","author":{"@type":"Person","name":"Ira Bodnar","jobTitle":"Founder, Ryze AI"},"publisher":{"@type":"Organization","name":"Ryze AI"},"datePublished":"2026-03-25","dateModified":"2026-11-08"}
+</script>
+<style>
+  :root {
+    --page: #ECECEC;
+    --card: #FFFFFF;
+    --inner: #F4F4F4;
+    --ink: #111111;
+    --ink-2: #555555;
+    --ink-3: #8E8E8E;
+    --line: #E8E8E8;
+    --gray: #D6D6D6;
+    --cta: #F04E14;
+    --cta-hover: #D8430E;
+    /* Ryze radius system: buttons and fields stay almost square, like the header button */
+    --r-btn: 4px;
+    --r-card: 8px;
+    --r-inner: 4px;
+    --ease: cubic-bezier(.2, .8, .2, 1);
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-width: 1280px; background: var(--page); color: var(--ink); font-family: 'Satoshi', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; }
+
+  /* site header: copied as is, not part of the redesign */
+  .site-header { position: sticky; top: 0; z-index: 50; height: 76px; padding: 0 64px; display: flex; align-items: center; justify-content: space-between; background: #fff; }
+  .site-logo { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 31px; letter-spacing: -.02em; }
+  .site-logo img { width: 38px; height: 38px; object-fit: contain; }
+  .site-nav { display: flex; gap: 42px; font-size: 16px; color: #222; }
+  .site-cta { background: #000; color: #fff; font-size: 15px; font-weight: 500; padding: 11px 20px; border-radius: var(--r-btn); }
+
+  .page { width: min(1376px, calc(100% - 64px)); margin: 12px auto 120px; display: flex; flex-direction: column; gap: 10px; }
+  .card { position: relative; background: var(--card); border-radius: var(--r-card); overflow: hidden; }
+  .pad { padding: 48px 56px; }
+  .label { font-size: 13px; font-weight: 500; color: var(--ink-3); }
+  .glass { background: rgba(255,255,255,.66); -webkit-backdrop-filter: blur(22px) saturate(1.3); backdrop-filter: blur(22px) saturate(1.3); border: 1px solid rgba(255,255,255,.55); }
+  .glass-dark { background: rgba(17,17,17,.5); -webkit-backdrop-filter: blur(24px) saturate(1.2); backdrop-filter: blur(24px) saturate(1.2); border: 1px solid rgba(255,255,255,.12); color: #fff; }
+  .tabnum { font-variant-numeric: tabular-nums; }
+  .stars { color: #F5A623; letter-spacing: 2px; }
+
+  /* buttons */
+  .btn-cta { display: inline-flex; align-items: center; justify-content: center; gap: 14px; margin: 6px; padding: 16px 28px; border: 0; border-radius: var(--r-btn); outline: 1.5px solid var(--cta); outline-offset: 4px; background: var(--cta); color: #fff; font-family: inherit; font-size: 17px; font-weight: 700; cursor: pointer; transition: background .25s, outline-offset .3s var(--ease); }
+  .btn-cta svg { width: 17px; height: 17px; transition: transform .35s var(--ease); }
+  .btn-cta:hover { background: var(--cta-hover); outline-offset: 2px; }
+  .btn-cta:hover svg { transform: translate(2px, -2px); }
+  .btn-cta:focus-visible { outline-color: var(--ink); }
+  .btn-cta.wide { width: calc(100% - 12px); }
+  .btn-2 { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 52px; padding: 0 22px; border: 0; border-radius: var(--r-btn); background: var(--inner); font: inherit; font-size: 16px; font-weight: 500; color: var(--ink); cursor: pointer; transition: background .2s, color .2s; }
+  .btn-2:hover { background: var(--ink); color: #fff; }
+  .btn-google { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; height: 54px; border: 0; border-radius: var(--r-btn); background: #fff; color: var(--ink); font: inherit; font-size: 16px; font-weight: 700; cursor: pointer; transition: background .2s; }
+  .btn-google:hover { background: #f1f1f1; }
+  .field { display: block; width: 100%; height: 54px; padding: 0 18px; border-radius: var(--r-btn); border: 1px solid var(--line); background: #fff; color: var(--ink); font: inherit; font-size: 16px; outline: none; transition: border-color .2s; }
+  .field:focus { border-color: var(--ink); }
+  .field.on-dark { border-color: rgba(255,255,255,.25); background: rgba(255,255,255,.1); color: #fff; }
+  .field.on-dark::placeholder { color: rgba(255,255,255,.55); }
+  .field.on-dark:focus { border-color: rgba(255,255,255,.6); }
+
+  /* ---------- 1. hero ---------- */
+  .hero { display: grid; grid-template-columns: 8fr 4fr; gap: 10px; }
+  .hero-main { display: flex; flex-direction: column; min-height: 600px; padding: 34px 56px 44px; }
+  .byline { display: flex; align-items: center; gap: 14px; }
+  .ava { width: 44px; height: 44px; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--ink); color: #fff; font-size: 14px; font-weight: 700; }
+  .byline b { display: block; font-size: 15px; font-weight: 700; }
+  .byline div span { display: block; margin-top: 2px; font-size: 13px; color: var(--ink-3); }
+  .crumbs { margin-left: auto; font-size: 14px; color: var(--ink-3); }
+  .crumbs a:hover { color: var(--ink); }
+  .star { position: absolute; top: 104px; right: 56px; width: 84px; height: 84px; will-change: transform; }
+  .hero-main h1 { margin: auto 0 0; font-size: 62px; line-height: 1.08; letter-spacing: -.025em; font-weight: 500; }
+  .line { display: block; overflow: hidden; padding-bottom: .06em; margin-bottom: -.06em; }
+  .line > span { display: block; transform: translateY(104%); transition: transform 1.1s var(--ease); }
+  .go .line > span { transform: none; }
+  .hero-answer { margin: 30px 0 0; max-width: 640px; font-size: 19px; line-height: 1.55; color: var(--ink-2); }
+  .hero-answer b { color: var(--ink); font-weight: 700; }
+  .dates { display: flex; gap: 28px; margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 14px; color: var(--ink-2); }
+  .dates b { font-weight: 500; color: var(--ink); }
+  .fade { opacity: 0; transform: translateY(14px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+  .go .fade { opacity: 1; transform: none; }
+
+  /* signup card where the photo was */
+  .signup { display: flex; flex-direction: column; background: var(--ink); color: #fff; }
+    .signup-in { position: relative; display: flex; flex-direction: column; gap: 14px; height: 100%; padding: 36px 34px 30px; }
+  .signup-in .label { color: rgba(255,255,255,.65); }
+  .signup h2 { margin: 0; font-size: 34px; line-height: 1.12; letter-spacing: -.02em; font-weight: 500; }
+  .signup p { margin: 0; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,.75); }
+  .or { display: flex; align-items: center; gap: 12px; font-size: 13px; color: rgba(255,255,255,.55); }
+  .or::before, .or::after { content: ""; flex: 1; height: 1px; background: rgba(255,255,255,.18); }
+  .signup .small { font-size: 13px; color: rgba(255,255,255,.6); text-align: center; }
+  .found { margin-top: auto; padding: 16px 18px 6px; border-radius: var(--r-inner); background: rgba(255,255,255,.08); }
+  .found-row { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-top: 1px solid rgba(255,255,255,.12); font-size: 14px; }
+  .found-row:first-of-type { margin-top: 8px; }
+  .found-row b { font-weight: 700; white-space: nowrap; }
+
+  .logos { display: flex; align-items: center; gap: 44px; padding: 30px 56px; }
+  .logos .label { flex: none; }
+  .logo-set { flex: 1; min-width: 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .logo-set img { height: 20px; width: auto; max-width: 130px; object-fit: contain; filter: grayscale(1) contrast(1.2); opacity: .75; transition: opacity .3s, filter .3s; }
+  .logo-set img:hover { opacity: 1; filter: none; }
+
+  /* ---------- article: sticky contents + CTA on the left ---------- */
+  .article { display: grid; grid-template-columns: 272px minmax(0, 1fr); gap: 10px; align-items: start; }
+  .side { position: sticky; top: 86px; display: flex; flex-direction: column; gap: 10px; }
+  .toc { padding: 26px 26px 20px; }
+  .toc ol { list-style: none; margin: 14px 0 0; padding: 0; }
+  .toc a { display: flex; gap: 12px; padding: 7px 0; font-size: 14px; line-height: 1.35; color: var(--ink-3); transition: color .2s; }
+  .toc a span { width: 20px; flex: none; font-variant-numeric: tabular-nums; }
+  .toc a:hover { color: var(--ink); }
+  .toc a.on { color: var(--ink); font-weight: 500; }
+  .side-cta { padding: 26px; }
+  .side-cta h3 { margin: 10px 0 0; font-size: 22px; line-height: 1.2; letter-spacing: -.01em; font-weight: 500; }
+  .side-cta ul { list-style: none; margin: 14px 0 0; padding: 0; font-size: 14px; line-height: 1.45; color: var(--ink-2); }
+  .side-cta li { position: relative; padding-left: 20px; margin-top: 6px; }
+  .side-cta li::before { content: "✓"; position: absolute; left: 0; color: var(--cta); font-weight: 700; }
+  .side-cta .btn-cta { margin-top: 18px; }
+  .side-cta .small { margin-top: 10px; text-align: center; font-size: 12.5px; color: var(--ink-3); }
+  .content { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+
+  h2 { margin: 0; max-width: 940px; font-size: 50px; line-height: 1.1; letter-spacing: -.025em; font-weight: 500; }
+  .intro { margin: 26px 0 0; max-width: 640px; font-size: 18px; line-height: 1.6; color: var(--ink-2); }
+  .intro b { color: var(--ink); }
+  .body-text { margin: 0; font-size: 18px; line-height: 1.65; color: var(--ink-2); }
+  .body-text b { color: var(--ink); font-weight: 700; }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* comparison table */
+  .cmp { width: 100%; margin-top: 36px; border-collapse: separate; border-spacing: 0; table-layout: fixed; }
+  .cmp th { padding: 0 16px 14px; text-align: left; font-size: 13px; font-weight: 500; color: var(--ink-3); }
+  .cmp td { padding: 18px 16px; border-top: 1px solid var(--line); font-size: 15.5px; vertical-align: middle; }
+  .cmp tr.ours td { background: var(--inner); border-top-color: transparent; }
+  .cmp tr.ours td:first-child { border-radius: var(--r-inner) 0 0 var(--r-inner); }
+  .cmp tr.ours td:last-child { border-radius: 0 var(--r-inner) var(--r-inner) 0; }
+  .cmp tr.ours + tr td { border-top-color: transparent; }
+  .cmp .rk { color: var(--ink-3); font-size: 14px; }
+  .tool { display: flex; align-items: center; gap: 12px; font-size: 16.5px; font-weight: 500; }
+  .tool .ico { width: 34px; height: 34px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--inner); }
+  .cmp tr.ours .tool .ico { background: #fff; }
+  .tool .ico img { width: 17px; height: 17px; object-fit: contain; }
+  .tool em { display: block; margin-top: 2px; font-style: normal; font-size: 12.5px; font-weight: 500; color: var(--ink-3); }
+  .cmp tr.ours .tool { font-weight: 700; }
+  .score { display: flex; align-items: center; gap: 12px; font-size: 16.5px; font-weight: 500; }
+  .score small { font-size: 12.5px; color: var(--ink-3); }
+  .meter { flex: 1; max-width: 110px; height: 8px; border-radius: 2px; background: var(--inner); overflow: hidden; }
+  .cmp tr.ours .meter { background: #fff; }
+  .meter i { display: block; height: 100%; width: calc(var(--v) * 100%); border-radius: 8px; background: var(--gray); transform-origin: left; transform: scaleX(0); transition: transform 1.3s var(--ease); border-radius: 2px; }
+  .in .meter i { transform: scaleX(1); }
+  .cmp tr.ours .meter i { background: var(--ink); }
+  .cmp .bf { color: var(--ink-2); }
+  .cmp .pr { font-weight: 500; }
+  .cmp tr.more { display: none; }
+  .cmp-card.open tr.more { display: table-row; }
+  .cmp-foot { display: flex; align-items: center; justify-content: space-between; gap: 40px; margin-top: 26px; }
+  .cmp-foot .label { max-width: 560px; line-height: 1.55; }
+  .cmp-card.open .btn-2 svg { transform: rotate(180deg); }
+  .btn-2 svg { transition: transform .3s var(--ease); }
+
+  /* CTA 1: frosted ranking band */
+  .cta-band { min-height: 270px; display: flex; align-items: center; padding: 34px; background: #c9774a; }
+  .cta-band > img { position: absolute; inset: -60px; width: calc(100% + 120px); height: calc(100% + 120px); object-fit: cover; object-position: 58% 48%; filter: blur(34px) saturate(1.35) brightness(1.45); transform: scale(2.6); }
+  .cta-panel { position: relative; width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 40px; padding: 36px 40px; border-radius: var(--r-card); }
+  .cta-panel .label { color: var(--ink-2); }
+  .cta-panel p { margin: 10px 0 0; max-width: 620px; font-size: 28px; line-height: 1.3; letter-spacing: -.015em; font-weight: 500; }
+  .cta-side { display: flex; flex-direction: column; align-items: center; gap: 6px; flex: none; }
+  .cta-side .label { color: var(--ink-2); }
+
+  /* short answer + chart */
+  .lead { margin: 40px 0 0; max-width: 1000px; font-size: 32px; line-height: 1.4; letter-spacing: -.012em; }
+  .lead b { font-weight: 700; }
+  .lead-rest { margin: 22px 0 0; max-width: 760px; font-size: 18px; line-height: 1.6; color: var(--ink-2); }
+  .lead-rest b { color: var(--ink); }
+  .disc { margin-top: 30px; }
+  .chart-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; }
+  .chart-head h3 { margin: 8px 0 0; font-size: 28px; line-height: 1.25; letter-spacing: -.015em; font-weight: 500; }
+  .bars { margin-top: 32px; }
+  .bar-row { display: grid; grid-template-columns: 200px 1fr 52px; align-items: center; gap: 22px; height: 44px; }
+  .bar-name { display: flex; align-items: center; gap: 12px; font-size: 15.5px; }
+  .bar-name img { width: 17px; height: 17px; object-fit: contain; }
+  .bar { position: relative; height: 14px; border-radius: 2px; background: var(--inner); }
+  .bar i { position: absolute; inset: 0 auto 0 0; width: calc(var(--v) * 100%); border-radius: 2px; background: var(--gray); transform-origin: left; transform: scaleX(0); transition: transform 1.3s var(--ease); }
+  .in .bar i { transform: scaleX(1); }
+  .bar-row.ours .bar i { background: var(--ink); }
+  .bar-row.ours .bar-name { font-weight: 700; }
+  .bar-val { text-align: right; font-size: 16px; font-weight: 500; }
+  .axis { display: grid; grid-template-columns: 200px 1fr 52px; gap: 22px; margin-top: 10px; }
+  .axis div { display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-3); }
+  .chart-note { margin-top: 26px; font-size: 14px; line-height: 1.55; color: var(--ink-3); }
+
+  /* CTA A: product preview */
+  .preview { display: grid; grid-template-columns: 1fr 1.15fr; gap: 48px; align-items: center; }
+  .preview h3, .calc h3, .vs h3 { margin: 10px 0 0; font-size: 34px; line-height: 1.15; letter-spacing: -.02em; font-weight: 500; }
+  .preview p, .calc p { margin: 14px 0 0; max-width: 440px; font-size: 17px; line-height: 1.55; color: var(--ink-2); }
+  .cta-row { display: flex; align-items: center; gap: 14px; margin-top: 26px; }
+  .ui { padding: 18px; border-radius: var(--r-card); background: var(--inner); }
+  .ui-head { display: flex; justify-content: space-between; align-items: center; padding: 0 4px 12px; font-size: 13px; font-weight: 500; color: var(--ink-3); }
+  .ui-head b { display: flex; align-items: center; gap: 8px; color: var(--ink); font-size: 14px; }
+  .ui-head b img { width: 16px; height: 16px; }
+  .ui-row { display: grid; grid-template-columns: 78px 1fr auto; gap: 14px; align-items: center; margin-top: 8px; padding: 14px 16px; border-radius: var(--r-inner); background: #fff; font-size: 14.5px; line-height: 1.4; }
+  .ui-row .k { font-size: 12px; font-weight: 500; color: var(--ink-3); }
+  .ui-row .v { display: block; margin-top: 2px; font-size: 12.5px; color: var(--ink-3); }
+  .ui-act { display: flex; gap: 6px; }
+  .ui-act button { height: 30px; padding: 0 12px; border-radius: var(--r-btn); border: 1px solid var(--line); background: #fff; font: inherit; font-size: 13px; font-weight: 500; cursor: pointer; }
+  .ui-act button.ok { border-color: var(--ink); background: var(--ink); color: #fff; }
+  .ui-row.done .ui-act { display: none; }
+  .ui-row .applied { display: none; font-size: 13px; font-weight: 700; color: #1F7A3D; }
+  .ui-row.done .applied { display: block; }
+
+  /* CTA B: savings calculator */
+  .calc { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px; background: var(--ink); color: #fff; }
+  .calc-l { padding: 38px 40px; }
+  .calc-l .label { color: rgba(255,255,255,.55); }
+  .calc p { color: rgba(255,255,255,.7); }
+  .calc-r { display: flex; flex-direction: column; justify-content: space-between; gap: 24px; padding: 34px 36px; border-radius: var(--r-card); background: #fff; color: var(--ink); }
+  .spend { display: flex; justify-content: space-between; align-items: baseline; font-size: 15px; color: var(--ink-2); }
+  .spend b { font-size: 22px; color: var(--ink); font-variant-numeric: tabular-nums; }
+  input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 4px; margin: 18px 0 0; border-radius: 2px; background: linear-gradient(90deg, var(--ink) var(--p, 20%), var(--line) var(--p, 20%)); outline: none; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; border-radius: var(--r-btn); background: var(--ink); cursor: pointer; }
+  input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border: 0; border-radius: var(--r-btn); background: var(--ink); cursor: pointer; }
+  .saved { font-size: 15px; color: var(--ink-2); }
+  .saved b { display: block; margin-top: 4px; font-size: 56px; line-height: 1; letter-spacing: -.03em; font-weight: 500; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .calc-r .small { font-size: 12.5px; color: var(--ink-3); }
+
+  /* CTA C: manual vs Ryze */
+  .vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 28px; }
+  .vs-col { padding: 26px 28px; border-radius: var(--r-card); background: var(--inner); }
+  .vs-col.ryze { background: var(--ink); color: #fff; }
+  .vs-col h4 { display: flex; align-items: center; gap: 10px; margin: 0; font-size: 17px; font-weight: 700; }
+  .vs-col h4 img { width: 18px; height: 18px; filter: invert(1); }
+  .vs-col ul { list-style: none; margin: 16px 0 0; padding: 0; }
+  .vs-col li { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-top: 1px solid rgba(17,17,17,.1); font-size: 15px; }
+  .vs-col.ryze li { border-top-color: rgba(255,255,255,.14); }
+  .vs-col li span { color: var(--ink-2); }
+  .vs-col.ryze li span { color: rgba(255,255,255,.65); }
+  .vs-col li b { font-weight: 700; text-align: right; }
+
+  /* CTA 2: review */
+  .review { display: grid; grid-template-columns: 300px 1fr; gap: 10px; padding: 10px; }
+  .review-photo { border-radius: var(--r-inner); overflow: hidden; background: var(--inner); }
+  .review-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .review-body { display: flex; flex-direction: column; padding: 36px 40px 34px; }
+  .review blockquote { margin: 16px 0 0; font-size: 26px; line-height: 1.4; letter-spacing: -.01em; font-weight: 500; }
+  .review cite { display: block; margin-top: 18px; font-style: normal; font-size: 15px; color: var(--ink-2); }
+  .review cite b { color: var(--ink); }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 28px; }
+  .stat { padding: 18px 20px; border-radius: var(--r-inner); background: var(--inner); }
+  .stat b { display: block; font-size: 34px; line-height: 1.1; letter-spacing: -.02em; font-weight: 500; }
+  .stat > span { display: block; margin-top: 4px; font-size: 13.5px; color: var(--ink-2); }
+  .review-cta { display: flex; align-items: center; gap: 22px; margin-top: 28px; }
+  .g2 { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--ink-2); }
+  .g2 img { width: 26px; height: 26px; object-fit: contain; }
+
+  /* reasons */
+  .reasons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 32px; }
+  .reason { display: flex; flex-direction: column; padding: 30px 30px 28px; border-radius: var(--r-card); background: var(--inner); }
+  .reason h3 { margin: 24px 0 0; font-size: 23px; line-height: 1.3; letter-spacing: -.01em; font-weight: 500; }
+  .reason p { margin: 12px 0 0; font-size: 15.5px; line-height: 1.6; color: var(--ink-2); }
+  .caveat { margin-top: auto; padding-top: 22px; }
+  .caveat div { padding: 16px 18px; border-radius: var(--r-inner); background: #fff; font-size: 14.5px; line-height: 1.5; }
+  .caveat .label { display: block; margin-bottom: 4px; }
+  .inline-cta { display: flex; align-items: center; justify-content: space-between; gap: 28px; margin-top: 10px; padding: 22px 26px; border-radius: var(--r-card); border: 1.5px dashed transparent; background: #FFF1EA; }
+  .inline-cta p { margin: 0; font-size: 18px; line-height: 1.45; }
+  .inline-cta a { flex: none; display: inline-flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 700; color: var(--cta); }
+  .inline-cta a svg { transition: transform .3s var(--ease); }
+  .inline-cta a:hover svg { transform: translateX(4px); }
+  .more-row { display: flex; align-items: center; justify-content: space-between; gap: 40px; margin-top: 32px; }
+  .see-also { display: flex; align-items: center; gap: 16px; flex: none; padding: 8px 8px 8px 22px; border-radius: var(--r-inner); background: var(--inner); font-size: 15.5px; font-weight: 500; transition: background .2s, color .2s; }
+  .see-also .a { width: 40px; height: 40px; display: grid; place-items: center; border-radius: var(--r-btn); background: #fff; color: var(--ink); transition: transform .3s var(--ease); }
+  .see-also:hover { background: var(--ink); color: #fff; }
+
+  /* CTA 3: logo wall */
+  .wall-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; }
+  .wall-head h3 { margin: 0; max-width: 640px; font-size: 36px; line-height: 1.15; letter-spacing: -.02em; font-weight: 500; }
+  .wall { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-top: 30px; }
+  .wall div { display: grid; place-items: center; height: 92px; border-radius: var(--r-inner); background: var(--inner); transition: background .25s; }
+  .wall div:hover { background: #fff; box-shadow: inset 0 0 0 1px var(--line); }
+  .wall img { max-width: 66%; max-height: 26px; object-fit: contain; filter: grayscale(1) contrast(1.15); opacity: .8; transition: filter .25s, opacity .25s; }
+  .wall div:hover img { filter: none; opacity: 1; }
+  .wall-cta { display: flex; align-items: center; gap: 14px; margin-top: 28px; }
+
+  /* CTA 4: lead magnet */
+  .magnet { display: grid; grid-template-columns: 1fr 420px; gap: 48px; align-items: center; }
+  .magnet h3 { margin: 10px 0 0; font-size: 34px; line-height: 1.15; letter-spacing: -.02em; font-weight: 500; }
+  .prompts { display: flex; flex-direction: column; gap: 8px; margin-top: 22px; }
+  .prompts div { padding: 14px 18px; border-radius: var(--r-inner); background: var(--inner); font-size: 15px; line-height: 1.45; color: var(--ink-2); }
+  .prompts div::before { content: "› "; color: var(--cta); font-weight: 700; }
+  .magnet form { display: flex; flex-direction: column; gap: 10px; }
+  .magnet .small { text-align: center; font-size: 13px; color: var(--ink-3); }
+
+  /* CTA 5: audit */
+  .audit { min-height: 620px; background: #120f0c; }
+  .audit > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 55%; transform: scale(1.12); transition: transform 2.2s var(--ease); }
+  .audit.in > img { transform: scale(1); }
+  .audit-in { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 12px; min-height: 620px; }
+  .audit-form { display: flex; flex-direction: column; justify-content: space-between; padding: 44px; border-radius: var(--r-card); }
+  .audit-form .label { color: rgba(255,255,255,.6); }
+  .audit-form h2 { margin-top: 14px; font-size: 58px; }
+  .audit-form p { margin: 20px 0 0; max-width: 480px; font-size: 18px; line-height: 1.55; color: rgba(255,255,255,.75); }
+  .audit-form .btn-cta { margin-top: 16px; }
+  .audit-form small { display: block; margin-top: 12px; text-align: center; font-size: 13px; color: rgba(255,255,255,.55); }
+  .log-card { align-self: end; padding: 26px 28px 14px; border-radius: var(--r-card); }
+  .log-head { display: flex; justify-content: space-between; font-size: 14px; font-weight: 500; color: var(--ink-2); }
+  .log { height: 248px; margin-top: 10px; overflow: hidden; }
+  .log-row { display: grid; grid-template-columns: 56px 1fr auto; gap: 14px; align-items: center; padding: 14px 0; border-top: 1px solid rgba(17,17,17,.08); font-size: 15px; line-height: 1.4; animation: logIn .7s var(--ease) both; }
+  .log-row .t { font-size: 13px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+  .log-row .st { padding: 5px 12px; border-radius: 999px; background: #fff; font-size: 12px; font-weight: 500; }
+  @keyframes logIn { from { opacity: 0; transform: translateY(-10px); } }
+
+  /* rolling digits */
+  .roll { --h: 1.2em; display: inline-flex; height: var(--h); line-height: var(--h); overflow: hidden; vertical-align: bottom; font-variant-numeric: tabular-nums; }
+  .roll .col { display: inline-block; height: var(--h); overflow: hidden; }
+  .roll .strip { display: flex; flex-direction: column; transition: transform 1.6s var(--ease); }
+  .roll .strip span { height: var(--h); line-height: var(--h); }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .reveal, .fade { opacity: 1 !important; transform: none !important; }
+    .line > span { transform: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="site-logo" href="#"><img src="../assets/logo.webp" alt="">Ryze</a>
+  <nav class="site-nav"><a href="#">AI Marketer</a><a href="#">MCP</a><a href="#">Muse</a><a href="#">SEO</a><a href="#">Shopify CRO</a><a href="#">About Us</a><a href="#">Pricing</a></nav>
+  <a class="site-cta" href="#">Get started</a>
+</header>
+
+<main class="page">
+
+  <!-- 1. hero: title + author on the left, sign-up on the right -->
+  <section class="hero" id="hero">
+    <article class="card hero-main">
+      <div class="byline">
+        <span class="ava">IB</span>
+        <div><b>Ira Bodnar</b><span>Founder, Ryze AI</span></div>
+        <nav class="crumbs"><a href="#">Blog</a> / <a href="#">Paid Ads</a></nav>
+      </div>
+      <img class="star" id="star" src="../assets/logo.webp" alt="">
+      <h1>
+        <span class="line"><span>Best AI Tools for</span></span>
+        <span class="line"><span>Google Ads Management</span></span>
+        <span class="line"><span>2026: Top 10</span></span>
+      </h1>
+      <p class="hero-answer fade" style="transition-delay:.5s"><b>Ryze AI</b> is the best AI for Google Ads in 2026 for teams that want changes applied automatically. If you approve changes by hand, Opteo fits better; OptyAds suits agencies that write their own rules. Ryze is our product.</p>
+      <div class="dates fade" style="transition-delay:.65s">
+        <span>Published <b><time datetime="2026-03-25">Mar 25, 2026</time></b></span>
+        <span>Updated <b><time datetime="2026-11-08">Nov 8, 2026</time></b></span>
+        <span>18 min read</span>
+        <span>Tested on live accounts spending $25K–$200K/mo</span>
+      </div>
+    </article>
+
+    <aside class="card signup">
+      <div class="signup-in">
+        <span class="label">Ryze AI · 7 days free</span>
+        <h2>Let AI run your Google Ads</h2>
+        <p>Connect your account and Ryze starts fixing bids, budgets and keywords today.</p>
+        <button class="btn-google" type="button"><svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.3-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.3-.4-3.5z"/></svg>Continue with Google</button>
+        <div class="or">or</div>
+        <form onsubmit="return false" style="display:flex; flex-direction:column; gap:6px">
+          <input class="field on-dark" type="email" placeholder="Work email" aria-label="Work email">
+          <button class="btn-cta wide" type="submit">Start free trial <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </form>
+        <div class="small">No credit card. Cancel anytime.</div>
+        <div class="found">
+          <span class="label">Found on a typical account in the first hour</span>
+          <div class="found-row"><span>Spend on keywords with no orders</span><b>$1,240/mo</b></div>
+          <div class="found-row"><span>Campaigns limited by budget</span><b>4</b></div>
+          <div class="found-row"><span>ROAS after 6 weeks</span><b>2.4x → 4.1x</b></div>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <div class="card logos"><span class="label">Used by <span data-roll="2,000">2,000</span>+ marketers</span><div class="logo-set" id="logo-set"></div></div>
+
+  <!-- article with sticky contents and a sticky CTA -->
+  <div class="article">
+    <aside class="side">
+      <nav class="card toc"><span class="label">Contents</span><ol id="toc-list"></ol></nav>
+      <div class="card side-cta">
+        <span class="label"><span class="stars">★★★★★</span> 4.8 on G2</span>
+        <h3>AI autopilot for Google Ads</h3>
+        <ul>
+          <li>Runs Google, Meta and 5 more platforms</li>
+          <li>Adjusts bids and budgets 24/7</li>
+          <li>$89/mo flat at any spend</li>
+        </ul>
+        <a class="btn-cta wide" href="#">Try for free <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="small">7 days free. No credit card.</div>
+      </div>
+    </aside>
+
+    <div class="content">
+
+      <!-- 2. quick comparison -->
+      <section class="card pad reveal cmp-card" id="comparison">
+        <h2>Quick comparison: the top AI tools at&nbsp;a&nbsp;glance</h2>
+        <p class="intro">Most Google Ads tool lists rank dashboards that show you what to change and wait. We scored every tool on <b>how much of the account it runs.</b></p>
+        <table class="cmp">
+          <colgroup><col style="width:56px"><col style="width:236px"><col style="width:226px"><col><col style="width:170px"></colgroup>
+          <thead><tr><th>Rank</th><th>Tool</th><th>Editorial score</th><th>Best for</th><th>Typical price</th></tr></thead>
+          <tbody id="cmp-body"></tbody>
+        </table>
+        <div class="cmp-foot">
+          <span class="label">Editorial scores from testing on accounts spending $25K to $200K a month. Prices from each vendor's pricing page on September 23, 2026.</span>
+          <button class="btn-2" type="button" id="toggle"><span>Show all 10 tools</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+        <p class="body-text" style="margin-top:36px; max-width:880px">Ryze AI takes the top slot because it decides what to change, applies it and re-measures, where the others execute rules you wrote or wait for your click. OptyAds is the deepest hands-on platform, Adalysis owns ad testing, and Scripts are the free floor for technical teams.</p>
+      </section>
+
+      <!-- CTA A: product preview -->
+      <section class="card pad reveal preview">
+        <div>
+          <span class="label">#1 in this ranking</span>
+          <h3>See what Ryze would change on your account today</h3>
+          <p>Ryze reads your Google Ads account, suggests changes and applies the ones you approve. Try it on the rows on the right.</p>
+          <div class="cta-row">
+            <a class="btn-cta" href="#">Connect Google Ads <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn-2" href="#">Watch a demo</a>
+          </div>
+        </div>
+        <div class="ui">
+          <div class="ui-head"><b><img src="../assets/logo.webp" alt="">Suggested changes</b><span>Today, 3 of 12</span></div>
+          <div class="ui-row"><span class="k">Budget</span><span>Move $40/day from Display to Search<span class="v">Search ROAS 4.3x vs Display 0.9x</span></span><span class="ui-act"><button type="button">Deny</button><button class="ok" type="button">Apply</button></span><span class="applied">Applied</span></div>
+          <div class="ui-row"><span class="k">Keywords</span><span>Pause 4 keywords with no orders<span class="v">$212 spent in the last 14 days</span></span><span class="ui-act"><button type="button">Deny</button><button class="ok" type="button">Apply</button></span><span class="applied">Applied</span></div>
+          <div class="ui-row"><span class="k">Bids</span><span>Raise bids 15% on "running shoes"<span class="v">Lost 38% impressions to rank</span></span><span class="ui-act"><button type="button">Deny</button><button class="ok" type="button">Apply</button></span><span class="applied">Applied</span></div>
+        </div>
+      </section>
+
+      <!-- 3. short answer + chart -->
+      <section class="card pad reveal" id="short-answer">
+        <h2>What is the best AI for Google Ads?</h2>
+        <p class="lead">The best AI for Google Ads in 2026 for most teams is <b>Ryze AI</b>: it applies bid, budget and negative keyword changes itself, with approval controls, at <b>$89 a month flat.</b></p>
+        <p class="lead-rest"><b>OptyAds</b> is the pick for agencies that want their own rules, <b>Adalysis</b> for ad testing, <b>Opteo</b> for one-click recommendations.</p>
+        <div class="label disc">Disclosure: Ryze AI publishes this blog.</div>
+      </section>
+
+      <section class="card pad reveal" id="chart">
+        <div class="chart-head">
+          <div><span class="label">Editorial score, out of 10</span><h3>The top 10 AI tools for Google Ads</h3></div>
+          <span class="label">Tested on live Google Ads accounts</span>
+        </div>
+        <div class="bars" id="bars"></div>
+        <div class="chart-note">Ryze AI scores 9.6/10 by applying bid, budget and negative keyword changes itself; OptyAds follows at 8.9/10. Weights: features ×3, automation ×3, value ×2, ease ×2.</div>
+      </section>
+
+      <!-- CTA B: savings calculator -->
+      <section class="card calc reveal">
+        <div class="calc-l">
+          <span class="label">Quick estimate</span>
+          <h3>How much of your Google Ads budget goes to waste?</h3>
+          <p>Move the slider to your monthly spend. Ryze finds most of this in the first week and moves it to campaigns that sell.</p>
+        </div>
+        <div class="calc-r">
+          <div>
+            <div class="spend"><span>Monthly ad spend</span><b id="spend-out">$10,000</b></div>
+            <input type="range" id="spend" min="1000" max="100000" step="1000" value="10000" aria-label="Monthly ad spend">
+          </div>
+          <div class="saved">Ryze could save you<b id="saved-out">$1,240/mo</b></div>
+          <div>
+            <a class="btn-cta wide" href="#">Find my wasted spend <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <div class="small" style="margin-top:8px; text-align:center">Estimate uses an average of 12.4% wasted spend. Placeholder figure.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA 2: review -->
+      <section class="card review reveal">
+        <div class="review-photo"><img src="../assets/sarah.webp" alt="Sarah K."></div>
+        <div class="review-body">
+          <span class="label"><span class="stars">★★★★★</span> &nbsp;Review</span>
+          <blockquote>“We went from spending 10 hours a week on bid management to maybe 30 minutes reviewing Ryze’s recommendations. Our ROAS went from 2.4x to 4.1x in six weeks.”</blockquote>
+          <cite><b>Sarah K.</b>, Paid Media Manager, e-commerce agency</cite>
+          <div class="stats">
+            <div class="stat"><b><span data-roll="4.1">4.1</span>x</b><span>ROAS achieved</span></div>
+            <div class="stat"><b><span data-roll="6">6</span> weeks</b><span>Time to result</span></div>
+            <div class="stat"><b><span data-roll="95">95</span>%</b><span>Less manual work</span></div>
+          </div>
+          <div class="review-cta">
+            <a class="btn-cta" href="#">Get the same results <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="g2" href="#"><img src="../assets/clients/g2.webp" alt="G2">More reviews on G2</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card pad reveal">
+        <p class="body-text" style="font-size:24px; line-height:1.45; color:var(--ink); max-width:880px">For most advertisers, Ryze AI is the best AI tool for Google Ads in 2026. Four reasons, each with a caveat.</p>
+        <div class="reasons">
+          <div class="reason"><span class="label">Reason 01</span><h3>It applies the changes.</h3><p>Bids, budgets, negatives and pauses are made by the agent, and approval settings decide which ones wait for you. Opteo, Adalysis and Adzooma recommend and wait for a click.</p><div class="caveat"><div><span class="label">Caveat</span>You need to be comfortable reading a change log instead of making each change.</div></div></div>
+          <div class="reason"><span class="label">Reason 02</span><h3>One flat price.</h3><p>Paid Ads Autopilot is $89 a month at any spend, with a 7-day free trial. OptyAds starts at $209 and Opteo at $129, and both rise with the spend they manage.</p><div class="caveat"><div><span class="label">Caveat</span>Agencies that want their own rule logic get more control from OptyAds.</div></div></div>
+          <div class="reason"><span class="label">Reason 03</span><h3>More than Google.</h3><p>The same agent covers Meta, TikTok and LinkedIn, which matters when the budget question is between channels.</p><div class="caveat"><div><span class="label">Caveat</span>Adalysis goes deeper on RSA testing, and Opteo on Google-only one-click fixes.</div></div></div>
+          <div class="reason"><span class="label">Reason 04</span><h3>It also answers questions.</h3><p>The free Google Ads MCP connector lets Claude or ChatGPT query the account in plain language.</p><div class="caveat"><div><span class="label">Caveat</span>Ryze AI is a younger company than OptyAds or WordStream, which have a decade of track record.</div></div></div>
+        </div>
+        <!-- CTA 3: inside the text -->
+        <div class="inline-cta"><p>Want these changes applied on your account tonight?</p><a href="#">Try Ryze free for 7 days <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        <div class="more-row">
+          <p class="body-text" style="max-width:640px">If you want rules you write yourself, <b>OptyAds</b>. If ad copy testing is the bottleneck, <b>Adalysis</b>. If you want a daily list of one-click fixes, <b>Opteo</b>.</p>
+          <a class="see-also" href="#">Top AI tools for Meta Ads <span class="a"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        </div>
+      </section>
+
+      <!-- CTA 4: logo wall -->
+      <section class="card pad reveal">
+        <div class="wall-head">
+          <h3>Trusted by <span data-roll="2,000">2,000</span>+ marketers, from startups to Uber Eats and adidas</h3>
+          <span class="label"><span class="stars">★★★★★</span> 4.8 on G2</span>
+        </div>
+        <div class="wall" id="wall"></div>
+        <div class="wall-cta">
+          <a class="btn-cta" href="#">Start free trial <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="btn-2" href="#">Book a call</a>
+        </div>
+      </section>
+
+      <!-- CTA C: manual vs Ryze -->
+      <section class="card pad reveal vs">
+        <span class="label">Your week with Google Ads</span>
+        <h3>Ten hours of bid work, or thirty minutes of review</h3>
+        <div class="vs-grid">
+          <div class="vs-col">
+            <h4>By hand</h4>
+            <ul>
+              <li><span>Time on bids and budgets</span><b>10 h/week</b></li>
+              <li><span>Budget pacing checked</span><b>Weekly</b></li>
+              <li><span>Negative keywords</span><b>Added by hand</b></li>
+              <li><span>Price</span><b>Your hours</b></li>
+            </ul>
+          </div>
+          <div class="vs-col ryze">
+            <h4><img src="../assets/logo.webp" alt="">With Ryze</h4>
+            <ul>
+              <li><span>Time on bids and budgets</span><b>30 min/week</b></li>
+              <li><span>Budget pacing checked</span><b>Every hour</b></li>
+              <li><span>Negative keywords</span><b>Added for you</b></li>
+              <li><span>Price</span><b>$89/mo flat</b></li>
+            </ul>
+          </div>
+        </div>
+        <div class="cta-row">
+          <a class="btn-cta" href="#">Switch to autopilot <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <span class="label">7 days free. No credit card.</span>
+        </div>
+      </section>
+
+      <!-- CTA 5: lead magnet -->
+      <section class="card pad reveal">
+        <div class="magnet">
+          <div>
+            <span class="label">Free download</span>
+            <h3>10 Claude prompts we use to audit Google Ads</h3>
+            <div class="prompts">
+              <div>Which ad groups spent money last week with zero conversions?</div>
+              <div>Where is my budget capping campaigns that convert?</div>
+              <div>Which search terms should be negatives this week?</div>
+            </div>
+          </div>
+          <form onsubmit="return false">
+            <input class="field" type="email" placeholder="Work email" aria-label="Work email">
+            <button class="btn-cta wide" type="submit">Send me the prompts <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="small">One email with the prompts. No spam.</div>
+          </form>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- CTA 6: audit -->
+  <section class="card audit reveal" id="audit">
+    <img src="../assets/night.jpg" alt="">
+    <div class="audit-in">
+      <div class="audit-form glass-dark">
+        <div>
+          <span class="label">Free audit from Ryze · SEO + AI search</span>
+          <h2>Free SEO/GEO audit</h2>
+          <p>Find the technical issues, quick wins and thin pages that keep your site out of Google results and ChatGPT answers.</p>
+        </div>
+        <form onsubmit="return false">
+          <input class="field on-dark" type="email" placeholder="Work email" aria-label="Work email">
+          <button class="btn-cta wide" type="submit">Get free audit <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <small>Free. No credit card. Results in a minute.</small>
+        </form>
+      </div>
+      <div class="log-card glass">
+        <div class="log-head"><span>Last night at a business like yours</span><span>Ryze log</span></div>
+        <div class="log" id="log"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  const TOOLS = [
+    { name: 'Ryze AI', logo: 'ryze.webp', score: 9.6, best: 'Autonomous management, flat fee', price: '$89/mo flat', ours: true },
+    { name: 'OptyAds', logo: 'optmyzr.png', score: 8.9, best: 'Agency rule-based automation, PMax depth', price: 'from $209/mo' },
+    { name: 'Adalysis', logo: 'adalysis.png', score: 8.7, best: 'Ad testing and copy optimization', price: 'See vendor site' },
+    { name: 'Opteo', logo: 'opteo.png', score: 8.5, best: 'One-click recommendations', price: '$129–499/mo' },
+    { name: 'WordStream', logo: 'wordstream.png', score: 8.1, best: 'Free grader, small-business beginners', price: 'Free grader, paid quoted' },
+    { name: 'Adzooma', logo: 'adzooma.png', score: 7.9, best: 'Free monitoring on a small budget', price: 'Free, $69, $179/mo' },
+    { name: 'AdCreative.ai', logo: 'adcreative.png', score: 7.7, best: 'AI ad creative for Display and PMax', price: '$39–999/mo' },
+    { name: 'Claude + MCP', logo: 'claude.webp', score: 7.6, best: 'Plain-language account analysis', price: '$20/mo Claude Pro' },
+    { name: 'Birch', logo: 'revealbot.png', score: 7.4, best: 'Rules across Google, Meta, TikTok', price: '$49, $99/mo' },
+    { name: 'Google Ads Scripts', logo: 'googleads.png', score: 7.2, best: 'Free automation for developers', price: 'Free' },
+  ];
+  const VISIBLE_ROWS = 6;
+  const CLIENTS = ['uber-eats', 'adidas', 'duolingo', 'mgm-resorts', 'wharton', 'lendingclub', 'norton', 'eventbrite', 'huel'];
+  const WALL = ['uber-eats', 'adidas', 'duolingo', 'mgm-resorts', 'wharton', 'lendingclub', 'norton', 'eventbrite', 'huel', 'together-ai', 'ghd', 'hack-the-box'];
+  const CONTENTS = ['Quick comparison', 'Short answer', "Google's own AI", 'Pricing', 'Feature matrix', 'The 10 tools', '8 more tools', 'Automation vs optimization', 'How to choose', 'Final verdict', 'FAQ', 'How we tested'];
+  const LOG = [
+    { t: '02:14', a: 'Raised bids 15% on "food delivery near me": pacing was 34% behind', s: 'Applied' },
+    { t: '03:02', a: 'Paused 4 keywords that spent $212 with no orders', s: 'Applied' },
+    { t: '03:47', a: 'Fixed 12 missing meta descriptions', s: 'Fixed' },
+    { t: '04:20', a: 'Merged 3 duplicate pages under /menu', s: 'Fixed' },
+    { t: '05:31', a: 'ChatGPT now cites the site for "best late-night food nearby"', s: 'New' },
+    { t: '06:05', a: 'Moved $40/day from Meta to Google Search', s: 'Applied' },
+  ];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.getElementById('logo-set').innerHTML = CLIENTS.map(c => `<img src="../assets/clients/${c}.svg" alt="${c.replace(/-/g, ' ')} logo">`).join('');
+  document.getElementById('wall').innerHTML = WALL.map(c => `<div><img src="../assets/clients/${c}.svg" alt="${c.replace(/-/g, ' ')} logo"></div>`).join('');
+
+  // contents in the sticky sidebar
+  const SECTION_IDS = { 0: 'comparison', 1: 'short-answer' };
+  document.getElementById('toc-list').innerHTML = CONTENTS.map((t, i) => `<li><a href="${SECTION_IDS[i] ? '#' + SECTION_IDS[i] : '#'}" data-id="${SECTION_IDS[i] || ''}"><span>${String(i + 1).padStart(2, '0')}</span>${t}</a></li>`).join('');
+  const tocLinks = [...document.querySelectorAll('.toc a[data-id]:not([data-id=""])')];
+  const spy = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) tocLinks.forEach(a => a.classList.toggle('on', a.dataset.id === e.target.id));
+  }), { rootMargin: '-30% 0px -60% 0px' });
+  Object.values(SECTION_IDS).forEach(id => spy.observe(document.getElementById(id)));
+
+  // comparison table
+  document.getElementById('cmp-body').innerHTML = TOOLS.map((t, i) => `
+    <tr class="${t.ours ? 'ours' : ''} ${i >= VISIBLE_ROWS ? 'more' : ''}">
+      <td class="rk tabnum">${String(i + 1).padStart(2, '0')}</td>
+      <td><div class="tool"><span class="ico"><img src="../assets/tools/${t.logo}" alt="${t.name} logo"></span><span>${t.name}${t.ours ? '<em>Our product</em>' : ''}</span></div></td>
+      <td><div class="score tabnum"><span><span data-roll="${t.score.toFixed(1)}">${t.score.toFixed(1)}</span><small>/10</small></span><span class="meter"><i style="--v:${t.score / 10}; transition-delay:${200 + i * 60}ms"></i></span></div></td>
+      <td class="bf">${t.best}</td>
+      <td class="pr">${t.price}</td>
+    </tr>`).join('');
+  const cmpCard = document.getElementById('comparison');
+  const toggle = document.getElementById('toggle');
+  if (TOOLS.length <= VISIBLE_ROWS) toggle.remove();
+  toggle.addEventListener('click', () => {
+    const open = cmpCard.classList.toggle('open');
+    toggle.querySelector('span').textContent = open ? 'Show fewer' : `Show all ${TOOLS.length} tools`;
+  });
+
+  // bar chart
+  document.getElementById('bars').innerHTML = TOOLS.map((t, i) => `
+    <div class="bar-row ${t.ours ? 'ours' : ''}">
+      <div class="bar-name"><img src="../assets/tools/${t.logo}" alt="">${t.name}</div>
+      <div class="bar"><i style="--v:${t.score / 10}; transition-delay:${i * 70}ms"></i></div>
+      <div class="bar-val tabnum">${t.score.toFixed(1)}</div>
+    </div>`).join('') + `<div class="axis"><span></span><div><span>0</span><span>2.5</span><span>5</span><span>7.5</span><span>10</span></div><span></span></div>`;
+
+  // rolling digits
+  function prepRoll(el) {
+    const value = el.dataset.roll;
+    el.setAttribute('aria-label', value);
+    el.classList.add('roll');
+    el.innerHTML = [...value].map(ch => /\d/.test(ch)
+      ? `<span class="col" aria-hidden="true"><span class="strip" data-d="${ch}">${'01234567890123456789'.split('').map(n => `<span>${n}</span>`).join('')}</span></span>`
+      : `<span aria-hidden="true">${ch}</span>`).join('');
+  }
+  function runRoll(el, delay = 0) {
+    el.querySelectorAll('.strip').forEach((s, i) => {
+      s.style.transitionDelay = `${delay + i * 120}ms`;
+      s.style.transform = `translateY(calc(-${10 + Number(s.dataset.d)} * var(--h)))`;
+    });
+  }
+  if (!reduce) document.querySelectorAll('[data-roll]').forEach(prepRoll);
+
+  // hero: title lines and text
+  const hero = document.getElementById('hero');
+  document.querySelectorAll('#hero .line > span').forEach((s, i) => s.style.transitionDelay = `${120 + i * 110}ms`);
+  requestAnimationFrame(() => setTimeout(() => {
+    hero.classList.add('go');
+    document.querySelectorAll('.logos [data-roll]').forEach(el => runRoll(el, 900));
+  }, 60));
+
+  // the Ryze star: half a turn with the title, then it turns after the cursor when the mouse is near
+  const star = document.getElementById('star');
+  if (!reduce) {
+    const NEAR = 360;
+    let angle = 0, target = 0, lastA = null, ready = false;
+    star.style.transition = 'transform 1.6s cubic-bezier(.2, .8, .2, 1)';
+    setTimeout(() => { angle = target = 180; star.style.transform = 'rotate(180deg)'; }, 120);
+    setTimeout(() => { star.style.transition = 'none'; ready = true; requestAnimationFrame(tick); }, 1800);
+    addEventListener('mousemove', e => {
+      if (!ready) return;
+      const r = star.getBoundingClientRect();
+      const dx = e.clientX - (r.left + r.width / 2), dy = e.clientY - (r.top + r.height / 2);
+      const d = Math.hypot(dx, dy);
+      if (d > NEAR) { lastA = null; return; }
+      const a = Math.atan2(dy, dx) * 180 / Math.PI;
+      if (lastA !== null) {
+        let delta = a - lastA;
+        if (delta > 180) delta -= 360;
+        if (delta < -180) delta += 360;
+        target += delta * (1 - d / NEAR) * 1.4;
+      }
+      lastA = a;
+    });
+    function tick() {
+      angle += (target - angle) * .1;
+      star.style.transform = `rotate(${angle}deg)`;
+      requestAnimationFrame(tick);
+    }
+  }
+
+  // CTA A: approve a suggested change
+  document.querySelectorAll('.ui-row').forEach(row => row.querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
+    if (b.classList.contains('ok')) row.classList.add('done'); else row.style.opacity = .45;
+  })));
+
+  // CTA B: wasted spend estimate
+  const WASTE_SHARE = .124;
+  const spend = document.getElementById('spend');
+  const money = n => '$' + Math.round(n).toLocaleString('en-US');
+  function updateSpend() {
+    const v = Number(spend.value);
+    spend.style.setProperty('--p', ((v - spend.min) / (spend.max - spend.min) * 100) + '%');
+    document.getElementById('spend-out').textContent = money(v);
+    document.getElementById('saved-out').textContent = money(Math.round(v * WASTE_SHARE / 10) * 10) + '/mo';
+  }
+  spend.addEventListener('input', updateSpend);
+  updateSpend();
+
+  // reveal on scroll
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('in');
+    e.target.querySelectorAll('[data-roll]').forEach((el, i) => runRoll(el, 200 + i * 60));
+    if (e.target.id === 'audit') startLog();
+    io.unobserve(e.target);
+  }), { threshold: .2 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // overnight log in the audit block: newest entry on top
+  const log = document.getElementById('log');
+  let cursor = 0, started = false;
+  function addEntry() {
+    const e = LOG[cursor++ % LOG.length];
+    log.insertAdjacentHTML('afterbegin', `<div class="log-row"><span class="t">${e.t}</span><span>${e.a}</span><span class="st">${e.s}</span></div>`);
+    while (log.children.length > 5) log.lastElementChild.remove();
+  }
+  function startLog() {
+    if (started) return; started = true;
+    for (let i = 0; i < 3; i++) setTimeout(addEntry, 300 + i * 500);
+    if (!reduce) setInterval(addEntry, 2800);
+  }
+</script>
+</body>
+</html>
