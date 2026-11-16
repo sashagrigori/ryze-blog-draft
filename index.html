@@ -609,6 +609,9 @@
   .hc-act { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
   /* the button keeps 6px for its outline, so the caption sits closer: the right block is as tall as the text block */
   .hc.v1 .hc-act, .hc.v6 .hc-act, .hc.v7 .hc-act { gap: 4px; }
+  /* under a button the caption is centred on the button, not pushed to the right edge of its outline */
+  .hc.v1 .hc-act, .hc.v6 .hc-act, .hc.v7 .hc-act { align-items: center; }
+  .hc.v1 .hc-s, .hc.v6 .hc-s, .hc.v7 .hc-s { text-align: center; }
 
   /* 6–7: cursors fall into the strip and pile up (Matter.js physics) */
   .hc.v6, .hc.v7 { min-height: 264px; align-items: start; }
@@ -742,14 +745,27 @@
   .demo-cur span { transition: background-color .3s; }
   .demo-cur.ink svg path { fill: var(--ink); }
   .demo-cur.ink span { background: var(--ink) !important; }
-  .dk-switch { right: auto; left: 20px; }
   .win-or { position: absolute; inset: 0; background: var(--cta); clip-path: circle(0 at 50% 84%); pointer-events: none; }
 
   /* review switch */
-  .var-switch { position: fixed; right: 20px; bottom: 20px; z-index: 100; display: flex; align-items: center; gap: 4px; padding: 6px; border-radius: var(--r-card); background: #fff; box-shadow: 0 10px 30px -10px rgba(0,0,0,.3); font-size: 13px; }
-  .var-switch span { padding: 0 8px 0 6px; color: var(--ink-3); }
-  .var-switch button { height: 32px; padding: 0 12px; border: 0; border-radius: var(--r-btn); background: var(--inner); font: inherit; font-weight: 500; cursor: pointer; }
-  .var-switch button.on { background: var(--ink); color: #fff; }
+  /* bottom centre, big enough to notice: which CTA you see and how to see the others */
+  .var-switch { position: fixed; left: 50%; bottom: 22px; z-index: 100; display: flex; align-items: center; gap: 6px; padding: 8px; border-radius: var(--r-card); background: #fff; box-shadow: 0 0 0 1px rgba(17,17,17,.08), 0 18px 40px -12px rgba(0,0,0,.35); transform: translateX(-50%); }
+  .vs-label { display: flex; flex-direction: column; padding: 0 14px 0 10px; line-height: 1.25; white-space: nowrap; }
+  .vs-label b { font-size: 14px; font-weight: 700; }
+  .vs-label span { font-size: 12.5px; color: var(--ink-3); }
+  .var-switch button { height: 42px; padding: 0 18px; border: 0; border-radius: var(--r-btn); background: var(--inner); font: inherit; font-size: 15px; font-weight: 500; color: var(--ink); cursor: pointer; transition: background .2s, color .2s; }
+  .var-switch button:hover { background: #E4E4E4; }
+  .var-switch button.on { background: var(--cta); color: #fff; }
+  .var-switch .vs-arrow { width: 42px; padding: 0; font-size: 20px; line-height: 1; background: #fff; box-shadow: inset 0 0 0 1px var(--line); }
+  .var-switch .vs-arrow:hover { background: var(--ink); color: #fff; }
+  /* the first time the strip shows up, the switch hops twice and lights an orange ring */
+  .var-switch.nudge { animation: vsNudge 1.6s var(--ease) 1; }
+  @keyframes vsNudge {
+    0%, 60%, 100% { transform: translate(-50%, 0); box-shadow: 0 0 0 1px rgba(17,17,17,.08), 0 18px 40px -12px rgba(0,0,0,.35); }
+    15% { transform: translate(-50%, -8px); box-shadow: 0 0 0 3px var(--cta), 0 24px 44px -12px rgba(0,0,0,.4); }
+    30% { transform: translate(-50%, 0); }
+    45% { transform: translate(-50%, -4px); box-shadow: 0 0 0 3px var(--cta), 0 20px 40px -12px rgba(0,0,0,.38); }
+  }
 
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -891,7 +907,13 @@
 
 </main>
 
-<div class="var-switch" id="hc-switch"><span>CTA в тексте</span><button type="button" data-v="1">1 · Налёт</button><button type="button" data-v="4">4 · Отзыв</button><button type="button" data-v="5">5 · Слайдер</button><button type="button" data-v="6">6 · Ливень</button><button type="button" data-v="7">7 · Задачи</button><button type="button" data-v="r" title="Повторить">↻</button></div>
+<div class="var-switch" id="hc-switch" role="group" aria-label="Варианты CTA в тексте">
+  <div class="vs-label"><b>CTA в тексте</b><span>5 вариантов, переключай</span></div>
+  <button type="button" class="vs-arrow" data-step="-1" aria-label="Предыдущий вариант">‹</button>
+  <button type="button" data-v="1">Налёт</button><button type="button" data-v="4">Отзыв</button><button type="button" data-v="5">Слайдер</button><button type="button" data-v="6">Ливень</button><button type="button" data-v="7">Задачи</button>
+  <button type="button" class="vs-arrow" data-step="1" aria-label="Следующий вариант">›</button>
+  <button type="button" class="vs-arrow" data-v="r" title="Повторить анимацию" aria-label="Повторить анимацию">↻</button>
+</div>
 
 <script>
   const TOOLS = [
@@ -1650,19 +1672,35 @@
   }
   hcPrep();
   // the strip opens from a thin line when it is a quarter of the way up the screen; it plays again each time you come back to it
+  const hcSwitch = document.getElementById('hc-switch');
+  let hcNudged = false;
   new IntersectionObserver(([e]) => {
     hcVisible = e.isIntersecting;
+    if (e.isIntersecting && !hcNudged) { hcNudged = true; setTimeout(() => hcSwitch.classList.add('nudge'), 900); }
     if (e.isIntersecting && !hcPlayed) { hcPlayed = true; hcPlay(); }
     else if (!e.isIntersecting && hcPlayed) { hcPlayed = false; hcPrep(); }
   }, { rootMargin: '0px 0px -22% 0px' }).observe(hcWrap);
-  document.getElementById('hc-switch').addEventListener('click', e => {
-    const b = e.target.closest('[data-v]'); if (!b) return;
-    if (b.dataset.v !== 'r') { hcV = Number(b.dataset.v); history.replaceState(null, '', '#cta' + hcV); }
+  // pick a version (or replay the current one); the page scrolls to the strip if it is not in view
+  const HC_ORDER = [1, 4, 5, 6, 7];
+  function hcGo(v) {
+    if (v) { hcV = v; history.replaceState(null, '', '#cta' + hcV); }
     const r = hcWrap.getBoundingClientRect();
-    if (r.top > 90 && r.bottom < innerHeight * .9) { hcPlayed = true; hcPlay(); return; }
+    if (r.top > 90 && r.bottom < innerHeight - 90) { hcPlayed = true; hcPlay(); return; }
     hcPlayed = false; hcPrep();
-    scrollTo({ top: scrollY + r.top - (innerHeight - r.height) / 2, behavior: 'smooth' });
+    scrollTo({ top: scrollY + r.top - (innerHeight - 80 - r.height) / 2, behavior: 'smooth' });
     setTimeout(() => { if (hcVisible && !hcPlayed) { hcPlayed = true; hcPlay(); } }, 900);
+  }
+  const hcStep = d => { const n = HC_ORDER.length, i = Math.max(0, HC_ORDER.indexOf(hcV)); hcGo(HC_ORDER[(i + d + n) % n]); };
+  hcSwitch.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    if (b.dataset.step) return hcStep(Number(b.dataset.step));
+    hcGo(b.dataset.v === 'r' ? 0 : Number(b.dataset.v));
+  });
+  // the arrow keys switch too while the strip is on screen
+  addEventListener('keydown', e => {
+    if (!hcVisible || e.target.closest('input, textarea') || e.altKey || e.metaKey || e.ctrlKey) return;
+    if (e.key === 'ArrowRight') { e.preventDefault(); hcStep(1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); hcStep(-1); }
   });
 
   // reveal on scroll
