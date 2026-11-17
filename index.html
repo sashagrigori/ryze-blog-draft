@@ -19,8 +19,8 @@
     --ink-3: #8E8E8E;
     --line: #E8E8E8;
     --gray: #D6D6D6;
-    --cta: #F04E14;
-    --cta-hover: #D8430E;
+    --cta: #EC6B3E;
+    --cta-hover: #D95C31;
     /* Ryze radius system: buttons and fields stay almost square, like the header button */
     --r-btn: 4px;
     --r-card: 8px;
@@ -61,9 +61,9 @@
   .btn-google:hover { background: #f1f1f1; }
   .field { display: block; width: 100%; height: 54px; padding: 0 18px; border-radius: var(--r-btn); border: 1px solid var(--line); background: #fff; color: var(--ink); font: inherit; font-size: 16px; outline: none; transition: border-color .2s; }
   .field:focus { border-color: var(--ink); }
-  .field.on-dark { border-color: rgba(255,255,255,.25); background: rgba(255,255,255,.1); color: #fff; }
+  .field.on-dark { border-color: #fff; background: rgba(255,255,255,.1); color: #fff; }
   .field.on-dark::placeholder { color: rgba(255,255,255,.55); }
-  .field.on-dark:focus { border-color: rgba(255,255,255,.6); }
+  .field.on-dark:focus { border-color: #fff; }
 
   /* ---------- 1. hero ---------- */
   .hero { display: grid; grid-template-columns: 8fr 4fr; gap: 10px; }
@@ -89,12 +89,12 @@
   /* signup card where the photo was */
   .signup { display: flex; flex-direction: column; background: var(--ink); color: #fff; }
     .signup-in { position: relative; display: flex; flex-direction: column; gap: 14px; height: 100%; padding: 36px 34px 30px; }
-  .signup-in .label { color: rgba(255,255,255,.65); }
+  .signup-in .label { color: #fff; }
   .signup h2 { margin: 0; font-size: 34px; line-height: 1.12; letter-spacing: -.02em; font-weight: 500; }
-  .signup p { margin: 0; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,.75); }
-  .or { display: flex; align-items: center; gap: 12px; font-size: 13px; color: rgba(255,255,255,.55); }
+  .signup p { margin: 0; font-size: 15px; line-height: 1.5; color: #fff; }
+  .or { display: flex; align-items: center; gap: 12px; font-size: 13px; color: #fff; }
   .or::before, .or::after { content: ""; flex: 1; height: 1px; background: rgba(255,255,255,.18); }
-  .signup .small { font-size: 13px; color: rgba(255,255,255,.6); text-align: center; }
+  .signup .small { font-size: 13px; color: #fff; text-align: center; }
   .found { margin-top: auto; padding: 16px 18px 6px; border-radius: var(--r-inner); background: rgba(255,255,255,.08); }
   .found-row { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-top: 1px solid rgba(255,255,255,.12); font-size: 14px; }
   .found-row:first-of-type { margin-top: 8px; }
@@ -216,8 +216,8 @@
   /* CTA B: savings calculator */
   .calc { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px; background: var(--ink); color: #fff; }
   .calc-l { padding: 38px 40px; }
-  .calc-l .label { color: rgba(255,255,255,.55); }
-  .calc p { color: rgba(255,255,255,.7); }
+  .calc-l .label { color: #fff; }
+  .calc p { color: #fff; }
   .calc-r { display: flex; flex-direction: column; justify-content: space-between; gap: 24px; padding: 34px 36px; border-radius: var(--r-card); background: #fff; color: var(--ink); }
   .spend { display: flex; justify-content: space-between; align-items: baseline; font-size: 15px; color: var(--ink-2); }
   .spend b { font-size: 22px; color: var(--ink); font-variant-numeric: tabular-nums; }
@@ -236,9 +236,9 @@
   .vs-col h4 img { width: 18px; height: 18px; filter: invert(1); }
   .vs-col ul { list-style: none; margin: 16px 0 0; padding: 0; }
   .vs-col li { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-top: 1px solid rgba(17,17,17,.1); font-size: 15px; }
-  .vs-col.ryze li { border-top-color: rgba(255,255,255,.14); }
+  .vs-col.ryze li { border-top-color: #fff; }
   .vs-col li span { color: var(--ink-2); }
-  .vs-col.ryze li span { color: rgba(255,255,255,.65); }
+  .vs-col.ryze li span { color: #fff; }
   .vs-col li b { font-weight: 700; text-align: right; }
 
   /* ---------- hero: the headline rewrites itself ---------- */
@@ -253,7 +253,7 @@
   .eh-answer { margin: 26px 0 0; max-width: 620px; font-size: 18px; line-height: 1.55; color: var(--ink-2); }
   .eh-answer b { color: var(--ink); }
   .joined { display: flex; align-items: center; width: 100%; max-width: 520px; height: 60px; margin-top: 30px; padding: 5px; border: 1.5px solid var(--ink); border-radius: var(--r-btn); background: #fff; transition: border-color .2s, box-shadow .2s; }
-  .joined:focus-within { border-color: var(--cta); box-shadow: 0 0 0 4px rgba(240,78,20,.15); }
+  .joined:focus-within { border-color: var(--cta); box-shadow: 0 0 0 4px rgba(236, 107, 62, .15); }
   .joined input { flex: 1; min-width: 0; height: 100%; padding: 0 14px; border: 0; background: transparent; font: inherit; font-size: 16px; outline: none; }
   .joined button { display: inline-flex; align-items: center; gap: 10px; height: 100%; padding: 0 22px; border: 0; border-radius: var(--r-btn); background: var(--cta); color: #fff; font: inherit; font-size: 16px; font-weight: 700; cursor: pointer; white-space: nowrap; transition: background .2s; }
   .joined button:hover { background: var(--cta-hover); }
@@ -267,7 +267,7 @@
   .eh-by b { color: var(--ink); font-weight: 700; }
   .eh-by .sp { flex: 1; }
   .eh-r { display: flex; flex-direction: column; gap: 10px; padding: 24px; border-radius: var(--r-card); background: var(--ink); color: #fff; }
-  .eh-k { font-size: 13px; color: rgba(255,255,255,.6); }
+  .eh-k { font-size: 13px; color: #fff; }
   .serp { padding: 16px 18px 18px; border-radius: var(--r-inner); background: #fff; color: #202124; font-family: Arial, Helvetica, sans-serif; }
   .serp-q { display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 14px; border-radius: 19px; box-shadow: 0 1px 4px rgba(32,33,36,.28); font-size: 14px; color: #202124; }
   .serp-res { margin-top: 16px; }
@@ -291,7 +291,7 @@
   .agent span { position: absolute; left: 16px; top: 18px; padding: 3px 8px; border-radius: var(--r-btn); color: #fff; font-size: 12px; font-weight: 700; white-space: nowrap; }
 
   /* ---------- CTA: the night receipt ---------- */
-  .rc { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 48px; padding: 48px 56px 48px 48px; background: var(--orange, #FF5A1F); }
+  .rc { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 48px; padding: 48px 56px 48px 48px; background: var(--orange, #EC6B3E); }
   .rc-l { display: flex; flex-direction: column; }
   .rc-k { font-size: 13px; font-weight: 500; color: rgba(17,17,17,.6); }
   .rc h3 { margin: 12px 0 0; font-size: 48px; line-height: 1.04; letter-spacing: -.03em; font-weight: 700; }
@@ -323,7 +323,7 @@
   .hm { display: grid; grid-template-columns: minmax(0, 1fr) 560px; gap: 40px; min-height: 640px; padding: 40px 40px 40px 56px; overflow: visible; }
   .hm-l { display: flex; flex-direction: column; }
   .hm-h1 { margin: 56px 0 0; font-size: 66px; line-height: 1.05; letter-spacing: -.03em; font-weight: 500; }
-  .hm-h1 .w { color: transparent; background: linear-gradient(100deg, #F04E14, #E0457B 35%, #8B5CF6 65%, #2F6FEB); -webkit-background-clip: text; background-clip: text; opacity: 0; transition: opacity .35s, color .9s ease; }
+  .hm-h1 .w { color: transparent; background: linear-gradient(100deg, #EC6B3E, #E26A8E 35%, #9479EA 65%, #4F7FEA); -webkit-background-clip: text; background-clip: text; opacity: 0; transition: opacity .35s, color .9s ease; }
   .hm-h1 .w.on { opacity: 1; }
   .hm-h1 .w.cool { color: var(--ink); }
   .hm-slot { position: relative; height: 560px; }
@@ -391,7 +391,7 @@
   .hm-slot { height: auto; min-height: 520px; }
   .win { background: var(--ink); color: #fff; box-shadow: none; }
   .win-full { width: 470px; height: auto; min-height: 520px; padding: 30px 30px 28px; gap: 0; background: transparent; }
-  .fx-k { font-size: 13px; font-weight: 500; color: rgba(255,255,255,.6); }
+  .fx-k { font-size: 13px; font-weight: 500; color: #fff; }
   .fx-h { margin: 10px 0 0; font-size: 34px; line-height: 1.12; letter-spacing: -.02em; font-weight: 500; }
   .win-full .joined { max-width: none; margin-top: 24px; }
   .win-full .joined { border-color: #fff; }
@@ -399,20 +399,20 @@
 
   .dock { background: var(--ink); color: #fff; }
   .dock, .win-mini { color: #fff; }
-  .dk-k { font-size: 12.5px; color: rgba(255,255,255,.6); }
-  .dk-num { display: block; margin-top: 6px; font-size: 44px; line-height: 1; letter-spacing: -.03em; font-weight: 500; color: var(--orange, #FF5A1F); }
-  .dk-num small { font-size: 18px; color: rgba(255,255,255,.7); }
-  .dock p, .win-mini p { margin: 10px 0 0; font-size: 13.5px; line-height: 1.5; color: rgba(255,255,255,.75); }
+  .dk-k { font-size: 12.5px; color: #fff; }
+  .dk-num { display: block; margin-top: 6px; font-size: 44px; line-height: 1; letter-spacing: -.03em; font-weight: 500; color: var(--orange, #EC6B3E); }
+  .dk-num small { font-size: 18px; color: #fff; }
+  .dock p, .win-mini p { margin: 10px 0 0; font-size: 13.5px; line-height: 1.5; color: #fff; }
   .dock ul, .win-mini ul { list-style: none; margin: 12px 0 0; padding: 0; font-size: 13.5px; line-height: 1.45; }
   .dock li, .win-mini li { position: relative; padding-left: 20px; margin-top: 4px; }
-  .dock li::before, .win-mini li::before { content: "✓"; position: absolute; left: 0; color: var(--orange, #FF5A1F); font-weight: 700; }
+  .dock li::before, .win-mini li::before { content: "✓"; position: absolute; left: 0; color: var(--orange, #EC6B3E); font-weight: 700; }
   .dk-form { display: flex; flex-direction: column; gap: 6px; margin-top: 16px; }
   .dk-form input { height: 46px; padding: 0 14px; border-radius: var(--r-btn); border: 1px solid rgba(255,255,255,.22); background: rgba(255,255,255,.08); color: #fff; font: inherit; font-size: 14.5px; outline: none; }
   .dk-form input::placeholder { color: rgba(255,255,255,.5); }
-  .dk-form input:focus { border-color: rgba(255,255,255,.6); }
+  .dk-form input:focus { border-color: #fff; }
   .dk-form .btn-cta { margin: 6px 6px 0; padding: 13px 14px; font-size: 14.5px; white-space: nowrap; }
-  .dock > small, .win-mini > small { color: rgba(255,255,255,.5); }
-  .dk-num small { display: inline; margin: 0 0 0 2px; font-size: 18px; text-align: left; color: rgba(255,255,255,.7); }
+  .dock > small, .win-mini > small { color: #fff; }
+  .dk-num small { display: inline; margin: 0 0 0 2px; font-size: 18px; text-align: left; color: #fff; }
 
   /* ---------- v13 hero: tall black form, one joined field, agents orbit the field ---------- */
   .hm { grid-template-columns: minmax(0, 1fr) 470px; gap: 50px; min-height: 620px; padding: 10px 10px 10px 56px; }
@@ -421,11 +421,11 @@
   .hm-slot { min-height: 0; }
   .win-full { min-height: 0; padding: 32px 32px 30px; display: flex; flex-direction: column; }
   .fx-h { margin: 12px 0 0; font-size: 36px; line-height: 1.12; }
-  .fx-p { margin: 12px 0 0; font-size: 15.5px; line-height: 1.5; color: rgba(255,255,255,.72); }
+  .fx-p { margin: 12px 0 0; font-size: 15.5px; line-height: 1.5; color: #fff; }
   .win-full .joined { margin-top: 26px; }
-  .fx-s { display: block; margin-top: 12px; font-size: 13px; color: rgba(255,255,255,.55); }
+  .fx-s { display: block; margin-top: 12px; font-size: 13px; color: #fff; }
   .fx-found { margin-top: auto; padding: 16px 18px 6px; border-radius: var(--r-inner); background: rgba(255,255,255,.08); }
-  .fx-found .fx-k { display: block; margin-bottom: 8px; color: rgba(255,255,255,.6); }
+  .fx-found .fx-k { display: block; margin-bottom: 8px; color: #fff; }
   .fx-row { display: flex; justify-content: space-between; gap: 12px; padding: 11px 0; border-top: 1px solid rgba(255,255,255,.12); font-size: 14px; }
   .fx-row b { font-weight: 700; white-space: nowrap; }
   .hm > .agent { z-index: 40; }
@@ -441,8 +441,8 @@
   .dk-ico img { width: 18px; height: 18px; object-fit: contain; }
   .dk-t { margin: 22px 0 0; font-size: 24px; line-height: 1.18; letter-spacing: -.015em; font-weight: 500; color: #fff; }
   .dk-list { list-style: none; margin: 20px 0 0; padding: 0; }
-  .dk-list li { position: relative; margin-top: 12px; padding-left: 20px; font-size: 14.5px; line-height: 1.45; color: rgba(255,255,255,.8); }
-  .dk-list li::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 2px; background: var(--orange, #FF5A1F); }
+  .dk-list li { position: relative; margin-top: 12px; padding-left: 20px; font-size: 14.5px; line-height: 1.45; color: #fff; }
+  .dk-list li::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 2px; background: var(--orange, #EC6B3E); }
   .dock .dk-park, .win-mini .dk-park { height: 56px; }
   .dock .btn-cta, .win-mini .btn-cta { margin-top: 0; }
   .dock > small, .win-mini > small { margin-top: 12px; }
@@ -456,7 +456,7 @@
   body.th-glass .dock > :not(.win-bg) { position: relative; z-index: 2; }
   body.th-glass .dock, body.th-glass .win-mini { padding: 34px 30px 30px; }
 
-  body.th-orange .win, body.th-orange .dock { background: var(--orange, #FF5A1F); color: var(--ink); }
+  body.th-orange .win, body.th-orange .dock { background: var(--orange, #EC6B3E); color: var(--ink); }
   body.th-orange .dk-t { color: var(--ink); }
   body.th-orange .fx-k, body.th-orange .fx-p, body.th-orange .fx-s, body.th-orange .fx-found .fx-k { color: rgba(17,17,17,.68); }
   body.th-orange .win-full .joined { border-color: var(--ink); }
@@ -504,18 +504,18 @@
   /* ---------- v24 sidebar card motion: rolling platform, breathing button, a rare demo press ---------- */
   .roll { display: inline-block; height: 1.18em; overflow: hidden; vertical-align: top; }
   .roll-in { display: flex; flex-direction: column; transition: transform .6s cubic-bezier(.65, 0, .35, 1); }
-  .roll-in span, .roll-w { height: 1.18em; line-height: 1.18em; white-space: nowrap; color: var(--orange, #FF5A1F); }
+  .roll-in span, .roll-w { height: 1.18em; line-height: 1.18em; white-space: nowrap; color: var(--orange, #EC6B3E); }
   .dock .dk-ico i { opacity: .45; transition: opacity .35s, transform .4s cubic-bezier(.34,1.56,.64,1), box-shadow .3s; }
-  .dock .dk-ico i.on { opacity: 1; transform: translateY(-3px); box-shadow: 0 0 0 2px #2E9E5B; }
+  .dock .dk-ico i.on { opacity: 1; transform: translateY(-3px); box-shadow: 0 0 0 2px #3E9F68; }
   #dock-btn { position: relative; transition: background .25s, outline-offset .5s cubic-bezier(.2,.8,.2,1), outline-color .5s, transform .15s; }
-  #dock-btn.breathe { outline-offset: 11px; outline-color: rgba(240, 78, 20, .25); }
+  #dock-btn.breathe { outline-offset: 11px; outline-color: rgba(236, 107, 62, .25); }
   #dock-btn.breathe svg { transform: translate(3px, -3px); }
   #dock-btn.press { transform: scale(.96); }
   #dock-btn .fill { position: absolute; left: 0; top: 0; bottom: 0; width: 0; border-radius: var(--r-btn); background: rgba(255,255,255,.22); }
   #dock-btn.busy .fill { width: 100%; transition: width 1.6s linear; }
   #dock-btn.busy svg, #dock-btn.ready svg { display: none; }
   #dock-btn { padding-left: 18px; padding-right: 18px; white-space: nowrap; }
-  #dock-btn.ready { background: #2E9E5B; outline-color: #2E9E5B; }
+  #dock-btn.ready { background: #3E9F68; outline-color: #3E9F68; }
   #dock-btn .lbl { position: relative; }
 
   /* CTA 2: review */
@@ -577,11 +577,11 @@
   .audit.in > img { transform: scale(1); }
   .audit-in { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 12px; min-height: 620px; }
   .audit-form { display: flex; flex-direction: column; justify-content: space-between; padding: 44px; border-radius: var(--r-card); }
-  .audit-form .label { color: rgba(255,255,255,.6); }
+  .audit-form .label { color: #fff; }
   .audit-form h2 { margin-top: 14px; font-size: 58px; }
-  .audit-form p { margin: 20px 0 0; max-width: 480px; font-size: 18px; line-height: 1.55; color: rgba(255,255,255,.75); }
+  .audit-form p { margin: 20px 0 0; max-width: 480px; font-size: 18px; line-height: 1.55; color: #fff; }
   .audit-form .btn-cta { margin-top: 16px; }
-  .audit-form small { display: block; margin-top: 12px; text-align: center; font-size: 13px; color: rgba(255,255,255,.55); }
+  .audit-form small { display: block; margin-top: 12px; text-align: center; font-size: 13px; color: #fff; }
   .log-card { align-self: end; padding: 26px 28px 14px; border-radius: var(--r-card); }
   .log-head { display: flex; justify-content: space-between; font-size: 14px; font-weight: 500; color: var(--ink-2); }
   .log { height: 248px; margin-top: 10px; overflow: hidden; }
@@ -604,7 +604,7 @@
   .hc { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 40px; min-height: 164px; padding: 30px 40px; background: var(--ink); color: #fff; clip-path: inset(0 0 0 0 round var(--r-card)); }
   .hc.pre { clip-path: inset(calc(50% - 1px) 0 calc(50% - 1px) 0 round var(--r-card)); }
   .hc.open { transition: clip-path .75s cubic-bezier(.65, 0, .35, 1); }
-  .hc-k { display: block; font-size: 13px; font-weight: 500; color: rgba(255,255,255,.6); }
+  .hc-k { display: block; font-size: 13px; font-weight: 500; color: #fff; }
   .hc-h { margin: 8px 0 0; max-width: 560px; font-size: 28px; line-height: 1.16; letter-spacing: -.02em; font-weight: 500; }
   .hc-act { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
   /* the button keeps 6px for its outline, so the caption sits closer: the right block is as tall as the text block */
@@ -619,7 +619,7 @@
   .ph-c svg { display: block; width: 100%; height: 100%; }
   .ph-p { position: absolute; left: 0; top: 0; padding: 7px 12px; border-radius: var(--r-btn); background: var(--c); color: #fff; font-size: 13px; font-weight: 700; line-height: 1.2; white-space: nowrap; will-change: transform; user-select: none; }
   .ph-p svg { position: absolute; left: -11px; top: -13px; width: 18px; height: 20px; }
-  .hc-s { font-size: 13px; color: rgba(255,255,255,.55); }
+  .hc-s { font-size: 13px; color: #fff; }
   .hc-t { opacity: 0; transform: translateY(12px); transition: opacity .6s var(--ease), transform .7s var(--ease); }
   .hc.show .hc-t { opacity: 1; transform: none; }
   .hc.show .hc-t:nth-child(2) { transition-delay: .08s; }
@@ -642,7 +642,7 @@
   .hc-b.build { outline-color: transparent; outline-offset: 0; }
   .hc-b svg { transition: opacity .25s, transform .4s cubic-bezier(.34, 1.56, .64, 1); }
   .hc-b.build svg { opacity: 0; transform: scale(.3); }
-  .hc-b.breathe { outline-offset: 11px; outline-color: rgba(240, 78, 20, .3); }
+  .hc-b.breathe { outline-offset: 11px; outline-color: rgba(236, 107, 62, .3); }
   .hc-sel { position: absolute; border: 1.5px solid var(--c); transition: opacity .3s; }
   .hc-sel b { position: absolute; width: 8px; height: 8px; background: #fff; border: 1.5px solid var(--c); }
   .hc-sel b:nth-child(1) { left: -5px; top: -5px; } .hc-sel b:nth-child(2) { right: -5px; top: -5px; }
@@ -660,9 +660,9 @@
   .hc.found .hc-fr div { opacity: 1; transform: none; }
   .hc.found .hc-fr div:nth-child(2) { transition-delay: .12s; } .hc.found .hc-fr div:nth-child(3) { transition-delay: .24s; }
   .hc-fr b { display: block; font-size: 28px; line-height: 1.1; font-weight: 500; letter-spacing: -.02em; white-space: nowrap; font-variant-numeric: tabular-nums; }
-  .hc-fr span { display: block; max-width: 150px; margin-top: 4px; font-size: 13px; line-height: 1.35; color: rgba(255,255,255,.6); }
+  .hc-fr span { display: block; max-width: 150px; margin-top: 4px; font-size: 13px; line-height: 1.35; color: #fff; }
   .hc .hc-j { width: 450px; max-width: none; margin: 0; border-color: #fff; }
-  .hc .hc-j.ff { border-color: var(--cta); box-shadow: 0 0 0 4px rgba(240,78,20,.3); }
+  .hc .hc-j.ff { border-color: var(--cta); box-shadow: 0 0 0 4px rgba(236, 107, 62, .3); }
   .hc-j button { position: relative; overflow: hidden; min-width: 188px; justify-content: center; transition: background .25s, transform .15s; }
   .hc-j .lbl { position: relative; }
   .hc-j .fill { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: rgba(255,255,255,.24); }
@@ -679,11 +679,11 @@
   .cm { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr .9fr 1.1fr; align-items: end; padding: 0 20px 16px; border-radius: inherit; }
   .cm.before { clip-path: inset(0 0 0 var(--x)); }
   .cm.after { background: rgba(46,158,91,.2); clip-path: inset(0 calc(100% - var(--x)) 0 0); }
-  .cm span { display: block; font-size: 12px; color: rgba(255,255,255,.55); }
+  .cm span { display: block; font-size: 12px; color: #fff; }
   .cm b { display: block; margin-top: 4px; font-size: 25px; line-height: 1.1; font-weight: 500; letter-spacing: -.01em; white-space: nowrap; font-variant-numeric: tabular-nums; }
-  .cm.after b, .cm.after em { color: #5BD68A; }
+  .cm.after b, .cm.after em { color: #86D3A6; }
   .cm em { position: absolute; top: 12px; font-size: 12px; font-style: normal; font-weight: 700; }
-  .cm.after em { left: 20px; } .cm.before em { right: 20px; color: rgba(255,255,255,.55); }
+  .cm.after em { left: 20px; } .cm.before em { right: 20px; color: #fff; }
   .cm-h { position: absolute; top: -7px; bottom: -7px; left: var(--x); width: 2px; margin-left: -1px; background: #fff; }
   .cm-h::after { content: ""; position: absolute; left: 50%; top: 50%; width: 22px; height: 32px; margin: -16px 0 0 -11px; border-radius: var(--r-btn); background: linear-gradient(#111, #111) 7px 10px / 2px 12px no-repeat, linear-gradient(#111, #111) 13px 10px / 2px 12px no-repeat, #fff; box-shadow: 0 4px 10px -2px rgba(0,0,0,.45); }
 
@@ -699,7 +699,7 @@
   .hc-quote .ul { position: absolute; left: -2px; right: -2px; bottom: -9px; width: calc(100% + 4px); height: 12px; overflow: visible; }
   .hc-quote .ul path { fill: none; stroke: #fff; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
   .hc.ul-on .hc-quote .ul path { stroke-dashoffset: 0; transition: stroke-dashoffset .7s cubic-bezier(.6, 0, .3, 1); }
-  .hc-who { margin-top: 12px; font-size: 14px; color: rgba(255,255,255,.85); }
+  .hc-who { margin-top: 12px; font-size: 14px; color: #fff; }
   .hc-who b { color: #fff; }
   .hc-stars { margin-left: 8px; letter-spacing: 2px; }
   .hc-stars i { font-style: normal; color: rgba(255,255,255,.35); transition: color .25s, transform .35s cubic-bezier(.34, 1.56, .64, 1); display: inline-block; }
@@ -709,14 +709,14 @@
   .hc.v4 .hc-j button { background: var(--ink); }
   .hc.v4 .hc-j button:hover { background: #2a2a2a; }
   .hc.v4 .hc-j:focus-within { border-color: #fff; box-shadow: 0 0 0 4px rgba(255,255,255,.3); }
-  .hc.v4 .hc-s { color: rgba(255,255,255,.85); }
+  .hc.v4 .hc-s { color: #fff; }
 
   /* 5: slide to connect */
   .sl { --k: 0px; position: relative; width: 440px; height: 64px; border-radius: var(--r-btn); background: rgba(255,255,255,.08); box-shadow: inset 0 0 0 1px rgba(255,255,255,.16); cursor: pointer; user-select: none; touch-action: none; }
   .sl.back { transition: --k .55s cubic-bezier(.3, 1.45, .5, 1); }
   .sl.go { transition: --k .45s cubic-bezier(.65, 0, .35, 1); }
   .sl-fill { position: absolute; left: 0; top: 0; bottom: 0; width: calc(var(--k) + 62px); border-radius: inherit; background: var(--cta); transition: background .3s; }
-  .sl.done .sl-fill { background: #2E9E5B; }
+  .sl.done .sl-fill { background: #3E9F68; }
   .sl-lbl { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 2px; padding-left: 46px; font-size: 15.5px; font-weight: 500; color: #fff; pointer-events: none; transition: opacity .2s; }
   .sl-lbl em { font-style: normal; font-weight: 700; color: rgba(255,255,255,.3); animation: chev 1.5s infinite; }
   .sl-lbl .t { margin-right: 8px; }
@@ -738,8 +738,8 @@
   body.dk-or .dock .dk-ico i.on { box-shadow: 0 0 0 2px var(--ink); }
   body.dk-or #dock-btn, body.dk-or .win-mini .btn-cta { background: var(--ink); outline-color: var(--ink); }
   body.dk-or #dock-btn:hover { background: #2a2a2a; }
-  body.dk-or #dock-btn.ready { background: #2E9E5B; outline-color: #2E9E5B; }
-  body.dk-or .dock > small, body.dk-or .win-mini > small { color: rgba(255,255,255,.82); }
+  body.dk-or #dock-btn.ready { background: #3E9F68; outline-color: #3E9F68; }
+  body.dk-or .dock > small, body.dk-or .win-mini > small { color: #fff; }
   /* Ryze demo turns black while it sits on the orange card, orange again when it leaves */
   .demo-cur svg path { transition: fill .3s; }
   .demo-cur span { transition: background-color .3s; }
@@ -748,6 +748,85 @@
   .win-or { position: absolute; inset: 0; background: var(--cta); clip-path: circle(0 at 50% 84%); pointer-events: none; }
 
   /* review switch */
+  /* ---------- v28: a simpler hero plate. Three layers: headline, one line, the email field; the colour does the rest ---------- */
+  .win-full { padding: 36px 34px 34px; }
+  .fx-h { margin: 0; font-size: 42px; line-height: 1.06; letter-spacing: -.025em; }
+  .fx-p { margin: 14px 0 0; max-width: 340px; font-size: 16.5px; line-height: 1.45; color: inherit; }
+  /* the field and the button are one piece: the button sits flush, no white frame around it */
+  .win-full .joined { height: 60px; margin-top: auto; padding: 0; border: 0; overflow: hidden; background: #fff; box-shadow: 0 14px 34px -14px rgba(0,0,0,.45); }
+  .win-full .joined:focus-within { box-shadow: 0 14px 34px -14px rgba(0,0,0,.45); }
+  .win-full .joined input { padding: 0 20px; color: var(--ink); }
+  .win-full .joined button { border-radius: 0; padding: 0 24px; background: var(--ink); }
+  .win-full .joined button:hover { background: #2a2a2a; }
+  /* colour fields: soft round spots that drift slowly and lean towards the mouse; the same picture in the plate and in the card */
+  .pl-g { position: absolute; inset: 0; overflow: hidden; border-radius: inherit; pointer-events: none; }
+  .pl-g i { position: absolute; left: 0; top: 0; border-radius: 50%; background: radial-gradient(circle closest-side, var(--c) 0%, color-mix(in srgb, var(--c) 55%, transparent) 42%, transparent 100%); will-change: transform; }
+  .pl-g::after { content: ""; position: absolute; inset: 0; opacity: var(--grain, .2); mix-blend-mode: overlay; background-size: 180px; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .7 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"); }
+  body.pl-black .pl-g { display: none; }
+  body.pl-flow .win, body.pl-flow .dock { background: #0E1020; }
+  body.pl-glow .win, body.pl-glow .dock { background: #0D0D0D; }
+  body.pl-light .win, body.pl-light .dock { color: var(--ink); }
+  body.pl-soft .win, body.pl-soft .dock { background: #F4EEE6; }
+  /* v30, after OpenAI's covers: a light base of two or three neighbouring colours, soft diagonal streaks of light, grain */
+  body.pl-lilac .win, body.pl-lilac .dock { background: linear-gradient(160deg, #E4DDFF 0%, #B9B2FB 38%, #8C9AF6 70%, #6F86F1 100%); }
+  body.pl-mint .win, body.pl-mint .dock { background: linear-gradient(160deg, #DDF7E8 0%, #A8E6C4 40%, #62CF98 75%, #2FB57C 100%); }
+  body.pl-peach .win, body.pl-peach .dock { background: linear-gradient(160deg, #FFF0E6 0%, #FFD2B8 38%, #F6A07A 72%, #EC6B3E 100%); }
+  body.pl-flow .pl-g i, body.pl-glow .pl-g i { mix-blend-mode: screen; }
+  body.pl-light .win-full .joined { box-shadow: 0 14px 30px -16px rgba(60,40,20,.35); }
+  /* the sidebar card follows the plate: no grey text, no green ring, no green button, no orange */
+  .dock > :not(.pl-g):not(.win-bg) { position: relative; z-index: 1; }
+  .dock .roll-in span, .win-mini .roll-w { color: inherit; }
+  body.pl-light .dk-t { color: var(--ink); }
+  body.pl-light .win-mini { color: var(--ink); }
+  .dock .dk-ico i.on { box-shadow: none; }
+  .dock > small, .win-mini > small { color: inherit; }
+  body.pl-light #dock-btn, body.pl-light .win-mini .btn-cta, body.pl-light #dock-btn.ready { background: var(--ink); color: #fff; outline-color: var(--ink); }
+  body.pl-light #dock-btn:hover { background: #2a2a2a; }
+  body.pl-light #dock-btn .fill { background: rgba(255,255,255,.22); }
+  /* on the black plate a black button would merge with the plate: there the field is dark and the button white */
+  /* the plate switch sits bottom left, so it never covers the email field */
+  #pl-switch { left: 20px; transform: none; padding: 6px; gap: 4px; }
+  #pl-switch .vs-label { padding: 0 10px 0 8px; }
+  #pl-switch button { height: 36px; padding: 0 13px; font-size: 14px; }
+  #pl-switch.hide { transform: translateY(18px); }
+  /* ---------- v29: no outline around buttons; email fields in the strips are one piece too ---------- */
+  .btn-cta { margin: 0; outline: 0; outline-offset: 0; }
+  .btn-cta:hover { outline-offset: 0; }
+  .btn-cta:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+  .btn-cta.wide { width: 100%; }
+  .hc-b, .hc-col .btn-cta { margin: 0; }
+  .hc-b.breathe svg { transform: translate(3px, -3px); }
+  .hc.v1 .hc-act, .hc.v6 .hc-act, .hc.v7 .hc-act { gap: 10px; }
+  .hc .hc-j { height: 58px; padding: 0; border: 0; overflow: hidden; }
+  .hc .hc-j button { border-radius: 0; }
+  .hc .hc-j input { padding: 0 18px; }
+
+  /* ---------- v31: the email form as on get-ryze.ai: white field, black button flush to it with a thin light border, a chevron ---------- */
+  .win-full .joined, .hc .hc-j { height: 54px; padding: 0; border: 0; border-radius: var(--r-btn); background: #fff; overflow: visible; box-shadow: none; }
+  .win-full .joined:focus-within, .hc .hc-j:focus-within { box-shadow: none; }
+  .win-full .joined input, .hc .hc-j input { padding: 0 18px; color: var(--ink); }
+  .win-full .joined input::placeholder, .hc .hc-j input::placeholder { color: #8E8E8E; }
+  .win-full .joined button, .hc .hc-j button, .hc.v4 .hc-j button { height: 100%; gap: 12px; padding: 0 22px; border: 1px solid #D6D6D6; border-radius: var(--r-btn); background: #1A1A1A; color: #fff; font-weight: 500; }
+  .win-full .joined button:hover, .hc .hc-j button:hover, .hc.v4 .hc-j button:hover { background: #2C2C2C; }
+  .hc .hc-j.ff { box-shadow: 0 0 0 3px rgba(255,255,255,.35); }
+  /* one button for the whole page: black, a thin light border, white medium text, our ↗ arrow.
+     The same in the hero form, in the sidebar card and in every CTA strip */
+  .btn-cta, .win-full .joined button, .hc .hc-j button, .hc.v4 .hc-j button { height: 54px; gap: 12px; padding: 0 24px; border: 1px solid #D6D6D6; border-radius: var(--r-btn); background: #1A1A1A; color: #fff; font-size: 16px; font-weight: 500; }
+  .btn-cta:hover, .win-full .joined button:hover, .hc .hc-j button:hover, .hc.v4 .hc-j button:hover { background: #2C2C2C; }
+  .btn-cta svg, .win-full .joined button svg, .hc .hc-j button svg { width: 16px; height: 16px; }
+  .btn-cta:hover svg, .win-full .joined button:hover svg, .hc .hc-j button:hover svg { transform: translate(2px, -2px); }
+  #dock-btn { height: 54px; }
+  #dock-btn .fill { background: rgba(255,255,255,.18); }
+  body #dock-btn.ready { background: #1A1A1A; }
+  /* the hand-drawn underline in the review: its round end showed as a dot before the line was drawn */
+  .hc-quote .ul path { stroke-dasharray: 1 2; }
+  .hc-quote .ul { opacity: 0; transition: opacity .15s; }
+  .hc.ul-on .hc-quote .ul { opacity: 1; }
+
+  /* one switch at a time: the plate colours by the hero, the CTA versions by the article */
+  .var-switch { transition: opacity .3s, transform .35s var(--ease); }
+  .var-switch.hide { opacity: 0; pointer-events: none; transform: translate(-50%, 18px); }
+
   /* bottom centre, big enough to notice: which CTA you see and how to see the others */
   .var-switch { position: fixed; left: 50%; bottom: 22px; z-index: 100; display: flex; align-items: center; gap: 6px; padding: 8px; border-radius: var(--r-card); background: #fff; box-shadow: 0 0 0 1px rgba(17,17,17,.08), 0 18px 40px -12px rgba(0,0,0,.35); transform: translateX(-50%); }
   .vs-label { display: flex; flex-direction: column; padding: 0 14px 0 10px; line-height: 1.25; white-space: nowrap; }
@@ -774,7 +853,7 @@
   }
 </style>
 </head>
-<body>
+<body class="pl-glow">
 
 <header class="site-header">
   <a class="site-logo" href="#"><img src="assets/logo.webp" alt="">Ryze</a>
@@ -796,18 +875,11 @@
     <div class="hm-slot" id="hm-slot">
       <div class="win" id="win">
         <img class="win-bg" src="assets/hero.jpg" alt="">
+        <div class="pl-g" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
         <div class="win-full" id="win-full">
-          <span class="fx-k">Ryze AI · 7 days free</span>
           <h2 class="fx-h">Let AI run your Google Ads</h2>
-          <p class="fx-p">Connect your account and Ryze starts fixing bids, budgets and keywords today.</p>
+          <p class="fx-p">Ryze fixes bids, budgets and keywords while you&nbsp;sleep.</p>
           <form class="joined" id="fx-form" onsubmit="return false"><input id="fx-email" type="email" placeholder="Work email" aria-label="Work email"><button type="submit"><span>Start free trial</span> <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></form>
-          <small class="fx-s">No credit card. Cancel anytime.</small>
-          <div class="fx-found">
-            <span class="fx-k">Found on a typical account in the first hour</span>
-            <div class="fx-row"><span>Spend on keywords with no orders</span><b>$1,240/mo</b></div>
-            <div class="fx-row"><span>Campaigns limited by budget</span><b>4</b></div>
-            <div class="fx-row"><span>ROAS after 6 weeks</span><b>2.4x → 4.1x</b></div>
-          </div>
         </div>
         <i class="win-or" id="win-or" aria-hidden="true"></i>
         <div class="win-mini" id="win-mini">
@@ -828,6 +900,7 @@
     <aside class="side">
       <div class="card dock" id="dock">
           <img class="win-bg" src="assets/hero.jpg" alt="">
+          <div class="pl-g" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
           <div class="dk-ico"><i><img src="assets/platforms/google-ads.webp" alt=""></i><i><img src="assets/platforms/meta.webp" alt=""></i><i><img src="assets/platforms/google-analytics.svg" alt=""></i><i><img src="assets/platforms/tiktok.webp" alt=""></i><i><img src="assets/platforms/linkedin.webp" alt=""></i></div>
           <h3 class="dk-t">AI autopilot for<br><span class="roll"><span class="roll-in" id="roll-in"><span>Google Ads</span><span>Meta Ads</span><span>Analytics</span><span>TikTok Ads</span><span>LinkedIn Ads</span><span>Google Ads</span></span></span></h3>
           <div class="dk-park"></div>
@@ -907,7 +980,7 @@
 
 </main>
 
-<div class="var-switch" id="hc-switch" role="group" aria-label="Варианты CTA в тексте">
+<div class="var-switch hide" id="hc-switch" role="group" aria-label="Варианты CTA в тексте">
   <div class="vs-label"><b>CTA в тексте</b><span>5 вариантов, переключай</span></div>
   <button type="button" class="vs-arrow" data-step="-1" aria-label="Предыдущий вариант">‹</button>
   <button type="button" data-v="1">Налёт</button><button type="button" data-v="4">Отзыв</button><button type="button" data-v="5">Слайдер</button><button type="button" data-v="6">Ливень</button><button type="button" data-v="7">Задачи</button>
@@ -1055,10 +1128,10 @@
 
   // hero: four agents rewrite a weak headline, then join the Ryze demo cursor and circle the sign-up field
   const EDITS = [
-    { i: 0, from: 'Some', to: 'Best', who: 'Copy', c: '#E0457B' },
-    { i: 1, from: 'AI apps', to: 'AI Tools', who: 'SEO', c: '#1F9D55' },
-    { i: 2, from: 'Google Ads', to: 'Google Ads Management', who: 'Keywords', c: '#2F6FEB' },
-    { i: 3, from: 'in 2026', to: '2026: Top 10', who: 'Numbers', c: '#8B5CF6' },
+    { i: 0, from: 'Some', to: 'Best', who: 'Copy', c: '#E26A8E' },
+    { i: 1, from: 'AI apps', to: 'AI Tools', who: 'SEO', c: '#3E9F68' },
+    { i: 2, from: 'Google Ads', to: 'Google Ads Management', who: 'Keywords', c: '#4F7FEA' },
+    { i: 3, from: 'in 2026', to: '2026: Top 10', who: 'Numbers', c: '#9479EA' },
   ];
   const ehero = document.getElementById('hero'), hl = ehero.querySelector('.hm-l'), slots = [...ehero.querySelectorAll('.slot')];
   const field = document.getElementById('fx-form');
@@ -1144,7 +1217,7 @@
   async function heroIntro() {
     const demo = document.createElement('div');
     demo.className = 'agent demo-cur';
-    demo.innerHTML = CURSOR('#F04E14') + '<span style="background:#F04E14">Ryze demo</span>';
+    demo.innerHTML = CURSOR('#EC6B3E') + '<span style="background:#EC6B3E">Ryze demo</span>';
     document.body.append(demo);
     const agents = EDITS.map(e => makeCursor(e.who, e.c));
     swarm = agents;
@@ -1256,7 +1329,7 @@
     s.integrity = 'sha384-T6Gykt/nqEBFlEDmZhgxpfIoQQknX2tjPhIC9ZShkefS1BJQd2tOqC9+Ve3evUrX'; s.crossOrigin = 'anonymous';
     s.onload = res; s.onerror = rej; document.head.append(s);
   }));
-  const PAL = ['#E0457B', '#1F9D55', '#2F6FEB', '#8B5CF6', '#F04E14'];
+  const PAL = ['#E26A8E', '#3E9F68', '#4F7FEA', '#9479EA', '#EC6B3E'];
   const TRI = [{ x: 2, y: 2 }, { x: 17.5, y: 10 }, { x: 7.2, y: 19.2 }];   // the cursor arrow as a triangle body
   // a world the size of the strip: floor and walls inside the rounded card, an open top that closes once a body is in
   function hcWorld(id) {
@@ -1324,10 +1397,10 @@
         Object.assign(lbl.style, { display: 'inline-block', width: LW + 'px', textAlign: 'left', whiteSpace: 'nowrap' });
         b.classList.add('build'); lbl.textContent = '';
         const team = [
-          { n: 'SEO', c: '#1F9D55', from: [W.w * .2, -260], to: [cx - 16, cy - 10], bend: 110 },
-          { n: 'Keywords', c: '#2F6FEB', from: [W.w + 160, W.h + 140], to: [cx + 12, cy + 6], bend: -90 },
-          { n: 'Numbers', c: '#8B5CF6', from: [W.w * .55, -320], to: [cx + 40, cy - 64], bend: -130 },
-          { n: 'Copy', c: '#E0457B', from: [W.w * .7, W.h + 280], to: [cx - 120, cy + 34], bend: 120 },
+          { n: 'SEO', c: '#3E9F68', from: [W.w * .2, -260], to: [cx - 16, cy - 10], bend: 110 },
+          { n: 'Keywords', c: '#4F7FEA', from: [W.w + 160, W.h + 140], to: [cx + 12, cy + 6], bend: -90 },
+          { n: 'Numbers', c: '#9479EA', from: [W.w * .55, -320], to: [cx + 40, cy - 64], bend: -130 },
+          { n: 'Copy', c: '#E26A8E', from: [W.w * .7, W.h + 280], to: [cx - 120, cy + 34], bend: 120 },
         ];
         const cur = team.map(t => { const a = hcCursor(t.n, t.c); hcPut(a, ...t.from); return a; });
         const [seo, kw, num, copy] = cur;
@@ -1336,7 +1409,7 @@
         await Promise.all(team.map((t, k) => hcFly(cur[k], ...t.to, { dur: 640, bend: t.bend, delay: k * 70 })));
         alive(id);
         // SEO and Keywords pull the corners of a selection frame out to the size of the button
-        const sel = document.createElement('div'); sel.className = 'hc-sel'; sel.style.setProperty('--c', '#1F9D55');
+        const sel = document.createElement('div'); sel.className = 'hc-sel'; sel.style.setProperty('--c', '#3E9F68');
         sel.innerHTML = '<b></b><b></b><b></b><b></b><em></em>'; hcLayer.prepend(sel);
         const em = sel.querySelector('em');
         const r0 = { left: cx - 14 + 'px', top: cy - 8 + 'px', width: '28px', height: '16px' }, r1 = { left: B.x + 'px', top: B.y + 'px', width: B.w + 'px', height: B.h + 'px' };
@@ -1427,7 +1500,7 @@
       async play(id) {
         const box = hcAct.querySelector('#cmp2'), handle = box.querySelector('.cm-h'), W = hr(hc);
         const knob = () => { const r = hr(handle); return { x: r.x + r.w / 2 + 2, y: r.y + r.h / 2 + 4 }; };
-        const a = hcCursor('Bids', '#2F6FEB'); hcPut(a, W.w * .3, -260);
+        const a = hcCursor('Bids', '#4F7FEA'); hcPut(a, W.w * .3, -260);
         await hs(550, id);
         let k = knob(); await hcFly(a, k.x, k.y, { dur: 720, bend: 120 }); alive(id);
         if (!box._user) {
@@ -1702,6 +1775,63 @@
     if (e.key === 'ArrowRight') { e.preventDefault(); hcStep(1); }
     if (e.key === 'ArrowLeft') { e.preventDefault(); hcStep(-1); }
   });
+
+  // ---------- v28: the colour of the hero plate (and of the sidebar card it turns into) ----------
+  // each spot: colour, centre x, centre y (share of the plate), drift x, drift y, seconds per loop
+  const PLATES = {
+    flow: { size: .95, grain: .22, spots: [['#4F7FEA', .12, .22, .2, .12, 17], ['#E26A8E', .9, .42, .12, .2, 13], ['#F2966A', .45, .98, .24, .07, 19], ['#9479EA', .72, .02, .18, .1, 23]] },
+    soft: { light: true, size: 1, grain: .32, spots: [['#FFB088', .18, .8, .2, .1, 18], ['#C4B2FF', .88, .32, .12, .18, 15], ['#8FD3FF', .28, .1, .22, .1, 21], ['#FFE08A', .82, .95, .16, .08, 25]] },
+    // v30, after OpenAI's covers: long soft streaks of light at one angle (stretch x, stretch y, angle), light base, grain
+    lilac: { light: true, size: 1, grain: .26, spots: [['#F6F2FFD9', .3, .34, .12, .07, 19, 1.9, .26, 28], ['#A98CFA', .12, .86, .1, .06, 23, 1.6, .5, 28], ['#5D7CF0', .92, .72, .08, .1, 17, 1.4, .6, 28], ['#EEE8FFB3', .74, .14, .1, .05, 25, 1.7, .22, 28]] },
+    mint: { light: true, size: 1, grain: .28, spots: [['#F2FFF7D9', .3, .3, .12, .07, 19, 1.9, .26, 28], ['#86E3B2', .14, .84, .1, .06, 23, 1.6, .5, 28], ['#1FA56C', .92, .76, .08, .1, 17, 1.4, .6, 28], ['#E2FAEDB3', .74, .14, .1, .05, 25, 1.7, .22, 28]] },
+    peach: { light: true, size: 1, grain: .26, spots: [['#FFF8F2D9', .3, .3, .12, .07, 19, 1.9, .26, 28], ['#F3A99A', .14, .84, .1, .06, 23, 1.6, .5, 28], ['#EC6B3E', .9, .8, .08, .1, 17, 1.4, .6, 28], ['#FBD5BCB3', .74, .14, .1, .05, 25, 1.7, .22, 28]] },
+    glow: { size: .72, grain: .18, spots: [['#4F7FEA', .18, 1.02, .22, .04, 11], ['#E26A8E', .55, 1.08, .22, .05, 13], ['#F2966A', .88, 1, .16, .05, 9]] },
+  };
+  const plHosts = [win, dock].map(h => ({ h, spots: [...h.querySelectorAll('.pl-g i')], w: 0 }));
+  let plate = 'glow';   // v32: Sasha chose «Свечение»: a black plate with the colour glowing under the email field
+  function setPlate(name) {
+    plate = name;
+    document.body.classList.remove('pl-black', 'pl-flow', 'pl-soft', 'pl-glow', 'pl-lilac', 'pl-mint', 'pl-peach', 'pl-light');
+    document.body.classList.add('pl-' + name);
+    const cfg = PLATES[name];
+    document.body.classList.toggle('pl-light', !!(cfg && cfg.light));
+    plHosts.forEach(({ h, spots }) => {
+      if (cfg) h.querySelector('.pl-g').style.setProperty('--grain', cfg.grain);
+      spots.forEach((el, i) => { const s = cfg && cfg.spots[i]; el.style.display = s ? '' : 'none'; if (s) el.style.setProperty('--c', s[0]); });
+    });
+    document.querySelectorAll('#pl-switch [data-pl]').forEach(b => b.classList.toggle('on', b.dataset.pl === name));
+  }
+  setPlate(plate);
+  // the spots drift on slow loops; the first one leans hard towards the mouse when it is over the plate, the others a little
+  let plx = .5, ply = .5, plOn = 0;
+  function plateDraw(now) {
+    const cfg = PLATES[plate];
+    if (cfg && !reduce) {
+      const t = now / 1000, host = win.classList.contains('gone') ? dock : win, R = host.getBoundingClientRect();
+      let over = 0;
+      if (mouse) { const mx = (mouse.x - R.left) / R.width, my = (mouse.y - R.top) / R.height; if (mx > -.1 && mx < 1.1 && my > -.1 && my < 1.1) { over = 1; plx += (mx - plx) * .06; ply += (my - ply) * .06; } }
+      plOn += (over - plOn) * .04;
+      for (const H of plHosts) {
+        const W = H.h.offsetWidth, Hh = H.h.offsetHeight, s = cfg.size * Math.max(W, Hh);
+        if (Math.abs(H.w - s) > .5) { H.w = s; H.spots.forEach(el => { el.style.width = el.style.height = s + 'px'; }); }
+        cfg.spots.forEach((sp, i) => {
+          const a = t * 2 * Math.PI / sp[5] + i * 1.7, k = plOn * (i === 0 ? .55 : .15);
+          let x = sp[1] + sp[3] * Math.sin(a), y = sp[2] + sp[4] * Math.cos(a * .8 + i);
+          x += (plx - x) * k; y += (ply - y) * k;
+          H.spots[i].style.transform = `translate(${x * W - s / 2}px, ${y * Hh - s / 2}px) rotate(${sp[8] || 0}deg) scale(${sp[6] || 1}, ${sp[7] || 1})`;
+        });
+      }
+    } else if (cfg && reduce) {
+      for (const H of plHosts) { const W = H.h.offsetWidth, Hh = H.h.offsetHeight, s = cfg.size * Math.max(W, Hh); cfg.spots.forEach((sp, i) => { Object.assign(H.spots[i].style, { width: s + 'px', height: s + 'px', transform: `translate(${sp[1] * W - s / 2}px, ${sp[2] * Hh - s / 2}px) rotate(${sp[8] || 0}deg) scale(${sp[6] || 1}, ${sp[7] || 1})` }); }); }
+    }
+  }
+  if (!reduce) { const loop = now => { plateDraw(now); requestAnimationFrame(loop); }; requestAnimationFrame(loop); }
+  else plateDraw(0);
+  addEventListener('resize', () => plateDraw(performance.now()));
+  // one switch at a time: plate colours while the hero is on screen, CTA versions further down
+  const switchBars = () => { const inHero = scrollY < art.getBoundingClientRect().top + scrollY - innerHeight * .6; hcSwitch.classList.toggle('hide', inHero); };
+  addEventListener('scroll', switchBars, { passive: true });
+  switchBars();
 
   // reveal on scroll
   const io = new IntersectionObserver(entries => entries.forEach(e => {
