@@ -823,6 +823,24 @@
   .hc-quote .ul { opacity: 0; transition: opacity .15s; }
   .hc.ul-on .hc-quote .ul { opacity: 1; }
 
+  /* ---------- v33: the same button in the soft orange (switch bottom left to compare with black) ---------- */
+  body.btn-or .btn-cta, body.btn-or .win-full .joined button, body.btn-or .hc .hc-j button { background: var(--cta); border-color: var(--cta); color: #fff; }
+  body.btn-or .btn-cta:hover, body.btn-or .win-full .joined button:hover, body.btn-or .hc .hc-j button:hover { background: var(--cta-hover); border-color: var(--cta-hover); }
+  body.btn-or #dock-btn.ready { background: var(--cta); }
+  /* on the orange review strip an orange button would disappear, so there it stays black */
+  body.btn-or .hc.v4 .hc-j button { background: #000; border-color: #D6D6D6; }
+  body.btn-or .hc.v4 .hc-j button:hover { background: #262626; border-color: #D6D6D6; }
+  /* white on black: a button that stands on a black surface is white with black text and arrow.
+     The button inside the email field stays black: it sits on the white field, and on the orange review strip it stays black too */
+  body.btn-wh .btn-cta { background: #fff; border-color: #fff; color: #000; }
+  body.btn-wh .btn-cta:hover { background: #EDEDED; border-color: #EDEDED; }
+  body.btn-wh #dock-btn .fill { background: rgba(0,0,0,.1); }
+  body.btn-wh #dock-btn.ready { background: #fff; }
+  #btn-switch { left: 20px; transform: none; flex-direction: column; align-items: stretch; padding: 6px; gap: 4px; }
+  #btn-switch .vs-label { padding: 4px 6px 2px; }
+  #btn-switch .vs-label span { display: none; }
+  #btn-switch button { height: 36px; padding: 0 13px; font-size: 14px; }
+
   /* one switch at a time: the plate colours by the hero, the CTA versions by the article */
   .var-switch { transition: opacity .3s, transform .35s var(--ease); }
   .var-switch.hide { opacity: 0; pointer-events: none; transform: translate(-50%, 18px); }
@@ -853,7 +871,7 @@
   }
 </style>
 </head>
-<body class="pl-glow">
+<body class="pl-glow btn-wh">
 
 <header class="site-header">
   <a class="site-logo" href="#"><img src="assets/logo.webp" alt="">Ryze</a>
@@ -1433,7 +1451,7 @@
         hcFly(num, cx + 56, cy - 54, { dur: 380, bend: -20 });
         await hs(240, id);
         // Copy types the label; its cursor rides on the caret
-        const CARET = '<span class="caret" style="--c:#fff"></span>';
+        const CARET = '<span class="caret" style="--c:currentColor"></span>';
         lbl.innerHTML = CARET;
         const c0 = hr(lbl.querySelector('.caret'));
         await hcFly(copy, c0.x + 4, c0.y + c0.h - 6, { dur: 340, bend: 40 }); alive(id);
