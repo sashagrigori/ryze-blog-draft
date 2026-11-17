@@ -1242,6 +1242,9 @@
   function frame() {
     const y = scrollY, artTop = art.getBoundingClientRect().top + y;
     const p = clamp(y / (artTop - STICK));
+    // the full plate is always as tall as its slot in the hero, so the email field stays at the bottom
+    // (before, the height was set only at the very top: after a reload lower down the field jumped up under the text)
+    full.style.height = slot.offsetHeight + 'px';
     swarm.forEach(a => a.style.opacity = p > .02 ? 0 : 1);
     if (p <= 0) { wor.style.clipPath = ''; win.classList.remove('flying', 'gone'); win.removeAttribute('style'); full.style.height = slot.offsetHeight + 'px'; full.style.transform = ''; full.style.opacity = 1; wmini.style.opacity = 0; dock.classList.remove('show'); return; }
     if (p >= 1) { win.classList.add('gone'); dock.classList.add('show'); return; }
@@ -1256,6 +1259,7 @@
     const c = document.body.classList.contains('dk-or') ? ease(clamp((p - .25) / .5)) : 0;
     wor.style.clipPath = `circle(${c * 150}% at 50% 84%)`;
   }
+  full.style.height = slot.offsetHeight + 'px';
   addEventListener('scroll', () => requestAnimationFrame(frame), { passive: true });
   addEventListener('resize', frame);
   document.fonts.ready.then(frame);
