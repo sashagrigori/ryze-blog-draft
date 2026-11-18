@@ -1640,14 +1640,14 @@
     (async () => {
       await sleep(250 + 760);
       if (building) {
-        const dx = -230;
-        field.style.opacity = 1;
-        await field.animate([{ transform: `translate(${dx}px, 0)` }, { transform: 'none' }], { duration: 650, easing: 'cubic-bezier(.3,.8,.3,1.08)' }).finished.catch(() => {});
+        // as in «В воздухе»: the field shows up in its place with the button already in it
+        field.style.opacity = 1; btn.style.opacity = 1;
+        btn.animate([{ transform: 'translateY(12px)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 480, delay: 160, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'backwards' });
+        await field.animate([{ transform: 'translateY(10px)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 560, easing: 'cubic-bezier(.2,.8,.2,1)' }).finished.catch(() => {});
       }
       fieldIn();
     })();
     const JOBS = {
-      2: a => dragIn(btn, a, 60, -120, [.5, .55], 520, fieldReady),
     };
     rewriting = true;
     // an agent whose layer is done leaves at once, off the right edge, so only the ones still at work stay on screen
