@@ -1357,7 +1357,7 @@
   /* gradient rings: a ring cut out of a gradient, so it can fade; it changes no size */
   .win-full .joined, .reasons .reason > .label, .cmp tr.ours .tool .ico, .cmp tr.ours td:first-child, .hc .hc-j { position: relative; }
   body.ll .gx-before::after, body.ll .gx-after::after, body.ll .win-full .joined::after, body.ll .reasons .reason > .label::after,
-  body.ll .cmp tr.ours .tool .ico::after, body.ll .cmp tr.ours td:first-child::after, body.hcw .hc .hc-j::after {
+  body.ll .cmp tr.ours .tool .ico::after, body.ll .cmp tr.ours td:first-child::after, body .hc-wrap.hcw .hc .hc-j::after {
     content: ""; position: absolute; inset: 0; z-index: 4; border-radius: inherit; padding: 1px; pointer-events: none; background: var(--ring);
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
     mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; }
@@ -1396,25 +1396,25 @@
   body.hb-on.pk-light .win { background: color-mix(in srgb, var(--pk-bg) 88%, transparent); -webkit-backdrop-filter: blur(8px) saturate(1.2); backdrop-filter: blur(8px) saturate(1.2); }
 
   /* ---- the CTA in the text, white: dark words, orange buttons, the many-colour stroke, a light shadow ---- */
-  body.hcw .hc, body.hcw .hc:not(.v4), body.hcw .hc.v4 { background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1px var(--ll-line); }
-  body.hcw .hc::after { content: ""; position: absolute; inset: 0; z-index: 6; border-radius: inherit; padding: 2px; pointer-events: none; background: linear-gradient(135deg, #F58E43 0%, #E1B5A8 13%, #9CE7DD 26%, #8DD8F3 38%, rgba(141,216,243,.18) 52%, rgba(255,255,255,0) 100%);
+  body .hc-wrap.hcw .hc, body .hc-wrap.hcw .hc:not(.v4), body .hc-wrap.hcw .hc.v4 { background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1px var(--ll-line); }
+  body .hc-wrap.hcw .hc::after { content: ""; position: absolute; inset: 0; z-index: 6; border-radius: inherit; padding: 2px; pointer-events: none; background: linear-gradient(135deg, #F58E43 0%, #E1B5A8 13%, #9CE7DD 26%, #8DD8F3 38%, rgba(141,216,243,.18) 52%, rgba(255,255,255,0) 100%);
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
     mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; }
-  body.hcw .hc-k, body.hcw .hc-who, body.hcw .hc-who b, body.hcw .hc-fr span, body.hcw .hc.v4 .hc-s { color: var(--ink); }
-  body.hcw .hc-s { color: var(--ink-2); }
-  body.hcw .hc-stars i { color: rgba(17,17,17,.16); }
-  body.hcw .hc-stars i.on { color: var(--cta); }
-  body.hcw .hc-quote .ul path { stroke: var(--cta); }
-  body.hcw .hc .btn-cta, body.hcw .hc .hc-j button, body.hcw .hc.v4 .hc-j button { background: var(--cta); border-color: var(--cta); color: #fff; }
-  body.hcw .hc .btn-cta:hover, body.hcw .hc .hc-j button:hover, body.hcw .hc.v4 .hc-j button:hover { background: var(--cta-hover); border-color: var(--cta-hover); }
-  body.hcw .hc .hc-j { box-shadow: 0 10px 24px -16px rgba(17,17,17,.3); --ring: linear-gradient(120deg, #66CDBF 0%, rgb(102 205 191 / .4) 40%, rgb(102 205 191 / .06) 100%); }
-  body.hcw .hc .hc-j.ff { box-shadow: 0 0 0 3px rgb(102 205 191 / .35); }
-  body.hcw .sl { background: #F4F3F0; box-shadow: inset 0 0 0 1px var(--ll-line); }
-  body.hcw .sl-lbl { color: var(--ink); }
-  body.hcw .sl-lbl em { animation-name: chevD; }
+  body .hc-wrap.hcw .hc-k, body .hc-wrap.hcw .hc-who, body .hc-wrap.hcw .hc-who b, body .hc-wrap.hcw .hc-fr span, body .hc-wrap.hcw .hc.v4 .hc-s { color: var(--ink); }
+  body .hc-wrap.hcw .hc-s { color: var(--ink-2); }
+  body .hc-wrap.hcw .hc-stars i { color: rgba(17,17,17,.16); }
+  body .hc-wrap.hcw .hc-stars i.on { color: var(--cta); }
+  body .hc-wrap.hcw .hc-quote .ul path { stroke: var(--cta); }
+  body .hc-wrap.hcw .hc .btn-cta, body .hc-wrap.hcw .hc .hc-j button, body .hc-wrap.hcw .hc.v4 .hc-j button { background: var(--cta); border-color: var(--cta); color: #fff; }
+  body .hc-wrap.hcw .hc .btn-cta:hover, body .hc-wrap.hcw .hc .hc-j button:hover, body .hc-wrap.hcw .hc.v4 .hc-j button:hover { background: var(--cta-hover); border-color: var(--cta-hover); }
+  body .hc-wrap.hcw .hc .hc-j { box-shadow: 0 10px 24px -16px rgba(17,17,17,.3); --ring: linear-gradient(120deg, #66CDBF 0%, rgb(102 205 191 / .4) 40%, rgb(102 205 191 / .06) 100%); }
+  body .hc-wrap.hcw .hc .hc-j.ff { box-shadow: 0 0 0 3px rgb(102 205 191 / .35); }
+  body .hc-wrap.hcw .sl { background: #F4F3F0; box-shadow: inset 0 0 0 1px var(--ll-line); }
+  body .hc-wrap.hcw .sl-lbl { color: var(--ink); }
+  body .hc-wrap.hcw .sl-lbl em { animation-name: chevD; }
   @keyframes chevD { 0%, 60%, 100% { color: rgba(17,17,17,.22); } 30% { color: var(--ink); } }
-  body.hcw .sl-end { background: #fff; box-shadow: inset 0 0 0 1px var(--ll-line); }
-  body.hcw .sl-k { box-shadow: 0 1px 3px rgba(0,0,0,.2), inset 0 0 0 1px var(--ll-line); }
+  body .hc-wrap.hcw .sl-end { background: #fff; box-shadow: inset 0 0 0 1px var(--ll-line); }
+  body .hc-wrap.hcw .sl-k { box-shadow: 0 1px 3px rgba(0,0,0,.2), inset 0 0 0 1px var(--ll-line); }
 
   /* ---------- v69 (Sasha, 19.11): the CTA variants each with its own background; the Ryze row's ring no longer melts to nothing on the right;
      the stroke back on the mint plate, without the blue; the glass white; a tuning panel with sliders (the values live in CSS variables) ---------- */
@@ -1434,8 +1434,8 @@
   body.ll .win::after, body.ll .dock::after { content: ""; position: absolute; inset: 0; z-index: 6; border-radius: inherit; padding: var(--s-w); pointer-events: none; background: var(--s-ring);
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
     mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; }
-  body.ll .hc:not(.v4)::after, body.hcw .hc::after { padding: var(--s-w); background: var(--s-ring); }
-  body.ll.ps-0 .win::after, body.ll.ps-0 .dock::after, body.ll.ps-0 .hc:not(.v4)::after, body.ps-0.hcw .hc::after { content: none; }
+  body.ll .hc:not(.v4)::after, body .hc-wrap.hcw .hc::after { padding: var(--s-w); background: var(--s-ring); }
+  body.ll.ps-0 .win::after, body.ll.ps-0 .dock::after, body.ll.ps-0 .hc:not(.v4)::after, body.ps-0 .hc-wrap.hcw .hc::after { content: none; }
   body.hs-nob { --h-ring: linear-gradient(135deg, var(--c-orange) 0%, var(--c-rose) calc(var(--s-len) * .25), var(--c-aqua) calc(var(--s-len) * .5), #fff calc(var(--s-len) * .75), rgb(255 255 255 / .55) var(--s-len), rgb(255 255 255 / .3) 100%); }
   body.hs-pal { --h-ring: linear-gradient(135deg, var(--c-orange) 0%, var(--c-rose) calc(var(--s-len) * .25), var(--c-aqua) calc(var(--s-len) * .5), var(--c-blue) calc(var(--s-len) * .73), rgba(141,216,243,.18) var(--s-len), rgba(255,255,255,.06) 100%); }
   body.hs-white { --h-ring: linear-gradient(135deg, #fff 0%, rgb(255 255 255 / .9) var(--s-len), rgb(255 255 255 / .4) 100%); }
@@ -1543,6 +1543,371 @@
   body.ll.pk-dk #dock-btn .fill { background: var(--cta); }
   body.ll.pk-dk #dock-btn.busy .fill { width: 100%; transition: width 1.6s cubic-bezier(.4,0,.2,1); }
   body.ll.pk-dk #dock-btn.ready { background: var(--cta); border-color: var(--cta); outline-color: var(--cta); color: #fff; transition: none; }
+
+  /* ---------- v74 (Sasha, 19.11): the whole article in the current system. Light plates with hairlines; Ryze picked out by the melting
+     green ring (as its row in the comparison table); bars drawn in dots, like the chart on the plate; every CTA spot a horizontal template.
+     No tinted pill tags, no square markers, no uppercase micro labels: quiet text labels instead ---------- */
+  #ld-switch, #hc-switch { display: none !important; }
+  .art .intro { max-width: 780px; }
+  .art-p { margin-top: 22px; max-width: 900px; }
+  .art p a, .art li a { color: var(--ink); text-decoration: underline; text-decoration-color: rgb(102 205 191 / .9); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+  .art-h3 { margin: 52px 0 0; font-size: 26px; line-height: 1.25; letter-spacing: -.012em; font-weight: 500; }
+  .art-note { margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: var(--ink-3); }
+  .art .ico { width: 34px; height: 34px; flex: none; display: grid; place-items: center; border-radius: 50%; background: #fff; box-shadow: inset 0 0 0 1px var(--ll-line); }
+  .art .ico img { width: 17px; height: 17px; object-fit: contain; }
+  .art h2.long { max-width: 960px; font-size: 40px; line-height: 1.12; }
+  .art h3 { font-weight: 500; }
+
+  /* quiet labels: plain grey text */
+  .ql { display: block; font-size: 14px; line-height: 1.35; font-weight: 400; color: var(--ink-3); }
+  /* the short page's own labels go quiet too: «Reason 03», the chart's caption, the table heads */
+  body.ll .reasons .reason > .label, body.ll .reasons .reason:nth-child(n) > .label, body.ll .chart-head .label:first-child {
+    display: block; padding: 0; border-radius: 0; background: none; box-shadow: none; color: var(--ink-3); font-size: 14px; font-weight: 400; letter-spacing: 0; text-transform: none; }
+  body.ll .reasons .reason > .label::before, body.ll .reasons .reason > .label::after, body.ll .chart-head .label:first-child::before { content: none; }
+  body.ll .cmp th { font-size: 13px; font-weight: 400; letter-spacing: 0; text-transform: none; }
+
+  /* plates inside the white cards */
+  .gf, .fit, .tc, .lv, .cq, .tr-r, .ct, .gv-c, .tf, .note, .mk { border-radius: var(--r-card); background: #F7F6F3; box-shadow: inset 0 0 0 1px var(--ll-line-2); }
+  /* Ryze: a light green fill and a green ring that melts away (accent strokes are always gradients) */
+  .pb.ours, .tc.ours, .fw.ours, .lv.ours { position: relative; background: rgb(164 240 184 / .16); box-shadow: none; }
+  .pb.ours::after, .tc.ours::after, .fw.ours::after, .lv.ours::after, .fm tr.ours td:first-child::after {
+    content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; padding: 1.5px; pointer-events: none;
+    background: linear-gradient(135deg, #6FD68C 0%, rgb(111 214 140 / .55) 35%, rgb(102 205 191 / .14) 100%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; }
+
+  /* Google's built-in AI */
+  .gfs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 34px; }
+  .gf { display: flex; flex-direction: column; padding: 24px 26px; }
+  .gf h3 { margin: 0; font-size: 19px; line-height: 1.3; }
+  .gf p { margin: 10px 0 0; font-size: 15.5px; line-height: 1.6; color: var(--ink-2); }
+  .note { display: flex; gap: 16px; align-items: flex-start; margin-top: 26px; padding: 20px 22px; }
+  .note p { margin: 0; font-size: 15.5px; line-height: 1.6; color: var(--ink-2); }
+  .note.warn { flex-direction: column; gap: 8px; }
+
+  /* what the tools cost: one row per tool, the entry price as a bar of dots */
+  .pbs { display: flex; flex-direction: column; margin-top: 34px; border-top: 1px solid var(--line); }
+  .pb { display: grid; grid-template-columns: 34px 160px minmax(0, 1fr) 132px 250px; align-items: center; gap: 16px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+  .pb.ours { border-radius: 4px; border-bottom-color: transparent; }
+  .pb-n { font-size: 15.5px; font-weight: 500; }
+  .pb-bar { position: relative; height: 16px; border-radius: 3px; background: #fff; box-shadow: inset 0 0 0 1px var(--ll-line); overflow: hidden; }
+  .pb-bar i { position: absolute; left: 3px; top: 3px; bottom: 3px; width: max(5px, calc(var(--w) - 6px));
+    background: radial-gradient(circle, #A9A6A0 1.2px, transparent 1.5px) 0 0 / 4px 4px;
+    -webkit-mask: linear-gradient(90deg, rgba(0,0,0,.4), #000 75%); mask: linear-gradient(90deg, rgba(0,0,0,.4), #000 75%);
+    transform-origin: left; transform: scaleX(0); transition: transform 1.2s var(--ease); }
+  .in .pb-bar i { transform: scaleX(1); }
+  .pb.ours .pb-bar i { background-image: radial-gradient(circle, var(--cta) 1.35px, transparent 1.65px); }
+  .pb-p b { font-size: 17px; font-weight: 700; }
+  .pb-p small { margin-left: 2px; font-size: 13px; color: var(--ink-3); }
+  .pb-m { display: flex; flex-direction: column; gap: 2px; font-size: 13.5px; line-height: 1.35; color: var(--ink-3); }
+  .pb-m b { font-weight: 500; color: var(--ink); }
+
+  /* tables: the feature matrix and the scores */
+  .fm-wrap { margin-top: 34px; }
+  .fm { width: 100%; border-collapse: separate; border-spacing: 0; }
+  .fm th { padding: 0 14px 12px; text-align: left; font-size: 13px; font-weight: 400; color: var(--ink-3); }
+  .fm td { padding: 13px 14px; border-top: 1px solid var(--line); font-size: 15px; line-height: 1.4; vertical-align: middle; color: var(--ink-2); }
+  .fm td:first-child { color: var(--ink); font-weight: 500; }
+  .fm .tool { font-size: 15.5px; }
+  .fm tr.ours td { background: rgb(164 240 184 / .2); border-top-color: transparent; }
+  .fm tr.ours td:first-child { position: relative; border-radius: 4px 0 0 4px; }
+  .fm tr.ours td:last-child { border-radius: 0 4px 4px 0; }
+  .fm tr.ours td:first-child::after { inset: 0 auto 0 0; width: var(--tm-roww, 100%); border-radius: 4px; padding: 1px;
+    background: linear-gradient(90deg, #6FD68C 0%, rgb(111 214 140 / .6) 45%, rgb(102 205 191 / .55) 100%); }
+  .fm tr.ours + tr td { border-top-color: transparent; }
+  .fm-v { display: inline-flex; align-items: center; gap: 7px; font-size: 14.5px; font-weight: 500; color: var(--ink); white-space: nowrap; }
+  .fm-v svg { width: 15px; height: 15px; flex: none; }
+  .fm-v.yes svg { color: #33A85A; }
+  .fm-v.part svg { color: #66CDBF; }
+  .fm-v.no { color: var(--ink-3); }
+  .fm-v.no svg { color: #C79586; }
+  .fm-pl { font-size: 14px; }
+  .fm .pr { color: var(--ink); font-weight: 500; white-space: nowrap; }
+  .fit { margin-top: 28px; padding: 22px 24px; }
+  .fit p { margin: 8px 0 0; font-size: 16px; line-height: 1.6; color: var(--ink-2); }
+  .dots { display: inline-flex; gap: 4px; vertical-align: middle; }
+  .dots i { width: 9px; height: 9px; border-radius: 50%; background: #E4E2DD; }
+  .dots i.on { background: var(--ink); }
+  .fm.sc tr.ours .dots i.on { background: #33A85A; }
+  .sc-t b { font-size: 17px; color: var(--ink); }
+
+  /* the 10 tools */
+  .tcs { display: flex; flex-direction: column; gap: 10px; margin-top: 36px; }
+  .tc { padding: 30px 32px; }
+  .tc-head { display: grid; grid-template-columns: 30px 52px minmax(0, 1fr) auto; align-items: center; gap: 16px; }
+  .tc-rank { font-size: 15px; color: var(--ink-3); }
+  .tc-ico { width: 52px; height: 52px; display: grid; place-items: center; border-radius: var(--r-card); background: #fff; box-shadow: inset 0 0 0 1px var(--ll-line); }
+  .tc-ico img { width: 26px; height: 26px; object-fit: contain; }
+  .tc-name h3 { display: flex; align-items: baseline; gap: 12px; margin: 0; font-size: 26px; line-height: 1.2; letter-spacing: -.012em; }
+  .tc-pick { font-size: 14px; font-weight: 500; letter-spacing: 0; color: #22743F; }
+  .tc-name p { margin: 4px 0 0; font-size: 15px; color: var(--ink-2); }
+  .tc-score { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+  .tc-sv { display: flex; align-items: baseline; gap: 2px; }
+  .tc-score b { font-size: 40px; line-height: 1; letter-spacing: -.03em; font-weight: 500; }
+  .tc-score small { font-size: 14px; color: var(--ink-3); }
+  .tc-score .meter { flex: none; width: 120px; max-width: none; }
+  .tc-score em { font-style: normal; font-size: 12px; color: var(--ink-3); }
+  .tc.ours .meter i { background: #33A85A; }
+  .tc-desc { max-width: 920px; margin: 22px 0 0; font-size: 16px; line-height: 1.65; color: var(--ink-2); }
+  .tc-desc a { color: var(--ink); text-decoration: underline; text-decoration-color: rgb(102 205 191 / .9); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+  .tc-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 22px 0 0; }
+  .tc-facts div { padding: 14px 16px; border-radius: var(--r-btn); background: #fff; box-shadow: inset 0 0 0 1px var(--ll-line); }
+  .tc-facts dt { font-size: 13px; color: var(--ink-3); }
+  .tc-facts dd { margin: 4px 0 0; font-size: 15px; line-height: 1.45; color: var(--ink); }
+  .tc-pc { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+  .tc-pros, .tc-cons { padding: 16px 18px; border-radius: var(--r-btn); background: #fff; box-shadow: inset 0 0 0 1px var(--ll-line); }
+  .tc-pc ul { list-style: none; display: flex; flex-direction: column; gap: 8px; margin: 10px 0 0; padding: 0; font-size: 15px; line-height: 1.45; color: var(--ink); }
+  .tc-pc li { display: flex; gap: 10px; }
+  .tc-pc li svg { width: 16px; height: 16px; flex: none; margin-top: 3px; }
+  .tc-pros li svg { color: #33A85A; }
+  .tc-cons li svg { color: #C79586; }
+  /* the screen recording: a black frame like the plate, its dots rising from the bottom */
+  .tc-fig { margin: 22px 0 0; }
+  .tc-shot { position: relative; aspect-ratio: 16 / 7; border-radius: var(--r-card); background: #111; overflow: hidden; }
+  .tc-shot::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle, rgb(236 107 62 / .95) 1.4px, transparent 1.75px) 0 0 / 6px 6px;
+    -webkit-mask: linear-gradient(0deg, #000 0%, rgba(0,0,0,.55) 30%, transparent 70%); mask: linear-gradient(0deg, #000 0%, rgba(0,0,0,.55) 30%, transparent 70%); }
+  .tc-play { position: absolute; left: 50%; top: 50%; width: 66px; height: 66px; margin: -33px 0 0 -33px; display: grid; place-items: center; border-radius: 50%; background: #fff; color: var(--ink);
+    box-shadow: 0 12px 26px -12px rgba(0,0,0,.6); }
+  .tc-play svg { width: 24px; height: 24px; margin-left: 3px; }
+  .tc-shot-l { position: absolute; left: 16px; top: 14px; font-size: 13px; color: rgba(255,255,255,.75); }
+  .tc-fig figcaption { margin-top: 10px; font-size: 13.5px; color: var(--ink-3); }
+  body.btn-wh .tc .tc-cta { margin: 22px 0 0; outline: none; background: var(--cta); border-color: var(--cta); color: #fff; }
+  body.btn-wh .tc .tc-cta:hover { background: var(--cta-hover); border-color: var(--cta-hover); }
+
+  /* 8 more tools */
+  .mts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 34px; }
+  .mt { display: flex; flex-direction: column; padding: 20px 22px; border-radius: var(--r-card); background: #fff; box-shadow: inset 0 0 0 1px var(--ll-line), var(--sh-1); }
+  .mt h3 { margin: 8px 0 0; font-size: 19px; line-height: 1.3; }
+  .mt p { margin: 6px 0 0; font-size: 15px; line-height: 1.55; color: var(--ink-2); }
+
+  /* three levels of help */
+  .lvs { display: grid; grid-template-columns: 1fr 30px 1fr 30px 1fr; margin-top: 34px; }
+  .lv-arrow { align-self: center; justify-self: center; color: var(--ink-3); }
+  .lv-arrow svg { display: block; width: 22px; height: 22px; }
+  .lv { display: flex; flex-direction: column; padding: 24px; }
+  .lv h3 { margin: 6px 0 0; font-size: 24px; line-height: 1.2; }
+  .lv dl { margin: 10px 0 0; }
+  .lv dt { margin-top: 14px; font-size: 13px; color: var(--ink-3); }
+  .lv dd { margin: 4px 0 0; font-size: 15px; line-height: 1.5; color: var(--ink-2); }
+  .lv dd.lv-t { color: var(--ink); }
+
+  /* how to choose: three questions, each a set of «if → then» rows */
+  .cqs { display: flex; flex-direction: column; gap: 10px; margin-top: 34px; }
+  .cq { display: grid; grid-template-columns: 40px minmax(0, 280px) minmax(0, 1fr); gap: 20px; padding: 24px 26px; }
+  .cq-n { padding-top: 3px; font-size: 15px; color: var(--ink-3); }
+  .cq h3 { margin: 0; font-size: 21px; line-height: 1.3; }
+  .cq-rs { display: flex; flex-direction: column; gap: 6px; }
+  .cq-r { display: grid; grid-template-columns: minmax(0, 210px) 14px minmax(0, 1fr); align-items: center; gap: 12px; padding: 11px 14px; border-radius: var(--r-btn); background: #fff; box-shadow: inset 0 0 0 1px var(--ll-line); font-size: 15px; line-height: 1.4; }
+  .cq-r span { color: var(--ink-2); }
+  .cq-r svg { width: 14px; height: 14px; color: var(--ink-3); }
+  .cq-r b { font-weight: 500; }
+
+  /* the verdict */
+  .v-lead { margin-top: 26px; max-width: 940px; font-size: 22px; line-height: 1.5; color: var(--ink); }
+  .fws { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 18px; }
+  .fw { display: grid; grid-template-columns: 34px 140px minmax(0, 1fr); align-items: center; gap: 14px; padding: 14px 16px; border-radius: var(--r-btn); background: #fff; box-shadow: inset 0 0 0 1px var(--ll-line); }
+  .fw b { font-weight: 500; }
+  .fw span { font-size: 14.5px; line-height: 1.45; color: var(--ink-2); }
+  .trs { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
+  .tr-r { padding: 18px 20px; }
+  .tr-h { display: flex; align-items: center; gap: 12px; }
+  .tr-h > b { font-weight: 500; }
+  .tr-s { margin-left: auto; font-size: 13.5px; color: var(--ink-2); }
+  .tr-s b { font-weight: 700; color: var(--ink); }
+  .tr-r p { margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: var(--ink-2); }
+  details.rm { margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--line); }
+  .rm summary { list-style: none; cursor: pointer; font-size: 17px; font-weight: 500; }
+  .rm summary::-webkit-details-marker { display: none; }
+  .rm summary::after { content: "  +"; color: var(--ink-3); }
+  .rm[open] summary::after { content: "  −"; }
+  .rm ul { margin: 12px 0 0; padding-left: 20px; font-size: 15px; line-height: 1.6; color: var(--ink-2); }
+  .rm li + li { margin-top: 8px; }
+
+  /* why it matters: the market in two numbers, two columns of dots */
+  .why-grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 40px; align-items: start; margin-top: 30px; }
+  .why-grid .art-p { margin-top: 22px; }
+  .mk { padding: 24px; }
+  .mk-n { display: flex; align-items: center; gap: 14px; margin-top: 14px; }
+  .mk-n b { display: block; font-size: 34px; line-height: 1; letter-spacing: -.03em; font-weight: 500; }
+  .mk-n span { display: block; margin-top: 6px; font-size: 13px; color: var(--ink-3); }
+  .mk-n svg { width: 20px; height: 20px; color: var(--ink-3); }
+  .mk-bars { display: flex; align-items: flex-end; gap: 14px; height: 120px; margin-top: 20px; border-bottom: 1px solid var(--line); }
+  .mk-bars i { width: 72px; height: var(--h); background: radial-gradient(circle, #A9A6A0 1.7px, transparent 2px) 0 100% / 6px 6px;
+    -webkit-mask: linear-gradient(0deg, #000 25%, rgba(0,0,0,.35)); mask: linear-gradient(0deg, #000 25%, rgba(0,0,0,.35));
+    transform-origin: 50% 100%; transform: scaleY(0); transition: transform 1.2s var(--ease) .2s; }
+  .in .mk-bars i { transform: none; }
+  .mk-bars i.b2 { background-image: radial-gradient(circle, var(--cta) 1.7px, transparent 2px); }
+  .mk-src { display: block; margin-top: 10px; font-size: 12.5px; color: var(--ink-3); }
+
+  /* tools by category */
+  .cts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 34px; }
+  .ct { display: flex; flex-direction: column; padding: 22px; }
+  .ct h3 { margin: 0; font-size: 19px; line-height: 1.3; }
+  .ct p { margin: 6px 0 0; font-size: 14.5px; line-height: 1.45; color: var(--ink-2); }
+  .ct ul { list-style: none; display: flex; flex-direction: column; gap: 8px; margin: 16px 0 0; padding: 0; }
+  .ct li { display: flex; align-items: center; gap: 10px; font-size: 13.5px; line-height: 1.35; color: var(--ink-3); }
+  .ct li b { display: block; font-size: 14.5px; color: var(--ink); font-weight: 500; }
+  .ct .ico { width: 30px; height: 30px; }
+  .ct .ico img { width: 15px; height: 15px; }
+
+  /* Google's own AI vs a third-party layer */
+  .gv { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 32px; }
+  .gv-c { display: flex; flex-direction: column; padding: 24px 26px; }
+  .gv-c h3 { margin: 0; font-size: 19px; line-height: 1.3; }
+  .gv-c p { margin: 10px 0 0; font-size: 15.5px; line-height: 1.65; color: var(--ink-2); }
+  .pull { margin: 30px 0 0; padding: 24px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 28px; line-height: 1.3; letter-spacing: -.014em; font-weight: 500; color: var(--ink); }
+
+  /* buying criteria */
+  .crs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 34px; }
+  .cr { position: relative; display: flex; flex-direction: column; padding: 26px; border-radius: var(--r-card); background: #fff; box-shadow: inset 0 0 0 1px var(--ll-line), var(--sh-1); }
+  .cr-n { position: absolute; right: 24px; top: 24px; font-size: 15px; color: var(--ink-3); }
+  .cr h3 { margin: 8px 0 0; font-size: 21px; line-height: 1.3; }
+  .cr p { margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: var(--ink-2); }
+
+  /* how we tested */
+  .tfs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 30px; }
+  .tf { padding: 18px 20px; border-radius: var(--r-btn); }
+  .tf p { margin: 6px 0 0; font-size: 15px; line-height: 1.55; color: var(--ink-2); }
+  .h2h { margin-top: 28px; }
+  .h2h > div { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .h2h a { display: inline-flex; align-items: center; gap: 8px; height: 42px; padding: 0 16px; border-radius: var(--r-btn); background: #fff; box-shadow: inset 0 0 0 1px var(--ll-line); font-size: 14.5px; font-weight: 500; transition: background .2s, color .2s; }
+  .h2h a:hover { background: var(--ink); color: #fff; }
+  .h2h a svg { width: 14px; height: 14px; }
+
+  /* FAQ */
+  .fqs { margin-top: 28px; border-top: 1px solid var(--line); }
+  .fq { border-bottom: 1px solid var(--line); }
+  .fq summary { display: grid; grid-template-columns: 40px minmax(0, 1fr) 26px; align-items: center; gap: 12px; padding: 20px 4px; list-style: none; cursor: pointer; }
+  .fq summary::-webkit-details-marker { display: none; }
+  .fq-n { font-size: 14px; color: var(--ink-3); }
+  .fq-q { font-size: 19px; line-height: 1.35; font-weight: 500; }
+  .fq-i { position: relative; width: 26px; height: 26px; border-radius: var(--r-btn); box-shadow: inset 0 0 0 1px var(--ll-line); transition: background .2s; }
+  .fq-i::before, .fq-i::after { content: ""; position: absolute; left: 8px; right: 8px; top: 12px; height: 1.6px; background: var(--ink); transition: background .2s; }
+  .fq-i::after { transform: rotate(90deg); transition: transform .25s var(--ease), background .2s; }
+  .fq[open] .fq-i { background: var(--ink); box-shadow: none; }
+  .fq[open] .fq-i::before, .fq[open] .fq-i::after { background: #fff; }
+  .fq[open] .fq-i::after { transform: rotate(0deg); }
+  .fq p { max-width: 820px; margin: 0 0 22px 56px; font-size: 16px; line-height: 1.65; color: var(--ink-2); }
+
+  /* related guides */
+  .rgs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 30px; }
+  .rg { display: flex; flex-direction: column; min-height: 220px; padding: 22px; border-radius: var(--r-card); background: #fff; box-shadow: inset 0 0 0 1px var(--ll-line), var(--sh-1); transition: transform .25s var(--ease), box-shadow .25s; }
+  .rg:hover { transform: translateY(-2px); box-shadow: inset 0 0 0 1px var(--ll-line), 0 16px 30px -18px rgba(17,17,17,.28); }
+  .rg h3 { margin: 8px 0 0; font-size: 18px; line-height: 1.3; }
+  .rg p { margin: 8px 0 0; font-size: 14px; line-height: 1.5; color: var(--ink-2); }
+  .rg-a { align-self: flex-end; width: 36px; height: 36px; margin-top: auto; display: grid; place-items: center; border-radius: var(--r-btn); background: var(--ink); color: #fff; }
+  .rg-a svg { width: 15px; height: 15px; }
+
+  /* ---------- v75 (Sasha, 19.11) ---------- */
+  /* 1. Ryze: no green fill; our accent stroke, from the left and melting to the right (the cards: from the top-left corner) */
+  body.ll .cmp tr.ours td, .fm tr.ours td { background: transparent; }
+  .pb.ours, .tc.ours, .fw.ours, .lv.ours { background: #fff; }
+  body.ll .cmp tr.ours td:first-child::after, .fm tr.ours td:first-child::after, .pb.ours::after, .fw.ours::after {
+    --ring: linear-gradient(90deg, var(--c-orange) 0%, var(--c-rose) 9%, var(--c-aqua) 20%, var(--c-blue) 34%, rgb(141 216 243 / .35) 60%, rgb(141 216 243 / .14) 100%);
+    background: var(--ring); padding: 1.5px; }
+  .tc.ours::after, .lv.ours::after { padding: 2px;
+    background: linear-gradient(135deg, var(--c-orange) 0%, var(--c-rose) 8%, var(--c-aqua) 18%, var(--c-blue) 30%, rgb(141 216 243 / .3) 55%, rgb(141 216 243 / .12) 100%); }
+  body.ll .cmp tr.ours .tool .ico { --ring: linear-gradient(rgb(17 17 17 / .1), rgb(17 17 17 / .1)); }
+  .tc.ours .meter i, body.ll .cmp tr.ours .meter i { background: var(--cta); }
+  .fm.sc tr.ours .dots i.on { background: var(--cta); }
+  .tc-pick { color: var(--cta); }
+  /* 2. plates: white with a thin pale-blue ring instead of the beige; the labels above headings orange */
+  body.ll .reason, .gf, .fit, .tc, .lv, .cq, .tr-r, .ct, .gv-c, .tf, .note, .mk { background: #fff; box-shadow: inset 0 0 0 1px rgb(141 216 243 / .65); }
+  .ql, body.ll .reasons .reason > .label, body.ll .reasons .reason:nth-child(n) > .label, body.ll .chart-head .label:first-child, body.ll .caveat .label { color: var(--cta); font-weight: 500; }
+  .tc-facts dt, .lv dt { color: var(--ink-2); }
+  /* 3. the free audit strip: the palette's blue, its own «scan» animation */
+  .hc.v8 { background: #8DD8F3; color: var(--ink); }
+  .hc.v8 .hc-k, .hc.v8 .hc-fr span { color: var(--ink); }
+  .hc.v8 .hc-s { color: rgb(17 17 17 / .7); }
+  .hc-sub { margin: 8px 0 0; max-width: 520px; font-size: 15.5px; line-height: 1.45; color: rgb(17 17 17 / .72); }
+  .hc.v8 .hc-j { border-color: #fff; box-shadow: 0 12px 26px -16px rgb(29 106 134 / .55); }
+  .hc.v8 .hc-j.ff { border-color: var(--ink); box-shadow: 0 0 0 4px rgb(255 255 255 / .55); }
+  .hc.v8 .hc-fr { gap: 34px; }
+  .hc-scan { position: absolute; left: 0; width: 3px; margin-left: -1.5px; border-radius: 2px; pointer-events: none;
+    background: linear-gradient(180deg, transparent, #fff 18%, #fff 82%, transparent); box-shadow: 0 0 22px 8px rgb(255 255 255 / .6); }
+
+  /* ---------- v76 (Sasha, 19.11) ---------- */
+  /* 1. the glass sits on flat backgrounds: no backdrop blur (it showed nothing and cost a frame); the chart's dots are copied columns */
+  body.sub-rim .hm-slot::before, body.sub-off .hm-slot::before, body.sub-rim .side::before, body.sub-off .side::before,
+  body.sub-rim .hc-wrap::before, body.sub-off .hc-wrap::before { -webkit-backdrop-filter: none; backdrop-filter: none; }
+  /* 2. one scale everywhere: a white track with a hairline, round dots on a 4 px grid, grey, orange for Ryze; it grows by uncovering, so no dot is squashed */
+  body.ll .meter, body.ll .cmp tr.ours .meter, body.ll .bar, .pb-bar { position: relative; height: 14px; border-radius: 3px; background: #fff; box-shadow: inset 0 0 0 1px var(--ll-line); overflow: hidden; }
+  body.ll .meter i, body.ll .bar i, body.ll .pb-bar i { position: absolute; left: 3px; top: 3px; bottom: 3px; height: auto; border-radius: 0;
+    width: max(4px, calc((100% - 6px) * var(--v))); width: max(4px, round(down, calc((100% - 6px) * var(--v)), 4px));
+    background: radial-gradient(circle, #A9A6A0 1.25px, transparent 1.6px) 0 0 / 4px 4px; -webkit-mask: none; mask: none; box-shadow: none;
+    transform: none; clip-path: inset(0 100% 0 0); transition: clip-path 1.2s var(--ease); }
+  body.ll .in .meter i, body.ll .in .bar i, body.ll .in .pb-bar i { clip-path: inset(0); transform: none; }
+  body.ll .cmp tr.ours .meter i, body.ll .tc.ours .meter i, body.ll .bar-row.ours .bar i, body.ll .pb.ours .pb-bar i { background: radial-gradient(circle, var(--cta) 1.35px, transparent 1.7px) 0 0 / 4px 4px; }
+  /* the top-10 chart: an older «.bars» rule (the small bars of another card) laid its rows out in one line; back to a column */
+  #bars { display: block; height: auto; gap: 0; grid-column: auto; }
+  #bars i { flex: none; border-radius: 0; }
+  /* 3. the short answer: our accent stroke; the first CTA: orange, a black button, no stroke (as «Отзыв») */
+  body.ll #short-answer::after { content: ""; position: absolute; inset: 0; z-index: 2; border-radius: inherit; padding: var(--s-w); pointer-events: none; background: var(--h-ring);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; }
+  body.ll .hc-wrap.hco .hc { background: var(--cta); color: #fff; box-shadow: none; }
+  body.ll .hc-wrap.hco .hc::after { content: none; }
+  body.ll .hc-wrap.hco .hc-k, body.ll .hc-wrap.hco .hc-s { color: #fff; }
+  body.ll .hc-wrap.hco .hc .btn-cta { background: var(--ink); border-color: var(--ink); outline-color: var(--ink); color: #fff; }
+  body.ll .hc-wrap.hco .hc .btn-cta:hover { background: #262626; border-color: #262626; }
+  /* 4. a button in the text, pressed by Ryze demo */
+  .article .demo-press { transform: scale(.96); transition: transform .12s; }
+  /* 5. the audit strip: no dark inner line (the black strips need it, the blue one does not) */
+  body.ll .hc.v8 { box-shadow: 0 16px 34px -22px rgb(29 106 134 / .45); }
+  /* 6. «How to choose»: the rows that lead to Ryze */
+  .cq-r.ours { position: relative; box-shadow: none; }
+  .cq-r.ours::after { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; pointer-events: none;
+    background: linear-gradient(90deg, var(--c-orange) 0%, var(--c-rose) 9%, var(--c-aqua) 20%, var(--c-blue) 34%, rgb(141 216 243 / .35) 60%, rgb(141 216 243 / .14) 100%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; }
+  /* 7. the market: two columns of whole dots (6 px grid), each under its number; they grow by uncovering */
+  .mk-n { display: grid; grid-template-columns: auto 34px auto; justify-content: start; align-items: start; gap: 0 10px; }
+  .mk-n svg { margin-top: 8px; }
+  .mk-bars { display: grid; grid-template-columns: auto 34px auto; justify-content: start; align-items: end; gap: 0 10px; height: 120px; }
+  .mk-bars i { width: 72px; background: radial-gradient(circle, #A9A6A0 2px, transparent 2.4px) 0 100% / 6px 6px; -webkit-mask: none; mask: none;
+    transform: none; clip-path: inset(100% 0 0 0); transition: clip-path 1.2s var(--ease) .2s; }
+  .mk-bars i.b2 { grid-column: 3; background-image: radial-gradient(circle, var(--cta) 2px, transparent 2.4px); }
+  .in .mk-bars i { transform: none; clip-path: inset(0); }
+  /* 8. thin palette-coloured rings instead of the old grey hairlines: blue by default, another colour in some sections */
+  body.ll { --pl: rgb(141 216 243 / .75); }
+  #google-ai, #levels, #google-vs { --pl: rgb(102 205 191 / .55); }
+  #more-tools, #categories, #related { --pl: rgb(111 214 140 / .55); }
+  #verdict, #criteria { --pl: rgb(199 149 134 / .5); }
+  body.ll .reason, .gf, .fit, .tc, .lv, .cq, .tr-r, .ct, .gv-c, .tf, .note, .mk, .mt, .cr, .rg { background: #fff; box-shadow: inset 0 0 0 1px var(--pl); }
+  .rg:hover { box-shadow: inset 0 0 0 1px var(--pl), 0 16px 30px -18px rgba(17,17,17,.22); }
+  body.ll .caveat div, .tc-facts div, .tc-pros, .tc-cons, .cq-r, .fw, .h2h a, .see-also, .see-also .a, .tc-ico, .art .ico { box-shadow: inset 0 0 0 1px var(--pl); }
+  body.ll .see-also { background: #fff; }
+  .tc.ours, .lv.ours, .fw.ours, .pb.ours, .cq-r.ours { box-shadow: none; }
+
+  /* ---------- v77 (Sasha, 19.11): the offset glass in the article too — under the reasons, the long notes, the levels, the «How to choose»
+     cards, the market card, the «Google vs» cards (and Google's own features beside them). Each card steps in by the glass's size,
+     so the glass keeps inside its column; the sections are their own layer, so the glass sits on the white of the section ---------- */
+  body.ll section.card.pad { isolation: isolate; }
+  body.ll .reason, .note, .fit, .tr-r, .gf, .lv, .cq, .mk, .gv-c { position: relative; margin-right: var(--g-size); margin-bottom: var(--g-size); }
+  body.ll .reason::before, .note::before, .fit::before, .tr-r::before, .gf::before, .lv::before, .cq::before, .mk::before, .gv-c::before { content: ""; position: absolute; z-index: -1; pointer-events: none; border-radius: 10px;
+    inset: var(--g-size) calc(-1 * var(--g-size)) calc(-1 * var(--g-size)) var(--g-size);
+    background: linear-gradient(140deg, rgb(255 255 255 / calc(var(--g-fill) * 1.3)) 0%, rgb(255 255 255 / calc(var(--g-fill) * .45)) 45%, rgb(255 255 255 / calc(var(--g-fill) * .85)) 100%),
+      linear-gradient(135deg, rgb(102 205 191 / calc(var(--g-tint) * .42)) 0%, rgb(141 216 243 / calc(var(--g-tint) * .38)) 55%, rgb(225 181 168 / calc(var(--g-tint) * .42)) 100%);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / var(--g-hl)), inset 1px 0 0 rgb(255 255 255 / calc(var(--g-hl) * .8)),
+      0 0 0 1px rgb(17 17 17 / var(--g-line)), 0 22px 44px -26px rgb(28 52 48 / calc(var(--g-sh) * .55)); }
+  .mk-bars.in i { clip-path: inset(0); }
+  /* the competitors' tool cards: a paler, warm-grey ring (their inner boxes too); Ryze keeps our accent stroke */
+  .tc:not(.ours) { --pl: rgb(214 206 196 / .9); }
+  /* the pull quote: no lines above and below */
+  .pull { padding: 0; border-top: 0; border-bottom: 0; }
+
+  /* ---------- v78 (Sasha, 19.11) ---------- */
+  /* 1. the CTA strips: rounded as they are clipped, so the stroke's corners meet the strip's; the blue strip has no stroke (as the orange ones) */
+  body.ll .hc { border-radius: var(--r-card); }
+  body.ll .hc.v8::after { content: none; }
+  /* 3. the buying criteria: the glass backing too */
+  .cr { margin-right: var(--g-size); margin-bottom: var(--g-size); }
+  .cr::before { content: ""; position: absolute; z-index: -1; pointer-events: none; border-radius: 10px;
+    inset: var(--g-size) calc(-1 * var(--g-size)) calc(-1 * var(--g-size)) var(--g-size);
+    background: linear-gradient(140deg, rgb(255 255 255 / calc(var(--g-fill) * 1.3)) 0%, rgb(255 255 255 / calc(var(--g-fill) * .45)) 45%, rgb(255 255 255 / calc(var(--g-fill) * .85)) 100%),
+      linear-gradient(135deg, rgb(102 205 191 / calc(var(--g-tint) * .42)) 0%, rgb(141 216 243 / calc(var(--g-tint) * .38)) 55%, rgb(225 181 168 / calc(var(--g-tint) * .42)) 100%);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / var(--g-hl)), inset 1px 0 0 rgb(255 255 255 / calc(var(--g-hl) * .8)),
+      0 0 0 1px rgb(17 17 17 / var(--g-line)), 0 22px 44px -26px rgb(28 52 48 / calc(var(--g-sh) * .55)); }
 
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -1676,7 +2041,7 @@
       </section>
 
       <!-- horizontal CTA in the text: five versions to compare, switch bottom right -->
-      <div class="hc-wrap" id="hc-wrap">
+      <div class="hc-wrap" id="hc-wrap" data-v="1" data-tone="or">
         <section class="card hc v1 pre" id="hc" aria-label="Try Ryze AI">
           <div class="hc-txt" id="hc-txt"></div>
           <div class="hc-act" id="hc-act"></div>
@@ -1706,6 +2071,151 @@
           <a class="see-also" href="#">Top AI tools for Meta Ads <span class="a"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
         </div>
       </section>
+
+      <section class="card pad art" id="google-ai">
+        <h2>Google's built-in AI for Google Ads</h2><p class="intro">Every Google Ads account already has Google's own AI built in. You switch these features on inside Google Ads itself, and the tools in this ranking work alongside them.</p>
+        <div class="gfs"><div class="gf"><h3>Smart Bidding</h3><p>Bid strategies that use Google AI to set a bid at auction time, for each auction. You choose Maximize conversions with an optional target CPA, or Maximize conversion value with an optional target ROAS.</p></div><div class="gf"><h3>Performance Max</h3><p>One campaign that uses Google AI to show your ads on Search, YouTube, Gmail, Maps, Display and Discover. You provide the goal, the assets and the budget, and you can add audience signals such as customer lists.</p></div><div class="gf"><h3>AI Max for Search</h3><p>A one-click set of features for Search campaigns, announced in May 2025. It matches more search terms with broad match and keywordless technology, writes new headlines and descriptions, and can send people to the most relevant page on your site.</p></div><div class="gf"><h3>Ads Advisor</h3><p>An agent built on Gemini models that works inside your account. You ask questions in plain language, it suggests actions and diagnoses performance changes, and it applies a change only after you review and approve it. Google announced it in November 2025 for English-language accounts.</p></div></div>
+        <p class="body-text art-p">Third-party tools work on top of these features. They set the targets, budgets, negative keywords and assets that Google's AI then works with, and many of them look across campaigns and across channels such as Meta.</p>
+        <div class="note"><span class="ico"><img src="assets/tools/claude.webp" alt=""></span><p>Claude + MCP for plain-language analysis: connect Claude to your Google Ads account through an MCP server and ask questions in plain words, such as which ad groups spent money last week with zero conversions. Claude reads the live data and explains what changed. Setup takes about 2 minutes with the free <a href="https://www.get-ryze.ai/google-ads-mcp">Google Ads MCP connector</a>. Claude + MCP ranks #8 below as an analysis layer, best paired with a tool that applies changes.</p></div>
+      </section>
+
+      <section class="card pad art" id="pricing">
+        <h2>What the tools cost</h2><p class="intro">Entry prices, as listed on each vendor's pricing page on September 23, 2026. Tiered tools rise with the spend or accounts they manage; Ryze AI stays $89 at any spend.</p>
+        <div class="pbs reveal" aria-label="Entry price per month"><div class="pb ours"><span class="ico"><img src="assets/tools/ryze.webp" alt=""></span><span class="pb-n">Ryze AI</span><span class="pb-bar"><i style="--v:0.426"></i></span><span class="pb-p"><b>$89</b><small>/mo</small></span><span class="pb-m"><b>Flat</b><span>flat at any spend</span></span></div><div class="pb"><span class="ico"><img src="assets/tools/optmyzr.png" alt=""></span><span class="pb-n">OptyAds</span><span class="pb-bar"><i style="--v:1.000"></i></span><span class="pb-p"><b>from $209</b><small>/mo</small></span><span class="pb-m"><b>Rises with spend</b><span>scales with managed spend</span></span></div><div class="pb"><span class="ico"><img src="assets/tools/opteo.png" alt=""></span><span class="pb-n">Opteo</span><span class="pb-bar"><i style="--v:0.617"></i></span><span class="pb-p"><b>$129</b><small>/mo</small></span><span class="pb-m"><b>Rises with spend</b><span>$249 once spend passes $25K</span></span></div><div class="pb"><span class="ico"><img src="assets/tools/adalysis.png" alt=""></span><span class="pb-n">Adalysis</span><span class="pb-bar pb-na"></span><span class="pb-p"><b>not published</b></span><span class="pb-m"><b>Rises with spend</b><span>priced by spend</span></span></div><div class="pb"><span class="ico"><img src="assets/tools/revealbot.png" alt=""></span><span class="pb-n">Birch</span><span class="pb-bar"><i style="--v:0.234"></i></span><span class="pb-p"><b>$49</b><small>/mo</small></span><span class="pb-m"><b>Rises with spend</b><span>$99 on Pro</span></span></div><div class="pb"><span class="ico"><img src="assets/tools/adcreative.png" alt=""></span><span class="pb-n">AdCreative.ai</span><span class="pb-bar"><i style="--v:0.187"></i></span><span class="pb-p"><b>$39</b><small>/mo</small></span><span class="pb-m"><b>Rises with spend</b><span>up to $999 by credits</span></span></div><div class="pb"><span class="ico"><img src="assets/tools/claude.webp" alt=""></span><span class="pb-n">Claude + MCP</span><span class="pb-bar"><i style="--v:0.096"></i></span><span class="pb-p"><b>$20</b><small>/mo</small></span><span class="pb-m"><b>Flat</b><span>Claude Pro, connector free</span></span></div><div class="pb"><span class="ico"><img src="assets/tools/adzooma.png" alt=""></span><span class="pb-n">Adzooma</span><span class="pb-bar"><i style="--v:0.025"></i></span><span class="pb-p"><b>Free</b></span><span class="pb-m"><b>Free</b><span>$69 and $179 plans</span></span></div><div class="pb"><span class="ico"><img src="assets/tools/wordstream.png" alt=""></span><span class="pb-n">WordStream</span><span class="pb-bar"><i style="--v:0.025"></i></span><span class="pb-p"><b>Free grader</b></span><span class="pb-m"><b>Free</b><span>managed plans quoted</span></span></div><div class="pb"><span class="ico"><img src="assets/tools/googleads.png" alt=""></span><span class="pb-n">Google Ads Scripts</span><span class="pb-bar"><i style="--v:0.025"></i></span><span class="pb-p"><b>Free</b></span><span class="pb-m"><b>Free</b><span>requires JavaScript</span></span></div></div>
+        <p class="body-text art-p">The pricing models differ more than the prices. Ryze AI charges $89 at any spend. OptyAds starts at $209 a month and scales with managed spend; Opteo moves from $129 to $249 when the account passes $25K a month; Adalysis prices by spend without publishing the numbers. Adzooma's free plan and Google Ads Scripts cost nothing, and WordStream's grader is free while its managed plans are quoted.</p>
+      </section>
+
+      <section class="card pad art" id="features">
+        <h2>Feature-by-feature comparison</h2><p class="intro">Green check = full support, partial = with limits, cross = not available. "How changes land" is what happens between the tool's decision and your live account.</p>
+        <div class="fm-wrap"><table class="fm"><thead><tr><th>Tool</th><th>How changes land</th><th>Bids and budgets</th><th>Ad testing</th><th>Platforms</th><th>Entry price</th></tr></thead><tbody><tr class="ours"><td><div class="tool"><span class="ico"><img src="assets/tools/ryze.webp" alt=""></span><span>Ryze AI</span></div></td><td>Autonomous, approval optional</td><td><span class="fm-v yes"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Yes</span></td><td><span class="fm-v part"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="5.2" stroke="currentColor" stroke-width="1.8"/><path d="M8 2.8a5.2 5.2 0 0 1 0 10.4z" fill="currentColor"/></svg>Partial</span></td><td class="fm-pl">Google, Meta, TikTok, LinkedIn +</td><td class="pr">$89/mo</td></tr><tr><td><div class="tool"><span class="ico"><img src="assets/tools/optmyzr.png" alt=""></span><span>OptyAds</span></div></td><td>Your rules</td><td><span class="fm-v yes"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Yes</span></td><td><span class="fm-v part"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="5.2" stroke="currentColor" stroke-width="1.8"/><path d="M8 2.8a5.2 5.2 0 0 1 0 10.4z" fill="currentColor"/></svg>Partial</span></td><td class="fm-pl">Google, Microsoft, Amazon, Meta</td><td class="pr">$209/mo</td></tr><tr><td><div class="tool"><span class="ico"><img src="assets/tools/adalysis.png" alt=""></span><span>Adalysis</span></div></td><td>One-click</td><td><span class="fm-v part"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="5.2" stroke="currentColor" stroke-width="1.8"/><path d="M8 2.8a5.2 5.2 0 0 1 0 10.4z" fill="currentColor"/></svg>Partial</span></td><td><span class="fm-v yes"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Yes</span></td><td class="fm-pl">Google, Microsoft</td><td class="pr">See vendor site</td></tr><tr><td><div class="tool"><span class="ico"><img src="assets/tools/opteo.png" alt=""></span><span>Opteo</span></div></td><td>One-click</td><td><span class="fm-v yes"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Yes</span></td><td><span class="fm-v no"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>No</span></td><td class="fm-pl">Google</td><td class="pr">$129/mo</td></tr><tr><td><div class="tool"><span class="ico"><img src="assets/tools/wordstream.png" alt=""></span><span>WordStream</span></div></td><td>Guided</td><td><span class="fm-v part"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="5.2" stroke="currentColor" stroke-width="1.8"/><path d="M8 2.8a5.2 5.2 0 0 1 0 10.4z" fill="currentColor"/></svg>Partial</span></td><td><span class="fm-v no"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>No</span></td><td class="fm-pl">Google, Microsoft, Meta</td><td class="pr">Free grader</td></tr><tr><td><div class="tool"><span class="ico"><img src="assets/tools/adzooma.png" alt=""></span><span>Adzooma</span></div></td><td>One-click</td><td><span class="fm-v part"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="5.2" stroke="currentColor" stroke-width="1.8"/><path d="M8 2.8a5.2 5.2 0 0 1 0 10.4z" fill="currentColor"/></svg>Partial</span></td><td><span class="fm-v no"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>No</span></td><td class="fm-pl">Google, Microsoft, Meta</td><td class="pr">Free</td></tr><tr><td><div class="tool"><span class="ico"><img src="assets/tools/adcreative.png" alt=""></span><span>AdCreative.ai</span></div></td><td>Creative only</td><td><span class="fm-v no"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>No</span></td><td><span class="fm-v part"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="5.2" stroke="currentColor" stroke-width="1.8"/><path d="M8 2.8a5.2 5.2 0 0 1 0 10.4z" fill="currentColor"/></svg>Partial</span></td><td class="fm-pl">Google, Meta, others</td><td class="pr">$39/mo</td></tr><tr><td><div class="tool"><span class="ico"><img src="assets/tools/claude.webp" alt=""></span><span>Claude + MCP</span></div></td><td>With approval</td><td><span class="fm-v part"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="5.2" stroke="currentColor" stroke-width="1.8"/><path d="M8 2.8a5.2 5.2 0 0 1 0 10.4z" fill="currentColor"/></svg>Partial</span></td><td><span class="fm-v part"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="5.2" stroke="currentColor" stroke-width="1.8"/><path d="M8 2.8a5.2 5.2 0 0 1 0 10.4z" fill="currentColor"/></svg>Partial</span></td><td class="fm-pl">Google, Meta via MCP</td><td class="pr">$20/mo</td></tr><tr><td><div class="tool"><span class="ico"><img src="assets/tools/revealbot.png" alt=""></span><span>Birch</span></div></td><td>Your rules</td><td><span class="fm-v yes"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Yes</span></td><td><span class="fm-v no"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>No</span></td><td class="fm-pl">Google, Meta, Snapchat, TikTok</td><td class="pr">$49/mo</td></tr><tr><td><div class="tool"><span class="ico"><img src="assets/tools/googleads.png" alt=""></span><span>Google Ads Scripts</span></div></td><td>Your code</td><td><span class="fm-v yes"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Yes</span></td><td><span class="fm-v part"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="5.2" stroke="currentColor" stroke-width="1.8"/><path d="M8 2.8a5.2 5.2 0 0 1 0 10.4z" fill="currentColor"/></svg>Partial</span></td><td class="fm-pl">Google</td><td class="pr">Free</td></tr></tbody></table></div>
+        <div class="fit"><span class="ql">Where Ryze AI fits</span><p>Ryze AI fits teams that want bids, budgets and negative keywords handled continuously, with <a href="https://help.get-ryze.ai/agent/approvals">approval settings</a> for the changes you want to check first and a flat $89 a month at any spend. It fits less well if you would rather make each change yourself than read a change log, if you are an agency that writes its own rules (OptyAds gives more control), or if RSA testing is your bottleneck (Adalysis goes deeper). It is also a younger company than OptyAds or WordStream. <a href="https://www.get-ryze.ai/">Explore Ryze AI</a>.</p></div>
+      </section>
+
+      <div class="hc-wrap" data-v="6" data-k="Autonomous, approval optional" data-h="The only tool on this list that makes the changes itself.">
+        <section class="card hc v6 pre" aria-label="Try Ryze AI">
+          <div class="hc-txt"></div>
+          <div class="hc-act"></div>
+        </section>
+        <div class="hc-layer"></div>
+      </div>
+
+      <section class="card pad art" id="tools">
+        <h2>The 10 best AI tools for Google Ads management in 2026</h2><p class="intro">Component scores weight features ×3, automation ×3, value ×2 and ease ×2, the full breakdown is in <a href="https://www.get-ryze.ai/blog/top-ai-tools-google-ads-management-2026#how-we-scored">how we scored them</a>. The final editorial score also weights autonomous execution, the ranking axis of this guide. Every tool below is real, buyable today, and priced from its public pricing page as of September 23, 2026. Screenshots are of each vendor's own site on the same date.</p>
+        <div class="tcs">
+        <article class="tc reveal ours" id="tool-1"><div class="tc-head"><span class="tc-rank tabnum">01</span><span class="tc-ico"><img src="assets/tools/ryze.webp" alt=""></span><div class="tc-name"><h3>Ryze AI<span class="tc-pick">Our pick</span></h3><p>Best for fully autonomous campaign management</p></div><div class="tc-score"><span class="tc-sv"><b class="tabnum">9.6</b><small>/10</small></span><span class="meter"><i style="--v:0.96"></i></span><em>Editorial score</em></div></div><p class="tc-desc"><a href="https://www.get-ryze.ai/">Ryze AI</a> is an autonomous agent for Google Ads. It adjusts bids and budgets on conversion data, moves spend from weak campaigns to strong ones, pauses ad groups that lose money, adds negative keywords and flags anomalies, 24 hours a day. The <a href="https://help.get-ryze.ai/ads/google-ads">Google Ads changes it makes</a> are documented change type by change type, including Shopping feed fixes such as title rewrites and category corrections, and <a href="https://help.get-ryze.ai/agent/approvals">approval settings</a> decide what runs without you. The same agent covers Meta, TikTok and LinkedIn, and the free <a href="https://www.get-ryze.ai/google-ads-mcp">Google Ads MCP connector</a> lets Claude or ChatGPT query the account with approval-gated writes. Pricing on the <a href="https://www.get-ryze.ai/pricing">pricing page</a> is Paid Ads Autopilot at $89 a month flat, never a percentage of spend, with a 7-day free trial. In our test it made the first bid and negative keyword changes within hours of connecting. Official pages: <a href="https://www.get-ryze.ai/pricing">pricing</a>, <a href="https://www.get-ryze.ai/ai-google-ads-tool">Ryze AI for Google Ads</a> and the <a href="https://help.get-ryze.ai/paid-ads/introduction">Paid Ads help guide</a>.</p><figure class="tc-fig"><div class="tc-shot"><span class="tc-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></span><span class="tc-shot-l">Screen recording · 0:42</span></div><figcaption>Screen recording of the Ryze AI app: 12 video ads generated in chat, then pushed to Meta.</figcaption></figure><dl class="tc-facts"><div><dt>Pricing</dt><dd>$89/mo flat · 7-day free trial</dd></div><div><dt>Best for</dt><dd>Teams that want the account run, not a to-do list</dd></div><div><dt>Platforms</dt><dd>Google, Meta, TikTok, LinkedIn and more</dd></div></dl><div class="tc-pc"><div class="tc-pros"><span class="ql">Pros</span><ul><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Applies changes itself, with approval controls</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Flat price at any spend level</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Google, Meta, TikTok and LinkedIn in one agent</span></li></ul></div><div class="tc-cons"><span class="ql">Cons</span><ul><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Review the change log; custom rule controls are less detailed than OptyAds.</span></li></ul></div></div><a class="btn-cta tc-cta" href="#">Try Ryze AI free <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></article>
+        <article class="tc reveal" id="tool-2"><div class="tc-head"><span class="tc-rank tabnum">02</span><span class="tc-ico"><img src="assets/tools/optmyzr.png" alt=""></span><div class="tc-name"><h3>OptyAds</h3><p>Best for agencies needing rule-based automation</p></div><div class="tc-score"><span class="tc-sv"><b class="tabnum">8.9</b><small>/10</small></span><span class="meter"><i style="--v:0.89"></i></span><em>Editorial score</em></div></div><p class="tc-desc">OptyAds is the Swiss Army knife of PPC management. Founded by former Google Ads evangelist Frederick Vallaeys, it offers one-click optimizations, a no-code Rule Engine (“if CPA exceeds $50 for 3 days, cut the bid 15%”), and PPC workflows agencies use across dozens of client accounts. Its Performance Max tooling is the deepest available, asset-group analysis, audience signals, and granular reporting on a campaign type Google keeps opaque, and it covers Microsoft, Amazon and Meta too. The trade-offs: pricing starts at $209 a month on the <a href="https://www.optmyzr.com/pricing/">pricing page</a> and rises with managed spend, with a 14-day trial and no card, and the Rule Engine takes time to learn. It is powerful but takes time to learn, and it executes your logic rather than deciding on its own.</p><dl class="tc-facts"><div><dt>Pricing</dt><dd>from $209/mo, scales with spend · 14-day trial</dd></div><div><dt>Best for</dt><dd>Agencies managing 10+ client accounts</dd></div><div><dt>Platforms</dt><dd>Google, Microsoft, Amazon, Meta</dd></div></dl><div class="tc-pc"><div class="tc-pros"><span class="ql">Pros</span><ul><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Deepest PMax controls anywhere</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Custom Rule Engine without code</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Strong multi-account workflows</span></li></ul></div><div class="tc-cons"><span class="ql">Cons</span><ul><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Expensive at scale</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Steep learning curve</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Executes your rules, not its own decisions</span></li></ul></div></div></article>
+        <article class="tc reveal" id="tool-3"><div class="tc-head"><span class="tc-rank tabnum">03</span><span class="tc-ico"><img src="assets/tools/adalysis.png" alt=""></span><div class="tc-name"><h3>Adalysis</h3><p>Best for ad testing and copy optimization</p></div><div class="tc-score"><span class="tc-sv"><b class="tabnum">8.7</b><small>/10</small></span><span class="meter"><i style="--v:0.8699999999999999"></i></span><em>Editorial score</em></div></div><p class="tc-desc">Adalysis focuses on what most AI tools treat as an afterthought: ad creative testing. Its automated A/B engine continuously monitors RSA performance, calls statistically significant winners and losers, and recommends which headlines and descriptions to keep, pause, or replace, for teams running 50+ ad groups this alone replaces hours of manual rotation. It adds Quality Score tracking, keyword-level analysis, account audits, and a daily email digest that surfaces the highest-impact changes without logging in. Built for Google Ads only, which keeps it focused and fast. Pricing on the <a href="https://adalysis.com/pricing/">pricing page</a> is tiered by monthly ad spend with unlimited accounts and users and a 30-day trial, but the page does not show the dollar amounts, so check it for your spend. The limitation is scope, no bid management, budget allocation, or audience optimization, so it pairs with a management tool rather than replacing one.</p><dl class="tc-facts"><div><dt>Pricing</dt><dd>See vendor site (spend-tiered) · 30-day trial</dd></div><div><dt>Best for</dt><dd>Teams whose bottleneck is ad testing at scale</dd></div><div><dt>Platforms</dt><dd>Google Ads (and Microsoft)</dd></div></dl><div class="tc-pc"><div class="tc-pros"><span class="ql">Pros</span><ul><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Excellent automated RSA testing</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Quality Score tracking</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Daily high-impact email digests</span></li></ul></div><div class="tc-cons"><span class="ql">Cons</span><ul><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>No bid or budget management</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Narrow feature scope</span></li></ul></div></div></article>
+        <article class="tc reveal" id="tool-4"><div class="tc-head"><span class="tc-rank tabnum">04</span><span class="tc-ico"><img src="assets/tools/opteo.png" alt=""></span><div class="tc-name"><h3>Opteo</h3><p>Best for smart one-click recommendations</p></div><div class="tc-score"><span class="tc-sv"><b class="tabnum">8.5</b><small>/10</small></span><span class="meter"><i style="--v:0.85"></i></span><em>Editorial score</em></div></div><p class="tc-desc">Opteo monitors your account continuously and surfaces “improvements”, specific recommendations you apply with one click, each with projected impact so you prioritize what moves the needle. Pause a bleeding keyword, adjust a bid, add a negative. The interface is intentionally minimal: where OptyAds is a power-user toolkit, Opteo distills everything into a prioritized feed, which makes it excellent for solo marketers or small teams managing 1–5 accounts who want 15 minutes a day of optimizing instead of two hours. Slack integration pushes improvements where your team already works. Per its <a href="https://opteo.com/pricing">pricing page</a>: Basic $129 a month (10 accounts, $25K spend), Professional $249 ($100K), Agency $499 ($250K). The limits: Google Ads only, and recommendation-only, every change waits for your click.</p><dl class="tc-facts"><div><dt>Pricing</dt><dd>$129 · $249 · $499/mo by spend</dd></div><div><dt>Best for</dt><dd>Solo marketers wanting daily quick wins</dd></div><div><dt>Platforms</dt><dd>Google Ads only</dd></div></dl><div class="tc-pc"><div class="tc-pros"><span class="ql">Pros</span><ul><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Clean, fast one-click improvements</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Projected impact on every suggestion</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Slack integration</span></li></ul></div><div class="tc-cons"><span class="ql">Cons</span><ul><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Not autonomous, every change needs approval</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Limited for large multi-account setups</span></li></ul></div></div></article>
+        <article class="tc reveal" id="tool-5"><div class="tc-head"><span class="tc-rank tabnum">05</span><span class="tc-ico"><img src="assets/tools/wordstream.png" alt=""></span><div class="tc-name"><h3>WordStream</h3><p>Best for small businesses getting started</p></div><div class="tc-score"><span class="tc-sv"><b class="tabnum">8.1</b><small>/10</small></span><span class="meter"><i style="--v:0.8099999999999999"></i></span><em>Editorial score</em></div></div><p class="tc-desc">WordStream (now part of LocaliQ by Gannett) has been a small-business PPC staple for over a decade, and its free Google Ads Performance Grader remains one of the best quick-audit tools available, plug in your account and get a report card on wasted spend, Quality Score, and impression share in minutes, no card required. The paid platform's “20-Minute Work Week” workflow guides businesses spending $1K–$10K/month through the optimizations that matter, preventing the classic mistakes like broad match with no negatives. Paid plans bundle PPC with local SEO, social and CRM through LocaliQ and are quoted rather than listed; the pricing page blocked our checker, so see the vendor site. The AI is basic next to purpose-built tools, it catches low-hanging fruit, and when you outgrow it you switch entirely rather than add to it.</p><dl class="tc-facts"><div><dt>Pricing</dt><dd>Free grader · paid plans: see vendor site</dd></div><div><dt>Best for</dt><dd>Local businesses under $10K/mo needing a guided entry</dd></div><div><dt>Platforms</dt><dd>Google, Microsoft, Meta (bundled)</dd></div></dl><div class="tc-pc"><div class="tc-pros"><span class="ql">Pros</span><ul><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Free Performance Grader is genuinely useful</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Beginner-friendly guided workflow</span></li></ul></div><div class="tc-cons"><span class="ql">Cons</span><ul><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Basic AI versus purpose-built tools</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Bundled pricing only, no PPC-only plan</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Outgrown quickly</span></li></ul></div></div></article>
+        <article class="tc reveal" id="tool-6"><div class="tc-head"><span class="tc-rank tabnum">06</span><span class="tc-ico"><img src="assets/tools/adzooma.png" alt=""></span><div class="tc-name"><h3>Adzooma</h3><p>Best for budget-conscious teams</p></div><div class="tc-score"><span class="tc-sv"><b class="tabnum">7.9</b><small>/10</small></span><span class="meter"><i style="--v:0.79"></i></span><em>Editorial score</em></div></div><p class="tc-desc">Adzooma offers a genuinely free tier with automated performance monitoring, weekly opportunity reports, and one-click optimizations across Google, Meta, and Microsoft Ads. It assigns your account an “Adzooma Score” out of 100 across 50+ health checks and estimates the impact of each suggested fix. For teams spending under $5K/month who cannot justify a paid tool, it is a legitimate safety net that catches the obvious waste, broad match leakage, underperforming ads, budget pacing issues. Per the <a href="https://www.adzooma.com/pricing">pricing page</a>, the free plan gives monthly reports and 3 alerts; Silver at $69 a month moves to weekly analysis and 10 alerts, Gold at $179 to daily. The limitation is depth: recommendations are surface-level next to OptyAds or Adalysis, and there is no creative or audience intelligence. A safety net, not a growth engine.</p><dl class="tc-facts"><div><dt>Pricing</dt><dd>Free · Silver $69 · Gold $179/mo</dd></div><div><dt>Best for</dt><dd>Small teams wanting free monitoring</dd></div><div><dt>Platforms</dt><dd>Google, Meta, Microsoft</dd></div></dl><div class="tc-pc"><div class="tc-pros"><span class="ql">Pros</span><ul><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Genuinely useful free tier</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Account health score with 50+ checks</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>One-click fixes</span></li></ul></div><div class="tc-cons"><span class="ql">Cons</span><ul><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Surface-level recommendations</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Limited automation depth</span></li></ul></div></div></article>
+        <article class="tc reveal" id="tool-7"><div class="tc-head"><span class="tc-rank tabnum">07</span><span class="tc-ico"><img src="assets/tools/adcreative.png" alt=""></span><div class="tc-name"><h3>AdCreative.ai</h3><p>Best for AI ad creative in Display and PMax</p></div><div class="tc-score"><span class="tc-sv"><b class="tabnum">7.7</b><small>/10</small></span><span class="meter"><i style="--v:0.77"></i></span><em>Editorial score</em></div></div><p class="tc-desc"><a href="https://www.adcreative.ai/">AdCreative.ai</a> covers the part of Google Ads the other tools skip: making the assets. It generates image ads, short videos and ad copy from your brand kit and product, scores each variant before launch, and exports sizes for Display, Performance Max, Demand Gen and social placements. That matters because PMax and Demand Gen perform better with more asset variety, and most teams do not have a designer on call. It does not touch bids, budgets or keywords, so it sits next to a management tool. Pricing on its <a href="https://www.adcreative.ai/">site</a> is credit-based: $39 a month for 10 credits and 1 brand, $249 for 50 credits and 10 brands, $999 for 100 credits and 25 brands, lower on annual billing.</p><dl class="tc-facts"><div><dt>Pricing</dt><dd>$39 to $999/mo by credits</dd></div><div><dt>Best for</dt><dd>Teams short on Display and PMax assets</dd></div><div><dt>Platforms</dt><dd>Google, Meta and other ad networks</dd></div></dl><div class="tc-pc"><div class="tc-pros"><span class="ql">Pros</span><ul><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Generates image, video and copy variants fast</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sizes for Display, PMax and Demand Gen</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Scores creatives before launch</span></li></ul></div><div class="tc-cons"><span class="ql">Cons</span><ul><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>No bid, budget or keyword management</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Credits run out fast at higher volume</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Trustpilot reviews report unexpected post-trial charges</span></li></ul></div></div></article>
+        <article class="tc reveal" id="tool-8"><div class="tc-head"><span class="tc-rank tabnum">08</span><span class="tc-ico"><img src="assets/tools/claude.webp" alt=""></span><div class="tc-name"><h3>Claude + MCP</h3><p>Best DIY AI analyst for technical teams</p></div><div class="tc-score"><span class="tc-sv"><b class="tabnum">7.6</b><small>/10</small></span><span class="meter"><i style="--v:0.76"></i></span><em>Editorial score</em></div></div><p class="tc-desc">Claude (by Anthropic) connected over MCP turns the most capable reasoning AI into a live Google Ads analyst: ask “which ad groups spent over $500 last week with zero conversions?” and get real data back, not hypothetical advice. With <a href="https://www.get-ryze.ai/blog/claude-marketing-skills-complete-guide">30 open-source marketing skills</a> you can build custom workflows, <a href="https://www.get-ryze.ai/blog/claude-skills-for-google-ads">wasted spend audits</a>, CPA diagnostics, budget reallocation models, automated reports, and no purpose-built tool matches its analytical depth. Cost is Claude Pro at $20 a month, or $17 billed annually, per <a href="https://claude.com/pricing">Claude's pricing page</a>, plus setup: 2 minutes with <a href="https://www.get-ryze.ai/how-to-connect-claude-to-google-ads">Ryze AI’s managed connector</a>, or ~30 minutes self-hosted (see the <a href="https://www.get-ryze.ai/blog/best-mcp-for-google-ads">best Claude connector for Google Ads</a>). The limit: with a read-only connector Claude only analyzes; write tools on a hosted connector need approval for each change.</p><dl class="tc-facts"><div><dt>Pricing</dt><dd>$20/mo (Claude Pro) · free MCP connector via Ryze AI</dd></div><div><dt>Best for</dt><dd>Technical teams wanting deep custom analysis</dd></div><div><dt>Platforms</dt><dd>Google, Meta, Analytics via MCP</dd></div></dl><div class="tc-pc"><div class="tc-pros"><span class="ql">Pros</span><ul><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Answers any question about the account in plain language</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>30 open-source marketing skills</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Customizable prompts and workflows</span></li></ul></div><div class="tc-cons"><span class="ql">Cons</span><ul><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>No autonomous execution</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Free Claude plan allows only one custom connector</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>You run the workflow manually</span></li></ul></div></div></article>
+        <article class="tc reveal" id="tool-9"><div class="tc-head"><span class="tc-rank tabnum">09</span><span class="tc-ico"><img src="assets/tools/revealbot.png" alt=""></span><div class="tc-name"><h3>Birch</h3><p>Best for rule-based automation across platforms</p></div><div class="tc-score"><span class="tc-sv"><b class="tabnum">7.4</b><small>/10</small></span><span class="meter"><i style="--v:0.74"></i></span><em>Editorial score</em></div></div><p class="tc-desc"><a href="https://bir.ch/">Birch</a> brings the rule-engine approach to teams running Google Ads alongside Meta, Snapchat and TikTok. You codify your playbook, “if CPA exceeds target for 3 days and spend tops $200, pause and notify Slack”, and Birch executes it around the clock at 15-minute intervals, with bulk creation tools for faster launches. It sits between OptyAds (deeper Google-specific tooling, pricier) and Adzooma (simpler, shallower): a solid pick when the same rule set should govern spend on two or three platforms from one place. Per its <a href="https://bir.ch/pricing">pricing page</a>, Essential is $49 a month and Pro $99 a month, with a 14-day trial and no card. On Google specifically its depth trails OptyAds, no comparable PMax tooling, and like every rule engine, it executes your judgment rather than forming its own.</p><dl class="tc-facts"><div><dt>Pricing</dt><dd>Essential $49/mo, Pro $99/mo · 14-day trial</dd></div><div><dt>Best for</dt><dd>One rule set across Google, Meta and TikTok</dd></div><div><dt>Platforms</dt><dd>Google, Meta, TikTok</dd></div></dl><div class="tc-pc"><div class="tc-pros"><span class="ql">Pros</span><ul><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Cross-platform rule engine</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>15-minute check intervals with alerts</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bulk creation</span></li></ul></div><div class="tc-cons"><span class="ql">Cons</span><ul><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Google depth trails OptyAds (no PMax tooling)</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Rules require manual design and upkeep</span></li></ul></div></div></article>
+        <article class="tc reveal" id="tool-10"><div class="tc-head"><span class="tc-rank tabnum">10</span><span class="tc-ico"><img src="assets/tools/googleads.png" alt=""></span><div class="tc-name"><h3>Google Ads Scripts</h3><p>Best free automation for developers</p></div><div class="tc-score"><span class="tc-sv"><b class="tabnum">7.2</b><small>/10</small></span><span class="meter"><i style="--v:0.72"></i></span><em>Editorial score</em></div></div><p class="tc-desc">Google Ads Scripts are JavaScript snippets that run inside Google Ads to automate almost anything: weather-based bid adjustments, budget pacing alerts, Quality Score tracking spreadsheets, N-gram analysis for negative keyword discovery. They are free, Google-supported, and backed by hundreds of ready-to-use community scripts. The catch: you need JavaScript, each script handles one task, there is no UI, and debugging happens in Google’s quirky script editor with 30-minute execution limits. For teams with development resources, Scripts are the most cost-effective automation available; for most marketing teams, the build-and-maintain cost exceeds a subscription. The practical pattern we recommend: Scripts for niche automations alongside a management tool like <a href="https://www.get-ryze.ai/">Ryze AI</a> for the comprehensive layer.</p><dl class="tc-facts"><div><dt>Pricing</dt><dd>Free (requires JavaScript)</dd></div><div><dt>Best for</dt><dd>Dev teams wanting free niche automations</dd></div><div><dt>Platforms</dt><dd>Google Ads only</dd></div></dl><div class="tc-pc"><div class="tc-pros"><span class="ql">Pros</span><ul><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Completely free</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Infinitely customizable</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Google-supported with a large community</span></li></ul></div><div class="tc-cons"><span class="ql">Cons</span><ul><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Requires JavaScript</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>No UI, real maintenance burden</span></li><li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Execution time limits</span></li></ul></div></div></article>
+        </div>
+      </section>
+
+      <div class="hc-wrap" data-v="8">
+        <section class="card hc v8 pre" aria-label="Free SEO and GEO audit">
+          <div class="hc-txt"></div>
+          <div class="hc-act"></div>
+        </section>
+        <div class="hc-layer"></div>
+      </div>
+
+      <section class="card pad art" id="more-tools">
+        <h2>8 more AI tools for Google Ads</h2><p class="intro">Not ranked: each covers one job well, so they sit next to the ranked 10 rather than replace them.</p>
+        <div class="mts"><div class="mt"><span class="ql">Built into Google Ads</span><h3>Google's own AI (Performance Max, AI Max for Search, Smart Bidding)</h3><p>Bidding, targeting and asset automation inside your campaigns</p></div><div class="mt"><span class="ql">Creative</span><h3>Lapis</h3><p>AI creatives for Display and Discovery, sized for Google and exported to Google Ads</p></div><div class="mt"><span class="ql">AI agent</span><h3>Adstudio</h3><p>Analyses the account and applies changes once you approve them</p></div><div class="mt"><span class="ql">Competitor intelligence</span><h3>Adthena</h3><p>Shows which competitors bid on your search terms and how their ads change</p></div><div class="mt"><span class="ql">Audits</span><h3>TrueClicks</h3><p>Account audits and monitoring for agencies running many accounts</p></div><div class="mt"><span class="ql">Enterprise</span><h3>Skai</h3><p>Bid and budget management across search, social and retail media</p></div><div class="mt"><span class="ql">Bid management</span><h3>Marin Software</h3><p>Cross-channel bid and budget management for large spenders</p></div><div class="mt"><span class="ql">Research</span><h3>SpyFu</h3><p>Competitor keyword and ad history research for Google Ads</p></div></div>
+      </section>
+
+      <section class="card pad art" id="levels">
+        <h2>Google Ads automation vs. optimization tools: which do you need?</h2><p class="intro">“Google Ads automation tools” and “Google Ads optimization tools” get used interchangeably, but they describe three different levels of help. Optimization tools audit your account and recommend changes, you review and apply each one. Automation tools execute changes on the rules or schedules you define, the judgment is still yours, codified. Autonomous management decides and executes continuously, with approval controls if you want them.</p>
+        <div class="lvs"><div class="lv"><span class="ql tabnum">Level 1</span><h3>Optimization</h3><dl><dt>What it does</dt><dd>Audits, scores, recommends bids, negatives, ad copy</dd><dt>You still do</dt><dd>Review and apply every change</dd><dt>Tools</dt><dd class="lv-t">Opteo, Adalysis, WordStream, Adzooma</dd></dl></div><span class="lv-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="lv"><span class="ql tabnum">Level 2</span><h3>Automation</h3><dl><dt>What it does</dt><dd>Executes your rules on schedule, bid rules, budget scripts, alerts</dd><dt>You still do</dt><dd>Design and maintain the rules</dd><dt>Tools</dt><dd class="lv-t">OptyAds, Birch, Google Ads Scripts</dd></dl></div><span class="lv-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="lv ours"><span class="ql tabnum">Level 3</span><h3>Autonomous</h3><dl><dt>What it does</dt><dd>Decides and executes 24/7, bids, budgets, negatives, reporting</dd><dt>You still do</dt><dd>Set goals and guardrails, review the log</dd><dt>Tools</dt><dd class="lv-t">Ryze AI</dd></dl></div></div>
+        <p class="body-text art-p">Which level you need follows from where your time goes. If you enjoy the analysis but want a second pair of eyes, an optimization tool is enough. If you already know your playbook and just want it enforced at 3am, rule-based automation fits. Most searches for AI tools that automate Google and Meta ads management for an agency land at this level too: rules travel between client accounts, and OptyAds and Birch both cover Meta alongside Google. If Google Ads is one of five things on your plate, autonomous management is the only level that actually removes the work, the other two still leave you as the operator.</p>
+      </section>
+
+      <section class="card pad art" id="choose">
+        <h2>How to choose the right AI tool for your Google Ads</h2><p class="intro">With 10 tools on this list ranging from free to $300+/month, the choice of Google Ads management tool comes down to three variables: your automation comfort level, your monthly ad spend, and your team’s technical capabilities.</p>
+        <div class="cqs"><div class="cq"><span class="cq-n tabnum">01</span><h3>Do you want AI to act or suggest?</h3><div class="cq-rs"><div class="cq-r ours"><span>Act on its own: bids, budgets, optimizations</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8h10M9 4.5L12.5 8 9 11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Ryze AI</b></div><div class="cq-r"><span>Review and approve each change</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8h10M9 4.5L12.5 8 9 11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Opteo or OptyAds</b></div><div class="cq-r"><span>Analysis only, no changes</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8h10M9 4.5L12.5 8 9 11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Claude + MCP</b></div></div></div><div class="cq"><span class="cq-n tabnum">02</span><h3>What is your monthly ad spend?</h3><div class="cq-rs"><div class="cq-r"><span>Under $5K/month</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8h10M9 4.5L12.5 8 9 11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Adzooma (free plan) or the WordStream grader (free audit)</b></div><div class="cq-r"><span>$5K–$25K/month</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8h10M9 4.5L12.5 8 9 11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Opteo (from $129/mo) or Ryze AI ($89/mo flat)</b></div><div class="cq-r ours"><span>$25K–$100K/month</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8h10M9 4.5L12.5 8 9 11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Ryze AI (the flat fee wins here) or OptyAds</b></div><div class="cq-r ours"><span>Over $100K/month</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8h10M9 4.5L12.5 8 9 11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Ryze AI (the flat fee stays $89 while spend-tiered plans rise) with OptyAds for PMax-specific controls if needed</b></div></div></div><div class="cq"><span class="cq-n tabnum">03</span><h3>What is your team’s technical level?</h3><div class="cq-rs"><div class="cq-r ours"><span>Non-technical marketers</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8h10M9 4.5L12.5 8 9 11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Ryze AI, Opteo, or WordStream (all require minimal setup)</b></div><div class="cq-r"><span>Technical marketers</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8h10M9 4.5L12.5 8 9 11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Claude + MCP or OptyAds’s Rule Engine</b></div><div class="cq-r"><span>Developers</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8h10M9 4.5L12.5 8 9 11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Google Ads Scripts for niche automations plus a management tool</b></div></div></div></div>
+      </section>
+
+      <div class="hc-wrap" data-v="4">
+        <section class="card hc v4 pre" aria-label="What a client says about Ryze AI">
+          <div class="hc-txt"></div>
+          <div class="hc-act"></div>
+        </section>
+        <div class="hc-layer"></div>
+      </div>
+
+      <section class="card pad art" id="verdict">
+        <h2>Final verdict: which AI tool should you pick?</h2>
+        <p class="lead-rest v-lead">After testing all 10 tools on live accounts, <a href="https://www.get-ryze.ai/">Ryze AI</a> is the best overall pick for most advertisers: it applies changes instead of listing them, charges $89 a month flat, and documents the <a href="https://help.get-ryze.ai/ads/google-ads">Google Ads changes it makes</a> change type by change type. Its limits: less manual rule control than OptyAds, and a shorter track record than the older tools here.</p>
+        <p class="body-text art-p">OptyAds is the best choice for agencies that want granular rule-based control and the deepest Performance Max tooling. Adalysis wins on automated ad testing. Opteo is the best pure recommendation engine for solo marketers. And Claude + MCP is the most flexible analysis layer, best paired with an execution tool.</p>
+        <p class="body-text art-p">The tools that win in 2026 are the ones shifting from “dashboard with suggestions” to “autonomous agent that executes.” Start with the tool that matches your biggest bottleneck, measure ROAS and hours saved over 30 days against your manual baseline, and scale from there.</p>
+        <h3 class="art-h3">Which tool fits whom</h3><div class="fws"><div class="fw ours"><span class="ico"><img src="assets/tools/ryze.webp" alt=""></span><b>Ryze AI</b><span>Teams that want bid, budget and negative keyword changes applied automatically, with approvals where you want them.</span></div><div class="fw"><span class="ico"><img src="assets/tools/optmyzr.png" alt=""></span><b>OptyAds</b><span>Agencies that write their own rules across many client accounts.</span></div><div class="fw"><span class="ico"><img src="assets/tools/adalysis.png" alt=""></span><b>Adalysis</b><span>Teams whose bottleneck is RSA ad testing.</span></div><div class="fw"><span class="ico"><img src="assets/tools/opteo.png" alt=""></span><b>Opteo</b><span>Marketers who want one-click recommendations they approve by hand.</span></div><div class="fw"><span class="ico"><img src="assets/tools/claude.webp" alt=""></span><b>Claude + MCP</b><span>Plain-language analysis of the account, next to a tool that applies changes.</span></div><div class="fw"><span class="ico"><img src="assets/tools/googleads.png" alt=""></span><b>Google Ads Scripts</b><span>Developers who want free automation for single tasks.</span></div></div>
+        <h3 class="art-h3">Public track record: what reviews and vendor pages say</h3><p class="art-note">Checked on September 23, 2026. Every item links to a source you can open.</p><div class="trs"><div class="tr-r"><div class="tr-h"><span class="ico"><img src="assets/tools/wordstream.png" alt=""></span><b>WordStream</b><span class="tr-s"><b>2.3</b>/5 on Trustpilot · 571 reviews</span></div><p>WordStream has a <a href="https://www.trustpilot.com/review/wordstream.com">Trustpilot score of 2.3 out of 5 across 571 reviews</a>. The 1-star reviews describe charges continuing after cancellation requests, slow support, and customers moved to a different platform after the LocaliQ acquisition. The free grader is not affected by any of this; the managed plans are.</p></div><div class="tr-r"><div class="tr-h"><span class="ico"><img src="assets/tools/adzooma.png" alt=""></span><b>Adzooma</b><span class="tr-s"><b>3.1</b>/5 on Trustpilot · 184 reviews</span></div><p>Adzooma has a <a href="https://www.trustpilot.com/review/adzooma.com">Trustpilot score of 3.1 out of 5 across 184 reviews</a>. Negative reviews say its recommendations repeat what Google and Microsoft already show for free, and one reports a refused refund two days after signing up.</p></div><div class="tr-r"><div class="tr-h"><span class="ico"><img src="assets/tools/adcreative.png" alt=""></span><b>AdCreative.ai</b><span class="tr-s"><b>3.4</b>/5 on Trustpilot · 4,538 reviews</span></div><p>AdCreative.ai has a <a href="https://www.trustpilot.com/review/adcreative.ai">Trustpilot score of 3.4 out of 5 across 4,538 reviews</a>; a third are 1-star. The recurring complaints from August and September 2026 are charges of $350 to $500 after a forgotten trial and refunds taking longer than promised. The company replies to many of them.</p></div><div class="tr-r"><div class="tr-h"><b>OptyAds, Opteo, Adalysis, Birch</b><span class="tr-s">documented limits</span></div><p>OptyAds and <a href="https://www.trustpilot.com/review/opteo.com">Opteo</a> have <a href="https://www.trustpilot.com/review/optmyzr.com">no Trustpilot reviews</a> (Opteo), so there is nothing negative to report there. Their documented limits: OptyAds starts at $209 a month and rises with spend per its <a href="https://www.optmyzr.com/pricing/">pricing page</a>; Opteo is Google Ads only and every change waits for a click. Adalysis does not publish its price as a number on its <a href="https://adalysis.com/pricing/">pricing page</a>. Birch supports Meta, Google, Snapchat and TikTok per its <a href="https://bir.ch/pricing">pricing page</a>, with Google depth below OptyAds's.</p></div></div>
+        <details class="rm"><summary>What we removed from this edition</summary><ul><li>PPC Signal ranked #7 in earlier editions. On September 23, 2026 ppcsignal.com redirected to a domain-for-sale page, so it is no longer listed. AdCreative.ai takes its slot.</li><li>MadgicAds AI appeared in earlier versions of this ranking. Its site is built around Meta ads, and our August 2026 re-test put it outside the top 10 for Google Ads.</li><li>Two names still show up in older roundups. Qwaya has closed, and qwaya.com now redirects to Funnel, the marketing data platform from the same founders. Pattern89 was bought by Shutterstock in 2021 and became part of Shutterstock.AI, so there is no standalone product to sign up for.</li></ul></details>
+      </section>
+
+      <section class="card pad art" id="why">
+        <h2>Why AI tools for Google Ads matter in 2026</h2>
+        <div class="why-grid"><div><p class="body-text">Google Ads is no longer a platform where manual bid adjustments and weekly check-ins produce competitive results. The average account now runs Search, Performance Max, Demand Gen, and YouTube campaigns simultaneously, each with its own bidding dynamics, audience signals, and creative requirements. The advertisers winning in 2026 are the ones using AI Google Ads management tools to handle the complexity that has outgrown human bandwidth.</p><p class="body-text art-p">The global AI in advertising market reached $5.6 billion in 2024 and is projected to hit $16.42 billion by 2029 (MarketsandMarkets). That growth reflects a real shift in how campaigns are managed. Smart Bidding was the first wave. The second wave, happening now, is fully autonomous AI agents that handle bid adjustments, budget allocation, negative keyword management, ad copy testing, and anomaly detection without waiting for a human to log in.</p></div><div class="mk"><span class="ql">AI in advertising, global market</span><div class="mk-n"><div><b class="tabnum">$5.6B</b><span>2024</span></div><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b class="tabnum">$16.42B</b><span>2029, projected</span></div></div><div class="mk-bars reveal"><i style="height:36px"></i><i class="b2" style="height:108px"></i></div><span class="mk-src">MarketsandMarkets</span></div></div>
+        <p class="body-text art-p">Our evaluation criteria: automation depth (does it act or just suggest?), pricing transparency, time-to-value, platform coverage, and measurable ROAS impact. To judge each tool's results against your sector's norms, keep the <a href="https://www.get-ryze.ai/blog/google-ads-cost-benchmarks-by-industry-2026">2026 Google Ads cost benchmarks by industry</a> handy.</p>
+      </section>
+
+      <section class="card pad art" id="categories">
+        <h2 class="long">Google Ads marketing tools by category: which of the 10 executes, optimizes, reports or tests creative</h2><p class="intro">Google Ads marketing tools sort into four jobs, and knowing which job a tool does keeps you from buying two that overlap. Execution tools write changes to the account: Ryze AI (on its own judgment), OptyAds and Birch (on your rules) and Google Ads Scripts (on your code). Optimization tools audit and recommend but leave the applying to you: Opteo, Adalysis, WordStream and Adzooma. Reporting and analysis tools read the account and explain it: Claude + MCP for ad-hoc questions in plain language, and Adzooma again for its free monitoring layer.</p>
+        <div class="cts"><div class="ct"><h3>Execution</h3><p>Write changes to the account</p><ul><li><span class="ico"><img src="assets/tools/ryze.webp" alt=""></span><span><b>Ryze AI</b> on its own judgment</span></li><li><span class="ico"><img src="assets/tools/optmyzr.png" alt=""></span><span><b>OptyAds</b> on your rules</span></li><li><span class="ico"><img src="assets/tools/revealbot.png" alt=""></span><span><b>Birch</b> on your rules</span></li><li><span class="ico"><img src="assets/tools/googleads.png" alt=""></span><span><b>Google Ads Scripts</b> on your code</span></li></ul></div><div class="ct"><h3>Optimization</h3><p>Audit and recommend, you apply</p><ul><li><span class="ico"><img src="assets/tools/opteo.png" alt=""></span><span><b>Opteo</b></span></li><li><span class="ico"><img src="assets/tools/adalysis.png" alt=""></span><span><b>Adalysis</b></span></li><li><span class="ico"><img src="assets/tools/wordstream.png" alt=""></span><span><b>WordStream</b></span></li><li><span class="ico"><img src="assets/tools/adzooma.png" alt=""></span><span><b>Adzooma</b></span></li></ul></div><div class="ct"><h3>Reporting and analysis</h3><p>Read the account and explain it</p><ul><li><span class="ico"><img src="assets/tools/claude.webp" alt=""></span><span><b>Claude + MCP</b> ad-hoc questions in plain language</span></li><li><span class="ico"><img src="assets/tools/adzooma.png" alt=""></span><span><b>Adzooma</b> free monitoring layer</span></li></ul></div><div class="ct"><h3>Creative</h3><p>Make or test the ads</p><ul><li><span class="ico"><img src="assets/tools/adcreative.png" alt=""></span><span><b>AdCreative.ai</b> generates image and copy variants</span></li><li><span class="ico"><img src="assets/tools/adalysis.png" alt=""></span><span><b>Adalysis</b> tests the RSA assets you wrote</span></li></ul></div></div>
+        <p class="body-text art-p">The fourth category, creative, has two entries. AdCreative.ai generates new image and copy variants, and Adalysis is the one with a real creative testing engine, and it tests responsive search ad assets you already wrote rather than generating new ones. Copy generators such as Jasper or Copy.ai can draft headlines, but they never see performance data, which is why they are not ranked here.</p>
+        <div class="note warn"><span class="ql">Avoid</span><p>A typical stack at $25K to $100K a month is one execution tool plus one analysis layer. Two execution tools on the same campaigns is the combination to avoid: rules from one will undo changes from the other, and neither log will explain why.</p></div>
+      </section>
+
+      <section class="card pad art" id="google-vs">
+        <h2 class="long">AI for Google Ads in 2026: what Google's own automation sees and what a third-party layer adds</h2>
+        <div class="gv"><div class="gv-c"><h3>What Google's AI sees</h3><p>AI for Google Ads means two different systems that get lumped together. The first is Google's own. Smart Bidding (Target CPA, Target ROAS, Maximize conversions, Maximize conversion value) sets a bid for every auction using signals no outside tool receives, such as device, location, time of day, browser and the query itself. Performance Max extends that to one campaign spending across Search, YouTube, Gmail, Maps, Display and Discover, including Shopping inventory, steered by asset groups and search themes.</p></div><div class="gv-c"><h3>What it cannot see</h3><p>What Google's AI cannot see is your business. It does not know margin per SKU, stock levels, lead quality in the CRM, or that a campaign promotes a product you are discontinuing, unless you feed it that through offline conversion imports and conversion values. It also optimizes one campaign at a time and never questions the budget split between campaigns, or between Google and Meta. Nor does it know a sale is coming, so a <a href="https://www.get-ryze.ai/blog/black-friday-google-ads">Black Friday Google Ads setup</a> adds seasonality adjustments and feed sale prices in advance.</p></div></div>
+        <p class="body-text art-p">That gap is where third-party AI layers earn their fee. They cannot bid per auction: on Smart Bidding campaigns the API lets a tool change targets and budgets, not individual bids. What they do is set the targets, budgets, negatives and asset changes that Smart Bidding then executes, watch across campaigns and platforms, and catch the anomalies a single-campaign optimizer treats as normal.</p>
+        <p class="pull">Google's automation for the auction, a third-party tool for everything above it.</p>
+      </section>
+
+      <div class="hc-wrap" data-v="5">
+        <section class="card hc v5 pre" aria-label="Connect Google Ads to Ryze AI">
+          <div class="hc-txt"></div>
+          <div class="hc-act"></div>
+        </section>
+        <div class="hc-layer"></div>
+      </div>
+
+      <section class="card pad art" id="criteria">
+        <h2 class="long">Google Ads management software buying criteria: write access, approvals, PMax support and pricing model</h2><p class="intro">Four questions separate Google Ads management software that saves you time from software that adds one more dashboard to check.</p>
+        <div class="crs"><div class="cr"><span class="cr-n tabnum">01</span><span class="ql">Write access</span><h3>Does it write changes to the account or only recommend them?</h3><p>Ask to see the change log from a live account: a recommendation tool shows a list of suggestions with an apply button, an execution tool shows a list of changes it already made.</p></div><div class="cr"><span class="cr-n tabnum">02</span><span class="ql">Approval controls</span><h3>What are the approval controls?</h3><p>You want an approval mode you can switch on per change type, an undo path, and a log that records the reason for each change, not only the change.</p></div><div class="cr"><span class="cr-n tabnum">03</span><span class="ql">Performance Max support</span><h3>How deep is Performance Max support?</h3><p>The minimum is asset group reporting, search themes and account-level negative keywords, which Google applies to PMax. Better tools also surface brand exclusions and channel-level spend, so you can see how much of the budget went to Display versus Shopping.</p></div><div class="cr"><span class="cr-n tabnum">04</span><span class="ql">Pricing model</span><h3>How does the price grow with the account?</h3><p>Percentage-of-spend and spend-tiered plans cost more as the account grows, which is fine under $10K a month and painful past $50K; flat plans (Ryze AI is $89 a month at any spend) do not. Whatever the model, keep the tool under 5 to 10 percent of monthly ad spend and run a 30-day trial on real campaigns before committing.</p></div></div>
+      </section>
+
+      <section class="card pad art" id="tested">
+        <h2>How we tested and scored these tools</h2><p class="intro">How we tested, and who is writing this</p>
+        <div class="tfs"><div class="tf"><span class="ql">What we tested</span><p>10 tools evaluated against live Google Ads accounts spending $25K–$200K per month, with pricing and feature sets re-checked September 2026.</p></div><div class="tf"><span class="ql">What we did not test</span><p>Enterprise-only contracts and results beyond the test window; those entries rely on demos and public documentation.</p></div><div class="tf"><span class="ql">Pricing</span><p>Verified against each vendor’s public pricing page on September 23, 2026. Ryze AI’s Paid Ads Autopilot is $89/month flat.</p></div><div class="tf"><span class="ql">Disclosure</span><p>This guide is published by Ryze AI and Ryze AI appears in the ranking. We mark it as our pick and show the comparison data so you can judge every tool independently.</p></div></div>
+        <p class="body-text art-p">Each tool was rated 0–5 on four criteria from our testing: feature depth (×3), automation depth (×3), value for money (×2), and ease of use (×2), for a component total out of 50.</p>
+        <div class="fm-wrap"><table class="fm sc"><thead><tr><th>Tool</th><th>Features ×3</th><th>Automation ×3</th><th>Value ×2</th><th>Ease ×2</th><th>Total / 50</th></tr></thead><tbody><tr class="ours"><td><div class="tool"><span class="ico"><img src="assets/tools/ryze.webp" alt=""></span><span>Ryze AI</span></div></td><td><span class="dots" aria-label="5 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td><span class="dots" aria-label="5 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td><span class="dots" aria-label="5 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td><span class="dots" aria-label="4 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span></td><td class="sc-t tabnum"><b>48</b></td></tr><tr><td><div class="tool"><span class="ico"><img src="assets/tools/optmyzr.png" alt=""></span><span>OptyAds</span></div></td><td><span class="dots" aria-label="5 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td><span class="dots" aria-label="4 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span></td><td><span class="dots" aria-label="3 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></td><td><span class="dots" aria-label="2 of 5"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></td><td class="sc-t tabnum"><b>37</b></td></tr><tr><td><div class="tool"><span class="ico"><img src="assets/tools/adalysis.png" alt=""></span><span>Adalysis</span></div></td><td><span class="dots" aria-label="3 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></td><td><span class="dots" aria-label="3 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></td><td><span class="dots" aria-label="4 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span></td><td><span class="dots" aria-label="4 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span></td><td class="sc-t tabnum"><b>34</b></td></tr><tr><td><div class="tool"><span class="ico"><img src="assets/tools/opteo.png" alt=""></span><span>Opteo</span></div></td><td><span class="dots" aria-label="3 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></td><td><span class="dots" aria-label="2 of 5"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></td><td><span class="dots" aria-label="4 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span></td><td><span class="dots" aria-label="5 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td class="sc-t tabnum"><b>33</b></td></tr><tr><td><div class="tool"><span class="ico"><img src="assets/tools/wordstream.png" alt=""></span><span>WordStream</span></div></td><td><span class="dots" aria-label="2 of 5"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></td><td><span class="dots" aria-label="2 of 5"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></td><td><span class="dots" aria-label="4 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span></td><td><span class="dots" aria-label="5 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td class="sc-t tabnum"><b>30</b></td></tr><tr><td><div class="tool"><span class="ico"><img src="assets/tools/adzooma.png" alt=""></span><span>Adzooma</span></div></td><td><span class="dots" aria-label="2 of 5"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></td><td><span class="dots" aria-label="2 of 5"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></td><td><span class="dots" aria-label="5 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td><span class="dots" aria-label="5 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td class="sc-t tabnum"><b>32</b></td></tr><tr><td><div class="tool"><span class="ico"><img src="assets/tools/adcreative.png" alt=""></span><span>AdCreative.ai</span></div></td><td><span class="dots" aria-label="3 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></td><td><span class="dots" aria-label="2 of 5"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></td><td><span class="dots" aria-label="3 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></td><td><span class="dots" aria-label="5 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td class="sc-t tabnum"><b>31</b></td></tr><tr><td><div class="tool"><span class="ico"><img src="assets/tools/claude.webp" alt=""></span><span>Claude + MCP</span></div></td><td><span class="dots" aria-label="3 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></td><td><span class="dots" aria-label="1 of 5"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></td><td><span class="dots" aria-label="5 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td><span class="dots" aria-label="3 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></td><td class="sc-t tabnum"><b>28</b></td></tr><tr><td><div class="tool"><span class="ico"><img src="assets/tools/revealbot.png" alt=""></span><span>Birch</span></div></td><td><span class="dots" aria-label="3 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></td><td><span class="dots" aria-label="4 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span></td><td><span class="dots" aria-label="3 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></td><td><span class="dots" aria-label="3 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></td><td class="sc-t tabnum"><b>33</b></td></tr><tr><td><div class="tool"><span class="ico"><img src="assets/tools/googleads.png" alt=""></span><span>Google Ads Scripts</span></div></td><td><span class="dots" aria-label="3 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></td><td><span class="dots" aria-label="3 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></td><td><span class="dots" aria-label="5 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td><span class="dots" aria-label="1 of 5"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></td><td class="sc-t tabnum"><b>30</b></td></tr></tbody></table></div>
+        <p class="body-text art-p">The component totals are not the ranking by themselves. The final editorial score (shown on each tool card) also weights autonomous execution and Google-specific depth, the axes this guide ranks on, which is why a free scripting environment with excellent value does not outrank purpose-built platforms, and why analysis-only tools sit lower than their component totals suggest.</p>
+        <div class="h2h"><span class="ql">Head-to-head pages, every plan and price side by side</span><div><a href="#">Ryze AI vs OptyAds <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="#">Ryze AI vs Opteo <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="#">Ryze AI vs Adalysis <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="#">Ryze AI vs WordStream <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
+      </section>
+
+      <section class="card pad art" id="faq">
+        <h2>Frequently asked questions</h2>
+        <div class="fqs"><details class="fq"><summary><span class="fq-n tabnum">01</span><span class="fq-q">What is the best AI for Google Ads?</span><span class="fq-i" aria-hidden="true"></span></summary><p>Ryze AI is the best AI for Google Ads in 2026 for teams that want bid, budget and negative keyword changes applied automatically. It has approval settings, costs a flat $89 a month and has a 7-day free trial. Other picks: Opteo if you want suggestions you approve by hand, OptyAds for agencies that write their own rules, and Adalysis for ad testing. Ryze AI publishes this guide.</p></details><details class="fq"><summary><span class="fq-n tabnum">02</span><span class="fq-q">Can AI run Google Ads?</span><span class="fq-i" aria-hidden="true"></span></summary><p>Yes, with limits. Google's own AI already automates parts of every account: Smart Bidding sets a bid for each auction, and Performance Max and AI Max for Search choose more of the queries, placements and ad text. Agents such as Ryze AI go further and apply bid, budget and negative keyword changes across campaigns, with approval settings for the changes you want to check first. People still set the goals, budgets, offers and conversion tracking, and review what the AI changed.</p></details><details class="fq"><summary><span class="fq-n tabnum">03</span><span class="fq-q">What AI does Google Ads use?</span><span class="fq-i" aria-hidden="true"></span></summary><p>Google Ads has its own AI built in. Smart Bidding uses Google AI to set bids at auction time. Performance Max uses Google AI to run one campaign across Search, YouTube, Gmail, Maps, Display and Discover. AI Max for Search matches more search terms and writes new headlines and descriptions for Search campaigns. Ads Advisor, built on Gemini models, answers questions inside Google Ads and applies changes after you approve them.</p></details><details class="fq"><summary><span class="fq-n tabnum">04</span><span class="fq-q">How much do AI tools for Google Ads cost?</span><span class="fq-i" aria-hidden="true"></span></summary><p>As of September 23, 2026: Google Ads Scripts, the Adzooma free plan and the WordStream grader are free. Ryze AI is $89 a month flat, Opteo $129 to $499, OptyAds from $209, Birch $49 to $99, AdCreative.ai $39 to $999 by credits. Adalysis prices by ad spend without listing the numbers. Spend-tiered tools cost more as the account grows; a flat fee does not.</p></details><details class="fq"><summary><span class="fq-n tabnum">05</span><span class="fq-q">What is the difference between AI tools and Google Ads Smart Bidding?</span><span class="fq-i" aria-hidden="true"></span></summary><p>Smart Bidding optimizes bids within a single campaign using Google's first-party data. Third-party AI tools go further: cross-campaign budget allocation, cross-platform optimization, negative keyword management, ad testing, anomaly detection, and reporting. They complement Smart Bidding rather than replace it.</p></details><details class="fq"><summary><span class="fq-n tabnum">06</span><span class="fq-q">Do AI Google Ads tools work with Performance Max campaigns?</span><span class="fq-i" aria-hidden="true"></span></summary><p>Yes, though depth varies. OptyAds offers the most granular PMax controls, asset-group analysis and audience signal management. Ryze AI includes automated PMax optimization inside its autonomous management. Recommendation tools like Opteo surface PMax improvements but leave the applying to you.</p></details><details class="fq"><summary><span class="fq-n tabnum">07</span><span class="fq-q">How long does it take to see results from an AI Google Ads tool?</span><span class="fq-i" aria-hidden="true"></span></summary><p>Plan for 30 days. Most tools need a 7–14 day learning period to analyze historical data before making significant changes, so measure ROAS, CPA and hours saved against your manual baseline over a full month. In our testing, Ryze AI made its first changes within hours of connecting.</p></details><details class="fq"><summary><span class="fq-n tabnum">08</span><span class="fq-q">What is the difference between optimization, automation, and autonomous tools?</span><span class="fq-i" aria-hidden="true"></span></summary><p>Optimization tools (Opteo, Adalysis, WordStream) recommend changes you review and apply. Automation tools (OptyAds, Birch, Google Ads Scripts) execute the rules you design. Autonomous management (Ryze AI) decides and executes on its own, 24/7, with approval controls optional. Each level removes more of the operator work.</p></details><details class="fq"><summary><span class="fq-n tabnum">09</span><span class="fq-q">Is autonomous AI safe to run on a real Google Ads account?</span><span class="fq-i" aria-hidden="true"></span></summary><p>Yes, with controls. Ryze AI ships approval mode, every proposed change can be held for review before it touches the account, plus change logs to audit what the agent did and why. Expect a 7–14 day learning period before autonomous changes hit their stride.</p></details><details class="fq"><summary><span class="fq-n tabnum">10</span><span class="fq-q">Are Google Ads Scripts better than paid AI tools?</span><span class="fq-i" aria-hidden="true"></span></summary><p>For developers automating specific niche tasks, weather-based bids, budget pacing alerts, Scripts are free and unbeatable. As a complete management system they are not practical for most teams: each script covers one task, there is no UI, and maintenance is real work. The common pattern is Scripts for niches plus a management platform for the rest.</p></details><details class="fq"><summary><span class="fq-n tabnum">11</span><span class="fq-q">Can one tool manage Google Ads and Meta Ads together?</span><span class="fq-i" aria-hidden="true"></span></summary><p>Yes. Ryze AI, Birch, OptyAds and Adzooma all cover both platforms, and cross-platform management matters because the two auctions compete for the same buyers. If social is your bigger channel, start with our top AI tools for Meta Ads management guide and pick a tool that covers both from one subscription.</p></details><details class="fq"><summary><span class="fq-n tabnum">12</span><span class="fq-q">Do these tools replace a PPC manager?</span><span class="fq-i" aria-hidden="true"></span></summary><p>No. AI tools replace the repetitive layer: bid checks, budget shifts, negative sweeps, and reporting. Strategy, offer design, and creative direction stay human. Teams using autonomous tools typically redeploy manager hours to landing pages and testing, the work that compounds, rather than cutting headcount.</p></details><details class="fq"><summary><span class="fq-n tabnum">13</span><span class="fq-q">Does flat pricing really matter versus spend-tiered pricing?</span><span class="fq-i" aria-hidden="true"></span></summary><p>At small budgets, not much. As spend grows, tiered tools move up a plan: Opteo goes from $129 to $249 a month once an account passes $25K in monthly spend, and OptyAds rises from $209 with managed spend. A flat fee such as Ryze AI's $89 stays the same.</p></details></div>
+      </section>
+
+      <section class="card pad art" id="related">
+        <h2>Related guides</h2>
+        <div class="rgs"><a class="rg" href="#"><span class="ql">Guide</span><h3>Top 10 AI Tools for Meta Ads Management in 2026</h3><p>The social-side companion to this guide, creative, automation and price compared.</p><span class="rg-a"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a><a class="rg" href="#"><span class="ql">Guide</span><h3>Google Ads Cost Benchmarks by Industry (2026)</h3><p>Judge every tool's results against your sector's CPC and CPA norms.</p><span class="rg-a"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a><a class="rg" href="#"><span class="ql">Guide</span><h3>Claude Skills for Google Ads</h3><p>Free skills that turn Claude into a Google Ads analyst over MCP.</p><span class="rg-a"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a><a class="rg" href="#"><span class="ql">Guide</span><h3>Best Claude Connector for Google Ads</h3><p>The integrations ranked, from managed MCP to self-hosted.</p><span class="rg-a"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
+      </section>
+
+      <div class="hc-wrap" data-v="7">
+        <section class="card hc v7 pre" aria-label="Try Ryze AI">
+          <div class="hc-txt"></div>
+          <div class="hc-act"></div>
+        </section>
+        <div class="hc-layer"></div>
+      </div>
 
     </div>
   </div>
@@ -1774,7 +2284,7 @@
   const VISIBLE_ROWS = 6;
   const CLIENTS = ['uber-eats', 'adidas', 'duolingo', 'mgm-resorts', 'wharton', 'lendingclub', 'norton', 'eventbrite', 'huel'];
   const WALL = ['uber-eats', 'adidas', 'duolingo', 'mgm-resorts', 'wharton', 'lendingclub', 'norton', 'eventbrite', 'huel', 'together-ai', 'ghd', 'hack-the-box'];
-  const CONTENTS = ['Quick comparison', 'Short answer', "Google's own AI", 'Pricing', 'Feature matrix', 'The 10 tools', '8 more tools', 'Automation vs optimization', 'How to choose', 'Final verdict', 'FAQ', 'How we tested'];
+  const CONTENTS = ["Quick comparison", "Short answer", "Google's own AI", "Pricing", "Feature matrix", "The 10 tools", "8 more tools", "Automation vs optimization", "How to choose", "Final verdict", "Why it matters in 2026", "Tools by category", "Google's AI vs a third-party layer", "Buying criteria", "How we tested", "FAQ", "Related guides"];
   const LOG = [
     { t: '02:14', a: 'Raised bids 15% on "food delivery near me": pacing was 34% behind', s: 'Applied' },
     { t: '03:02', a: 'Paused 4 keywords that spent $212 with no orders', s: 'Applied' },
@@ -1790,7 +2300,7 @@
 
   // contents in the sticky sidebar
   // contents: a short card in the sidebar — where you are, what is next, the full list on demand
-  const SECTION_IDS = { 0: 'comparison', 1: 'short-answer' };
+  const SECTION_IDS = { 0: 'comparison', 1: 'short-answer', 2: 'google-ai', 3: 'pricing', 4: 'features', 5: 'tools', 6: 'more-tools', 7: 'levels', 8: 'choose', 9: 'verdict', 10: 'why', 11: 'categories', 12: 'google-vs', 13: 'criteria', 14: 'tested', 15: 'faq', 16: 'related' };
   const href = i => SECTION_IDS[i] ? '#' + SECTION_IDS[i] : '#';
   const t2 = document.getElementById('t2'), t2bar = document.getElementById('t2-bar'), t2pop = document.getElementById('t2-pop'), t2all = document.getElementById('t2-all');
   document.getElementById('t2-total').textContent = CONTENTS.length;
@@ -2258,7 +2768,7 @@
   }
 
   // ---------- v25: horizontal CTA in the text, five versions; the switch bottom right replays them ----------
-  const hcWrap = document.getElementById('hc-wrap'), hc = document.getElementById('hc'), hcTxt = document.getElementById('hc-txt'), hcAct = document.getElementById('hc-act'), hcLayer = document.getElementById('hc-layer');
+  let hcWrap = document.getElementById('hc-wrap'), hc = document.getElementById('hc'), hcTxt = document.getElementById('hc-txt'), hcAct = document.getElementById('hc-act'), hcLayer = document.getElementById('hc-layer');
   const ARROW = `<svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
   const STOP = Symbol('stop');
   let hcV = Number((location.hash.match(/^#cta([1-7])$/) || [])[1] || 1), hcRun = 0, hcTimers = [], hcVisible = false, hcPlayed = false, hcDemo = false;
@@ -2687,14 +3197,59 @@
         } finally { demoFree(); }
       },
     },
+    // 8. v75, the free SEO/GEO audit: Ryze demo types a site and presses the button, a scan line sweeps the strip, the findings count up
+    8: {
+      render() {
+        hcTxt.innerHTML = `<div class="hc-swap"><div class="hc-a"><span class="hc-k hc-t">Free audit · SEO + AI search</span><h3 class="hc-h hc-t">Free SEO/GEO audit</h3><p class="hc-sub hc-t">Technical SEO issues, quick wins, duplicate and thin pages.</p></div>
+          <div class="hc-found"><span class="hc-k">Found in 41 seconds on a sample site</span><div class="hc-fr"><div><b data-n="14">0</b><span>technical SEO issues</span></div><div><b data-n="6">0</b><span>quick wins</span></div><div><b data-n="9">0</b><span>duplicate and thin pages</span></div></div></div></div>`;
+        hcAct.innerHTML = `<form class="joined hc-j hc-t" onsubmit="return false"><input type="text" placeholder="yoursite.com" aria-label="Your site"><button type="submit"><i class="fill"></i><span class="lbl">Run the free audit</span>${ARROW}</button></form><small class="hc-s hc-t">Free. No credit card. Instant.</small>`;
+      },
+      final() {
+        hc.classList.add('found');
+        hcTxt.querySelectorAll('.hc-fr b').forEach(b => { b.textContent = b.dataset.n; });
+        hcAct.querySelector('input').value = 'brightskin.co'; hcAct.querySelector('.lbl').textContent = 'See the full report';
+      },
+      async play(id) {
+        const form = hcAct.querySelector('.hc-j'), inp = form.querySelector('input'), btn = form.querySelector('button'), lbl = btn.querySelector('.lbl');
+        await hs(650, id);
+        await demoTake(id);
+        try {
+          dockAim = demoAt(inp, 0, .5, 24, 4); await hs(750, id);
+          await demoTap(id); form.classList.add('ff');
+          dockAim = demoAt(inp, 0, 1, 120, 18);
+          for (const ch of 'brightskin.co') { inp.value += ch; await hs(52, id); }
+          await hs(250, id);
+          dockAim = demoAt(btn, .5, .5, 6, 4); await hs(560, id);
+          await demoTap(id); btn.classList.add('press'); await hs(140, id); btn.classList.remove('press');
+          form.classList.remove('ff');
+          btn.classList.add('busy'); lbl.textContent = 'Scanning…';
+          dockAim = demoAt(btn, .5, 1, 30, 26);
+          // the scan line sweeps the strip from left to right
+          const W = hr(hc), line = document.createElement('i');
+          line.className = 'hc-scan'; line.style.top = W.y + 'px'; line.style.height = W.h + 'px'; hcLayer.append(line);
+          await line.animate([{ transform: `translateX(${W.x}px)`, opacity: 0 }, { opacity: 1, offset: .08 }, { opacity: 1, offset: .92 }, { transform: `translateX(${W.x + W.w}px)`, opacity: 0 }],
+            { duration: 1500, easing: 'cubic-bezier(.45, 0, .55, 1)' }).finished.catch(() => {});
+          alive(id); line.remove();
+          btn.classList.remove('busy'); lbl.textContent = 'See the full report'; hc.classList.add('found');
+          // the findings count up, one after another
+          const nums = [...hcTxt.querySelectorAll('.hc-fr b')];
+          await Promise.all(nums.map((b, k) => new Promise(res => {
+            const n = +b.dataset.n, t0 = performance.now() + 250 + k * 140;
+            const step = now => { if (id !== hcRun) return res(); const q = Math.max(0, Math.min(1, (now - t0) / 700)); b.textContent = Math.round(n * (1 - Math.pow(1 - q, 3))); if (q < 1) requestAnimationFrame(step); else res(); };
+            requestAnimationFrame(step);
+          })));
+          await hs(700, id);
+        } finally { demoFree(); }
+      },
+    },
   };
 
   function hcStop() { hcRun++; hcTimers.forEach(clearInterval); hcTimers = []; hcClean.forEach(f => f()); hcClean = []; hcLayer.innerHTML = ''; demoFree(); stripBusy = false; }
   function hcPrep() {
     hcStop();
     hc.className = `card hc v${hcV} pre`;
-    document.body.classList.toggle('hcw', [1, 7].includes(+hcV));
-    HC[hcV].render();
+    hcWrap.classList.toggle('hcw', [1, 7].includes(+hcV) && !hcWrap.dataset.tone); hcWrap.classList.toggle('hco', hcWrap.dataset.tone === 'or');
+    HC[hcV].render(); hcCopy();
     document.querySelectorAll('#hc-switch [data-v]').forEach(b => b.classList.toggle('on', b.dataset.v === String(hcV)));
     if (reduce) { hc.className = `card hc v${hcV} show`; HC[hcV].final(); }
   }
@@ -2711,16 +3266,79 @@
     } catch (e) { if (e !== STOP) console.error(e); }
     finally { if (id === hcRun) stripBusy = false; }
   }
+  // ---------- v74: every CTA spot of the article is a template; the machine binds to the spot on screen and plays it ----------
+  // a spot may carry its own words: data-k (the line above), data-h (the headline), data-btn (the button), data-s (the small print)
+  function hcCopy() {
+    const o = hcWrap.dataset, q = (box, sel) => box && box.querySelector(sel);
+    if (o.k && q(hcTxt, '.hc-k')) q(hcTxt, '.hc-k').innerHTML = o.k;
+    if (o.h && q(hcTxt, '.hc-h')) q(hcTxt, '.hc-h').innerHTML = o.h;
+    if (o.btn && q(hcAct, '.lbl')) q(hcAct, '.lbl').textContent = o.btn;
+    if (o.s && q(hcAct, '.hc-s')) q(hcAct, '.hc-s').textContent = o.s;
+  }
+  const HC_SLOTS = [...document.querySelectorAll('.hc-wrap')].map(w => ({ w, v: +(w.dataset.v || 1), hc: w.querySelector('.hc'), txt: w.querySelector('.hc-txt'), act: w.querySelector('.hc-act'), layer: w.querySelector('.hc-layer'), played: false }));
+  let hcSlot = HC_SLOTS[0];
+  const hcBind = sl => { hcSlot = sl; hcWrap = sl.w; hc = sl.hc; hcTxt = sl.txt; hcAct = sl.act; hcLayer = sl.layer; hcV = sl.v; };
+  // draw a spot that is not playing: folded to its thin line («pre») or finished («open show»); the bound spot is left alone
+  function hcStill(sl, state) {
+    const keep = hcSlot; hcBind(sl);
+    try { hc.className = `card hc v${hcV} ${state}`; hcWrap.classList.toggle('hcw', [1, 7].includes(+hcV) && !hcWrap.dataset.tone); hcWrap.classList.toggle('hco', hcWrap.dataset.tone === 'or'); hcLayer.innerHTML = ''; HC[hcV].render(); hcCopy(); if (state !== 'pre') HC[hcV].final(); }
+    finally { hcBind(keep); }
+  }
+  HC_SLOTS.forEach(sl => hcStill(sl, 'pre'));
   hcPrep();
-  // the strip opens from a thin line when it is a quarter of the way up the screen; it plays again each time you come back to it
   const hcSwitch = document.getElementById('hc-switch');
-  let hcNudged = false;
-  new IntersectionObserver(([e]) => {
-    hcVisible = e.isIntersecting;
-    if (e.isIntersecting && !hcNudged) { hcNudged = true; setTimeout(() => hcSwitch.classList.add('nudge'), 900); }
-    if (e.isIntersecting && !hcPlayed) { hcPlayed = true; hcPlay(); }
-    else if (!e.isIntersecting && hcPlayed) { hcPlayed = false; hcPrep(); }
-  }, { rootMargin: '0px 0px -22% 0px' }).observe(hcWrap);
+  // a spot opens from a thin line when it is a quarter of the way up the screen; it plays again each time you come back to it
+  const hcIO = new IntersectionObserver(es => es.forEach(e => {
+    const sl = HC_SLOTS.find(x => x.w === e.target);
+    if (e.isIntersecting && !sl.played) {
+      if (hcSlot !== sl) { const was = hcSlot; hcStop(); if (was.played) hcStill(was, 'open show'); hcBind(sl); }
+      sl.played = true; hcVisible = true; hcPlay();
+    } else if (!e.isIntersecting && sl.played) {
+      sl.played = false;
+      if (hcSlot === sl) { hcVisible = false; hcPrep(); } else hcStill(sl, 'pre');
+    }
+  }), { rootMargin: '0px 0px -22% 0px' });
+  HC_SLOTS.forEach(sl => hcIO.observe(sl.w));
+
+  // ---------- v76: hover a button in the text and Ryze demo leaves the sidebar card, flies over and shows the click ----------
+  (function () {
+    const SEL = '.article .see-also, .article .btn-cta, .article .h2h a, .article .rg, .article .hc-j button, .article .sl-k, .article .fq summary';
+    let hov = null, run = 0;
+    document.addEventListener('pointerover', e => {
+      const b = e.target.closest(SEL); if (!b || b === hov || b.closest('.dock')) return;
+      if (demoLock || stripBusy || !dock.classList.contains('show')) return;   // the cursor is busy, or still in the first screen
+      hov = b; demoLock = true; demoSnap = false;
+      dockAim = demoAt(b, .5, .5, 14, 10);
+      const my = ++run;
+      const tap = () => { if (my !== run) return; const d = demoCur(); d?.classList.add('tap'); b.classList.add('demo-press');
+        setTimeout(() => { d?.classList.remove('tap'); b.classList.remove('demo-press'); }, 170); setTimeout(tap, 1700); };
+      setTimeout(tap, 700);
+    });
+    document.addEventListener('pointerout', e => {
+      if (!hov || !hov.contains(e.target) || (e.relatedTarget && hov.contains(e.relatedTarget))) return;
+      hov.classList.remove('demo-press'); hov = null; run++; dockAim = null; demoLock = false;
+    });
+  })();
+
+  // ---------- v78: when the FAQ comes into view, Ryze demo flies over and opens the first question (again each time it is closed) ----------
+  (function () {
+    const fq = document.querySelector('#faq .fq'); if (!fq) return;
+    const wait = ms => new Promise(r => setTimeout(r, ms));
+    let busyFq = false;
+    async function openFirst() {
+      if (busyFq || fq.open) return;
+      if (demoLock || stripBusy || !dock.classList.contains('show')) { setTimeout(() => { if (fqVisible) openFirst(); }, 700); return; }
+      busyFq = true; demoLock = true; demoSnap = false;
+      dockAim = demoAt(fq.querySelector('.fq-i'), .5, .5, 6, 6);
+      await wait(1000);
+      const d = demoCur(); d?.classList.add('tap'); await wait(150); d?.classList.remove('tap');
+      fq.open = true;
+      await wait(1300);
+      dockAim = null; demoLock = false; busyFq = false;
+    }
+    let fqVisible = false;
+    new IntersectionObserver(([e]) => { fqVisible = e.isIntersecting; if (fqVisible) openFirst(); }, { rootMargin: '0px 0px -35% 0px' }).observe(fq);
+  })();
   // pick a version (or replay the current one); the page scrolls to the strip if it is not in view
   const HC_ORDER = [1, 4, 5, 6, 7];
   function hcGo(v) {
@@ -2739,6 +3357,7 @@
   });
   // the arrow keys switch too while the strip is on screen
   addEventListener('keydown', e => {
+    if (true) return;   // v74: the whole page has no CTA switch
     if (!hcVisible || e.target.closest('input, textarea') || e.altKey || e.metaKey || e.ctrlKey) return;
     if (e.key === 'ArrowRight') { e.preventDefault(); hcStep(1); }
     if (e.key === 'ArrowLeft') { e.preventDefault(); hcStep(-1); }
@@ -2947,7 +3566,7 @@
   setCm(cm, gxSt, true);
 
   // ---------- v56: the stroke of the Ryze row spans the row ----------
-  function tmRow() { const td = document.querySelector('.cmp tr.ours td'); if (td) td.style.setProperty('--tm-roww', td.parentElement.getBoundingClientRect().width + 'px'); }
+  function tmRow() { document.querySelectorAll('.cmp tr.ours td:first-child, .fm tr.ours td:first-child').forEach(td => td.style.setProperty('--tm-roww', td.parentElement.getBoundingClientRect().width + 'px')); }
   addEventListener('resize', tmRow);
   // ---------- v54: volume and strokes in the elements ----------
   (function () {
@@ -3056,10 +3675,25 @@
     (function () {
       const B = document.body;
       B.classList.add('hs-pal', 'ps-pal', 'tn-txt', 'tn-chip', 'mt-txt', 'cd-on', 'pk-dk');
-      // halftone: a dot in every cell, its size grows with the depth under the hill's edge; one path per colour, filled once
+      // v76: whole dots as before, but cheap. A column of dots is drawn once (each row's dot sized by its depth under the hill's edge);
+      // every frame only copies that column under each x, starting at the first row below the edge — about a hundred copies instead of
+      // thousands of circles, so the drawing and the change of numbers no longer hold frames
       const gx = document.getElementById('gx'), cdc = document.createElement('canvas'), cdx = cdc.getContext('2d');
       cdc.className = 'gx-dith'; gx.insertBefore(cdc, gx.querySelector('.gx-l'));
-      const CELL = 5, KD = .6, C_BEFORE = '#E1B5A8', C_AFTER = '#EC6B3E';
+      const CELL = 5, KD = .6, C_BEFORE = '#E1B5A8', C_AFTER = '#EC6B3E', DPR = Math.min(2, devicePixelRatio || 1);
+      let strips = null, stripsH = 0;
+      function makeStrips(H) {
+        const mk = (col, cap, k) => {
+          const c = document.createElement('canvas'); c.width = Math.ceil(CELL * DPR); c.height = Math.ceil(H * DPR);
+          const x = c.getContext('2d'), p = new Path2D(); x.scale(DPR, DPR);
+          for (let j = 0; j * CELL < H; j++) {
+            const y = j * CELL + CELL / 2, depth = (CELL / 2 + j * CELL) / (H * .3), dens = Math.min(cap, (cap < 1 ? .12 : .16) + depth * KD * k), r = CELL * .5 * Math.sqrt(dens);
+            if (r >= .4) { p.moveTo(CELL / 2 + r, y); p.arc(CELL / 2, y, r, 0, 6.2832); }
+          }
+          x.fillStyle = col; x.fill(p); return c;
+        };
+        strips = { b: mk(C_BEFORE, .6, .7), a: mk(C_AFTER, 1, 1.5) }; stripsH = H;
+      }
       // the hill's edge from the same curve as the page's shapeD (flat, then two cubic pieces)
       function hillTop(yb, ya) {
         const d = yb - ya, Y = f => yb - d * f, pts = [];
@@ -3076,23 +3710,18 @@
         const clipW = +gxaCr.getAttribute('width');
         const k = [W, H, hill.yb.toFixed(1), hill.ya.toFixed(1), clipW.toFixed(0)].join('|');
         if (k === key) return; key = k;
-        const dpr = Math.min(2, devicePixelRatio || 1);
-        if (cdc.width !== Math.round(W * dpr) || cdc.height !== Math.round(H * dpr)) { cdc.width = Math.round(W * dpr); cdc.height = Math.round(H * dpr); }
-        cdx.setTransform(dpr, 0, 0, dpr, 0, 0); cdx.clearRect(0, 0, W, H);
-        const sx = W / 470, sy = H / 600, clipPx = (clipW - 4) * sx, topAt = hillTop(hill.yb, hill.ya), pB = new Path2D(), pA = new Path2D();
+        if (!strips || Math.abs(stripsH - H) > 1) makeStrips(H);
+        if (cdc.width !== Math.round(W * DPR) || cdc.height !== Math.round(H * DPR)) { cdc.width = Math.round(W * DPR); cdc.height = Math.round(H * DPR); }
+        cdx.setTransform(DPR, 0, 0, DPR, 0, 0); cdx.clearRect(0, 0, W, H);
+        const sx = W / 470, sy = H / 600, clipPx = (clipW - 4) * sx, topAt = hillTop(hill.yb, hill.ya);
         for (let ix = 0; ix * CELL < W; ix++) {
           const x = ix * CELL + CELL / 2; if (x > clipPx) break;
-          const xv = Math.min(x / sx, 473), top = topAt(xv) * sy, before = xv < MARK, p = before ? pB : pA;
-          for (let iy = Math.max(0, Math.floor(top / CELL)); iy * CELL < H; iy++) {
-            const y = iy * CELL + CELL / 2; if (y < top) continue;
-            const depth = (y - top) / (H * .3), dens = before ? Math.min(.6, .12 + depth * KD * .7) : Math.min(1, .16 + depth * KD * 1.5);
-            const r = CELL * .5 * Math.sqrt(dens); if (r < .4) continue;
-            p.moveTo(x + r, y); p.arc(x, y, r, 0, 6.2832);
-          }
+          const xv = Math.min(x / sx, 473), top = topAt(xv) * sy, st = xv < MARK ? strips.b : strips.a;
+          const iy0 = Math.max(0, Math.ceil((top - CELL / 2) / CELL)), y0 = iy0 * CELL, h = H - y0; if (h <= 0) continue;
+          cdx.drawImage(st, 0, 0, st.width, Math.min(st.height, Math.ceil(h * DPR)), ix * CELL, y0, CELL, Math.min(h, st.height / DPR));
         }
-        cdx.fillStyle = C_BEFORE; cdx.fill(pB); cdx.fillStyle = C_AFTER; cdx.fill(pA);
       }
-      const tick = () => { if (scrollY < 1400) draw(); requestAnimationFrame(tick); };
+      const tick = () => { if (scrollY < 1400 && !win.classList.contains('gone')) draw(); requestAnimationFrame(tick); };
       requestAnimationFrame(tick);
 
     })();
