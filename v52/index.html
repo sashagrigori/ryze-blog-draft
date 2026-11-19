@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Best AI Tools for Google Ads Management 2026: Top 10 — Ryze blog redesign, draft by Aleksandra Zianchurina</title>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap">
+<style>
+  :root { --ink: #111; --inner: #F4F4F4; --cta: #EC6B3E; --r-btn: 4px; --r-card: 8px; --ease: cubic-bezier(.2, .8, .2, 1); }
+  html, body { margin: 0; height: 100%; background: #ECECEC; font-family: 'Satoshi', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  /* each concept is a whole page with its own scroll, shown one at a time */
+  #view { position: fixed; inset: 0; width: 100%; height: 100%; border: 0; display: block; background: #ECECEC; transition: opacity .25s; }
+  #view.out { opacity: 0; }
+  .switch { position: fixed; left: 50%; bottom: 22px; z-index: 10; display: flex; align-items: center; gap: 6px; padding: 8px; border-radius: var(--r-card); background: #fff; box-shadow: 0 0 0 1px rgba(17,17,17,.08), 0 18px 40px -12px rgba(0,0,0,.35); transform: translateX(-50%); transition: opacity .3s, transform .35s var(--ease); }
+  .switch.hide { opacity: 0; pointer-events: none; transform: translate(-50%, 18px); }
+  .switch .lbl { display: flex; flex-direction: column; padding: 0 14px 0 10px; line-height: 1.25; white-space: nowrap; }
+  .switch .lbl b { font-size: 14px; font-weight: 700; color: var(--ink); }
+  .switch .lbl span { font-size: 12.5px; color: #8E8E8E; }
+  .switch button { height: 42px; padding: 0 18px; border: 0; border-radius: var(--r-btn); background: var(--inner); font: inherit; font-size: 15px; font-weight: 500; color: var(--ink); white-space: nowrap; cursor: pointer; transition: background .2s, color .2s; }
+  .switch button:hover { background: #E4E4E4; }
+  .switch button.on { background: var(--cta); color: #fff; }
+</style>
+</head>
+<body>
+<iframe id="view" title="First screen concept"></iframe>
+<div class="switch" id="switch" role="group" aria-label="First screen concepts">
+  <div class="lbl"><b>Первый экран</b><span>3 концепта, переключай</span></div>
+  <button type="button" data-c="card">Карточка</button><button type="button" data-c="bento">Бенто</button><button type="button" data-c="air">В воздухе</button>
+</div>
+<script>
+  const PAGES = { card: 'v41-card.html', bento: 'v51-bento.html', air: 'v50-air.html' };
+  const view = document.getElementById('view'), sw = document.getElementById('switch');
+  let cur = null;
+  function show(k) {
+    if (!PAGES[k]) k = 'card';
+    if (k === cur) return;
+    cur = k;
+    sw.querySelectorAll('[data-c]').forEach(b => b.classList.toggle('on', b.dataset.c === k));
+    history.replaceState(null, '', '#' + k);
+    view.classList.add('out');
+    setTimeout(() => { view.src = PAGES[k]; }, 200);
+  }
+  view.addEventListener('load', () => { view.classList.remove('out'); try { view.contentWindow.focus(); } catch (e) {} });
+  sw.addEventListener('click', e => { const b = e.target.closest('[data-c]'); if (b) show(b.dataset.c); });
+  // the switch hides once the concept is scrolled down to the article, as inside the pages
+  (function watch() {
+    try {
+      const w = view.contentWindow, art = w && w.document.querySelector('.article');
+      if (art) sw.classList.toggle('hide', w.scrollY > art.getBoundingClientRect().top + w.scrollY - w.innerHeight * .6);
+    } catch (e) {}
+    requestAnimationFrame(watch);
+  })();
+  show(location.hash.slice(1) || 'card');
+</script>
+</body>
+</html>

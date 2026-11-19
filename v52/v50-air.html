@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Best AI Tools for Google Ads Management 2026: Top 10 — Ryze blog redesign, draft by Aleksandra Zianchurina · bento</title>
+<title>Best AI Tools for Google Ads Management 2026: Top 10 — Ryze blog redesign, draft by Aleksandra Zianchurina · in the air</title>
 <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","headline":"Best AI Tools for Google Ads Management 2026: Top 10","author":{"@type":"Person","name":"Ira Bodnar","jobTitle":"Founder, Ryze AI"},"publisher":{"@type":"Organization","name":"Ryze AI"},"datePublished":"2026-03-25","dateModified":"2026-11-08"}
@@ -1027,17 +1027,135 @@
   .mx-n i { transition: opacity .25s, transform .45s var(--ease) .25s; }
   .b-or .mx-n i { color: #111; }
 
-  /* ---------- v51: the main button. The agents charge it with orange, or Copy draws a frame round the form ---------- */
-  #fx-form button { position: relative; overflow: hidden; }
+  /* ---------- v43 in the air ---------- */
+  .air { position: relative; padding: 40px 0 44px; }
+  .air > .agent { z-index: 40; }
+  .air-field { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+  .at { position: absolute; left: 0; top: 0; display: grid; place-items: center; border-radius: var(--r-card); background: #fff; box-shadow: 0 22px 44px -22px rgba(0,0,0,.34), 0 0 0 1px rgba(0,0,0,.03); pointer-events: auto; cursor: pointer; opacity: 0; will-change: transform; }
+  .at > img { width: 50%; height: 50%; object-fit: contain; }
+  .at .star { position: static; width: 54%; height: 54%; }
+  .at-s { position: absolute; right: -7px; bottom: -7px; padding: 3px 6px; border-radius: var(--r-btn); background: #111; color: #fff; font-size: 11.5px; font-weight: 700; white-space: nowrap; }
+  .at.ours .at-s { background: var(--cta); }
+  .at-n { position: absolute; left: 50%; top: calc(100% + 12px); padding: 4px 8px; border-radius: var(--r-btn); background: #111; color: #fff; font-size: 12.5px; font-weight: 500; white-space: nowrap; opacity: 0; transform: translateX(-50%); transition: opacity .2s; pointer-events: none; }
+  .at:hover .at-n { opacity: 1; }
+  .air .hm-l { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; max-width: 1000px; margin: 0 auto; padding: 0; text-align: center; }
+  .air .hm-l .eh-h1 { margin: 22px 0 0; font-size: 62px; line-height: 1.04; }
+  .air .eh-answer { margin: 18px auto 0; max-width: 900px; font-size: 17px; }
+  .air .eh-by { margin-top: 22px; padding-top: 0; justify-content: center; }
+  .air .eh-by .sp { display: none; }
+  .air .hm-slot { width: 640px; height: 168px; min-height: 0; margin: 30px auto 0; text-align: left; }
+  .air .win-full { width: 640px; padding: 24px 28px; }
+  .air .fx-h { max-width: none; font-size: 26px; line-height: 1.15; }
+  .air .fx-p { margin-top: 4px; max-width: none; font-size: 15px; }
+  .air .win.build .fx-h, .air .win.build .fx-p { visibility: visible; }
+
+  /* ---------- v44 in the air: a white first screen, edge to edge, and different pieces of Ryze floating around ---------- */
+  /* the white goes on under the logo strip, so the logos sit on the same white and the grey page starts with the article */
+  .air::before { content: ""; position: absolute; left: 50%; top: -12px; bottom: -100px; width: 100vw; transform: translateX(-50%); background: #fff; z-index: 0; }
+  .fl { position: absolute; left: 0; top: 0; border-radius: var(--r-card); background: #fff; color: var(--ink); box-shadow: 0 18px 40px -22px rgba(0,0,0,.3), 0 0 0 1px #EBEBEB; pointer-events: auto; opacity: 0; will-change: transform; transition: box-shadow .35s; white-space: nowrap; }
+  .fl.held { box-shadow: 0 34px 56px -24px rgba(0,0,0,.4), 0 0 0 1px #E2E2E2; }
+  .fl-tile { display: grid; place-items: center; }
+  .fl-tile img { width: 52%; height: 52%; object-fit: contain; }
+  .fl-tile .star { position: static; width: 54%; height: 54%; }
+  .fl .at-s { position: absolute; right: -7px; bottom: -7px; padding: 3px 6px; border-radius: var(--r-btn); background: var(--cta); color: #fff; font-size: 11.5px; font-weight: 700; }
+  .fl-chip { font-style: normal; display: inline-block; padding: 3px 7px; border-radius: var(--r-btn); background: var(--c); color: #fff; font-size: 11.5px; font-weight: 700; }
+  .fl-chg { display: flex; align-items: center; gap: 10px; height: 44px; padding: 0 14px 0 8px; font-size: 13.5px; }
+  .fl-chg b, .fl-st b { font-weight: 700; }
+  .fl-met { width: 150px; height: 104px; padding: 12px 14px; overflow: hidden; }
+  .fl-met span { display: block; font-size: 12.5px; font-weight: 500; }
+  .fl-met b { display: block; margin-top: 2px; font-size: 30px; line-height: 1; letter-spacing: -.02em; font-weight: 500; }
+  .fl-met svg { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 40px; }
+  .fl-met path { fill: var(--cta); }
+  .fl-rev { display: flex; align-items: center; gap: 10px; padding: 10px 16px 10px 10px; font-size: 13px; line-height: 1.35; }
+  .fl-rev img { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; }
+  .fl-rev i { display: block; font-style: normal; color: var(--cta); letter-spacing: 1px; font-size: 12px; }
+  .fl-g2 { display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 12px 0 10px; font-size: 14px; font-weight: 700; }
+  .fl-g2 img { width: 20px; height: 20px; }
+  .fl-g2 span { font-weight: 500; }
+  .fl-st { display: flex; align-items: center; gap: 12px; height: 40px; padding: 0 8px 0 12px; font-size: 13.5px; }
+  .fl-tag { padding: 3px 6px; border-radius: var(--r-btn); background: #E26A8E; color: #fff; font-size: 10.5px; font-weight: 700; letter-spacing: .03em; }
+  .fl-ap { display: flex; align-items: center; gap: 6px; height: 36px; padding: 0 13px; background: #111; color: #fff; font-size: 13px; font-weight: 500; transition: background .25s, color .25s, box-shadow .35s; }
+  .fl-ap.off { background: #fff; color: var(--ink); }
+  .fl-ap.off svg { display: none; }
+
+  /* ---------- v45: fewer letters in the floating pieces, more pictures and icons ---------- */
+  .fl-ad { overflow: visible; }
+  .fl-ad img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: var(--r-card); }
+  .fl-up { position: absolute; left: 8px; bottom: 8px; display: flex; align-items: center; gap: 3px; padding: 3px 6px; border-radius: var(--r-btn); background: var(--cta); color: #fff; font-size: 11.5px; font-weight: 700; }
+  .fl-up svg { width: 10px; height: 10px; }
+  .fl-play { position: absolute; left: 50%; top: 50%; width: 34px; height: 34px; margin: -17px 0 0 -17px; display: grid; place-items: center; border-radius: 50%; background: #fff; box-shadow: 0 8px 16px -8px rgba(0,0,0,.5); }
+  .fl-play svg { width: 12px; height: 12px; margin-left: 2px; }
+  .fl-chart { width: 130px; height: 84px; overflow: hidden; }
+  .fl-chart b { position: absolute; left: 12px; top: 9px; font-size: 22px; line-height: 1; letter-spacing: -.02em; font-weight: 500; }
+  .fl-chart svg { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 46px; }
+  .fl-chart path { fill: var(--cta); }
+  .fl-faces { display: flex; align-items: center; height: 46px; padding: 0 12px 0 8px; font-size: 14px; font-weight: 700; }
+  .fl-faces img.f { width: 30px; height: 30px; margin-left: -8px; border: 2px solid #fff; border-radius: 50%; object-fit: cover; }
+  .fl-faces img.f:first-child { margin-left: 0; }
+  .fl-faces img.g { width: 18px; height: 18px; margin: 0 5px 0 10px; }
+  .fl-tog { width: 64px; height: 38px; padding: 5px; }
+  .fl-tog i { position: relative; display: block; width: 100%; height: 100%; border-radius: var(--r-btn); background: #E4E4E4; transition: background .3s; }
+  .fl-tog i::after { content: ""; position: absolute; left: 3px; top: 3px; width: 22px; height: 22px; border-radius: 3px; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.25); transition: transform .35s var(--ease); }
+  .fl-tog.on i { background: var(--cta); }
+  .fl-tog.on i::after { transform: translateX(26px); }
+  .fl-bars { width: 62px; height: 62px; display: flex; align-items: flex-end; justify-content: center; gap: 5px; padding: 15px; }
+  .fl-bars i { display: block; width: 7px; border-radius: 2px; background: #111; transition: height .5s var(--ease); }
+  .fl-bars i:last-child { background: var(--cta); }
+
+  /* ---------- v46 in the air: icons in the headline (as on mobbin.com) or Ryze stars around it (as the coins on gumroad.com) ---------- */
+  .hi { display: none; place-items: center; width: .8em; height: .8em; margin: 0 .04em; border-radius: var(--r-card); vertical-align: -.1em; font-style: normal; }
+  body.am-inline .hi { display: inline-grid; animation: hiIn .7s cubic-bezier(.3,1.5,.5,1) both; }
+  .hi img { width: 62%; height: 62%; object-fit: contain; }
+  .hi-ryze { background: #111; }
+  .hi-ryze img { filter: invert(1); }
+  .hi-gads { background: #fff; box-shadow: inset 0 0 0 1.5px #E4E4E4; }
+  body.am-inline .hi-ryze { animation-delay: .5s; }
+  body.am-inline .hi-gads { animation-delay: .68s; }
+  @keyframes hiIn { from { transform: scale(.2) rotate(-24deg); opacity: 0; } to { transform: none; opacity: 1; } }
+  .hi { transition: transform .3s var(--ease); }
+  .hi:hover { transform: rotate(-8deg) scale(1.06); }
+  /* the stars: one brand object, many times, big ones cut off by the edges */
+  .fl.fl-star { background: var(--c); border-radius: 0; box-shadow: none !important; -webkit-mask: url(../assets/logo.webp) center / contain no-repeat; mask: url(../assets/logo.webp) center / contain no-repeat; }
+  .air .hm-l > .star { display: none; }
+  #am-switch { bottom: 84px; }
+  #am-switch button { white-space: nowrap; }
+
+  /* ---------- v49: physics on the first screen ---------- */
+  .ph-layer, .ph-cv, .ph-rope { position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; }
+  .ph-cv { z-index: 36; }
+  .ph-layer { z-index: 37; }
+  .ph-rope { z-index: 44; overflow: visible; }
+  .ph-rope path { fill: none; stroke: var(--cta); stroke-width: 2; stroke-linecap: round; }
+  .ph-rope circle { fill: var(--cta); }
+  .ph-pill { position: absolute; left: 0; top: 0; display: flex; align-items: center; gap: 8px; height: 34px; padding: 0 12px 0 7px; border-radius: var(--r-btn); background: #fff; color: var(--ink); box-shadow: 0 10px 22px -12px rgba(0,0,0,.35), 0 0 0 1px #E4E4E4; font-size: 13.5px; font-weight: 500; white-space: nowrap; will-change: transform; }
+  .ph-pill i { width: 18px; height: 18px; border-radius: 3px; background: var(--c); }
+  .ph-ryze { position: absolute; left: 0; top: 0; z-index: 47; cursor: grab; touch-action: none; display: none; }
+  .ph-ryze:active { cursor: grabbing; }
+  .ph-ryze svg { display: block; width: 22px; height: 24px; filter: drop-shadow(0 2px 3px rgba(0,0,0,.25)); }
+  .ph-ryze span { position: absolute; left: 16px; top: 18px; padding: 3px 7px; border-radius: var(--r-btn); background: var(--cta); color: #fff; font-size: 11.5px; font-weight: 700; white-space: nowrap; }
+  body.ph-band .ph-ryze { display: block; }
+  .ph-count { position: absolute; left: 0; top: 0; z-index: 38; padding: 4px 9px; border-radius: var(--r-btn); background: #111; color: #fff; font-size: 12.5px; font-weight: 700; white-space: nowrap; opacity: 0; transition: opacity .3s; pointer-events: none; }
+  body.ph-edits .ph-count { opacity: 1; }
+  body.ph-orbit .air > .agent { pointer-events: auto; cursor: grab; touch-action: none; }
+  #ph-switch { bottom: 84px; }
+  #ph-switch button { white-space: nowrap; }
+
+  /* ---------- v50: the main CTA is the focus. The magnet stays; three ways to make the button want a click ---------- */
+  #ph-switch { display: none !important; }
+  #fx-form button { position: relative; overflow: hidden; transition: background .3s, border-color .3s, translate .25s var(--ease); }
   #fx-form button > span, #fx-form button > svg { position: relative; z-index: 1; }
+  #fx-form button > svg { transition: transform .3s var(--ease); }
   .ct-fill { position: absolute; inset: 0; background: var(--cta); transform: scaleX(0); transform-origin: 0 50%; transition: transform .6s var(--ease); pointer-events: none; }
   #fx-form button.charged:hover .ct-fill { background: var(--cta-hover); }
-  .ct-frame { position: absolute; left: 0; top: 0; z-index: 34; border: 1.5px solid var(--cta); pointer-events: none; opacity: 0; transition: opacity .2s; }
+  /* the magnetic button: it leans towards the mouse, the arrow points at it, on hover it turns orange */
+  body.ct-mag #fx-form button:hover { background: var(--cta); }
+  /* the selection: a frame with handles around the form, as in a design tool, with its name */
+  .ct-frame { position: absolute; left: 0; top: 0; z-index: 34; border: 1.5px solid var(--cta); pointer-events: none; display: none; }
+  body.ct-sel .ct-frame.on, body.ct-both .ct-frame.on { display: block; }
   .ct-frame i { position: absolute; width: 9px; height: 9px; margin: -5px 0 0 -5px; border: 1.5px solid var(--cta); background: #fff; opacity: 0; transition: opacity .3s; }
   .ct-frame.done i { opacity: 1; }
   .ct-frame b { position: absolute; left: -1.5px; top: -27px; padding: 3px 8px; border-radius: var(--r-btn); background: var(--cta); color: #fff; font-size: 12px; font-weight: 700; white-space: nowrap; opacity: 0; transform: translateY(4px); transition: opacity .3s, transform .4s var(--ease); }
   .ct-frame.done b { opacity: 1; transform: none; }
-  #gx-switch { display: none !important; }
   #ct-switch { display: none !important; }
   #ct-switch button { white-space: nowrap; }
 
@@ -1050,29 +1168,29 @@
 <script>if (window.top !== window) document.documentElement.classList.add('embed');</script>
 <style>html.embed #cx-switch { display: none !important; }</style>
 </head>
-<body class="pl-black btn-wh cm-num" data-cx="bento">
+<body class="pl-black btn-wh cm-num am-inline" data-cx="air">
 
 <header class="site-header">
-  <a class="site-logo" href="#"><img src="assets/logo.webp" alt="">Ryze</a>
+  <a class="site-logo" href="#"><img src="../assets/logo.webp" alt="">Ryze</a>
   <nav class="site-nav"><a href="#">AI Marketer</a><a href="#">MCP</a><a href="#">Muse</a><a href="#">SEO</a><a href="#">Shopify CRO</a><a href="#">About Us</a><a href="#">Pricing</a></nav>
   <a class="site-cta" href="#">Get started</a>
 </header>
 
 <main class="page">
 
-  <!-- 1. hero, bento: the headline tile, the sign-up tile (it flies into the sidebar on scroll), one result of an account at a time, the G2 rating.
-       10 px gaps and the 8 px corners of the Ryze cards, as everywhere on the page -->
-  <section class="bento" id="hero">
-    <div class="card hm-l">
+  <!-- 1. hero, in the air: a white screen, no card. The headline in the middle, the form strip under it (it flies into the sidebar on scroll),
+       only the icons of the services floating around, moved about now and then by the agents' cursors -->
+  <section class="air" id="hero">
+    <div class="air-field" id="air-field"></div>
+    <div class="hm-l">
       <nav class="eh-crumbs"><a href="#">Blog</a> / <a href="#">Paid Ads</a></nav>
-      <img class="star" id="star" src="assets/logo.webp" alt="">
+      <img class="star" id="star" src="../assets/logo.webp" alt="">
       <h1 class="eh-h1" aria-label="Best AI Tools for Google Ads Management 2026: Top 10"><span class="slot" data-i="0">Best</span> <span class="slot" data-i="1">AI Tools</span> for <span class="slot" data-i="2">Google Ads Management</span> <span class="slot" data-i="3">2026: Top&nbsp;10</span></h1>
       <p class="eh-answer"><b>Ryze AI</b> is the best AI for Google Ads in 2026 for teams that want changes applied automatically. Opteo fits if you approve by hand; OptyAds suits agencies that write their own rules. Ryze is our product.</p>
       <div class="eh-by"><span class="ava">IB</span><span>By <b>Ira Bodnar</b>, Founder, Ryze AI</span><span class="sp"></span><span>Published <time datetime="2026-03-25">Mar 25, 2026</time></span><span>Updated <time datetime="2026-11-08">Nov 8, 2026</time></span><span>18 min read</span></div>
-    </div>
     <div class="hm-slot" id="hm-slot">
       <div class="win" id="win">
-        <img class="win-bg" src="assets/hero.jpg" alt="">
+        <img class="win-bg" src="../assets/hero.jpg" alt="">
         <div class="pl-g" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
         <div class="gx st-a" id="gx" aria-label="ROAS by week in one account: flat at 2.4x for four weeks, then 4.1x six weeks after Ryze was connected">
           <svg class="gx-svg" viewBox="0 0 470 600" preserveAspectRatio="none" aria-hidden="true">
@@ -1103,7 +1221,7 @@
         </div>
         <i class="win-or" id="win-or" aria-hidden="true"></i>
         <div class="win-mini" id="win-mini">
-          <div class="dk-ico"><i><img src="assets/platforms/google-ads.webp" alt=""></i><i><img src="assets/platforms/meta.webp" alt=""></i><i><img src="assets/platforms/google-analytics.svg" alt=""></i><i><img src="assets/platforms/tiktok.webp" alt=""></i><i><img src="assets/platforms/linkedin.webp" alt=""></i></div>
+          <div class="dk-ico"><i><img src="../assets/platforms/google-ads.webp" alt=""></i><i><img src="../assets/platforms/meta.webp" alt=""></i><i><img src="../assets/platforms/google-analytics.svg" alt=""></i><i><img src="../assets/platforms/tiktok.webp" alt=""></i><i><img src="../assets/platforms/linkedin.webp" alt=""></i></div>
           <h3 class="dk-t">AI autopilot for<br><span class="roll-w">Google Ads</span></h3>
           <div class="dk-park"></div>
           <a class="btn-cta wide" href="#">Try for free <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -1111,25 +1229,6 @@
         </div>
       </div>
     </div>
-    <div class="card b-tile b-or" id="b-or">
-      <div class="bt-top"><span>One account on Ryze</span></div>
-      <div class="mx" id="mx">
-        <div class="mx-k" id="mx-k">ROAS after 6 weeks</div>
-        <div class="mx-n"><b id="mx-v">4.1x</b><i id="mx-a">↗</i></div>
-        <div class="mx-f" id="mx-f">from 2.4x before Ryze</div>
-        <div class="mx-bar" id="mx-bar"><i></i><i></i><i></i><i></i></div>
-      </div>
-      <svg class="bo-chart" id="bo-chart" viewBox="0 0 235 86" preserveAspectRatio="none" aria-hidden="true">
-        <defs><clipPath id="bo-clip"><rect id="bo-cr" x="-2" y="-4" width="240" height="94"/></clipPath></defs>
-        <g clip-path="url(#bo-clip)"><path class="bo-b"/><path class="bo-a"/></g>
-        <path class="bo-guide"/>
-      </svg>
-    </div>
-    <div class="card b-tile b-vi" id="b-vi">
-      <div class="bt-top"><span>G2 rating</span></div>
-      <div class="bt-big" id="bv-n">4.8</div>
-      <div class="bt-stars" aria-label="5 stars"><i class="on">★</i><i class="on">★</i><i class="on">★</i><i class="on">★</i><i class="on">★</i></div>
-      <div class="b-faces"><img src="assets/people/a1.jpg" alt=""><img src="assets/people/a2.jpg" alt=""><img src="assets/people/a3.jpg" alt=""><span>340 reviews</span></div>
     </div>
   </section>
 
@@ -1139,9 +1238,9 @@
   <div class="article">
     <aside class="side">
       <div class="card dock" id="dock">
-          <img class="win-bg" src="assets/hero.jpg" alt="">
+          <img class="win-bg" src="../assets/hero.jpg" alt="">
           <div class="pl-g" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-          <div class="dk-ico"><i><img src="assets/platforms/google-ads.webp" alt=""></i><i><img src="assets/platforms/meta.webp" alt=""></i><i><img src="assets/platforms/google-analytics.svg" alt=""></i><i><img src="assets/platforms/tiktok.webp" alt=""></i><i><img src="assets/platforms/linkedin.webp" alt=""></i></div>
+          <div class="dk-ico"><i><img src="../assets/platforms/google-ads.webp" alt=""></i><i><img src="../assets/platforms/meta.webp" alt=""></i><i><img src="../assets/platforms/google-analytics.svg" alt=""></i><i><img src="../assets/platforms/tiktok.webp" alt=""></i><i><img src="../assets/platforms/linkedin.webp" alt=""></i></div>
           <h3 class="dk-t">AI autopilot for<br><span class="roll"><span class="roll-in" id="roll-in"><span>Google Ads</span><span>Meta Ads</span><span>Analytics</span><span>TikTok Ads</span><span>LinkedIn Ads</span><span>Google Ads</span></span></span></h3>
           <div class="dk-park"></div>
           <a class="btn-cta wide" id="dock-btn" href="#"><i class="fill"></i><span class="lbl">Try for free</span> <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -1225,9 +1324,15 @@
   <button type="button" data-cm="rot">Показатели</button><button type="button" data-cm="num">Цифры</button><button type="button" data-gx="a">Холм</button><button type="button" data-gx="b">Столбики</button><button type="button" data-gx="c">Линия</button>
   <button type="button" class="vs-arrow" data-gx="r" title="Нарисовать ещё раз" aria-label="Нарисовать ещё раз">↻</button>
 </div>
+  <button type="button" data-am="inline">В заголовке</button><button type="button" data-am="stars">Звёздочки</button><button type="button" data-am="icons">Иконки вокруг</button>
+</div>
+<div class="var-switch" id="ph-switch" role="group" aria-label="Физика">
+  <div class="vs-label"><b>Физика</b></div>
+  <button type="button" data-ph="magnet">Магнит</button><button type="button" data-ph="rain">Ливень</button><button type="button" data-ph="edits">Правки</button><button type="button" data-ph="band">Резинка</button><button type="button" data-ph="orbit">Орбита</button>
+</div>
 <div class="var-switch" id="ct-switch" role="group" aria-label="Главная кнопка">
   <div class="vs-label"><b>Кнопка</b></div>
-  <button type="button" data-ct="charge">Заряд</button><button type="button" data-ct="sel">Выделение</button><button type="button" data-ct="both">Вместе</button><button type="button" data-ct="none">Без</button>
+  <button type="button" data-ct="charge">Заряд</button><button type="button" data-ct="sel">Выделение</button><button type="button" data-ct="both">Вместе</button><button type="button" data-ct="mag">Магнит-кнопка</button><button type="button" data-ct="now">Как сейчас</button>
 </div>
 <div class="var-switch" id="cx-switch" role="group" aria-label="Концепты первого экрана">
   <div class="vs-label"><b>Первый экран</b><span>3 концепта, переключай</span></div>
@@ -1269,7 +1374,7 @@
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduce) document.getElementById('win').classList.remove('unframed');
 
-  document.getElementById('logo-set').innerHTML = CLIENTS.map(c => `<img src="assets/clients/${c}.svg" alt="${c.replace(/-/g, ' ')} logo">`).join('');
+  document.getElementById('logo-set').innerHTML = CLIENTS.map(c => `<img src="../assets/clients/${c}.svg" alt="${c.replace(/-/g, ' ')} logo">`).join('');
 
   // contents in the sticky sidebar
   // contents: a short card in the sidebar — where you are, what is next, the full list on demand
@@ -1302,7 +1407,7 @@
   document.getElementById('cmp-body').innerHTML = TOOLS.map((t, i) => `
     <tr class="${t.ours ? 'ours' : ''} ${i >= VISIBLE_ROWS ? 'more' : ''}">
       <td class="rk tabnum">${String(i + 1).padStart(2, '0')}</td>
-      <td><div class="tool"><span class="ico"><img src="assets/tools/${t.logo}" alt="${t.name} logo"></span><span>${t.name}${t.ours ? '<em>Our product</em>' : ''}</span></div></td>
+      <td><div class="tool"><span class="ico"><img src="../assets/tools/${t.logo}" alt="${t.name} logo"></span><span>${t.name}${t.ours ? '<em>Our product</em>' : ''}</span></div></td>
       <td><div class="score tabnum"><span><span data-roll="${t.score.toFixed(1)}">${t.score.toFixed(1)}</span><small>/10</small></span><span class="meter"><i style="--v:${t.score / 10}; transition-delay:${200 + i * 60}ms"></i></span></div></td>
       <td class="bf">${t.best}</td>
       <td class="pr">${t.price}</td>
@@ -1318,7 +1423,7 @@
   // bar chart
   document.getElementById('bars').innerHTML = TOOLS.map((t, i) => `
     <div class="bar-row ${t.ours ? 'ours' : ''}">
-      <div class="bar-name"><img src="assets/tools/${t.logo}" alt="">${t.name}</div>
+      <div class="bar-name"><img src="../assets/tools/${t.logo}" alt="">${t.name}</div>
       <div class="bar"><i style="--v:${t.score / 10}; transition-delay:${i * 70}ms"></i></div>
       <div class="bar-val tabnum">${t.score.toFixed(1)}</div>
     </div>`).join('') + `<div class="axis"><span></span><div><span>0</span><span>2.5</span><span>5</span><span>7.5</span><span>10</span></div><span></span></div>`;
@@ -1483,11 +1588,7 @@
     win.style.clipPath = ''; win.classList.remove('build', 'unframed');
     [cardH, cardP, field, btn, gc].forEach(el => { el.getAnimations().forEach(x => x.cancel()); el.style.transform = el.style.opacity = el.style.visibility = ''; el.classList.remove('picked'); });
     chartFinal(); fieldIn();
-    mx.style.visibility = ''; mx.classList.remove('picked');
-    [slot, bOr, bVi].forEach(t => { t.getAnimations().forEach(x => x.cancel()); t.style.opacity = t.style.transform = ''; t.classList.remove('picked'); });
-    bviFinal();
-    boCr.setAttribute('width', 240);
-    [mxK, mxF, mxA, document.getElementById('mx-bar')].forEach(e => { e.style.opacity = ''; });
+    slot.getAnimations().forEach(x => x.cancel());
   }
   const pick = (el, c) => { el.style.setProperty('--pc', c); el.classList.add('picked'); setTimeout(() => el.classList.remove('picked'), 650); };
   // the frame grows from the top left corner after the cursor, like drawing a rectangle
@@ -1633,15 +1734,14 @@
     // only the form inside the black tile is built: the email field slides in, then Keywords drops the button into it.
     // Ryze demo shows up only when the page scrolls
     demoLoop(demo);
-    const flyIn = (el, i) => el.animate([{ transform: 'translate(80px, 16px)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 760, delay: 250 + i * 150, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'backwards' }).finished.catch(() => {});
-    const landed = Promise.all([slot, bOr, bVi].map(flyIn));
-    // the first segment starts filling the moment the metric tile has landed
-    landed.then(() => startRot(0));
+    const landed = slot.animate([{ transform: 'translateY(26px)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 760, delay: 250, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'backwards' }).finished.catch(() => {});
     (async () => {
-      await sleep(250 + 760);
+      await sleep(250 + 420);   // the field and the button come in while the strip is still settling
       if (building) {
-        // as in «В воздухе»: the field shows up in its place with the button already in it
-        field.style.opacity = 1; btn.style.opacity = 1;
+        // v45: the field shows up in its own place, rising a little, not from the side
+        field.style.opacity = 1;
+        // the button comes in right with the field, on its own: no waiting for an agent
+        btn.style.opacity = 1;
         btn.animate([{ transform: 'translateY(12px)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 480, delay: 160, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'backwards' });
         await field.animate([{ transform: 'translateY(10px)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 560, easing: 'cubic-bezier(.2,.8,.2,1)' }).finished.catch(() => {});
       }
@@ -1658,12 +1758,12 @@
       setTimeout(() => a.remove(), 1100);
     };
     // the agents leave as soon as their word is done; only Keywords stays for the button
-    await rewrite(agents, async (k, a) => { if (building && JOBS[k]) { await landed; await JOBS[k](a, EDITS[k].c); } await ctJob(a, k); await sleep(150); leave(a); });
+    await rewrite(agents, async (k, a) => { if (building && JOBS[k]) { await landed; await JOBS[k](a, EDITS[k].c); } if (!reduce) takeOver(a, k); });
     rewriting = false;
     await sleep(350);
     finishBuild();
     await sleep(250);
-    flyAway(agents.filter(a => !a._gone && !a._ctl));
+    // v44: the agents stay in the first screen and keep playing with the pieces
   }
   document.fonts.ready.then(() => { if (!reduce) heroIntro(); });
 
@@ -1683,7 +1783,7 @@
     // the full plate is always as tall as its slot in the hero, so the email field stays at the bottom
     // (before, the height was set only at the very top: after a reload lower down the field jumped up under the text)
     full.style.height = slot.offsetHeight + 'px';
-    swarm.forEach(a => { if (!a._ctl) a.style.opacity = p > .02 ? 0 : 1; });
+    swarm.forEach(a => { if (!a._ctl) a.style.opacity = p > .02 || a._away ? 0 : 1; });
     if (p <= 0) { wor.style.clipPath = ''; win.classList.remove('flying', 'gone'); win.removeAttribute('style'); full.style.height = slot.offsetHeight + 'px'; full.style.transform = ''; full.style.opacity = 1; wmini.style.opacity = 0; dock.classList.remove('show'); return; }
     if (p >= 1) { win.classList.add('gone'); dock.classList.add('show'); return; }
     const A = slot.getBoundingClientRect(), B = dockBox(), e = ease(p);
@@ -1982,7 +2082,7 @@
     4: {
       render() {
         const words = s => s.split(' ').map(w => `<span class="w">${w}</span>`).join(' ');
-        hcTxt.innerHTML = `<div class="hc-q"><img class="hc-ava" src="assets/sarah.webp" alt=""><div>
+        hcTxt.innerHTML = `<div class="hc-q"><img class="hc-ava" src="../assets/sarah.webp" alt=""><div>
           <p class="hc-quote">${words('“We')} <u>${words('cut CPA by 32%')}<svg class="ul" viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3 8 C 40 3, 90 2, 140 5 S 190 9, 197 4"/></svg></u> ${words('in six weeks, and I stopped checking bids at&nbsp;night.”')}</p>
           <div class="hc-who hc-t" style="transition-delay:.7s"><b>Sarah Mitchell</b>, growth lead at a skincare brand <span class="hc-stars">${'<i>★</i>'.repeat(5)}</span></div></div></div>`;
         hcTxt.querySelectorAll('.w').forEach((w, i) => { w.style.transitionDelay = `${120 + i * 38}ms`; });
@@ -2000,7 +2100,7 @@
     5: {
       render() {
         hcTxt.innerHTML = `<span class="hc-k hc-t">Takes 2 minutes</span><h3 class="hc-h hc-t">Connect Google&nbsp;Ads. Ryze takes the night&nbsp;shift.</h3>`;
-        hcAct.innerHTML = `<div class="sl hc-t" id="sl"><i class="sl-fill"></i><span class="sl-lbl"><span class="t">Slide to connect Google Ads</span><em>›</em><em>›</em><em>›</em></span><span class="sl-end"><img src="assets/logo.webp" alt=""></span><button class="sl-k" type="button" aria-label="Connect Google Ads"><img src="assets/platforms/google-ads.webp" alt=""></button></div><small class="hc-s hc-t">7 days free. No credit card.</small>`;
+        hcAct.innerHTML = `<div class="sl hc-t" id="sl"><i class="sl-fill"></i><span class="sl-lbl"><span class="t">Slide to connect Google Ads</span><em>›</em><em>›</em><em>›</em></span><span class="sl-end"><img src="../assets/logo.webp" alt=""></span><button class="sl-k" type="button" aria-label="Connect Google Ads"><img src="../assets/platforms/google-ads.webp" alt=""></button></div><small class="hc-s hc-t">7 days free. No credit card.</small>`;
         const sl = hcAct.querySelector('#sl'), knob = sl.querySelector('.sl-k'), lab = sl.querySelector('.sl-lbl'), txt = lab.querySelector('.t');
         const MAX = () => sl.clientWidth - 12 - knob.offsetWidth;
         const setK = v => { sl.style.setProperty('--k', v + 'px'); lab.style.opacity = sl.classList.contains('done') ? 1 : Math.max(0, 1 - v / 170); };
@@ -2283,7 +2383,7 @@
   else plateDraw(0);
   addEventListener('resize', () => plateDraw(performance.now()));
   // one switch at a time: plate colours while the hero is on screen, CTA versions further down
-  const switchBars = () => { const inHero = scrollY < art.getBoundingClientRect().top + scrollY - innerHeight * .6; hcSwitch.classList.toggle('hide', inHero); document.getElementById('cx-switch').classList.toggle('hide', !inHero); document.getElementById('ct-switch').classList.toggle('hide', !inHero); document.getElementById('gx-switch').classList.toggle('hide', !inHero); };
+  const switchBars = () => { const inHero = scrollY < art.getBoundingClientRect().top + scrollY - innerHeight * .6; hcSwitch.classList.toggle('hide', inHero); document.getElementById('cx-switch').classList.toggle('hide', !inHero); document.getElementById('ph-switch').classList.toggle('hide', !inHero); document.getElementById('ct-switch').classList.toggle('hide', !inHero); document.getElementById('gx-switch').classList.toggle('hide', !inHero); };
   addEventListener('scroll', switchBars, { passive: true });
   switchBars();
 
@@ -2431,105 +2531,382 @@
   });
   setCm(cm, gxSt, true);
 
-  // ---------- v42: the little hill in the metric tile ----------
-  const boB = document.querySelector('.bo-b'), boA = document.querySelector('.bo-a'), boG = document.querySelector('.bo-guide'), boCr = document.getElementById('bo-cr'), boSvg = document.getElementById('bo-chart');
-  // the card's hill heights (248 … 470) mapped into the tile (8 … 70)
-  const tY = y => 8 + (y - 248) / (470 - 248) * 62;
-  let boHill = { yb: 0, ya: 0 }, boRun = 0;
-  function boShape(yb, ya) {
-    boHill = { yb, ya };
-    const d = yb - ya, pt = (x, f) => `${x} ${(yb - d * f).toFixed(1)}`, c = `C ${pt(105, .02)}, ${pt(128, .23)}, ${pt(150, .54)} S ${pt(200, .94)}, 237 ${ya.toFixed(1)}`;
-    boB.setAttribute('d', '');
-    boA.setAttribute('d', `M-2 ${yb.toFixed(1)} L70 ${yb.toFixed(1)} ${c} L237 90 L-2 90 Z`);
-    boG.setAttribute('d', `M-2 ${yb.toFixed(1)} L70 ${yb.toFixed(1)} ${c}`);
-  }
-  function boTo(m, ms) {
-    const y0 = { ...boHill }, yb = tY(m.yb), ya = tY(m.ya), t0 = performance.now(), id = ++boRun;
-    const step = now => { if (id !== boRun) return; const k = Math.min(1, (now - t0) / ms), e = k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2; boShape(y0.yb + (yb - y0.yb) * e, y0.ya + (ya - y0.ya) * e); if (k < 1) requestAnimationFrame(step); };
-    requestAnimationFrame(step);
-  }
-  boShape(tY(470), tY(248));
-  // in the build, Numbers rides the edge of the hill from left to right while it appears
-  async function boDraw(a) {
-    const at = x => { const q = atX(boG, x), r = boSvg.getBoundingClientRect(), H = ehero.getBoundingClientRect(); return { x: r.left - H.left + q.x * r.width / 235, y: r.top - H.top + q.y * r.height / 86 }; };
-    const q0 = at(4);
-    a.style.transition = 'transform .45s cubic-bezier(.2,.8,.2,1), opacity .3s'; place(a, q0.x - 3, q0.y - 3);
-    await sleep(470); if (!building) return;
-    a.style.transition = 'opacity .3s';
-    await new Promise(res => {
-      const t0 = performance.now();
-      const step = now => {
-        if (!building) return res();
-        const k = Math.min(1, (now - t0) / 950), e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2, x = -2 + 239 * e;
-        boCr.setAttribute('width', x + 2);
-        const q = at(Math.max(4, Math.min(x, 226))); place(a, q.x - 3, q.y - 3);
-        if (k < 1) requestAnimationFrame(step); else res();
-      };
-      requestAnimationFrame(step);
+
+  // ---------- v44 in the air: different pieces of Ryze float around the headline, and the agents play with them ----------
+  const ARROW_S = '<svg viewBox="0 0 18 18" width="12" height="12" fill="none"><path d="M3.5 9.5l3.2 3 7.8-8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const hillD = 'M0 40 L0 30 C 40 30, 60 26, 85 18 S 130 4, 150 2 L150 40 Z';
+  // x, y: where the piece lives, as a share of the hero; z: depth (far ones are smaller, a little soft, and move less)
+  const UP = '<svg viewBox="0 0 12 12" fill="none"><path d="M3 9L9 3M4 3h5v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const PLAY = '<svg viewBox="0 0 12 12"><path d="M3 1.8v8.4L10 6z" fill="#111"/></svg>';
+  const FR = [
+    { k: 'ryze', x: .915, y: .22, z: 1.1, r: 7, cls: 'fl-tile', size: 100, html: '<span class="at-s">#1</span>' },
+    { k: 'gads', x: .09, y: .22, z: .95, r: -8, cls: 'fl-tile', size: 72, html: '<img src="../assets/platforms/google-ads.webp" alt="Google Ads">' },
+    { k: 'meta', x: .04, y: .07, z: .6, r: 10, cls: 'fl-tile', size: 52, html: '<img src="../assets/platforms/meta.webp" alt="Meta">' },
+    { k: 'lin', x: .065, y: .56, z: .85, r: 5, cls: 'fl-tile', size: 60, html: '<img src="../assets/platforms/linkedin.webp" alt="LinkedIn">' },
+    { k: 'ga', x: .15, y: .84, z: .9, r: -6, cls: 'fl-tile', size: 64, html: '<img src="../assets/platforms/google-analytics.svg" alt="Google Analytics">' },
+    { k: 'tik', x: .835, y: .06, z: .75, r: 8, cls: 'fl-tile', size: 58, html: '<img src="../assets/platforms/tiktok.webp" alt="TikTok">' },
+    { k: 'shop', x: .95, y: .6, z: .85, r: -9, cls: 'fl-tile', size: 62, html: '<img src="../assets/platforms/shopify.webp" alt="Shopify">' },
+  ];
+  const airF = document.getElementById('air-field'), starEl = document.getElementById('star');
+  // the stars: x, y as a share of the hero, size, colour, tilt, spin (degrees a second), depth
+  const STARS = [
+    { x: -.01, y: .2, size: 210, c: '#111', r: -14, spin: 4, z: 1 },
+    { x: 1.0, y: .82, size: 250, c: 'var(--cta)', r: 12, spin: -3, z: 1.1 },
+    { x: .9, y: .14, size: 120, c: 'var(--cta)', r: 20, spin: -6, z: .9 },
+    { x: .11, y: .8, size: 110, c: 'var(--cta)', r: -8, spin: 7, z: .9 },
+    { x: .22, y: .05, size: 54, c: '#111', r: 6, spin: -9, z: .7 },
+    { x: .085, y: .5, size: 64, c: '#111', r: 15, spin: -7, z: .8 },
+    { x: .935, y: .47, size: 72, c: '#111', r: -10, spin: 8, z: .85 },
+  ].map(f => ({ ...f, cls: 'fl-star', html: '' }));
+  let fls = [], airMode = 'inline';
+  function buildPieces(list) {
+    fls.forEach(f => f.el.remove());
+    fls = list.map((f, n) => {
+      const el = document.createElement('div');
+      el.className = 'fl ' + f.cls; el.innerHTML = f.html;
+      if (f.size) Object.assign(el.style, { width: f.size + 'px', height: f.size + 'px' });
+      if (f.c) el.style.setProperty('--c', f.c);
+      if (f.k === 'ryze') el.prepend(starEl);
+      if (f.z < .7) el.style.filter = 'blur(1.2px)';
+      el.style.zIndex = Math.round(f.z * 10);
+      airF.append(el);
+      return { ...f, el, n, dx: 0, dy: 0, held: null, ph: n * 1.37, per: 6 + (n % 4) * 1.4 };
     });
-    boCr.setAttribute('width', 240);
+    [...fls].sort((a, b) => b.z - a.z).forEach((f, i) => { f.order = i; });
+  }
+  // what changes when an agent puts a piece down
+  const drops = {};   // v45: the icons stay as they are; the agents only move them about
+  let airMx = 0, airMy = 0, airSx = 0, airSy = 0;
+  addEventListener('mousemove', e => { airMx = e.clientX / innerWidth - .5; airMy = e.clientY / innerHeight - .5; }, { passive: true });
+  let airT0 = performance.now();
+  function airDraw(now) {
+    const W = airF.offsetWidth, H = airF.offsetHeight, t = (now - airT0) / 1000, sy = scrollY;
+    airSx += (airMx - airSx) * .04; airSy += (airMy - airSy) * .04;
+    for (const f of fls) {
+      const k = reduce ? 1 : clamp((t - .5 - f.order * .12) / .9), e = 1 - Math.pow(1 - k, 3);
+      const fx = f.held || reduce ? 0 : Math.sin(t * 2 * Math.PI / f.per + f.ph) * 3 * f.z, fy = f.held || reduce ? 0 : Math.cos(t * 2 * Math.PI / (f.per * 1.3) + f.ph) * 5 * f.z;
+      const w = f.el.offsetWidth, h = f.el.offsetHeight;
+      const x = f.x * W + f.dx + fx - airSx * 12 * f.z - w / 2;
+      const y = f.y * H + f.dy + fy - airSy * 8 * f.z - sy * (.15 + f.z * .35) - h / 2 + (1 - e) * 16;
+      f.el.style.transform = `translate(${x}px, ${y}px) rotate(${f.spin ? f.r + t * f.spin : f.r * (f.held ? .4 : 1)}deg) scale(${(.94 + .06 * e) * (f.held ? 1.04 : 1)})`;
+      f.el.style.opacity = e;
+    }
+    if (!reduce) requestAnimationFrame(airDraw);
+  }
+  requestAnimationFrame(airDraw);
+  // the agents' play: fly to a piece, take it, carry it a little way, put it down, rest; never more than two carrying at once
+  let carrying = 0;
+  const rnd = (a, b) => a + Math.random() * (b - a);
+  async function play(a) {
+    a.style.opacity = 1;
+    await sleep(rnd(300, 1400));
+    while (true) {
+      if (airMode === 'inline') {
+        if (!a._away) { a._away = true; a.style.transition = 'transform .9s cubic-bezier(.55,0,.75,.3), opacity .6s ease .15s'; place(a, a._x + 240, a._y - 60); a.style.opacity = 0; }
+        await sleep(600); continue;
+      }
+      if (a._away) { a._away = false; const W = rel(win); a.style.transition = 'none'; place(a, W.x + W.w + 40, W.y + 20); requestAnimationFrame(() => { a.style.transition = 'opacity .4s'; a.style.opacity = 1; }); await sleep(450); }
+      if (scrollY > 200 || document.hidden || carrying >= 2) { await sleep(700); continue; }
+      const free = fls.filter(f => !f.held);
+      const f = free[Math.floor(Math.random() * free.length)];
+      if (!f) { await sleep(700); continue; }
+      f.held = a; carrying++;
+      const grip = () => { const r = f.el.getBoundingClientRect(), H = ehero.getBoundingClientRect(); return { x: r.left - H.left + r.width * .68, y: r.top - H.top + r.height * .58 }; };
+      let q = grip();
+      a.style.transition = 'transform 1s cubic-bezier(.2,.8,.2,1), opacity .3s'; place(a, q.x, q.y);
+      await sleep(1050);
+      f.el.classList.add('held');
+      a.style.transition = 'opacity .3s';
+      const tx = rnd(-44, 44), ty = rnd(-26, 26), sx = f.dx, sy0 = f.dy, t0 = performance.now(), ms = rnd(1400, 2000);
+      await new Promise(res => {
+        const step = now => {
+          const k = Math.min(1, (now - t0) / ms), e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+          f.dx = sx + (tx - sx) * e; f.dy = sy0 + (ty - sy0) * e;
+          q = grip(); place(a, q.x, q.y);
+          if (k < 1) requestAnimationFrame(step); else res();
+        };
+        requestAnimationFrame(step);
+      });
+      f.el.classList.remove('held'); f.held = null; carrying--;
+      if (drops[f.k]) drops[f.k](f);
+      // rest close by, then look for the next piece
+      a.style.transition = 'transform 1.4s cubic-bezier(.2,.8,.2,1)'; place(a, a._x + rnd(-16, 30), a._y + rnd(14, 34));
+      await sleep(rnd(2200, 4600));
+    }
   }
 
-  // ---------- v42 bento: the G2 tile counts up to 4.8 and lights its stars; the form switch ----------
-  const bOr = document.getElementById('b-or'), bVi = document.getElementById('b-vi'), bvN = document.getElementById('bv-n');
-  const bviCount = (to, ms) => new Promise(res => { const t0 = performance.now(); const step = now => { const k = Math.min(1, (now - t0) / ms), e = 1 - Math.pow(1 - k, 3); bvN.textContent = (to * e).toFixed(1); if (k < 1) requestAnimationFrame(step); else res(); }; requestAnimationFrame(step); });
-  async function bviPlay() {
-    bVi.classList.remove('wait');
-    await bviCount(4.8, 900);
-    for (const st of bVi.querySelectorAll('.bt-stars i')) { st.classList.add('on'); await sleep(100); }
-  }
-  function bviFinal() { bVi.classList.remove('wait'); bvN.textContent = '4.8'; bVi.querySelectorAll('.bt-stars i').forEach(x => x.classList.add('on')); }
+  // ---------- v47: nothing floats, the cursors are the whole show ----------
+  airMode = 'inline'; buildPieces([]);
 
-  // ---------- v51: the main button ----------
-  // «Заряд»: on their way out each agent flies into the button and fills a part of it with orange.
-  // «Выделение»: Copy draws a frame round the form with the name «Start here». «Вместе»: Copy draws, the other three charge
-  const ctSwitch = document.getElementById('ct-switch'), ctFill = btn.querySelector('.ct-fill'), ctArrow = btn.querySelector('svg');
-  const ctMode = 'charge';   // Sasha: the bento keeps the charge only
-  ctSwitch.querySelectorAll('[data-ct]').forEach(b => b.classList.toggle('on', b.dataset.ct === ctMode));
-  // a new choice replays the whole first screen
-  ctSwitch.addEventListener('click', e => { const b = e.target.closest('[data-ct]'); if (!b) return; history.replaceState(null, '', '#ct-' + b.dataset.ct); scrollTo(0, 0); location.reload(); });
-  const ctNeed = ctMode === 'both' ? 3 : 4;
-  let ctCharge = 0, ctSelP = 0, ctSelOn = false;
+  // ---------- v49: physics on the first screen ----------
+  const phSwitch = document.getElementById('ph-switch');
+  let phMode = (location.hash.match(/^#ph-(magnet|rain|edits|band|orbit)$/) || [])[1] || 'magnet';
+  const SVGNS = 'http://www.w3.org/2000/svg';
+  const HR = () => ehero.getBoundingClientRect();
+  const relR = el => { const H = HR(), r = el.getBoundingClientRect(); return { l: r.left - H.left, t: r.top - H.top, r: r.right - H.left, b: r.bottom - H.top, w: r.width, h: r.height }; };
+  // the mouse in the hero's coordinates, with its speed
+  let pmx = -999, pmy = -999, pmvx = 0, pmvy = 0, mLast = 0;
+  addEventListener('pointermove', e => {
+    const H = HR(), x = e.clientX - H.left, y = e.clientY - H.top, t = performance.now();
+    if (t - mLast < 100) { const d = Math.max(8, t - mLast) / 1000; pmvx = pmvx * .5 + (x - pmx) / d * .5; pmvy = pmvy * .5 + (y - pmy) / d * .5; } else { pmvx = pmvy = 0; }
+    pmx = x; pmy = y; mLast = t;
+  }, { passive: true });
+  const mIn = () => { if (!mouse) return false; const H = HR(); return pmx > -20 && pmy > -40 && pmx < H.width + 20 && pmy < H.height + 30; };
+  const mSpeed = () => performance.now() - mLast < 120 ? Math.hypot(pmvx, pmvy) : 0;
+  const input = field.querySelector('input');
+  let focused = false;
+  input.addEventListener('focus', () => { focused = true; }); input.addEventListener('blur', () => { focused = false; });
+  const home = k => { const rs = slots[EDITS[k].i].getClientRects(), r = rs[rs.length - 1], H = HR(); return { x: r.right - H.left + 2, y: r.bottom - H.top - 20 }; };
+  const lineRects = () => {
+    const rg = document.createRange(); rg.selectNodeContents(hl.querySelector('.eh-h1'));
+    const rs = [...rg.getClientRects()].filter(r => r.width > 4), H = HR(), lines = [];
+    rs.forEach(r => { const L = lines.find(l => Math.abs(l.t - r.top) < 12); if (L) { L.l = Math.min(L.l, r.left); L.r = Math.max(L.r, r.right); L.b = Math.max(L.b, r.bottom); } else lines.push({ l: r.left, r: r.right, t: r.top, b: r.bottom }); });
+    return lines.map(l => ({ l: l.l - H.left, t: l.t - H.top, w: l.r - l.l, h: l.b - l.t }));
+  };
+  const btnPress = () => btn.animate([{ transform: 'scale(1)' }, { transform: 'scale(.96)' }, { transform: 'scale(1)' }], { duration: 240 });
+
+  // ---- the named agents: springs (magnet) and orbits ----
+  const AG = [];
+  function takeOver(a, k) {
+    if (AG.some(g => g.a === a)) return;
+    const g = { a, k, x: a._x, y: a._y, vx: 0, vy: 0, drag: false, away: false, th: k * 1.6 };
+    a._ctl = true; a.style.transition = 'opacity .35s';
+    a.addEventListener('pointerdown', e => { if (phMode !== 'orbit') return; e.preventDefault(); g.drag = true; a.setPointerCapture(e.pointerId); });
+    a.addEventListener('pointerup', () => { g.drag = false; });
+    AG.push(g);
+    if (AG.length === 4 && typeof ctStart === 'function') ctStart();
+  }
+  function agentsStep(dt, now) {
+    const hidden = scrollY > 40 || document.hidden, show = phMode === 'magnet' || phMode === 'orbit';
+    const F = relR(field), B = relR(btn), bc = { x: B.l + B.w / 2, y: B.t + B.h / 2 }, inn = mIn();
+    const near = focused || ctNear(now) || (inn && pmx > F.l - 140 && pmx < F.r + 140 && pmy > F.t - 120 && pmy < F.b + 100);
+    const overBtn = inn && pmx > B.l && pmx < B.r && pmy > B.t && pmy < B.b, sp = mSpeed();
+    AG.forEach((g, i) => {
+      if (!show) {
+        if (!g.away) { g.away = true; g.vx = 520; g.vy = -180; }
+        g.x += g.vx * dt; g.y += g.vy * dt; g.a.style.opacity = 0; g.a.style.transform = `translate(${g.x}px, ${g.y}px)`; return;
+      }
+      if (g.away) { g.away = false; const h0 = home(g.k); g.x = h0.x + 320; g.y = h0.y - 60; g.vx = g.vy = 0; }
+      const hm = home(g.k), dr = { x: Math.sin(now / 1700 + i * 2.1) * 6, y: Math.cos(now / 2100 + i * 1.3) * 5 };
+      let tx, ty, K, C;
+      if (phMode === 'magnet') {
+        // v49 (Sasha): smooth, no bounce. Near the form the agents glide to their spots around the form strip (never on the button)
+        // and float there, each on a slow little circle
+        const S = relR(slot), fl = now / 1000 * (2 * Math.PI / (7 + g.k * 1.3)) + g.k * 1.7;
+        const spot = [{ x: S.l - 78, y: S.t + S.h * .35 }, { x: S.r + 26, y: S.t + 18 }, { x: S.l + S.w * .26, y: S.b + 16 }, { x: S.r + 22, y: S.b - 44 }][g.k];
+        if (near) { tx = spot.x + Math.cos(fl) * 16; ty = spot.y + Math.sin(fl) * 11; }
+        else { tx = hm.x + dr.x; ty = hm.y + dr.y; }
+        K = 6; C = 5;
+        const o = ctHook(g, now, B);
+        if (o) { tx = o.x; ty = o.y; K = o.K; C = o.C; }
+      } else {
+        // the button is the centre of gravity: each agent on its own flattened orbit; over the button the orbits tighten
+        const R = [120, 165, 210, 255][g.k] * (overBtn ? .5 : 1);
+        g.th += [.9, -.7, .55, -.45][g.k] * dt * (overBtn ? 1.7 : 1);
+        tx = bc.x + Math.cos(g.th) * R; ty = bc.y + Math.sin(g.th) * R * .42; K = 9; C = 2.4;
+      }
+      if (g.drag) { const px = g.x, py = g.y; g.x = pmx; g.y = pmy; g.vx = (g.x - px) / dt; g.vy = (g.y - py) / dt; }
+      else { g.vx += (K * (tx - g.x) - C * g.vx) * dt; g.vy += (K * (ty - g.y) - C * g.vy) * dt; g.x += g.vx * dt; g.y += g.vy * dt; }
+      g.a.style.transform = `translate(${g.x}px, ${g.y}px)`;
+      g.a.style.opacity = hidden ? 0 : 1;
+    });
+  }
+
+  // ---- the rubber band: Ryze is tied to the button with an elastic string ----
+  const rope = document.createElementNS(SVGNS, 'svg'); rope.setAttribute('class', 'ph-rope');
+  const ropeP = document.createElementNS(SVGNS, 'path'), knot = document.createElementNS(SVGNS, 'circle'); knot.setAttribute('r', 3);
+  rope.append(ropeP, knot); ehero.append(rope);
+  const ryze = document.createElement('div'); ryze.className = 'ph-ryze';
+  ryze.innerHTML = '<svg viewBox="0 0 20 22"><path d="M2 2l15.5 8-7 1.8-3.3 7.4z" fill="#EC6B3E" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"/></svg><span>Ryze</span>';
+  ehero.append(ryze);
+  const band = { x: 0, y: 0, vx: 0, vy: 0, drag: false, init: false };
+  ryze.addEventListener('pointerdown', e => { e.preventDefault(); band.drag = true; ryze.setPointerCapture(e.pointerId); });
+  ryze.addEventListener('pointerup', () => { band.drag = false; });
+  function bandStep(dt) {
+    const show = phMode === 'band';
+    rope.style.display = show ? '' : 'none';
+    if (!show) return;
+    const B = relR(btn), A = { x: B.r - 10, y: B.t + 8 }, rest = { x: A.x + 56, y: A.y - 70 };
+    if (!band.init) { band.init = true; band.x = rest.x + 300; band.y = rest.y - 200; band.vx = band.vy = 0; }
+    if (band.drag) { const px = band.x, py = band.y; band.x = pmx; band.y = pmy; band.vx = (band.x - px) / dt; band.vy = (band.y - py) / dt; }
+    else {
+      let tx = rest.x, ty = rest.y;
+      // when the mouse comes close, Ryze leans out to it on the string
+      if (mIn()) { const d = Math.hypot(pmx - rest.x, pmy - rest.y); if (d < 200) { const k = 1 - d / 200; tx += (pmx - rest.x) * .6 * k; ty += (pmy - rest.y) * .6 * k; } }
+      band.vx += (52 * (tx - band.x) - 3 * band.vx) * dt; band.vy += (52 * (ty - band.y) - 3 * band.vy + 140) * dt;
+      band.x += band.vx * dt; band.y += band.vy * dt;
+    }
+    ryze.style.transform = `translate(${band.x}px, ${band.y}px)`;
+    const tip = { x: band.x + 3, y: band.y + 3 }, d = Math.hypot(tip.x - A.x, tip.y - A.y), L0 = 110, sag = d < L0 ? Math.sqrt(L0 * L0 - d * d) * .75 : 3;
+    ropeP.setAttribute('d', `M ${A.x} ${A.y} Q ${(A.x + tip.x) / 2} ${(A.y + tip.y) / 2 + sag} ${tip.x} ${tip.y}`);
+    knot.setAttribute('cx', A.x); knot.setAttribute('cy', A.y);
+  }
+
+  // ---- the falling worlds: rain of cursors, edits that drop into the button (Matter.js) ----
+  const cv = document.createElement('canvas'); cv.className = 'ph-cv'; ehero.append(cv);
+  const cx = cv.getContext('2d');
+  const layer = document.createElement('div'); layer.className = 'ph-layer'; ehero.append(layer);
+  const counter = document.createElement('div'); counter.className = 'ph-count'; ehero.append(counter);
+  const PH_PAL = ['#E26A8E', '#3E9F68', '#4F7FEA', '#9479EA', '#111111', '#EC6B3E'];
+  const EDIT_T = [['Bids −12%', '#E26A8E'], ['3 search terms blocked', '#3E9F68'], ['+$40/day to Search', '#4F7FEA'], ['Paused 1 weak ad', '#9479EA'], ['12 negative keywords', '#3E9F68'], ['Bid on “crm” +9%', '#E26A8E'], ['Budget 9–11 am +14%', '#4F7FEA']];
+  const PH_ARROW = new Path2D('M2 2l15.5 8-7 1.8-3.3 7.4z');
+  let M = null, eng = null, bodies = [], pills = [], pusher = null, spawnT = 0, spawned = 0, editN = 0, eaten = 23, acc = 0, worldKind = null;
+  function worldStop() {
+    if (eng) { M.Composite.clear(eng.world, false); M.Engine.clear(eng); }
+    eng = null; worldKind = null; bodies = []; pills.forEach(p => p.el.remove()); pills = [];
+    cx.clearRect(0, 0, cv.width, cv.height);
+  }
+  function worldStart(kind) {
+    loadMatter().then(() => {
+      if (phMode !== kind) return;
+      M = Matter; worldStop(); worldKind = kind;
+      eng = M.Engine.create(); eng.gravity.y = kind === 'rain' ? 1 : .6;
+      const H = HR(), W = H.width, Hh = H.height;
+      const st = (x, y, w, h) => M.Bodies.rectangle(x + w / 2, y + h / 2, w, h, { isStatic: true, friction: .5 });
+      const walls = [st(-40, -600, 40, Hh + 640), st(W, -600, 40, Hh + 640), st(-60, Hh - 4, W + 120, 60)];
+      const S = relR(slot);
+      pusher = M.Bodies.circle(-300, -300, 28, { isStatic: true });
+      M.Composite.add(eng.world, [...walls, st(S.l, S.t, S.w, S.h), pusher]);
+      spawned = 0; spawnT = 0; acc = 0; eaten = 23; counter.textContent = `✓ ${eaten} changes applied`;
+    });
+  }
+  function worldStep(dt) {
+    const H = HR(), W = H.width, S = relR(slot), B = relR(btn), bc = { x: B.l + B.w / 2, y: B.t + B.h / 2 };
+    // the mouse is a round body that pushes things around
+    if (mIn()) { M.Body.setPosition(pusher, { x: pmx, y: pmy }); M.Body.setVelocity(pusher, { x: pmvx / 60, y: pmvy / 60 }); }
+    else M.Body.setPosition(pusher, { x: -300, y: -300 });
+    if (worldKind === 'rain') {
+      if (spawned < 36) { spawnT -= dt; if (spawnT <= 0) { spawnT = .06; const b = M.Bodies.polygon(30 + Math.random() * (W - 60), -20 - Math.random() * 80, 3, 14, { restitution: .25, friction: .15, frictionAir: .012, angle: Math.random() * 6.28 }); b.col = PH_PAL[Math.floor(Math.random() * PH_PAL.length)]; bodies.push(b); M.Composite.add(eng.world, b); spawned++; } }
+      // what lands on the black strip slides along it towards the button
+      bodies.forEach(b => { const p = b.position; if (p.y > S.t - 30 && p.y < S.t + 2 && p.x > S.l && p.x < S.r) M.Body.applyForce(b, p, { x: Math.sign(bc.x - p.x) * .00018 * b.mass, y: 0 }); });
+    } else {
+      if (pills.length < 7) { spawnT -= dt; if (spawnT <= 0) { spawnT = 1.3; spawnPill(W); } }
+      for (const p of [...pills]) {
+        if (p.gone) continue;
+        const q = p.b.position, dx = bc.x - q.x, dy = bc.y - q.y, d = Math.hypot(dx, dy) || 1;
+        M.Body.applyForce(p.b, q, { x: dx / d * .00042 * p.b.mass, y: dy / d * .00012 * p.b.mass });
+        // once it lands on the form and settles for a moment, it drops into the button
+        const onForm = q.y > S.t - p.h - 10 && q.y < S.b && q.x > S.l - 30 && q.x < S.r + 30;
+        p.touch = onForm ? (p.touch || 0) + dt : 0;
+        if (p.touch > .45) eat(p, bc);
+      }
+    }
+  }
+  function spawnPill(W) {
+    const [t, c] = EDIT_T[editN++ % EDIT_T.length], el = document.createElement('div');
+    el.className = 'ph-pill'; el.innerHTML = `<i style="--c:${c}"></i>${t}`; layer.append(el);
+    const w = el.offsetWidth, h = el.offsetHeight, left = Math.random() < .5;
+    const S = relR(slot), x = S.l + w / 2 + Math.random() * Math.max(10, S.w - w);
+    const b = M.Bodies.rectangle(x, -40, w, h, { chamfer: { radius: 4 }, restitution: .2, friction: .08, frictionAir: .02, angle: (Math.random() - .5) * .5 });
+    M.Composite.add(eng.world, b); pills.push({ b, el, w, h });
+  }
+  function eat(p, bc) {
+    p.gone = true; M.Composite.remove(eng.world, p.b);
+    const q = p.b.position;
+    p.el.animate([{ transform: `translate(${q.x - p.w / 2}px, ${q.y - p.h / 2}px) rotate(${p.b.angle}rad)`, opacity: 1 }, { transform: `translate(${bc.x - p.w / 2}px, ${bc.y - p.h / 2}px) scale(.2)`, opacity: 0 }], { duration: 360, easing: 'cubic-bezier(.5,0,.75,0)', fill: 'forwards' });
+    setTimeout(() => { p.el.remove(); pills = pills.filter(x => x !== p); }, 380);
+    setTimeout(() => { btnPress(); counter.textContent = `✓ ${++eaten} changes applied`; counter.animate([{ transform: counter.style.transform + ' scale(1.08)' }, { transform: counter.style.transform }], { duration: 260 }); }, 300);
+  }
+  function worldRender() {
+    const H = HR();
+    if (cv.width !== Math.round(H.width * 2)) { cv.width = Math.round(H.width * 2); cv.height = Math.round(H.height * 2); }
+    cx.setTransform(2, 0, 0, 2, 0, 0); cx.clearRect(0, 0, H.width, H.height);
+    if (worldKind === 'rain') {
+      for (const b of bodies) {
+        cx.save(); cx.translate(b.position.x, b.position.y); cx.rotate(b.angle); cx.scale(1.1, 1.1); cx.translate(-8, -11);
+        cx.fillStyle = b.col; cx.fill(PH_ARROW); cx.lineWidth = 1.6; cx.lineJoin = 'round'; cx.strokeStyle = '#fff'; cx.stroke(PH_ARROW); cx.restore();
+      }
+    }
+    for (const p of pills) if (!p.gone) p.el.style.transform = `translate(${p.b.position.x - p.w / 2}px, ${p.b.position.y - p.h / 2}px) rotate(${p.b.angle}rad)`;
+    if (worldKind === 'edits') { const S = relR(slot); counter.style.transform = `translate(${S.r - counter.offsetWidth}px, ${S.b + 12}px)`; }
+  }
+
+  let lastT = performance.now();
+  function phLoop(now) {
+    const dt = Math.min(.04, (now - lastT) / 1000); lastT = now;
+    agentsStep(dt, now); bandStep(dt);
+    if (eng) { acc += dt; let n = 0; while (acc >= 1 / 60 && n < 3) { worldStep(1 / 60); M.Engine.update(eng, 1000 / 60); acc -= 1 / 60; n++; } worldRender(); }
+    requestAnimationFrame(phLoop);
+  }
+  requestAnimationFrame(phLoop);
+  function setPh(k) {
+    phMode = k;
+    document.body.classList.remove('ph-magnet', 'ph-rain', 'ph-edits', 'ph-band', 'ph-orbit'); document.body.classList.add('ph-' + k);
+    phSwitch.querySelectorAll('[data-ph]').forEach(b => b.classList.toggle('on', b.dataset.ph === k));
+    worldStop(); band.init = false; AG.forEach(g => { g.drag = false; });
+    if (k === 'rain' || k === 'edits') worldStart(k);
+  }
+  phSwitch.addEventListener('click', e => { const b = e.target.closest('[data-ph]'); if (b) setPh(b.dataset.ph); });
+  setPh(phMode);
+
+  // ---------- v50: the main CTA ----------
+  const ctSwitch = document.getElementById('ct-switch'), fill = btn.querySelector('.ct-fill'), arrowSvg = btn.querySelector('svg');
+  let ctMode = 'charge', ctT0 = 0, charge = 0, selP = 0, selGo = false;
+  // after the headline the agents come to the form on their own for a few seconds, so the CTA is the focus even without a mouse
+  function ctNear(now) { return ctMode !== 'now' && ctT0 > 0 && now - ctT0 < 5200; }
+  function ctStart() {
+    ctT0 = performance.now(); charge = 0; selP = 0; selGo = false;
+    fill.style.transform = 'scaleX(0)'; btn.classList.remove('charged');
+    ctFrame.classList.remove('done'); ctFrame.classList.toggle('on', ctMode === 'sel' || ctMode === 'both');
+    AG.forEach(g => { g.ch = 0; g.chAt = ctT0 + 350 + g.k * 480; });
+  }
+  // «Заряд»: each agent flies into the button and fills a quarter of it with orange; with all four the button is orange
+  // «Выделение»: Copy draws a ctFrame round the form, the others gather
+  function ctHook(g, now, B) {
+    const need = ctMode === 'both' ? 3 : 4;
+    if ((ctMode === 'charge' || (ctMode === 'both' && g.k !== 0)) && g.ch !== 2 && g.chAt && now > g.chAt && ctNear(now)) {
+      const t = { x: B.l + B.w * (.18 + .2 * (g.k % 4)), y: B.t + B.h * .45 };
+      g.ch = 1;
+      if (Math.hypot(g.x - t.x, g.y - t.y) < 18) {
+        g.ch = 2; charge++;
+        fill.style.transform = `scaleX(${Math.min(1, charge / need)})`;
+        btn.animate([{ transform: 'scale(1)' }, { transform: 'scale(.97)' }, { transform: 'scale(1)' }], { duration: 220 });
+        if (charge === need) { btn.classList.add('charged'); arrowSvg.animate([{ transform: 'none' }, { transform: 'translate(4px, -4px)' }, { transform: 'none' }, { transform: 'translate(3px, -3px)' }, { transform: 'none' }], { duration: 900, delay: 300 }); }
+      }
+      return { x: t.x, y: t.y, K: 30, C: 10 };
+    }
+    if ((ctMode === 'sel' || ctMode === 'both') && g.k === 0 && selP < 1 && ctT0) {
+      const S = relR(slot), a = { x: S.l - 8, y: S.t - 8 };
+      if (!selGo) { if (Math.hypot(g.x - a.x, g.y - a.y) < 14) selGo = now; return { x: a.x, y: a.y, K: 30, C: 10 }; }
+      selP = Math.min(1, (now - selGo) / 1000);
+      const e = selP < .5 ? 2 * selP * selP : 1 - Math.pow(-2 * selP + 2, 2) / 2;
+      if (selP >= 1) ctFrame.classList.add('done');
+      return { x: a.x + (S.w + 16) * e, y: a.y + (S.h + 16) * e, K: 400, C: 40 };
+    }
+    return null;
+  }
+  // the ctFrame
   const ctFrame = document.createElement('div'); ctFrame.className = 'ct-frame';
   ctFrame.innerHTML = '<i style="left:0;top:0"></i><i style="left:100%;top:0"></i><i style="left:0;top:100%"></i><i style="left:100%;top:100%"></i><b>Start here · 2 min</b>';
   ehero.append(ctFrame);
-  const ctBox = () => { const H = ehero.getBoundingClientRect(), r = field.getBoundingClientRect(); return { l: r.left - H.left - 8, t: r.top - H.top - 8, w: r.width + 16, h: r.height + 16 }; };
-  (function ctLoop() {
-    if (ctSelOn) {
-      const F = ctBox(), e = ctSelP < .5 ? 2 * ctSelP * ctSelP : 1 - Math.pow(-2 * ctSelP + 2, 2) / 2;
-      Object.assign(ctFrame.style, { left: F.l + 'px', top: F.t + 'px', width: Math.max(2, F.w * e) + 'px', height: Math.max(2, F.h * e) + 'px', opacity: scrollY < 40 ? 1 : 0 });
+  (function ctLoop(now) {
+    const S = relR(slot);
+    if (ctMode === 'sel' || ctMode === 'both') {
+      const e = selP < .5 ? 2 * selP * selP : 1 - Math.pow(-2 * selP + 2, 2) / 2;
+      Object.assign(ctFrame.style, { left: S.l - 8 + 'px', top: S.t - 8 + 'px', width: Math.max(2, (S.w + 16) * e) + 'px', height: Math.max(2, (S.h + 16) * e) + 'px', opacity: selGo && scrollY < 40 ? 1 : 0 });
+    }
+    if (ctMode === 'mag') {
+      const B = relR(btn), c = { x: B.l + B.w / 2, y: B.t + B.h / 2 };
+      const d = Math.hypot(pmx - c.x, pmy - c.y), on = mIn() && d < 170 && scrollY < 40;
+      if (on) {
+        const k = 1 - d / 170;
+        btn.style.translate = `${Math.max(-10, Math.min(10, (pmx - c.x) * .14 * k))}px ${Math.max(-6, Math.min(6, (pmy - c.y) * .14 * k))}px`;
+        // the arrow points at the mouse while it approaches; on the button itself it points ahead again
+        const inside = pmx > B.l && pmx < B.r && pmy > B.t && pmy < B.b;
+        arrowSvg.style.transform = inside ? 'translate(2px, -2px)' : `rotate(${Math.atan2(pmy - c.y, pmx - c.x) * 180 / Math.PI + 45}deg)`;
+      } else { btn.style.translate = ''; arrowSvg.style.transform = ''; }
     }
     requestAnimationFrame(ctLoop);
-  })();
-  const ctUntil = (f, ms) => new Promise(res => { const t0 = performance.now(); const chk = () => { if (f() || performance.now() - t0 > ms) res(); else setTimeout(chk, 80); }; chk(); });
-  async function ctJob(a, k) {
-    if (reduce || ctMode === 'none') return;
-    const doSel = (ctMode === 'sel' || ctMode === 'both') && k === 0, doCharge = ctMode === 'charge' || (ctMode === 'both' && k !== 0);
-    if (!doSel && !doCharge) return;
-    // the form must be there first
-    await ctUntil(() => +getComputedStyle(btn).opacity > .9 && +getComputedStyle(field).opacity > .9 && !(slot.getAnimations().length), 6000);
-    const H = () => ehero.getBoundingClientRect();
-    if (doSel) {
-      const F = ctBox();
-      a.style.transition = 'transform .6s cubic-bezier(.2,.8,.2,1), opacity .3s'; place(a, F.l, F.t);
-      await sleep(620);
-      ctSelOn = true; a.style.transition = 'opacity .3s';
-      await new Promise(res => { const t0 = performance.now(); const step = now => { ctSelP = Math.min(1, (now - t0) / 1000); const e = ctSelP < .5 ? 2 * ctSelP * ctSelP : 1 - Math.pow(-2 * ctSelP + 2, 2) / 2, F2 = ctBox(); place(a, F2.l + F2.w * e, F2.t + F2.h * e); if (ctSelP < 1) requestAnimationFrame(step); else res(); }; requestAnimationFrame(step); });
-      ctFrame.classList.add('done');
-      await sleep(250);
-    }
-    if (doCharge) {
-      const h = H(), B = btn.getBoundingClientRect();
-      a.style.transition = 'transform .7s cubic-bezier(.2,.8,.2,1), opacity .3s';
-      place(a, B.left - h.left + B.width * (.18 + .2 * (k % 4)), B.top - h.top + B.height * .45);
-      await sleep(720);
-      a.querySelector('svg').animate([{ transform: 'scale(1)' }, { transform: 'scale(.78)' }, { transform: 'scale(1)' }], { duration: 240 });
-      ctCharge++; ctFill.style.transform = `scaleX(${Math.min(1, ctCharge / ctNeed)})`;
-      btn.animate([{ transform: 'scale(1)' }, { transform: 'scale(.97)' }, { transform: 'scale(1)' }], { duration: 220 });
-      if (ctCharge === ctNeed) { btn.classList.add('charged'); ctArrow.animate([{ transform: 'none' }, { transform: 'translate(4px, -4px)' }, { transform: 'none' }, { transform: 'translate(3px, -3px)' }, { transform: 'none' }], { duration: 900, delay: 300 }); }
-      await sleep(200);
-    }
+  })(performance.now());
+  function setCt(k) {
+    ctMode = k;
+    document.body.classList.remove('ct-charge', 'ct-mag', 'ct-sel', 'ct-both', 'ct-now'); document.body.classList.add('ct-' + k);
+    ctSwitch.querySelectorAll('[data-ct]').forEach(b => b.classList.toggle('on', b.dataset.ct === k));
+    btn.style.translate = ''; arrowSvg.style.transform = '';
+    if (AG.length === 4) ctStart(); else { fill.style.transform = 'scaleX(0)'; ctFrame.classList.toggle('on', k === 'sel' || k === 'both'); }
   }
+  ctSwitch.addEventListener('click', e => { const b = e.target.closest('[data-ct]'); if (b) setCt(b.dataset.ct); });
+  setCt(ctMode);
 
   // reveal on scroll
   const io = new IntersectionObserver(entries => entries.forEach(e => {
