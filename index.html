@@ -1535,14 +1535,14 @@
   :root { --pk-fill: 1; --cd-under: 0; }
   body.pk-dk.pk-mint { --pk-base: #111111; --pk-edge: rgb(17 17 17 / .65); }
   body.pk-dk { --col-txt: #FFFFFF; --col-chip: #FFFFFF; --col-before: #E1B5A8; --col-after: #EC6B3E; --col-hero: #FFFFFF; }
-  /* the button of the mini version: orange or white (the switch bottom left, once the card is on screen) */
-  body.ll.dkb-or #dock-btn, body.ll.dkb-or #dock-btn.ready, body.ll.dkb-or .win-mini .btn-cta { background: var(--cta); border-color: var(--cta); outline-color: var(--cta); color: #fff; }
-  body.ll.dkb-or #dock-btn:hover, body.ll.dkb-or .win-mini .btn-cta:hover { background: var(--cta-hover); border-color: var(--cta-hover); }
-  body.ll.dkb-wh #dock-btn, body.ll.dkb-wh #dock-btn.ready, body.ll.dkb-wh .win-mini .btn-cta { background: #fff; border-color: #fff; outline-color: #fff; color: #111; }
-  body.ll.dkb-wh #dock-btn:hover, body.ll.dkb-wh .win-mini .btn-cta:hover { background: #EDEDED; border-color: #EDEDED; }
-  #dkb-switch { left: 16px; transform: none; }
-  #dkb-switch.hide { transform: translateY(18px); }
-  #dkb-switch.lift { bottom: 92px; }
+  /* the button of the mini version (Sasha, 19.11): white; the demo press fills it orange from left to right, «✓ Ready in 2 min» stands on orange,
+     then it eases back to white */
+  body.ll.pk-dk #dock-btn, body.ll.pk-dk .win-mini .btn-cta { background: #fff; border-color: #fff; outline-color: #fff; color: #111;
+    transition: background .4s, border-color .4s, color .3s, transform .15s; }
+  body.ll.pk-dk #dock-btn:hover, body.ll.pk-dk .win-mini .btn-cta:hover { background: #EDEDED; border-color: #EDEDED; }
+  body.ll.pk-dk #dock-btn .fill { background: var(--cta); }
+  body.ll.pk-dk #dock-btn.busy .fill { width: 100%; transition: width 1.6s cubic-bezier(.4,0,.2,1); }
+  body.ll.pk-dk #dock-btn.ready { background: var(--cta); border-color: var(--cta); outline-color: var(--cta); color: #fff; transition: none; }
 
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -1736,10 +1736,6 @@
 <div class="var-switch" id="ld-switch" role="group" aria-label="Земля до Ryze">
   <div class="vs-label"><b>Земля до Ryze</b><span>цвет на графике</span></div>
   <button type="button" data-ld="rose"><span class="pal-dots" aria-hidden="true"><i style="background:#E1F6F2"></i><i style="background:#E1B5A8"></i><i style="background:#EC6B3E"></i></span>Пудра</button><button type="button" data-ld="aqua"><span class="pal-dots" aria-hidden="true"><i style="background:#E1F6F2"></i><i style="background:#9CE7DD"></i><i style="background:#EC6B3E"></i></span>Бирюза</button><button type="button" data-ld="blue"><span class="pal-dots" aria-hidden="true"><i style="background:#E1F6F2"></i><i style="background:#8DD8F3"></i><i style="background:#EC6B3E"></i></span>Голубой</button><button type="button" data-ld="sage"><span class="pal-dots" aria-hidden="true"><i style="background:#E1F6F2"></i><i style="background:#B5CFC8"></i><i style="background:#EC6B3E"></i></span>Шалфей</button><button type="button" data-ld="graphite"><span class="pal-dots" aria-hidden="true"><i style="background:#E1F6F2"></i><i style="background:#2F3D3A"></i><i style="background:#EC6B3E"></i></span>Графит</button>
-</div>
-<div class="var-switch hide" id="dkb-switch" role="group" aria-label="Кнопка в карточке слева">
-  <div class="vs-label"><b>Кнопка слева</b><span>в мини-версии</span></div>
-  <button type="button" data-dkb="or">Оранжевая</button><button type="button" data-dkb="wh">Белая</button>
 </div>
 <div class="var-switch" id="sub-switch" role="group" aria-label="Подложка">
   <div class="vs-label"><b>Подложка</b><span>стекло под плашкой, карточкой слева и CTA</span></div>
@@ -3099,12 +3095,6 @@
       const tick = () => { if (scrollY < 1400) draw(); requestAnimationFrame(tick); };
       requestAnimationFrame(tick);
 
-      // the button of the mini version: orange or white. The switch shows once the hero is passed, and steps up over the CTA switch
-      one('dkb-switch', 'dkb', ['or', 'wh'], 'ryze-dkb', 'or', k => ['or', 'wh'].forEach(x => B.classList.toggle('dkb-' + x, x === k)));
-      const dsw = document.getElementById('dkb-switch'), hsw = document.getElementById('hc-switch');
-      const place = () => { dsw.classList.toggle('hide', scrollY < innerHeight * .5); dsw.classList.toggle('lift', !hsw.classList.contains('hide')); };
-      addEventListener('scroll', place, { passive: true }); place();
-      new MutationObserver(place).observe(hsw, { attributes: true, attributeFilter: ['class'] });
     })();
   })();
 
