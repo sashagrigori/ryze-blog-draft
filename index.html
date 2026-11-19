@@ -1437,10 +1437,10 @@
   body.ll .hc:not(.v4)::after, body.hcw .hc::after { padding: var(--s-w); background: var(--s-ring); }
   body.ll.ps-0 .win::after, body.ll.ps-0 .dock::after, body.ll.ps-0 .hc:not(.v4)::after, body.ps-0.hcw .hc::after { content: none; }
   body.hs-nob { --h-ring: linear-gradient(135deg, var(--c-orange) 0%, var(--c-rose) calc(var(--s-len) * .25), var(--c-aqua) calc(var(--s-len) * .5), #fff calc(var(--s-len) * .75), rgb(255 255 255 / .55) var(--s-len), rgb(255 255 255 / .3) 100%); }
-  body { --h-ring: linear-gradient(135deg, var(--c-orange) 0%, var(--c-rose) calc(var(--s-len) * .25), var(--c-aqua) calc(var(--s-len) * .5), var(--c-blue) calc(var(--s-len) * .73), rgba(141,216,243,.18) var(--s-len), rgba(255,255,255,.06) 100%); }
+  body.hs-pal { --h-ring: linear-gradient(135deg, var(--c-orange) 0%, var(--c-rose) calc(var(--s-len) * .25), var(--c-aqua) calc(var(--s-len) * .5), var(--c-blue) calc(var(--s-len) * .73), rgba(141,216,243,.18) var(--s-len), rgba(255,255,255,.06) 100%); }
   body.hs-white { --h-ring: linear-gradient(135deg, #fff 0%, rgb(255 255 255 / .9) var(--s-len), rgb(255 255 255 / .4) 100%); }
   body.ps-nob { --s-ring: linear-gradient(135deg, var(--c-orange) 0%, var(--c-rose) calc(var(--s-len) * .25), var(--c-aqua) calc(var(--s-len) * .5), #fff calc(var(--s-len) * .75), rgb(255 255 255 / .55) var(--s-len), rgb(255 255 255 / .3) 100%); }
-  body { --s-ring: linear-gradient(135deg, var(--c-orange) 0%, var(--c-rose) calc(var(--s-len) * .25), var(--c-aqua) calc(var(--s-len) * .5), var(--c-blue) calc(var(--s-len) * .73), rgba(141,216,243,.18) var(--s-len), rgba(255,255,255,.06) 100%); }
+  body.ps-pal { --s-ring: linear-gradient(135deg, var(--c-orange) 0%, var(--c-rose) calc(var(--s-len) * .25), var(--c-aqua) calc(var(--s-len) * .5), var(--c-blue) calc(var(--s-len) * .73), rgba(141,216,243,.18) var(--s-len), rgba(255,255,255,.06) 100%); }
   body.ps-white { --s-ring: linear-gradient(135deg, #fff 0%, rgb(255 255 255 / .9) var(--s-len), rgb(255 255 255 / .4) 100%); }
 
   /* the interactive plate: the glass on the slot; the main block makes room */
@@ -1493,6 +1493,56 @@
   /* the Ryze row: green into aqua, so the right end keeps an edge */
   body.ll .cmp tr.ours td:first-child::after { --ring: linear-gradient(90deg, #6FD68C 0%, rgb(111 214 140 / .6) 45%, rgb(102 205 191 / .55) 100%); }
 
+
+  /* ---------- v71 (Sasha, 19.11): colours from the palette and dots, from the panel ---------- */
+  /* the plate and its mini version on the left: any colour, mixed with white by «Заливка» */
+  body.pk-mint { --pk-bg: color-mix(in srgb, var(--pk-base, #E1F6F2) calc(var(--pk-fill) * 100%), #fff); }
+  /* the background of the main block, the chart, the buttons of the form and of the sidebar card */
+  body.ll #hero { background-color: var(--col-hero, #FFFFFF); }
+  body.ll .gx .gxa-before { fill: var(--col-before, var(--pk-before)); }
+  body.ll .gx .gxa-after { fill: var(--col-after, var(--cta)); }
+  body.tn-btn .win-full .joined button, body.tn-btn #dock-btn, body.tn-btn #dock-btn.ready, body.tn-btn .win-mini .btn-cta {
+    background: var(--col-btn) !important; border-color: var(--col-btn) !important; outline-color: var(--col-btn) !important; color: var(--col-btn-ink) !important; }
+  body.tn-btn .win-full .joined button:hover, body.tn-btn #dock-btn:hover, body.tn-btn .win-mini .btn-cta:hover { filter: brightness(.94); }
+  /* the text in the plate and its mini version on the left (headline, line under it, «Ryze connected», the small print); the text on the chart's chips */
+  body.tn-txt .win-full .fx-h, body.tn-txt .win-full .fx-p, body.tn-txt .gx-mark, body.tn-txt .win-mini .dk-t, body.tn-txt .win-mini .dk-t span, body.tn-txt .win-mini small,
+  body.tn-txt .dock .dk-t, body.tn-txt .dock .dk-t span, body.tn-txt .dock small { color: var(--col-txt) !important; }
+  body.tn-txt.tn-txt .gx-dots i { background: color-mix(in srgb, var(--col-txt) 22%, transparent); }
+  body.tn-txt.tn-txt .gx-dots i.done, body.tn-txt.tn-txt .gx-dots i.on::after { background: var(--col-txt); }
+  body.tn-chip .gx-before, body.tn-chip .gx-before b, body.tn-chip .gx-before span, body.tn-chip .gx-after, body.tn-chip .gx-after b, body.tn-chip .gx-after span { color: var(--col-chip) !important; }
+  /* a dark plate (set by the panel from the plate's colour): the chips become dark glass, the mark line and the story segments go light */
+  body.pk-dk .gx-before, body.pk-dk .gx-after { background: rgb(255 255 255 / .08); box-shadow: 0 12px 26px -14px rgba(0,0,0,.7);
+    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); --ring: linear-gradient(150deg, rgb(255 255 255 / .42) 0%, rgb(255 255 255 / .12) 45%, rgb(255 255 255 / .03) 100%); }
+  body.pk-dk .gxa-mark { stroke: rgba(255,255,255,.3); }
+  /* the email form: a plain white ring; the sidebar card's black button gets a white edge, so it does not melt into the black card */
+  body.pk-dk .win-full .joined { --ring: linear-gradient(#fff, #fff); }
+  body.pk-dk #dock-btn, body.pk-dk .win-mini .btn-cta { border-color: #fff; }
+  body.pk-dk .gx-dots i { background: rgba(255,255,255,.18); }
+  body.pk-dk .gx-dots i.done, body.pk-dk .gx-dots i.on::after { background: #fff; }
+  /* the metrics as plain text: no chip, the same place, the text where the chip's text was */
+  body.mt-txt .gx-before, body.mt-txt .gx-after { margin: 0; padding: 0; background: none; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
+  body.mt-txt .gx-before::after, body.mt-txt .gx-after::after { content: none; }
+  /* the dots on the chart: a canvas over the hill; the hill's own fill stays as a faint wash under the dots */
+  .gx-dith { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; display: none; }
+  body.cd-on .gx-dith { display: block; }
+  body.cd-on .gx .gxa-before, body.cd-on .gx .gxa-after { fill-opacity: var(--cd-under, 0); }
+  /* the dots behind the main block are its own background picture (drawn by the panel), so nothing changes in the layering */
+  body.ll #hero.bd-pic { background-repeat: no-repeat; background-size: 100% 100%; }
+
+
+  /* ---------- v72 (Sasha, 19.11): the dark plate fixed — a black plate and sidebar card, white text, the numbers as plain text,
+     the chart as halftone dots (before Ryze rose, after orange), a black main button in a white-ringed form ---------- */
+  :root { --pk-fill: 1; --cd-under: 0; }
+  body.pk-dk.pk-mint { --pk-base: #111111; --pk-edge: rgb(17 17 17 / .65); }
+  body.pk-dk { --col-txt: #FFFFFF; --col-chip: #FFFFFF; --col-before: #E1B5A8; --col-after: #EC6B3E; --col-hero: #FFFFFF; }
+  /* the button of the mini version: orange or white (the switch bottom left, once the card is on screen) */
+  body.ll.dkb-or #dock-btn, body.ll.dkb-or #dock-btn.ready, body.ll.dkb-or .win-mini .btn-cta { background: var(--cta); border-color: var(--cta); outline-color: var(--cta); color: #fff; }
+  body.ll.dkb-or #dock-btn:hover, body.ll.dkb-or .win-mini .btn-cta:hover { background: var(--cta-hover); border-color: var(--cta-hover); }
+  body.ll.dkb-wh #dock-btn, body.ll.dkb-wh #dock-btn.ready, body.ll.dkb-wh .win-mini .btn-cta { background: #fff; border-color: #fff; outline-color: #fff; color: #111; }
+  body.ll.dkb-wh #dock-btn:hover, body.ll.dkb-wh .win-mini .btn-cta:hover { background: #EDEDED; border-color: #EDEDED; }
+  #dkb-switch { left: 16px; transform: none; }
+  #dkb-switch.hide { transform: translateY(18px); }
+  #dkb-switch.lift { bottom: 92px; }
 
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -1686,6 +1736,10 @@
 <div class="var-switch" id="ld-switch" role="group" aria-label="Земля до Ryze">
   <div class="vs-label"><b>Земля до Ryze</b><span>цвет на графике</span></div>
   <button type="button" data-ld="rose"><span class="pal-dots" aria-hidden="true"><i style="background:#E1F6F2"></i><i style="background:#E1B5A8"></i><i style="background:#EC6B3E"></i></span>Пудра</button><button type="button" data-ld="aqua"><span class="pal-dots" aria-hidden="true"><i style="background:#E1F6F2"></i><i style="background:#9CE7DD"></i><i style="background:#EC6B3E"></i></span>Бирюза</button><button type="button" data-ld="blue"><span class="pal-dots" aria-hidden="true"><i style="background:#E1F6F2"></i><i style="background:#8DD8F3"></i><i style="background:#EC6B3E"></i></span>Голубой</button><button type="button" data-ld="sage"><span class="pal-dots" aria-hidden="true"><i style="background:#E1F6F2"></i><i style="background:#B5CFC8"></i><i style="background:#EC6B3E"></i></span>Шалфей</button><button type="button" data-ld="graphite"><span class="pal-dots" aria-hidden="true"><i style="background:#E1F6F2"></i><i style="background:#2F3D3A"></i><i style="background:#EC6B3E"></i></span>Графит</button>
+</div>
+<div class="var-switch hide" id="dkb-switch" role="group" aria-label="Кнопка в карточке слева">
+  <div class="vs-label"><b>Кнопка слева</b><span>в мини-версии</span></div>
+  <button type="button" data-dkb="or">Оранжевая</button><button type="button" data-dkb="wh">Белая</button>
 </div>
 <div class="var-switch" id="sub-switch" role="group" aria-label="Подложка">
   <div class="vs-label"><b>Подложка</b><span>стекло под плашкой, карточкой слева и CTA</span></div>
@@ -2996,11 +3050,62 @@
       sw.addEventListener('click', e => { const b = e.target.closest('[data-' + attr + ']'); if (b) set(b.dataset[attr]); });
       set(m);
     };
-    document.body.classList.add('sub-off');
+    one('sub-switch', 'sub', ['off', 'rim', '0'], 'ryze-sub', 'off', k => ['off', 'rim'].forEach(s => document.body.classList.toggle('sub-' + s, s === k)));
 
     // the glass under the sidebar card follows the card's height
     const dk = document.querySelector('.dock');
     if (dk && window.ResizeObserver) new ResizeObserver(() => dk.parentElement.style.setProperty('--dock-h', dk.offsetHeight + 'px')).observe(dk);
+
+    // ---------- v72: the dark plate, fixed (Sasha, 19.11) — what the panel's «Тёмная» set; the chart drawn as halftone dots ----------
+    (function () {
+      const B = document.body;
+      B.classList.add('hs-pal', 'ps-pal', 'tn-txt', 'tn-chip', 'mt-txt', 'cd-on', 'pk-dk');
+      // halftone: a dot in every cell, its size grows with the depth under the hill's edge; one path per colour, filled once
+      const gx = document.getElementById('gx'), cdc = document.createElement('canvas'), cdx = cdc.getContext('2d');
+      cdc.className = 'gx-dith'; gx.insertBefore(cdc, gx.querySelector('.gx-l'));
+      const CELL = 5, KD = .6, C_BEFORE = '#E1B5A8', C_AFTER = '#EC6B3E';
+      // the hill's edge from the same curve as the page's shapeD (flat, then two cubic pieces)
+      function hillTop(yb, ya) {
+        const d = yb - ya, Y = f => yb - d * f, pts = [];
+        [[[187, yb], [260, Y(.02)], [305, Y(.23)], [352, Y(.54)]], [[352, Y(.54)], [399, Y(.85)], [430, Y(.94)], [474, ya]]].forEach(([a, b, c, e]) => {
+          for (let i = 0; i <= 48; i++) { const t = i / 48, u = 1 - t, A = u * u * u, Bq = 3 * u * u * t, C = 3 * u * t * t, E = t * t * t;
+            pts.push([A * a[0] + Bq * b[0] + C * c[0] + E * e[0], A * a[1] + Bq * b[1] + C * c[1] + E * e[1]]); }
+        });
+        let j = 1;
+        return x => { if (x < 187) return yb; while (j < pts.length - 1 && pts[j][0] < x) j++; const [x0, y0] = pts[j - 1], [x1, y1] = pts[j]; return y0 + (y1 - y0) * Math.max(0, Math.min(1, (x - x0) / ((x1 - x0) || 1))); };
+      }
+      let key = '';
+      function draw() {
+        const W = gx.offsetWidth, H = gx.offsetHeight; if (!W || !H) return;
+        const clipW = +gxaCr.getAttribute('width');
+        const k = [W, H, hill.yb.toFixed(1), hill.ya.toFixed(1), clipW.toFixed(0)].join('|');
+        if (k === key) return; key = k;
+        const dpr = Math.min(2, devicePixelRatio || 1);
+        if (cdc.width !== Math.round(W * dpr) || cdc.height !== Math.round(H * dpr)) { cdc.width = Math.round(W * dpr); cdc.height = Math.round(H * dpr); }
+        cdx.setTransform(dpr, 0, 0, dpr, 0, 0); cdx.clearRect(0, 0, W, H);
+        const sx = W / 470, sy = H / 600, clipPx = (clipW - 4) * sx, topAt = hillTop(hill.yb, hill.ya), pB = new Path2D(), pA = new Path2D();
+        for (let ix = 0; ix * CELL < W; ix++) {
+          const x = ix * CELL + CELL / 2; if (x > clipPx) break;
+          const xv = Math.min(x / sx, 473), top = topAt(xv) * sy, before = xv < MARK, p = before ? pB : pA;
+          for (let iy = Math.max(0, Math.floor(top / CELL)); iy * CELL < H; iy++) {
+            const y = iy * CELL + CELL / 2; if (y < top) continue;
+            const depth = (y - top) / (H * .3), dens = before ? Math.min(.6, .12 + depth * KD * .7) : Math.min(1, .16 + depth * KD * 1.5);
+            const r = CELL * .5 * Math.sqrt(dens); if (r < .4) continue;
+            p.moveTo(x + r, y); p.arc(x, y, r, 0, 6.2832);
+          }
+        }
+        cdx.fillStyle = C_BEFORE; cdx.fill(pB); cdx.fillStyle = C_AFTER; cdx.fill(pA);
+      }
+      const tick = () => { if (scrollY < 1400) draw(); requestAnimationFrame(tick); };
+      requestAnimationFrame(tick);
+
+      // the button of the mini version: orange or white. The switch shows once the hero is passed, and steps up over the CTA switch
+      one('dkb-switch', 'dkb', ['or', 'wh'], 'ryze-dkb', 'or', k => ['or', 'wh'].forEach(x => B.classList.toggle('dkb-' + x, x === k)));
+      const dsw = document.getElementById('dkb-switch'), hsw = document.getElementById('hc-switch');
+      const place = () => { dsw.classList.toggle('hide', scrollY < innerHeight * .5); dsw.classList.toggle('lift', !hsw.classList.contains('hide')); };
+      addEventListener('scroll', place, { passive: true }); place();
+      new MutationObserver(place).observe(hsw, { attributes: true, attributeFilter: ['class'] });
+    })();
   })();
 
   // reveal on scroll
