@@ -1423,6 +1423,8 @@
   /* the fill of the mint plate and its mini version on the left: from the mint (100 %) to white (0 %) */
   :root { --pk-fill: .24; }
   body.pk-mint { --pk-bg: color-mix(in srgb, #E1F6F2 calc(var(--pk-fill) * 100%), #fff); }
+  /* the active service icon in the sidebar card: no green ring (Sasha, 19.11) — it stands out by full colour and the lift */
+  body.pk-light .dock .dk-ico i.on { box-shadow: inset 0 0 0 1px var(--pk-edge); }
 
   /* the strokes, two groups from the panel: the main block (--h-ring) and the plates — the mint plate, its mini version on the left, the CTA in the text (--s-ring) */
   body.ll #hero::after { content: ""; position: absolute; inset: 0; z-index: 2; border-radius: inherit; padding: var(--s-w); pointer-events: none; background: var(--h-ring);
