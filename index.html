@@ -1437,10 +1437,10 @@
   body.ll .hc:not(.v4)::after, body.hcw .hc::after { padding: var(--s-w); background: var(--s-ring); }
   body.ll.ps-0 .win::after, body.ll.ps-0 .dock::after, body.ll.ps-0 .hc:not(.v4)::after, body.ps-0.hcw .hc::after { content: none; }
   body.hs-nob { --h-ring: linear-gradient(135deg, var(--c-orange) 0%, var(--c-rose) calc(var(--s-len) * .25), var(--c-aqua) calc(var(--s-len) * .5), #fff calc(var(--s-len) * .75), rgb(255 255 255 / .55) var(--s-len), rgb(255 255 255 / .3) 100%); }
-  body.hs-pal { --h-ring: linear-gradient(135deg, var(--c-orange) 0%, var(--c-rose) calc(var(--s-len) * .25), var(--c-aqua) calc(var(--s-len) * .5), var(--c-blue) calc(var(--s-len) * .73), rgba(141,216,243,.18) var(--s-len), rgba(255,255,255,.06) 100%); }
+  body { --h-ring: linear-gradient(135deg, var(--c-orange) 0%, var(--c-rose) calc(var(--s-len) * .25), var(--c-aqua) calc(var(--s-len) * .5), var(--c-blue) calc(var(--s-len) * .73), rgba(141,216,243,.18) var(--s-len), rgba(255,255,255,.06) 100%); }
   body.hs-white { --h-ring: linear-gradient(135deg, #fff 0%, rgb(255 255 255 / .9) var(--s-len), rgb(255 255 255 / .4) 100%); }
   body.ps-nob { --s-ring: linear-gradient(135deg, var(--c-orange) 0%, var(--c-rose) calc(var(--s-len) * .25), var(--c-aqua) calc(var(--s-len) * .5), #fff calc(var(--s-len) * .75), rgb(255 255 255 / .55) var(--s-len), rgb(255 255 255 / .3) 100%); }
-  body.ps-pal { --s-ring: linear-gradient(135deg, var(--c-orange) 0%, var(--c-rose) calc(var(--s-len) * .25), var(--c-aqua) calc(var(--s-len) * .5), var(--c-blue) calc(var(--s-len) * .73), rgba(141,216,243,.18) var(--s-len), rgba(255,255,255,.06) 100%); }
+  body { --s-ring: linear-gradient(135deg, var(--c-orange) 0%, var(--c-rose) calc(var(--s-len) * .25), var(--c-aqua) calc(var(--s-len) * .5), var(--c-blue) calc(var(--s-len) * .73), rgba(141,216,243,.18) var(--s-len), rgba(255,255,255,.06) 100%); }
   body.ps-white { --s-ring: linear-gradient(135deg, #fff 0%, rgb(255 255 255 / .9) var(--s-len), rgb(255 255 255 / .4) 100%); }
 
   /* the interactive plate: the glass on the slot; the main block makes room */
@@ -1493,33 +1493,6 @@
   /* the Ryze row: green into aqua, so the right end keeps an edge */
   body.ll .cmp tr.ours td:first-child::after { --ring: linear-gradient(90deg, #6FD68C 0%, rgb(111 214 140 / .6) 45%, rgb(102 205 191 / .55) 100%); }
 
-  /* ---- the tuning panel ---- */
-  .tune { position: fixed; left: 16px; bottom: 16px; z-index: 300; width: 300px; max-height: calc(100vh - 110px); display: flex; flex-direction: column;
-    border-radius: 10px; background: #fff; color: var(--ink); font-size: 13px; line-height: 1.3;
-    box-shadow: 0 0 0 1px rgba(17,17,17,.08), 0 18px 40px -14px rgba(0,0,0,.32); }
-  .tune-h { display: flex; align-items: center; justify-content: space-between; gap: 8px; width: 100%; padding: 11px 14px; border: 0; border-radius: 10px;
-    background: transparent; color: inherit; font: inherit; font-weight: 600; cursor: grab; touch-action: none; user-select: none; }
-  .tune-h:active { cursor: grabbing; }
-  .tune-h small { font-weight: 400; color: var(--ink-3); }
-  .tune-h i { font-style: normal; width: 22px; height: 22px; display: grid; place-items: center; border-radius: 6px; background: #F2F1EE; transition: transform .2s; }
-  .tune.min .tune-h i { transform: rotate(180deg); }
-  .tune-b { overflow: auto; padding: 0 14px 14px; border-top: 1px solid var(--ll-line); }
-  .tune.min .tune-b { display: none; }
-  .tune-sec { margin: 14px 0 8px; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
-  .tune-lbl { margin: 10px 0 5px; color: var(--ink-2); }
-  .tune-seg { display: flex; gap: 4px; margin-bottom: 8px; padding: 3px; border-radius: 7px; background: #F2F1EE; }
-  .tune-seg button { flex: 1 1 auto; padding: 6px 3px; border: 0; border-radius: 5px; background: transparent; color: var(--ink-2); font: inherit; font-size: 12px; cursor: pointer; white-space: nowrap; }
-  .tune-seg button.on { background: #fff; color: var(--ink); box-shadow: 0 1px 2px rgba(17,17,17,.12); }
-  .tune-r { display: grid; grid-template-columns: 108px 1fr 42px; align-items: center; gap: 8px; margin: 6px 0; }
-  .tune-r span { color: var(--ink-2); }
-  .tune-r input[type=range] { width: 100%; height: 4px; margin: 0; background: linear-gradient(90deg, var(--cta) var(--p, 0%), #E4E2DD var(--p, 0%)); }
-  .tune-r input[type=range]::-webkit-slider-thumb { width: 14px; height: 14px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 1.5px var(--cta), 0 1px 3px rgba(0,0,0,.25); }
-  .tune-r input[type=range]::-moz-range-thumb { width: 14px; height: 14px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 1.5px var(--cta), 0 1px 3px rgba(0,0,0,.25); }
-  .tune-r output { text-align: right; font-variant-numeric: tabular-nums; color: var(--ink); }
-  .tune-foot { display: flex; gap: 6px; margin-top: 14px; }
-  .tune-foot button { flex: 1; padding: 8px 6px; border: 0; border-radius: 6px; background: #F2F1EE; color: var(--ink); font: inherit; font-size: 12px; cursor: pointer; }
-  .tune-foot button:hover { background: #E8E6E1; }
-  .tune-foot button.ok { background: #DDF6E4; }
 
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -1713,10 +1686,6 @@
 <div class="var-switch" id="ld-switch" role="group" aria-label="Земля до Ryze">
   <div class="vs-label"><b>Земля до Ryze</b><span>цвет на графике</span></div>
   <button type="button" data-ld="rose"><span class="pal-dots" aria-hidden="true"><i style="background:#E1F6F2"></i><i style="background:#E1B5A8"></i><i style="background:#EC6B3E"></i></span>Пудра</button><button type="button" data-ld="aqua"><span class="pal-dots" aria-hidden="true"><i style="background:#E1F6F2"></i><i style="background:#9CE7DD"></i><i style="background:#EC6B3E"></i></span>Бирюза</button><button type="button" data-ld="blue"><span class="pal-dots" aria-hidden="true"><i style="background:#E1F6F2"></i><i style="background:#8DD8F3"></i><i style="background:#EC6B3E"></i></span>Голубой</button><button type="button" data-ld="sage"><span class="pal-dots" aria-hidden="true"><i style="background:#E1F6F2"></i><i style="background:#B5CFC8"></i><i style="background:#EC6B3E"></i></span>Шалфей</button><button type="button" data-ld="graphite"><span class="pal-dots" aria-hidden="true"><i style="background:#E1F6F2"></i><i style="background:#2F3D3A"></i><i style="background:#EC6B3E"></i></span>Графит</button>
-</div>
-<div class="tune" id="tune" role="region" aria-label="Настройки">
-  <button type="button" class="tune-h" id="tune-h" title="Перетащить или свернуть"><span>Настройки <small>· тяни за шапку</small></span><i aria-hidden="true">▾</i></button>
-  <div class="tune-b" id="tune-b"></div>
 </div>
 <div class="var-switch" id="sub-switch" role="group" aria-label="Подложка">
   <div class="vs-label"><b>Подложка</b><span>стекло под плашкой, карточкой слева и CTA</span></div>
@@ -3027,82 +2996,11 @@
       sw.addEventListener('click', e => { const b = e.target.closest('[data-' + attr + ']'); if (b) set(b.dataset[attr]); });
       set(m);
     };
-    one('sub-switch', 'sub', ['off', 'rim', '0'], 'ryze-sub', 'off', k => ['off', 'rim'].forEach(s => document.body.classList.toggle('sub-' + s, s === k)));
+    document.body.classList.add('sub-off');
 
     // the glass under the sidebar card follows the card's height
     const dk = document.querySelector('.dock');
     if (dk && window.ResizeObserver) new ResizeObserver(() => dk.parentElement.style.setProperty('--dock-h', dk.offsetHeight + 'px')).observe(dk);
-
-    // ---------- v69: the tuning panel — sliders write CSS variables, choices write body classes; kept for the tab in sessionStorage ----------
-    (function () {
-      const root = document.documentElement, panel = document.getElementById('tune'), body = document.getElementById('tune-b'), head = document.getElementById('tune-h');
-      const SL = [
-        { sec: 'Подложка-стекло' },
-        { seg: 'sub', opts: [['off', 'Со сдвигом'], ['rim', 'Вокруг'], ['0', 'Нет']], def: 'off' },
-        { v: '--g-size', name: 'Размер', min: 4, max: 24, step: 1, def: 8, u: 'px' },
-        { v: '--g-fill', name: 'Белизна', min: 0, max: 100, step: 1, def: 78, u: '%', k: .01 },
-        { v: '--g-tint', name: 'Оттенок', min: 0, max: 100, step: 1, def: 64, u: '%', k: .01 },
-        { v: '--g-blur', name: 'Размытие', min: 0, max: 40, step: 1, def: 40, u: 'px' },
-        { v: '--g-hl', name: 'Блик', min: 0, max: 100, step: 1, def: 80, u: '%', k: .01 },
-        { v: '--g-line', name: 'Контур', min: 0, max: 100, step: 1, def: 0, u: '%', k: .0015 },
-        { v: '--g-sh', name: 'Тень', min: 0, max: 100, step: 1, def: 50, u: '%', k: .01 },
-        { sec: 'Мятная плашка и мини-версия слева' },
-        { v: '--pk-fill', name: 'Заливка', min: 0, max: 100, step: 1, def: 24, u: '%', k: .01 },
-        { sec: 'Обводка' },
-        { seg: 'hs', label: 'Главный блок', opts: [['pal', 'Палитра'], ['nob', 'Без голубого'], ['white', 'Белая'], ['0', 'Нет']], def: 'pal' },
-        { seg: 'ps', label: 'Плашка, мини-версия слева, CTA', opts: [['pal', 'Палитра'], ['nob', 'Без голубого'], ['white', 'Белая'], ['0', 'Нет']], def: 'pal' },
-        { v: '--s-w', name: 'Толщина', min: 1, max: 4, step: .5, def: 2, u: 'px' },
-        { v: '--s-len', name: 'Длина цвета', min: 20, max: 100, step: 1, def: 50, u: '%', css: x => x + '%' },
-      ];
-      // kept in localStorage too, so the values survive a new tab
-      let st = {}; try { st = JSON.parse(localStorage.getItem('ryze-tune') || sessionStorage.getItem('ryze-tune') || '{}'); } catch (e) {}
-      const save = () => { const j = JSON.stringify(st); try { localStorage.setItem('ryze-tune', j); } catch (e) {} try { sessionStorage.setItem('ryze-tune', j); } catch (e) {} };
-      const subNow = () => document.querySelector('#sub-switch .on')?.dataset.sub;
-      const val = d => d.seg ? (st[d.seg] ?? (d.seg === 'sub' ? subNow() : null) ?? d.def) : (st[d.v] ?? d.def);
-      const apply = d => {
-        if (d.sec) return;
-        const x = val(d);
-        if (d.seg === 'sub') { const b = document.querySelector(`#sub-switch [data-sub="${x}"]`); if (b && !b.classList.contains('on')) b.click(); }
-        else if (d.seg) d.opts.forEach(([k]) => document.body.classList.toggle(d.seg + '-' + k, k === x));
-        else root.style.setProperty(d.v, d.css ? d.css(x) : d.u === 'px' ? x + 'px' : String(x * d.k));
-      };
-      body.innerHTML = SL.map((d, i) => d.sec ? `<div class="tune-sec">${d.sec}</div>`
-        : d.seg ? (d.label ? `<div class="tune-lbl">${d.label}</div>` : '') + `<div class="tune-seg" data-i="${i}">${d.opts.map(([k, n]) => `<button type="button" data-k="${k}">${n}</button>`).join('')}</div>`
-        : `<label class="tune-r"><span>${d.name}</span><input type="range" data-i="${i}" min="${d.min}" max="${d.max}" step="${d.step}"><output></output></label>`).join('')
-        + '<div class="tune-foot"><button type="button" id="tune-reset">Сбросить</button><button type="button" id="tune-copy">Скопировать</button></div>';
-      const sync = () => SL.forEach((d, i) => {
-        if (d.seg) body.querySelectorAll(`.tune-seg[data-i="${i}"] button`).forEach(b => b.classList.toggle('on', b.dataset.k === val(d)));
-        else if (!d.sec) { const r = body.querySelector(`input[data-i="${i}"]`); r.value = val(d); r.style.setProperty('--p', (val(d) - d.min) / (d.max - d.min) * 100 + '%'); r.nextElementSibling.textContent = val(d) + ' ' + d.u; }
-      });
-      SL.forEach(apply); sync();
-      body.addEventListener('input', e => { const i = e.target.dataset.i; if (i == null) return; const d = SL[i]; st[d.v] = +e.target.value; apply(d); sync(); save(); });
-      body.addEventListener('click', e => {
-        const b = e.target.closest('.tune-seg button');
-        if (b) { const d = SL[b.parentElement.dataset.i]; st[d.seg] = b.dataset.k; apply(d); sync(); save(); return; }
-        if (e.target.id === 'tune-reset') {
-          st = { x: st.x, y: st.y, min: st.min };
-          SL.forEach(d => { if (d.seg === 'sub') st.sub = d.def; apply(d); });
-          sync(); save();
-        }
-        if (e.target.id === 'tune-copy') {
-          const txt = SL.filter(d => !d.sec).map(d => d.seg ? (d.seg === 'sub' ? 'Подложка' : 'Обводка — ' + d.label.toLowerCase()) + ': ' + d.opts.find(([k]) => k === val(d))[1] : d.name + ': ' + val(d) + ' ' + d.u).join('\n');
-          const ok = () => { e.target.textContent = 'Скопировано'; e.target.classList.add('ok'); setTimeout(() => { e.target.textContent = 'Скопировать'; e.target.classList.remove('ok'); }, 1600); };
-          (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(ok, () => { window.prompt('Скопируй значения:', txt); });
-        }
-      });
-      // drag by the header; a click without moving folds the panel
-      const place = () => { if (st.x != null) { panel.style.left = Math.max(8, Math.min(innerWidth - 80, st.x)) + 'px'; panel.style.top = Math.max(8, Math.min(innerHeight - 44, st.y)) + 'px'; panel.style.bottom = 'auto'; } };
-      panel.classList.toggle('min', st.min ?? true); place();
-      let drag = null;
-      head.addEventListener('pointerdown', e => { const r = panel.getBoundingClientRect(); drag = { x: e.clientX, y: e.clientY, l: r.left, t: r.top, moved: false }; head.setPointerCapture(e.pointerId); });
-      head.addEventListener('pointermove', e => {
-        if (!drag) return; const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
-        if (!drag.moved && Math.hypot(dx, dy) < 4) return; drag.moved = true;
-        st.x = drag.l + dx; st.y = drag.t + dy; place();
-      });
-      head.addEventListener('pointerup', () => { if (drag && !drag.moved) { panel.classList.toggle('min'); st.min = panel.classList.contains('min'); } save(); drag = null; });
-      addEventListener('resize', place);
-    })();
   })();
 
   // reveal on scroll
