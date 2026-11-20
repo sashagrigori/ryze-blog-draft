@@ -1909,6 +1909,31 @@
     box-shadow: inset 0 1px 0 rgb(255 255 255 / var(--g-hl)), inset 1px 0 0 rgb(255 255 255 / calc(var(--g-hl) * .8)),
       0 0 0 1px rgb(17 17 17 / var(--g-line)), 0 22px 44px -26px rgb(28 52 48 / calc(var(--g-sh) * .55)); }
 
+  /* ---------- v79 (Sasha, 19.11): black blocks — white text, orange labels, white arrow chips, no rings; hover/press orange ---------- */
+  /* 1. the caveats inside the reasons */
+  body.ll .caveat div { background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1px var(--cta); }  /* v80: white again, a thin orange ring */
+  body.ll .caveat div::after { content: none; }
+  /* 2. the «see also» button */
+  body.ll .see-also { background: var(--ink); color: #fff; box-shadow: none; transition: background .25s, color .2s, transform .12s; }
+  body.ll .see-also::after { content: none; }
+  body.ll .see-also .a { background: #fff; color: var(--ink); box-shadow: none; }
+  body.ll .see-also:hover, body.ll .see-also.demo-press { background: var(--cta); box-shadow: none; }
+  /* 3. the market card (the glass stays under it, as under the dark plate); the «before» bar takes the dark plate's «before» colour */
+  body.ll .mk { background: var(--ink); color: #fff; box-shadow: none; }
+  body.ll .mk-n span, body.ll .mk-src { color: rgb(255 255 255 / .58); }
+  body.ll .mk-n svg { color: rgb(255 255 255 / .5); }
+  body.ll .mk-bars { border-bottom-color: rgb(255 255 255 / .2); }
+  body.ll .mk-bars i:not(.b2) { background-image: radial-gradient(circle, #E1B5A8 2px, transparent 2.4px); }
+  /* 4. the head-to-head buttons */
+  body.ll .h2h a { background: var(--ink); color: #fff; box-shadow: none; transition: background .25s, color .2s, transform .12s; }
+  body.ll .h2h a:hover, body.ll .h2h a.demo-press { background: var(--cta); }
+  /* 5. the related guides */
+  body.ll .rg { background: var(--ink); color: #fff; box-shadow: var(--sh-1); }
+  body.ll .rg p { color: rgb(255 255 255 / .66); }
+  body.ll .rg-a { background: #fff; color: var(--ink); transition: background .25s, color .2s; }
+  body.ll .rg:hover { box-shadow: 0 18px 32px -18px rgb(17 17 17 / .45); }
+  body.ll .rg:hover .rg-a, body.ll .rg.demo-press .rg-a { background: var(--cta); color: #fff; }
+
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
     .reveal, .fade { opacity: 1 !important; transform: none !important; }
