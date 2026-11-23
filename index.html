@@ -19,8 +19,8 @@
     --ink-3: #8E8E8E;
     --line: #E8E8E8;
     --gray: #D6D6D6;
-    --cta: #EC6B3E;
-    --cta-hover: #D95C31;
+    --cta: #FF7F32;
+    --cta-hover: #EC681C;
     /* Ryze radius system: buttons and fields stay almost square, like the header button */
     --r-btn: 4px;
     --r-card: 8px;
@@ -253,7 +253,7 @@
   .eh-answer { margin: 26px 0 0; max-width: 620px; font-size: 18px; line-height: 1.55; color: var(--ink-2); }
   .eh-answer b { color: var(--ink); }
   .joined { display: flex; align-items: center; width: 100%; max-width: 520px; height: 60px; margin-top: 30px; padding: 5px; border: 1.5px solid var(--ink); border-radius: var(--r-btn); background: #fff; transition: border-color .2s, box-shadow .2s; }
-  .joined:focus-within { border-color: var(--cta); box-shadow: 0 0 0 4px rgba(236, 107, 62, .15); }
+  .joined:focus-within { border-color: var(--cta); box-shadow: 0 0 0 4px color-mix(in srgb, var(--cta) 15%, transparent); }
   .joined input { flex: 1; min-width: 0; height: 100%; padding: 0 14px; border: 0; background: transparent; font: inherit; font-size: 16px; outline: none; }
   .joined button { display: inline-flex; align-items: center; gap: 10px; height: 100%; padding: 0 22px; border: 0; border-radius: var(--r-btn); background: var(--cta); color: #fff; font: inherit; font-size: 16px; font-weight: 700; cursor: pointer; white-space: nowrap; transition: background .2s; }
   .joined button:hover { background: var(--cta-hover); }
@@ -291,7 +291,7 @@
   .agent span { position: absolute; left: 16px; top: 18px; padding: 3px 8px; border-radius: var(--r-btn); color: #fff; font-size: 12px; font-weight: 700; white-space: nowrap; }
 
   /* ---------- CTA: the night receipt ---------- */
-  .rc { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 48px; padding: 48px 56px 48px 48px; background: var(--orange, #EC6B3E); }
+  .rc { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 48px; padding: 48px 56px 48px 48px; background: var(--orange, var(--cta)); }
   .rc-l { display: flex; flex-direction: column; }
   .rc-k { font-size: 13px; font-weight: 500; color: rgba(17,17,17,.6); }
   .rc h3 { margin: 12px 0 0; font-size: 48px; line-height: 1.04; letter-spacing: -.03em; font-weight: 700; }
@@ -323,7 +323,7 @@
   .hm { display: grid; grid-template-columns: minmax(0, 1fr) 560px; gap: 40px; min-height: 640px; padding: 40px 40px 40px 56px; overflow: visible; }
   .hm-l { display: flex; flex-direction: column; }
   .hm-h1 { margin: 56px 0 0; font-size: 66px; line-height: 1.05; letter-spacing: -.03em; font-weight: 500; }
-  .hm-h1 .w { color: transparent; background: linear-gradient(100deg, #EC6B3E, #C47A66 35%, #33A85A 65%, #2E97C9); -webkit-background-clip: text; background-clip: text; opacity: 0; transition: opacity .35s, color .9s ease; }
+  .hm-h1 .w { color: transparent; background: linear-gradient(100deg, var(--cta), #C47A66 35%, #33A85A 65%, #2E97C9); -webkit-background-clip: text; background-clip: text; opacity: 0; transition: opacity .35s, color .9s ease; }
   .hm-h1 .w.on { opacity: 1; }
   .hm-h1 .w.cool { color: var(--ink); }
   .hm-slot { position: relative; height: 560px; }
@@ -400,12 +400,12 @@
   .dock { background: var(--ink); color: #fff; }
   .dock, .win-mini { color: #fff; }
   .dk-k { font-size: 12.5px; color: #fff; }
-  .dk-num { display: block; margin-top: 6px; font-size: 44px; line-height: 1; letter-spacing: -.03em; font-weight: 500; color: var(--orange, #EC6B3E); }
+  .dk-num { display: block; margin-top: 6px; font-size: 44px; line-height: 1; letter-spacing: -.03em; font-weight: 500; color: var(--orange, var(--cta)); }
   .dk-num small { font-size: 18px; color: #fff; }
   .dock p, .win-mini p { margin: 10px 0 0; font-size: 13.5px; line-height: 1.5; color: #fff; }
   .dock ul, .win-mini ul { list-style: none; margin: 12px 0 0; padding: 0; font-size: 13.5px; line-height: 1.45; }
   .dock li, .win-mini li { position: relative; padding-left: 20px; margin-top: 4px; }
-  .dock li::before, .win-mini li::before { content: "✓"; position: absolute; left: 0; color: var(--orange, #EC6B3E); font-weight: 700; }
+  .dock li::before, .win-mini li::before { content: "✓"; position: absolute; left: 0; color: var(--orange, var(--cta)); font-weight: 700; }
   .dk-form { display: flex; flex-direction: column; gap: 6px; margin-top: 16px; }
   .dk-form input { height: 46px; padding: 0 14px; border-radius: var(--r-btn); border: 1px solid rgba(255,255,255,.22); background: rgba(255,255,255,.08); color: #fff; font: inherit; font-size: 14.5px; outline: none; }
   .dk-form input::placeholder { color: rgba(255,255,255,.5); }
@@ -442,7 +442,7 @@
   .dk-t { margin: 22px 0 0; font-size: 24px; line-height: 1.18; letter-spacing: -.015em; font-weight: 500; color: #fff; }
   .dk-list { list-style: none; margin: 20px 0 0; padding: 0; }
   .dk-list li { position: relative; margin-top: 12px; padding-left: 20px; font-size: 14.5px; line-height: 1.45; color: #fff; }
-  .dk-list li::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 2px; background: var(--orange, #EC6B3E); }
+  .dk-list li::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 2px; background: var(--orange, var(--cta)); }
   .dock .dk-park, .win-mini .dk-park { height: 56px; }
   .dock .btn-cta, .win-mini .btn-cta { margin-top: 0; }
   .dock > small, .win-mini > small { margin-top: 12px; }
@@ -456,7 +456,7 @@
   body.th-glass .dock > :not(.win-bg) { position: relative; z-index: 2; }
   body.th-glass .dock, body.th-glass .win-mini { padding: 34px 30px 30px; }
 
-  body.th-orange .win, body.th-orange .dock { background: var(--orange, #EC6B3E); color: var(--ink); }
+  body.th-orange .win, body.th-orange .dock { background: var(--orange, var(--cta)); color: var(--ink); }
   body.th-orange .dk-t { color: var(--ink); }
   body.th-orange .fx-k, body.th-orange .fx-p, body.th-orange .fx-s, body.th-orange .fx-found .fx-k { color: rgba(17,17,17,.68); }
   body.th-orange .win-full .joined { border-color: var(--ink); }
@@ -504,11 +504,11 @@
   /* ---------- v24 sidebar card motion: rolling platform, breathing button, a rare demo press ---------- */
   .roll { display: inline-block; height: 1.18em; overflow: hidden; vertical-align: top; }
   .roll-in { display: flex; flex-direction: column; transition: transform .6s cubic-bezier(.65, 0, .35, 1); }
-  .roll-in span, .roll-w { height: 1.18em; line-height: 1.18em; white-space: nowrap; color: var(--orange, #EC6B3E); }
+  .roll-in span, .roll-w { height: 1.18em; line-height: 1.18em; white-space: nowrap; color: var(--orange, var(--cta)); }
   .dock .dk-ico i { opacity: .45; transition: opacity .35s, transform .4s cubic-bezier(.34,1.56,.64,1), box-shadow .3s; }
   .dock .dk-ico i.on { opacity: 1; transform: translateY(-3px); box-shadow: 0 0 0 2px #23A08E; }
   #dock-btn { position: relative; transition: background .25s, outline-offset .5s cubic-bezier(.2,.8,.2,1), outline-color .5s, transform .15s; }
-  #dock-btn.breathe { outline-offset: 11px; outline-color: rgba(236, 107, 62, .25); }
+  #dock-btn.breathe { outline-offset: 11px; outline-color: color-mix(in srgb, var(--cta) 25%, transparent); }
   #dock-btn.breathe svg { transform: translate(3px, -3px); }
   #dock-btn.press { transform: scale(.96); }
   #dock-btn .fill { position: absolute; left: 0; top: 0; bottom: 0; width: 0; border-radius: var(--r-btn); background: rgba(255,255,255,.22); }
@@ -642,7 +642,7 @@
   .hc-b.build { outline-color: transparent; outline-offset: 0; }
   .hc-b svg { transition: opacity .25s, transform .4s cubic-bezier(.34, 1.56, .64, 1); }
   .hc-b.build svg { opacity: 0; transform: scale(.3); }
-  .hc-b.breathe { outline-offset: 11px; outline-color: rgba(236, 107, 62, .3); }
+  .hc-b.breathe { outline-offset: 11px; outline-color: color-mix(in srgb, var(--cta) 30%, transparent); }
   .hc-sel { position: absolute; border: 1.5px solid var(--c); transition: opacity .3s; }
   .hc-sel b { position: absolute; width: 8px; height: 8px; background: #fff; border: 1.5px solid var(--c); }
   .hc-sel b:nth-child(1) { left: -5px; top: -5px; } .hc-sel b:nth-child(2) { right: -5px; top: -5px; }
@@ -662,7 +662,7 @@
   .hc-fr b { display: block; font-size: 28px; line-height: 1.1; font-weight: 500; letter-spacing: -.02em; white-space: nowrap; font-variant-numeric: tabular-nums; }
   .hc-fr span { display: block; max-width: 150px; margin-top: 4px; font-size: 13px; line-height: 1.35; color: #fff; }
   .hc .hc-j { width: 450px; max-width: none; margin: 0; border-color: #fff; }
-  .hc .hc-j.ff { border-color: var(--cta); box-shadow: 0 0 0 4px rgba(236, 107, 62, .3); }
+  .hc .hc-j.ff { border-color: var(--cta); box-shadow: 0 0 0 4px color-mix(in srgb, var(--cta) 30%, transparent); }
   .hc-j button { position: relative; overflow: hidden; min-width: 188px; justify-content: center; transition: background .25s, transform .15s; }
   .hc-j .lbl { position: relative; }
   .hc-j .fill { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: rgba(255,255,255,.24); }
@@ -770,7 +770,7 @@
   /* v30, after OpenAI's covers: a light base of two or three neighbouring colours, soft diagonal streaks of light, grain */
   body.pl-lilac .win, body.pl-lilac .dock { background: linear-gradient(160deg, #E4DDFF 0%, #B9B2FB 38%, #8C9AF6 70%, #6F86F1 100%); }
   body.pl-mint .win, body.pl-mint .dock { background: linear-gradient(160deg, #DDF7E8 0%, #A8E6C4 40%, #62CF98 75%, #2FB57C 100%); }
-  body.pl-peach .win, body.pl-peach .dock { background: linear-gradient(160deg, #FFF0E6 0%, #FFD2B8 38%, #F6A07A 72%, #EC6B3E 100%); }
+  body.pl-peach .win, body.pl-peach .dock { background: linear-gradient(160deg, #FFF0E6 0%, #FFD2B8 38%, #F6A07A 72%, var(--cta) 100%); }
   body.pl-flow .pl-g i, body.pl-glow .pl-g i { mix-blend-mode: screen; }
   body.pl-light .win-full .joined { box-shadow: 0 14px 30px -16px rgba(60,40,20,.35); }
   /* the sidebar card follows the plate: no grey text, no green ring, no green button, no orange */
@@ -863,7 +863,6 @@
     30% { transform: translate(-50%, 0); }
     45% { transform: translate(-50%, -4px); box-shadow: 0 0 0 3px var(--cta), 0 20px 40px -12px rgba(0,0,0,.38); }
   }
-
 
   /* ---------- v35: three concepts of the first screen; the switch links the pages ---------- */
   .var-switch a { display: inline-flex; align-items: center; height: 42px; padding: 0 18px; border-radius: var(--r-btn); background: var(--inner); font-size: 15px; font-weight: 500; color: var(--ink); white-space: nowrap; transition: background .2s, color .2s; }
@@ -1123,10 +1122,10 @@
      In our colours: orange on the cards that sell (the form, the sidebar card, the CTA in the text, the Ryze row, the result tile), grey on the rest.
      It sits on top of «Вместе» (body has both classes); only the hairlines are replaced ---------- */
   body.el-tm { --tm-w: 1.5px;
-    --tm-acc: linear-gradient(135deg, #EC6B3E 0%, rgba(236,107,62,.75) 12%, rgba(236,107,62,.28) 26%, rgba(255,255,255,.13) 42%, rgba(255,255,255,.05) 100%);
+    --tm-acc: linear-gradient(135deg, var(--cta) 0%, color-mix(in srgb, var(--cta) 75%, transparent) 12%, color-mix(in srgb, var(--cta) 28%, transparent) 26%, rgba(255,255,255,.13) 42%, rgba(255,255,255,.05) 100%);
     --tm-dark: linear-gradient(160deg, rgba(255,255,255,.34) 0%, rgba(255,255,255,.08) 45%, rgba(255,255,255,.03) 100%);
     --tm-light: linear-gradient(180deg, #CCCCCC 0%, #E3E3E3 40%, rgba(17,17,17,.03) 100%);
-    --tm-acc-l: linear-gradient(135deg, #EC6B3E 0%, rgba(236,107,62,.5) 20%, #E3E3E3 48%, rgba(17,17,17,.03) 100%); }
+    --tm-acc-l: linear-gradient(135deg, var(--cta) 0%, color-mix(in srgb, var(--cta) 50%, transparent) 20%, #E3E3E3 48%, rgba(17,17,17,.03) 100%); }
   /* the stroke is a ring cut out of a gradient, so it can fade; it does not change any size */
   body.el-tm .card::after, body.el-tm .win::after, body.el-tm .reason::after, body.el-tm .btn-2::after, body.el-tm .see-also::after,
   body.el-tm .tool .ico::after, body.el-tm .caveat div::after, body.el-tm .joined button::after, body.el-tm .cmp tr.ours td:first-child::after,
@@ -1148,7 +1147,7 @@
   body.el-tm .dock { box-shadow: 0 16px 32px -18px rgba(0,0,0,.45); }
   /* where the stroke is brightest, a little warm light falls into the card (the inner frame of «Вместе» goes) */
   body.el-tm .win::before, body.el-tm .dock::before, body.el-tm .hc:not(.v4)::before { inset: 0; border: 0; border-radius: inherit;
-    background: radial-gradient(110% 60% at 0% 0%, rgba(236,107,62,.13), rgba(236,107,62,0) 60%); }
+    background: radial-gradient(110% 60% at 0% 0%, color-mix(in srgb, var(--cta) 13%, transparent), color-mix(in srgb, var(--cta) 0%, transparent) 60%); }
   body.el-tm .btn-2, body.el-tm .see-also { box-shadow: 0 1px 2px rgba(17,17,17,.07), inset 0 -1px 0 rgba(17,17,17,.05); }
   body.el-tm .btn-2:hover, body.el-tm .see-also:hover { box-shadow: 0 0 0 1px #000, inset 0 1px 0 rgba(255,255,255,.16); }
   body.el-tm .see-also .a { box-shadow: 0 1px 2px rgba(17,17,17,.1); }
@@ -1156,7 +1155,7 @@
   body.el-tm .caveat div { box-shadow: 0 1px 2px rgba(17,17,17,.05), 0 8px 16px -12px rgba(17,17,17,.2); }
   body.el-tm .cmp tr.ours td, body.el-tm .cmp tr.ours td:first-child, body.el-tm .cmp tr.ours td:last-child { box-shadow: none; }
   body.el-tm .cmp tr.ours td:first-child::after { inset: 0 auto 0 0; width: var(--tm-roww, 100%); border-radius: 4px;
-    --tm-g: linear-gradient(90deg, #EC6B3E 0%, rgba(236,107,62,.45) 10%, #E3E3E3 32%, rgba(17,17,17,.05) 100%); }
+    --tm-g: linear-gradient(90deg, var(--cta) 0%, color-mix(in srgb, var(--cta) 45%, transparent) 10%, #E3E3E3 32%, rgba(17,17,17,.05) 100%); }
   body.el-tm .tool .ico, body.el-tm .cmp tr.ours .tool .ico { box-shadow: 0 1px 2px rgba(17,17,17,.08); }
   body.el-tm.sc-on .gx-before, body.el-tm.sc-on .gx-after { box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 12px 26px -14px rgba(0,0,0,.55); }
   /* the line «Ryze connected» fades from orange, as the timeline line in the reference */
@@ -1226,7 +1225,7 @@
   body.ll .dock, body.ll .hc:not(.v4) { box-shadow: inset 0 0 0 1px #2E2E33; }
   /* the orange partial stroke: the sign-up card and the sidebar card */
   body.ll .win::after, body.ll .dock::after { content: ""; position: absolute; inset: 0; z-index: 6; border-radius: inherit; padding: 2px; pointer-events: none;
-    background: linear-gradient(135deg, #EC6B3E 0%, rgba(236,107,62,.75) 12%, rgba(236,107,62,.28) 26%, rgba(255,255,255,.13) 42%, rgba(255,255,255,.05) 100%);
+    background: linear-gradient(135deg, var(--cta) 0%, color-mix(in srgb, var(--cta) 75%, transparent) 12%, color-mix(in srgb, var(--cta) 28%, transparent) 26%, rgba(255,255,255,.13) 42%, rgba(255,255,255,.05) 100%);
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
     mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; }
   /* flat elements with hairlines */
@@ -1270,7 +1269,7 @@
 
   /* the CTAs: the partial stroke runs through the palette from the orange corner and melts */
   body.ll .win::after, body.ll .dock::after, body.ll .hc:not(.v4)::after { content: ""; position: absolute; inset: 0; z-index: 6; border-radius: inherit; padding: 2px; pointer-events: none;
-    background: linear-gradient(135deg, var(--c-orange) 0%, var(--c-rose) 13%, var(--c-aqua) 26%, var(--c-blue) 38%, rgba(141,216,243,.18) 52%, rgba(255,255,255,.06) 100%);
+    background: linear-gradient(in oklab 135deg, var(--c-orange) 0%, var(--c-rose) 13%, var(--c-lilac) calc(13% + (26% - 13%) * .5), var(--c-blue) 26%, var(--c-aqua) 38%, rgba(141,216,243,.18) 52%, rgba(255,255,255,.06) 100%);
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
     mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; }
 
@@ -1397,7 +1396,7 @@
 
   /* ---- the CTA in the text, white: dark words, orange buttons, the many-colour stroke, a light shadow ---- */
   body .hc-wrap.hcw .hc, body .hc-wrap.hcw .hc:not(.v4), body .hc-wrap.hcw .hc.v4 { background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1px var(--ll-line); }
-  body .hc-wrap.hcw .hc::after { content: ""; position: absolute; inset: 0; z-index: 6; border-radius: inherit; padding: 2px; pointer-events: none; background: linear-gradient(135deg, #F58E43 0%, #E1B5A8 13%, #9CE7DD 26%, #8DD8F3 38%, rgba(141,216,243,.18) 52%, rgba(255,255,255,0) 100%);
+  body .hc-wrap.hcw .hc::after { content: ""; position: absolute; inset: 0; z-index: 6; border-radius: inherit; padding: 2px; pointer-events: none; background: linear-gradient(in oklab 135deg, #F58E43 0%, #E1B5A8 13%, #CDBDEB calc(13% + (26% - 13%) * .5), #8DD8F3 26%, #9CE7DD 38%, rgba(141,216,243,.18) 52%, rgba(255,255,255,0) 100%);
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
     mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; }
   body .hc-wrap.hcw .hc-k, body .hc-wrap.hcw .hc-who, body .hc-wrap.hcw .hc-who b, body .hc-wrap.hcw .hc-fr span, body .hc-wrap.hcw .hc.v4 .hc-s { color: var(--ink); }
@@ -1436,11 +1435,11 @@
     mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; }
   body.ll .hc:not(.v4)::after, body .hc-wrap.hcw .hc::after { padding: var(--s-w); background: var(--s-ring); }
   body.ll.ps-0 .win::after, body.ll.ps-0 .dock::after, body.ll.ps-0 .hc:not(.v4)::after, body.ps-0 .hc-wrap.hcw .hc::after { content: none; }
-  body.hs-nob { --h-ring: linear-gradient(135deg, var(--c-orange) 0%, var(--c-rose) calc(var(--s-len) * .25), var(--c-aqua) calc(var(--s-len) * .5), #fff calc(var(--s-len) * .75), rgb(255 255 255 / .55) var(--s-len), rgb(255 255 255 / .3) 100%); }
-  body.hs-pal { --h-ring: linear-gradient(135deg, var(--c-orange) 0%, var(--c-rose) calc(var(--s-len) * .25), var(--c-aqua) calc(var(--s-len) * .5), var(--c-blue) calc(var(--s-len) * .73), rgba(141,216,243,.18) var(--s-len), rgba(255,255,255,.06) 100%); }
+  body.hs-nob { --h-ring: linear-gradient(in oklab 135deg, var(--c-orange) 0%, var(--c-rose) calc(var(--s-len) * .25), var(--c-lilac) calc(calc(var(--s-len) * .25) + (calc(var(--s-len) * .5) - calc(var(--s-len) * .25)) * .4), var(--c-blue) calc(calc(var(--s-len) * .25) + (calc(var(--s-len) * .5) - calc(var(--s-len) * .25)) * .75), var(--c-aqua) calc(var(--s-len) * .5), #fff calc(var(--s-len) * .75), rgb(255 255 255 / .55) var(--s-len), rgb(255 255 255 / .3) 100%); }
+  body.hs-pal { --h-ring: linear-gradient(in oklab 135deg, var(--c-orange) 0%, var(--c-rose) calc(var(--s-len) * .25), var(--c-lilac) calc(calc(var(--s-len) * .25) + (calc(var(--s-len) * .5) - calc(var(--s-len) * .25)) * .5), var(--c-blue) calc(var(--s-len) * .5), var(--c-aqua) calc(var(--s-len) * .73), rgba(141,216,243,.18) var(--s-len), rgba(255,255,255,.06) 100%); }
   body.hs-white { --h-ring: linear-gradient(135deg, #fff 0%, rgb(255 255 255 / .9) var(--s-len), rgb(255 255 255 / .4) 100%); }
-  body.ps-nob { --s-ring: linear-gradient(135deg, var(--c-orange) 0%, var(--c-rose) calc(var(--s-len) * .25), var(--c-aqua) calc(var(--s-len) * .5), #fff calc(var(--s-len) * .75), rgb(255 255 255 / .55) var(--s-len), rgb(255 255 255 / .3) 100%); }
-  body.ps-pal { --s-ring: linear-gradient(135deg, var(--c-orange) 0%, var(--c-rose) calc(var(--s-len) * .25), var(--c-aqua) calc(var(--s-len) * .5), var(--c-blue) calc(var(--s-len) * .73), rgba(141,216,243,.18) var(--s-len), rgba(255,255,255,.06) 100%); }
+  body.ps-nob { --s-ring: linear-gradient(in oklab 135deg, var(--c-orange) 0%, var(--c-rose) calc(var(--s-len) * .25), var(--c-lilac) calc(calc(var(--s-len) * .25) + (calc(var(--s-len) * .5) - calc(var(--s-len) * .25)) * .4), var(--c-blue) calc(calc(var(--s-len) * .25) + (calc(var(--s-len) * .5) - calc(var(--s-len) * .25)) * .75), var(--c-aqua) calc(var(--s-len) * .5), #fff calc(var(--s-len) * .75), rgb(255 255 255 / .55) var(--s-len), rgb(255 255 255 / .3) 100%); }
+  body.ps-pal { --s-ring: linear-gradient(in oklab 135deg, var(--c-orange) 0%, var(--c-rose) calc(var(--s-len) * .25), var(--c-lilac) calc(calc(var(--s-len) * .25) + (calc(var(--s-len) * .5) - calc(var(--s-len) * .25)) * .5), var(--c-blue) calc(var(--s-len) * .5), var(--c-aqua) calc(var(--s-len) * .73), rgba(141,216,243,.18) var(--s-len), rgba(255,255,255,.06) 100%); }
   body.ps-white { --s-ring: linear-gradient(135deg, #fff 0%, rgb(255 255 255 / .9) var(--s-len), rgb(255 255 255 / .4) 100%); }
 
   /* the interactive plate: the glass on the slot; the main block makes room */
@@ -1493,7 +1492,6 @@
   /* the Ryze row: green into aqua, so the right end keeps an edge */
   body.ll .cmp tr.ours td:first-child::after { --ring: linear-gradient(90deg, #6FD68C 0%, rgb(111 214 140 / .6) 45%, rgb(102 205 191 / .55) 100%); }
 
-
   /* ---------- v71 (Sasha, 19.11): colours from the palette and dots, from the panel ---------- */
   /* the plate and its mini version on the left: any colour, mixed with white by «Заливка» */
   body.pk-mint { --pk-bg: color-mix(in srgb, var(--pk-base, #E1F6F2) calc(var(--pk-fill) * 100%), #fff); }
@@ -1529,12 +1527,11 @@
   /* the dots behind the main block are its own background picture (drawn by the panel), so nothing changes in the layering */
   body.ll #hero.bd-pic { background-repeat: no-repeat; background-size: 100% 100%; }
 
-
   /* ---------- v72 (Sasha, 19.11): the dark plate fixed — a black plate and sidebar card, white text, the numbers as plain text,
      the chart as halftone dots (before Ryze rose, after orange), a black main button in a white-ringed form ---------- */
   :root { --pk-fill: 1; --cd-under: 0; }
   body.pk-dk.pk-mint { --pk-base: #111111; --pk-edge: rgb(17 17 17 / .65); }
-  body.pk-dk { --col-txt: #FFFFFF; --col-chip: #FFFFFF; --col-before: #E1B5A8; --col-after: #EC6B3E; --col-hero: #FFFFFF; }
+  body.pk-dk { --col-txt: #FFFFFF; --col-chip: #FFFFFF; --col-before: #E1B5A8; --col-after: var(--cta); --col-hero: #FFFFFF; }
   /* the button of the mini version (Sasha, 19.11): white; the demo press fills it orange from left to right, «✓ Ready in 2 min» stands on orange,
      then it eases back to white */
   body.ll.pk-dk #dock-btn, body.ll.pk-dk .win-mini .btn-cta { background: #fff; border-color: #fff; outline-color: #fff; color: #111;
@@ -1664,7 +1661,7 @@
   /* the screen recording: a black frame like the plate, its dots rising from the bottom */
   .tc-fig { margin: 22px 0 0; }
   .tc-shot { position: relative; aspect-ratio: 16 / 7; border-radius: var(--r-card); background: #111; overflow: hidden; }
-  .tc-shot::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle, rgb(236 107 62 / .95) 1.4px, transparent 1.75px) 0 0 / 6px 6px;
+  .tc-shot::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle, color-mix(in srgb, var(--cta) 95%, transparent) 1.4px, transparent 1.75px) 0 0 / 6px 6px;
     -webkit-mask: linear-gradient(0deg, #000 0%, rgba(0,0,0,.55) 30%, transparent 70%); mask: linear-gradient(0deg, #000 0%, rgba(0,0,0,.55) 30%, transparent 70%); }
   .tc-play { position: absolute; left: 50%; top: 50%; width: 66px; height: 66px; margin: -33px 0 0 -33px; display: grid; place-items: center; border-radius: 50%; background: #fff; color: var(--ink);
     box-shadow: 0 12px 26px -12px rgba(0,0,0,.6); }
@@ -1803,10 +1800,10 @@
   body.ll .cmp tr.ours td, .fm tr.ours td { background: transparent; }
   .pb.ours, .tc.ours, .fw.ours, .lv.ours { background: #fff; }
   body.ll .cmp tr.ours td:first-child::after, .fm tr.ours td:first-child::after, .pb.ours::after, .fw.ours::after {
-    --ring: linear-gradient(90deg, var(--c-orange) 0%, var(--c-rose) 9%, var(--c-aqua) 20%, var(--c-blue) 34%, rgb(141 216 243 / .35) 60%, rgb(141 216 243 / .14) 100%);
+    --ring: linear-gradient(in oklab 90deg, var(--c-orange) 0%, var(--c-rose) 9%, var(--c-lilac) calc(9% + (20% - 9%) * .5), var(--c-blue) 20%, var(--c-aqua) 34%, rgb(141 216 243 / .35) 60%, rgb(141 216 243 / .14) 100%);
     background: var(--ring); padding: 1.5px; }
   .tc.ours::after, .lv.ours::after { padding: 2px;
-    background: linear-gradient(135deg, var(--c-orange) 0%, var(--c-rose) 8%, var(--c-aqua) 18%, var(--c-blue) 30%, rgb(141 216 243 / .3) 55%, rgb(141 216 243 / .12) 100%); }
+    background: linear-gradient(in oklab 135deg, var(--c-orange) 0%, var(--c-rose) 8%, var(--c-lilac) calc(8% + (18% - 8%) * .5), var(--c-blue) 18%, var(--c-aqua) 30%, rgb(141 216 243 / .3) 55%, rgb(141 216 243 / .12) 100%); }
   body.ll .cmp tr.ours .tool .ico { --ring: linear-gradient(rgb(17 17 17 / .1), rgb(17 17 17 / .1)); }
   .tc.ours .meter i, body.ll .cmp tr.ours .meter i { background: var(--cta); }
   .fm.sc tr.ours .dots i.on { background: var(--cta); }
@@ -1857,7 +1854,7 @@
   /* 6. «How to choose»: the rows that lead to Ryze */
   .cq-r.ours { position: relative; box-shadow: none; }
   .cq-r.ours::after { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; pointer-events: none;
-    background: linear-gradient(90deg, var(--c-orange) 0%, var(--c-rose) 9%, var(--c-aqua) 20%, var(--c-blue) 34%, rgb(141 216 243 / .35) 60%, rgb(141 216 243 / .14) 100%);
+    background: linear-gradient(in oklab 90deg, var(--c-orange) 0%, var(--c-rose) 9%, var(--c-lilac) calc(9% + (20% - 9%) * .5), var(--c-blue) 20%, var(--c-aqua) 34%, rgb(141 216 243 / .35) 60%, rgb(141 216 243 / .14) 100%);
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
     mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; }
   /* 7. the market: two columns of whole dots (6 px grid), each under its number; they grow by uncovering */
@@ -1934,6 +1931,537 @@
   body.ll .rg:hover { box-shadow: 0 18px 32px -18px rgb(17 17 17 / .45); }
   body.ll .rg:hover .rg-a, body.ll .rg.demo-press .rg-a { background: var(--cta); color: #fff; }
 
+  /* ---------- v81 (Ira via Sasha, 23.11) ---------- */
+  /* 2. the page uses the screen: narrow side margins on wide screens too */
+  .page { width: min(1880px, calc(100% - 2 * clamp(32px, 3.2vw, 72px))); }
+
+  /* 4. «Без блоков»: the article text sits on the page, not on white cards; the CTA blocks stand out */
+  body.nb .article section.card.pad { background: transparent; box-shadow: none; padding-left: 4px; padding-right: 4px; }
+  body.nb .article section.card.pad::after { content: none; }
+  body.nb .article section.card.pad + section.card.pad { border-top: 1px solid var(--ll-line); }
+
+  /* the new blocks carry the same offset glass as the CTA strips */
+  .xw { position: relative; margin: 0 var(--g-size) var(--g-size) 0; }
+  .xw::before { content: ""; position: absolute; z-index: 0; pointer-events: none; border-radius: 10px;
+    inset: var(--g-size) calc(-1 * var(--g-size)) calc(-1 * var(--g-size)) var(--g-size);
+    background: linear-gradient(140deg, rgb(255 255 255 / calc(var(--g-fill) * 1.3)) 0%, rgb(255 255 255 / calc(var(--g-fill) * .45)) 45%, rgb(255 255 255 / calc(var(--g-fill) * .85)) 100%),
+      linear-gradient(135deg, rgb(102 205 191 / calc(var(--g-tint) * .42)) 0%, rgb(141 216 243 / calc(var(--g-tint) * .38)) 55%, rgb(225 181 168 / calc(var(--g-tint) * .42)) 100%);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / var(--g-hl)), inset 1px 0 0 rgb(255 255 255 / calc(var(--g-hl) * .8)), 0 22px 44px -26px rgb(28 52 48 / calc(var(--g-sh) * .55)); }
+  .xw > .card { position: relative; z-index: 1; }
+
+  /* ---------- 1. the big block: text on the left, an Ads Manager screen on the right where the agents work ---------- */
+  .mxb { display: grid; grid-template-columns: clamp(320px, 31%, 440px) minmax(0, 1fr); gap: 44px; padding: 0 0 0 48px; overflow: hidden;
+    background: var(--ink); color: #fff; border-radius: var(--r-card); clip-path: inset(0 round var(--r-card)); }
+  .mxb.c-blue { background: radial-gradient(120% 90% at 100% 0%, #5AB0FF 0%, rgb(90 176 255 / 0) 55%), linear-gradient(135deg, #1460DB 0%, #1E78F0 55%, #3593FA 100%); }
+  .mxb.c-or { background: var(--cta); }
+  .mxb-l { align-self: center; padding: 44px 0; }
+  .mxb-k { display: block; font-size: 14px; font-weight: 500; color: var(--cta); }
+  .mxb.c-blue .mxb-k, .mxb.c-or .mxb-k { color: #fff; opacity: .85; }
+  .mxb-h { margin: 12px 0 0; font-size: 36px; line-height: 1.1; letter-spacing: -.025em; font-weight: 500; }
+  .mxb-ul { margin: 20px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; font-size: 15px; line-height: 1.4; color: rgb(255 255 255 / .82); }
+  .mxb-ul li { position: relative; padding-left: 20px; }
+  .mxb-ul li::before { content: ""; position: absolute; left: 0; top: .52em; width: 7px; height: 7px; border-radius: 1px; background: var(--cta); }
+  .mxb.c-blue .mxb-ul li::before, .mxb.c-or .mxb-ul li::before { background: #fff; }
+  .mxb-f { margin-top: 26px; max-width: 440px; height: 56px; border: 0; background: #fff; }
+  .mxb-f input { color: var(--ink); }
+  .mxb.c-or .mxb-f button { background: var(--ink); }
+  .mxb.c-or .mxb-f button:hover { background: #2A2A2A; }
+  .mxb-s { display: block; margin-top: 10px; font-size: 13px; color: rgb(255 255 255 / .6); }
+  .mxb-ico { display: flex; gap: 16px; margin-top: 26px; }
+  .mxb-ico img { width: 22px; height: 22px; object-fit: contain; filter: brightness(0) invert(1); opacity: .9; }
+  .mxb-r { position: relative; min-width: 0; }
+
+  /* the screen: drawn at 700 px, scaled to the room; it runs off the bottom edge like a laptop screen */
+  .am { position: absolute; left: 0; top: 44px; width: 700px; display: flex; flex-direction: column; transform-origin: 0 0; background: #F4F5F7; color: #1C2B33; border-radius: 10px 10px 0 0;
+    font-size: 12.5px; line-height: 1.3; overflow: hidden; box-shadow: 0 0 0 1px rgb(255 255 255 / .12), 0 30px 60px -30px rgb(0 0 0 / .6); }
+  .am-top { flex: none; display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 14px; background: #fff; border-bottom: 1px solid #E4E6EB; }
+  .am-top img { width: 18px; height: 18px; object-fit: contain; }
+  .am-top b { font-weight: 700; font-size: 13px; }
+  .am-sep { color: #BCC0C4; }
+  .am-crumb { color: #65676B; }
+  .am-st { margin-left: 10px; padding: 3px 9px; border-radius: 20px; background: #EEF0F2; color: #65676B; font-size: 11.5px; font-weight: 600; transition: background .3s, color .3s; }
+  .am-st.live { background: #DDF4E4; color: #19803A; }
+  .am-who { margin-left: auto; display: flex; }
+  .am-who i { width: 20px; height: 20px; margin-left: -5px; border: 2px solid #fff; border-radius: 50%; }
+  .am-body { flex: 1 1 auto; display: grid; grid-template-columns: 124px minmax(0, 1fr); }
+  .am-nav { display: flex; flex-direction: column; gap: 4px; padding: 14px 10px; background: #fff; border-right: 1px solid #E4E6EB; }
+  .am-step { display: flex; align-items: center; gap: 8px; height: 30px; padding: 0 8px; border-radius: 6px; color: #65676B; font-weight: 600; transition: background .3s, color .3s; }
+  .am-step i { width: 14px; height: 14px; border-radius: 50%; box-shadow: inset 0 0 0 1.5px #BCC0C4; transition: background .3s, box-shadow .3s; }
+  .am-step.ok { color: #1C2B33; }
+  .am-step.ok i { background: #0866FF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M4 7.2l2 2 4-4.4' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 14px no-repeat; box-shadow: none; }
+  .am-fc { margin-top: auto; padding: 10px 8px; border-radius: 6px; background: #F4F5F7; }
+  .am-fc span { display: block; font-size: 10.5px; color: #65676B; }
+  .am-fc b { display: inline-block; margin-top: 4px; font-size: 22px; font-weight: 700; letter-spacing: -.02em; }
+  .am-fc em { margin-left: 4px; font-style: normal; font-size: 11px; color: #65676B; }
+  .am-fc.up b { color: #19803A; }
+  .am-main { display: grid; grid-template-columns: 1fr 1fr; grid-template-areas: "name aud" "obj aud" "bud pl" "cr cr"; gap: 10px; padding: 12px; align-content: start; }
+  .am-c { position: relative; padding: 10px 12px 12px; border-radius: 8px; background: #fff; box-shadow: 0 0 0 1px #E4E6EB; transition: box-shadow .15s; }
+  .am-c.sel { box-shadow: 0 0 0 2px var(--sc); }
+  .am-c label { display: block; margin-bottom: 7px; font-size: 11px; font-weight: 600; color: #65676B; }
+  .am-c-name { grid-area: name; } .am-c-obj { grid-area: obj; } .am-c-aud { grid-area: aud; } .am-c-bud { grid-area: bud; } .am-c-pl { grid-area: pl; } .am-c-cr { grid-area: cr; }
+  .am-in { display: flex; align-items: center; height: 30px; padding: 0 9px; border-radius: 6px; box-shadow: inset 0 0 0 1px #CED0D4; font-weight: 600; white-space: nowrap; overflow: hidden; }
+  .am-in span:empty::before { content: "Name your campaign"; color: #A8ABAF; font-weight: 400; }
+  .am-caret { display: inline-block; width: 1.5px; height: 1.1em; margin-left: 1px; vertical-align: -2px; background: var(--c); }
+  .am-tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; }
+  .am-tiles b { display: grid; place-items: center; height: 30px; border-radius: 6px; box-shadow: inset 0 0 0 1px #CED0D4; font-size: 11px; font-weight: 600; transition: background .2s, box-shadow .2s, color .2s; }
+  .am-tiles b.hov { box-shadow: inset 0 0 0 1px #0866FF; }
+  .am-tiles b.on { background: #E7F0FF; box-shadow: inset 0 0 0 1.5px #0866FF; color: #0866FF; }
+  .am-chips { display: flex; flex-wrap: wrap; gap: 5px; min-height: 84px; align-content: flex-start; }
+  .am-chips span { display: inline-flex; align-items: center; height: 24px; padding: 0 9px; border-radius: 12px; background: #E7F0FF; color: #0B4FC2; font-size: 11.5px; font-weight: 600; }
+  .am-chips span.pop { animation: amPop .32s cubic-bezier(.2, 1.4, .4, 1); }
+  .am-chips .am-add { background: #fff; box-shadow: inset 0 0 0 1px #CED0D4; color: #65676B; }
+  .am-chips .am-add.press { background: #F0F2F5; }
+  @keyframes amPop { from { transform: scale(.4); opacity: 0; } }
+  .am-reach { margin-top: 10px; padding-top: 9px; border-top: 1px solid #EEF0F2; font-size: 11px; color: #65676B; }
+  .am-reach b { margin-left: 4px; font-size: 13px; color: #1C2B33; }
+  .am-bud { display: flex; align-items: baseline; gap: 3px; }
+  .am-bud b { font-size: 22px; font-weight: 700; letter-spacing: -.02em; }
+  .am-bud span { color: #65676B; }
+  .am-sl { position: relative; height: 6px; margin: 12px 4px 2px; border-radius: 3px; background: #E4E6EB; --v: .2; }
+  .am-sl .f { position: absolute; left: 0; top: 0; bottom: 0; width: calc(var(--v) * 100%); border-radius: 3px; background: #0866FF; }
+  .am-sl .k { position: absolute; top: 50%; left: calc(var(--v) * 100%); width: 16px; height: 16px; margin: -8px 0 0 -8px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 1px #CED0D4, 0 1px 3px rgb(0 0 0 / .2); }
+  .am-tgs { display: grid; grid-template-columns: 1fr 1fr; gap: 9px 10px; }
+  .am-tgs span { display: flex; align-items: center; gap: 7px; font-size: 11.5px; font-weight: 600; white-space: nowrap; }
+  .tg { position: relative; flex: none; width: 28px; height: 16px; border-radius: 8px; background: #CED0D4; transition: background .2s; }
+  .tg::after { content: ""; position: absolute; left: 2px; top: 2px; width: 12px; height: 12px; border-radius: 50%; background: #fff; transition: transform .2s; }
+  .tg.on { background: #0866FF; }
+  .tg.on::after { transform: translateX(12px); }
+  .am-ths { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .am-ths i { position: relative; height: 92px; border-radius: 6px; box-shadow: inset 0 0 0 1.5px #CED0D4; background: repeating-linear-gradient(135deg, transparent 0 6px, #F0F2F5 6px 7px); overflow: hidden; }
+  .am-ths i.in { box-shadow: none; background: var(--th); animation: amPop .3s cubic-bezier(.2, 1.3, .4, 1); }
+  .am-ths i b { position: absolute; left: 8px; bottom: 8px; padding: 2px 6px; border-radius: 4px; background: rgb(255 255 255 / .92); color: #1C2B33; font-size: 10.5px; font-weight: 700; }
+  .am-ths i em { position: absolute; left: 8px; top: 8px; font-style: normal; font-size: 13px; font-weight: 700; color: #fff; text-shadow: 0 1px 6px rgb(0 0 0 / .25); }
+  .am-foot { flex: none; display: flex; align-items: center; gap: 12px; height: 52px; padding: 0 14px; background: #fff; border-top: 1px solid #E4E6EB; }
+  .am-n { flex: none; color: #65676B; }
+  .am-n b { color: #1C2B33; }
+  .am-log { flex: 1; min-width: 0; height: 18px; overflow: hidden; }
+  .am-lr { display: flex; align-items: center; gap: 6px; height: 18px; white-space: nowrap; color: #65676B; animation: amLog .3s ease; }
+  .am-lr i { flex: none; width: 8px; height: 8px; border-radius: 50%; }
+  .am-lr b { color: #1C2B33; }
+  @keyframes amLog { from { transform: translateY(12px); opacity: 0; } }
+  .am-pub { position: relative; flex: none; display: grid; place-items: center; height: 34px; padding: 0 20px; border-radius: 6px; background: #0866FF; color: #fff; font-weight: 700; overflow: hidden; transition: transform .12s, background .3s; }
+  .am-pub .fill { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: rgb(255 255 255 / .28); }
+  .am-pub.busy .fill { width: 100%; transition: width 1.2s cubic-bezier(.4, 0, .2, 1); }
+  .am-pub.press { transform: scale(.95); }
+  .am-pub.live { background: #19803A; }
+  .am-pub .lbl { position: relative; }
+  .am-layer { position: absolute; inset: 0; z-index: 5; pointer-events: none; }
+  .am-cur { position: absolute; left: 0; top: 0; will-change: transform; transition: opacity .3s; }
+  .am-cur i { display: block; transform-origin: 2px 2px; transition: transform .1s; }
+  .am-cur i svg { display: block; width: 17px; height: 19px; filter: drop-shadow(0 2px 3px rgb(0 0 0 / .22)); }
+  .am-cur.tap i { transform: scale(.78); }
+  .am-cur span { position: absolute; left: 13px; top: 16px; padding: 2px 7px; border-radius: 4px; color: #fff; font-size: 11px; font-weight: 700; white-space: nowrap; }
+  .am-cur.out { opacity: 0; }
+  .am-drag { position: absolute; left: 0; top: 0; width: 58px; height: 58px; border-radius: 6px; box-shadow: 0 10px 20px -8px rgb(0 0 0 / .35); pointer-events: none; }
+
+  /* ---------- 5. Jev: a white strip with our accent stroke; the workflows run on a dark screen ---------- */
+  .jv { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 560px); align-items: center; gap: 44px; padding: 40px 40px 40px 44px; background: #fff; color: var(--ink); border-radius: var(--r-card); }
+  .jv::after { content: ""; position: absolute; inset: 0; z-index: 6; border-radius: inherit; padding: 2px; pointer-events: none;
+    background: linear-gradient(in oklab 135deg, var(--c-orange) 0%, var(--c-rose) 13%, var(--c-lilac) calc(13% + (26% - 13%) * .5), var(--c-blue) 26%, var(--c-aqua) 38%, rgba(141,216,243,.18) 52%, rgba(255,255,255,0) 100%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); }
+  .jv-k { display: block; font-size: 14px; font-weight: 500; color: var(--cta); }
+  .jv-h { margin: 10px 0 0; max-width: 520px; font-size: 36px; line-height: 1.1; letter-spacing: -.022em; font-weight: 500; }
+  .jv-p { margin: 14px 0 0; max-width: 480px; font-size: 16.5px; line-height: 1.5; color: var(--ink-2); }
+  .jv-b { margin-top: 24px; }
+  body.btn-wh .jv .btn-cta { background: var(--cta); color: #fff; }
+  .jv-s { border-radius: 10px; background: #111; color: #fff; overflow: hidden; box-shadow: 0 24px 48px -26px rgb(17 17 17 / .55); font-size: 12.5px; }
+  .jv-bar { display: flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px; border-bottom: 1px solid rgb(255 255 255 / .08); }
+  .jv-bar i { width: 9px; height: 9px; border-radius: 50%; background: rgb(255 255 255 / .18); }
+  .jv-bar span { margin-left: 8px; color: rgb(255 255 255 / .55); }
+  .jv-sum { display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 1px; background: rgb(255 255 255 / .08); }
+  .jv-sum div { padding: 10px 14px; background: #111; }
+  .jv-sum span { display: block; font-size: 11px; color: rgb(255 255 255 / .5); }
+  .jv-sum b { display: block; margin-top: 3px; font-size: 22px; font-weight: 500; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+  .jv-sum .jv-x b { color: rgb(255 255 255 / .25); transition: color .4s; }
+  .jv.fin .jv-sum .jv-x b { color: var(--cta); }
+  .jv-rows { padding: 6px 0 8px; }
+  .jv-row { display: grid; grid-template-columns: 26px minmax(0, 1fr) auto; align-items: center; gap: 10px; height: 31px; padding: 0 14px; color: rgb(255 255 255 / .38); transition: color .25s, background .25s; }
+  .jv-row em { font-style: normal; font-variant-numeric: tabular-nums; color: rgb(255 255 255 / .3); }
+  .jv-row span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+  .jv-row b { font-weight: 600; opacity: 0; transform: translateX(6px); transition: opacity .25s, transform .25s; }
+  .jv-row.run { background: rgb(255 255 255 / .06); color: #fff; }
+  .jv-row.run em { color: var(--cta); }
+  .jv-row.run b { opacity: 1; transform: none; color: rgb(255 255 255 / .5); }
+  .jv-row.run b::before { content: "running…"; }
+  .jv-row.run b > * { display: none; }
+  .jv-row.done { color: rgb(255 255 255 / .86); }
+  .jv-row.done em { color: #3ECF8E; }
+  .jv-row.done b { opacity: 1; transform: none; color: #3ECF8E; }
+
+  /* the first strip: one cursor comes to the button and presses it */
+  .hc .hc-b { position: relative; overflow: hidden; }
+  .hc .hc-b .fill { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: var(--ink); }
+  .hc .hc-b.busy .fill { width: 100%; transition: width 1.2s cubic-bezier(.4, 0, .2, 1); }
+  .hc .hc-b .lbl, .hc .hc-b svg { position: relative; }
+  .hc .hc-b.busy, .hc .hc-b.ready { color: #fff; }
+  .hc .hc-b.ready { background: var(--ink); }
+  .hc .hc-b.press { transform: scale(.96); }
+
+  /* the switch panel of this draft */
+  .vp { position: fixed; right: 14px; bottom: 14px; z-index: 130; display: grid; gap: 4px; padding: 8px; border-radius: var(--r-card); background: #fff; box-shadow: 0 0 0 1px rgb(17 17 17 / .08), 0 18px 40px -18px rgb(17 17 17 / .35); font-size: 13px; }
+  .vp-r { display: flex; align-items: center; gap: 4px; }
+  .vp-r b { width: 112px; flex: none; font-weight: 600; }
+  .vp button { display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 10px; border: 0; border-radius: var(--r-btn); background: var(--inner); font: inherit; font-size: 12.5px; font-weight: 500; color: var(--ink); cursor: pointer; white-space: nowrap; }
+  .vp button:hover { background: #E4E4E4; }
+  .vp button.on { background: var(--ink); color: #fff; }
+  .vp button i { width: 10px; height: 10px; border-radius: 50%; }
+
+  /* ---------- v82 (Sasha, 23.11) ---------- */
+  /* the cursors of «Налёт», «Ливень» and «Задачи» stay inside the frame of their strip */
+  .hc-layer { clip-path: inset(0 round var(--r-card)); }
+
+  /* the first screen: text and form on the left, an Ads Manager screen with twelve agents on the right (as on get-ryze.ai and in the reels) */
+  .hx-only { display: none !important; }
+  body.hxon .hx-only { display: block !important; }
+  body.hxon form.hx-only { display: flex !important; }
+  body.hxon #hm-slot { display: none; }
+  body.hxon .hm { grid-template-columns: minmax(0, 1fr) minmax(0, 1.18fr); gap: 48px; min-height: 660px; }
+  body.hxon .hm-l { padding: 30px 0; }
+  body.hxon .hm-l .eh-h1 { margin-top: 92px; font-size: clamp(46px, 3.7vw, 68px); }
+  body.hxon .star { top: 26px; width: 60px; height: 60px; }
+  body.hxon .eh-answer { font-size: 17px; }
+  .hx-f { margin-top: 30px; max-width: 470px; height: 58px; }
+  body.hxon .eh-by { flex-wrap: wrap; row-gap: 6px; white-space: normal; }
+  body.hxon .eh-by .sp { flex-basis: 100%; height: 0; }
+  .hx-wrap { position: relative; min-height: 600px; }
+  .hx-tabs span { position: absolute; display: flex; align-items: flex-start; gap: 7px; padding: 9px 14px; border-radius: 10px 10px 0 0; font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgb(17 17 17 / .55);
+    background: linear-gradient(135deg, rgb(102 205 191 / .22), rgb(141 216 243 / .2) 55%, rgb(225 181 168 / .2)); box-shadow: inset 0 1px 0 rgb(255 255 255 / .8), inset 0 0 0 1px rgb(17 17 17 / .05); }
+  .hx-tabs span i { width: 6px; height: 6px; margin-top: 4px; border-radius: 50%; background: #3ECF8E; }
+  .hx-tabs .t3 { left: 52px; right: 0; top: 0; bottom: 0; }
+  .hx-tabs .t2 { left: 26px; right: 0; top: 26px; bottom: 0; }
+  .hx-tabs .t1 { left: 0; right: 0; top: 52px; bottom: 0; color: rgb(17 17 17 / .75); background: linear-gradient(135deg, rgb(102 205 191 / .36), rgb(141 216 243 / .32) 55%, rgb(225 181 168 / .3)); }
+  .hx-frame { position: absolute; left: 10px; right: 0; top: 88px; bottom: 0; overflow: hidden; border-radius: 8px 8px 0 0; box-shadow: 0 0 0 1px rgb(17 17 17 / .08), 0 24px 50px -28px rgb(17 17 17 / .4); }
+  .hx { position: absolute; left: 0; top: 0; width: 760px; display: flex; flex-direction: column; transform-origin: 0 0; background: #fff; color: #1C2B33; font-size: 12px; line-height: 1.3; }
+  .hx-chrome { flex: none; display: flex; align-items: center; gap: 6px; height: 32px; padding: 0 12px; background: #F1F2F4; border-bottom: 1px solid #E4E6EB; }
+  .hx-chrome > i { width: 9px; height: 9px; border-radius: 50%; background: #D5D7DB; }
+  .hx-tab { display: flex; align-items: center; gap: 6px; margin-left: 10px; height: 24px; padding: 0 10px; border-radius: 6px 6px 0 0; background: #fff; font-size: 11px; font-weight: 600; }
+  .hx-tab img { width: 13px; height: 13px; object-fit: contain; }
+  .hx-url { margin-left: 10px; color: #8A8D91; font-size: 11px; }
+  .hx-app { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: 38px 172px minmax(0, 1fr); }
+  .hx-rail { display: flex; flex-direction: column; align-items: center; gap: 13px; padding: 12px 0; background: #1C2B33; }
+  .hx-rail img { width: 18px; height: 18px; object-fit: contain; filter: brightness(0) invert(1); }
+  .hx-rail i { width: 16px; height: 16px; border-radius: 4px; box-shadow: inset 0 0 0 1.6px rgb(255 255 255 / .5); }
+  .hx-rail i.on { background: #0866FF; box-shadow: none; }
+  .hx-tree { padding: 10px 8px; background: #F7F8FA; border-right: 1px solid #E4E6EB; overflow: hidden; }
+  .hx-q { height: 26px; margin-bottom: 8px; padding: 0 10px; border-radius: 6px; background: #fff; box-shadow: inset 0 0 0 1px #E4E6EB; line-height: 26px; color: #A8ABAF; }
+  .hx-n { position: relative; display: flex; align-items: center; gap: 7px; height: 27px; padding: 0 8px; border-radius: 5px; white-space: nowrap; overflow: hidden; color: #1C2B33; transition: background .2s; }
+  .hx-n i { flex: none; width: 12px; height: 12px; border-radius: 3px; box-shadow: inset 0 0 0 1.4px #8A8D91; }
+  .hx-n.c { font-weight: 700; } .hx-n.c i { background: #1C2B33; box-shadow: none; }
+  .hx-n.s { padding-left: 18px; } .hx-n.a { padding-left: 30px; color: #4B4F56; }
+  .hx-n.a i { border-radius: 50%; }
+  .hx-n.hl { background: #E7F0FF; }
+  .hx-n.ok::after { content: "✓"; position: absolute; right: 8px; color: #19803A; font-weight: 700; }
+  .hx-n.pop { animation: amPop .3s cubic-bezier(.2, 1.3, .4, 1); }
+  .hx-form { display: flex; flex-direction: column; gap: 9px; padding: 10px 14px 0; background: #F0F2F5; overflow: hidden; }
+  .hx-crumb { flex: none; display: flex; align-items: center; gap: 10px; height: 30px; white-space: nowrap; }
+  .hx-crumb b { font-weight: 700; }
+  .hx-crumb span { color: #65676B; }
+  .hx-px { padding: 2px 7px; border-radius: 10px; background: #E4E6EB; font-size: 10.5px; font-weight: 700; transition: background .3s, color .3s; }
+  .hx-px.on { background: #DDF4E4; color: #19803A !important; }
+  .hx-dr { margin-left: auto; padding: 3px 9px; border-radius: 10px; background: #fff; font-weight: 600; box-shadow: inset 0 0 0 1px #E4E6EB; transition: background .3s, color .3s; }
+  .hx-dr.live { background: #DDF4E4; color: #19803A !important; box-shadow: none; }
+  .hx-sec { flex: none; padding: 9px 12px 10px; border-radius: 8px; background: #fff; box-shadow: 0 0 0 1px #E4E6EB; transition: box-shadow .12s; }
+  .hx-sec.two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 0; background: transparent; box-shadow: none; }
+  .hx-sec.two > div { padding: 9px 12px 10px; border-radius: 8px; background: #fff; box-shadow: 0 0 0 1px #E4E6EB; transition: box-shadow .12s; }
+  .hx-sec.sel, .hx-sec.two > div.sel { box-shadow: 0 0 0 2px var(--sc); }
+  .hx-sec label { display: flex; align-items: center; gap: 7px; margin-bottom: 6px; font-size: 11px; font-weight: 700; color: #1C2B33; }
+  .hx-sec p { margin: 0; color: #65676B; font-size: 11px; }
+  .hx-ab label { margin-bottom: 3px; }
+  .hx-rd { width: 13px; height: 13px; border-radius: 50%; box-shadow: inset 0 0 0 1.5px #8A8D91; transition: box-shadow .15s; }
+  .hx-ab.on .hx-rd { box-shadow: inset 0 0 0 4px #0866FF; }
+  .hx-row { display: flex; align-items: center; gap: 8px; }
+  .hx-row em { font-style: normal; color: #8A8D91; }
+  .hx-sel, .hx-inp { display: inline-flex; align-items: center; height: 28px; padding: 0 10px; border-radius: 6px; box-shadow: inset 0 0 0 1px #CED0D4; background: #fff; white-space: nowrap; overflow: hidden; }
+  .hx-sel { padding-right: 26px; position: relative; font-weight: 600; }
+  .hx-sel::after { content: ""; position: absolute; right: 10px; top: 11px; width: 6px; height: 6px; border-right: 1.5px solid #65676B; border-bottom: 1.5px solid #65676B; transform: rotate(45deg); }
+  .hx-sel.w, .hx-inp.w { display: flex; width: 100%; }
+  .hx-inp { min-width: 110px; font-variant-numeric: tabular-nums; }
+  .hx-flash { animation: hxFlash .5s ease; }
+  @keyframes hxFlash { 0% { background: #E7F0FF; } 100% { background: #fff; } }
+  .hx-chips { display: flex; gap: 5px; flex-wrap: nowrap; overflow: hidden; height: 24px; }
+  .hx-chips span { flex: none; display: inline-flex; align-items: center; height: 24px; padding: 0 9px; border-radius: 12px; background: #E7F0FF; color: #0B4FC2; font-size: 11px; font-weight: 600; }
+  .hx-chips span.pop { animation: amPop .3s cubic-bezier(.2, 1.4, .4, 1); }
+  .hx-ths { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; }
+  .hx-ths i { position: relative; height: 62px; border-radius: 6px; background: var(--th); }
+  .hx-ths i.pop { animation: amPop .3s cubic-bezier(.2, 1.3, .4, 1); }
+  .hx-ths i b { position: absolute; left: 6px; bottom: 6px; padding: 1px 5px; border-radius: 4px; background: rgb(255 255 255 / .92); font-size: 10px; }
+  .hx-foot { flex: none; display: flex; align-items: center; gap: 10px; height: 46px; margin: auto -14px 0; padding: 0 14px; background: #fff; border-top: 1px solid #E4E6EB; }
+  .hx-foot small { flex: 1; color: #8A8D91; font-size: 10.5px; }
+  .hx-dis { padding: 7px 12px; border-radius: 6px; box-shadow: inset 0 0 0 1px #CED0D4; font-weight: 600; }
+  .hx-pub { position: relative; display: grid; place-items: center; height: 32px; padding: 0 18px; border-radius: 6px; background: #0866FF; color: #fff; font-weight: 700; overflow: hidden; transition: transform .12s, background .3s; }
+  .hx-pub .fill { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: rgb(255 255 255 / .28); }
+  .hx-pub.busy .fill { width: 100%; transition: width 1.1s cubic-bezier(.4, 0, .2, 1); }
+  .hx-pub.press { transform: scale(.95); }
+  .hx-pub.live { background: #19803A; }
+  .hx-pub .lbl { position: relative; }
+  .hx-layer { position: absolute; inset: 0; z-index: 5; pointer-events: none; }
+
+  /* ---------- v83 (Sasha, 23.11): the article without blocks, the black agents block, no switch panel ---------- */
+  /* the short answer keeps its accent ring, so it keeps its padding and its white too */
+  body.nb .article #short-answer { padding: 44px 48px; background: #fff; }
+  /* the first screen: the stacked tabs and the screen keep a margin from the card's edges */
+  body.hxon .hx-wrap { margin: 18px 0 8px; }
+  .hx-frame { border-radius: 8px; }
+
+  /* 1. the agents block in the middle is wider: it takes the sidebar's room too, and the sidebar steps aside while it passes */
+  #agents-wrap { margin-left: -282px; z-index: 3; }
+  .article .side { transition: opacity .35s, transform .35s; }
+  body.side-hide .article .side { opacity: 0; transform: translateX(-14px); pointer-events: none; }
+  .mxb { grid-template-columns: clamp(340px, 30%, 470px) minmax(0, 1fr); }
+  .mxb-h { font-size: 42px; }
+
+  /* the screen: Ads Manager at the ad set — locations on a map, age, targeting; dozens of agents at once (as in the reels) */
+  .gm { position: absolute; left: 0; top: 44px; width: 760px; display: flex; flex-direction: column; transform-origin: 0 0; background: #fff; color: #1C2B33; border-radius: 10px 10px 0 0;
+    font-size: 12px; line-height: 1.3; overflow: hidden; box-shadow: 0 0 0 1px rgb(255 255 255 / .12), 0 30px 60px -30px rgb(0 0 0 / .6); }
+  .gm-top { flex: none; display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px; border-bottom: 1px solid #E4E6EB; white-space: nowrap; }
+  .gm-top img { width: 16px; height: 16px; object-fit: contain; }
+  .gm-top b { font-weight: 700; }
+  .gm-sep { color: #BCC0C4; }
+  .gm-cur { font-weight: 600; }
+  .gm-st { margin-left: auto; padding: 3px 9px; border-radius: 10px; box-shadow: inset 0 0 0 1px #E4E6EB; font-weight: 600; transition: background .3s, color .3s; }
+  .gm-st.live { background: #DDF4E4; color: #19803A; box-shadow: none; }
+  .gm-body { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: 236px minmax(0, 1fr); }
+  .gm-side { display: flex; flex-direction: column; gap: 8px; padding: 10px; background: #F0F2F5; border-right: 1px solid #E4E6EB; overflow: hidden; }
+  .gm-s { position: relative; padding: 9px 11px 10px; border-radius: 8px; background: #fff; box-shadow: 0 0 0 1px #E4E6EB; transition: box-shadow .12s; }
+  .gm-s.sel { box-shadow: 0 0 0 2px var(--sc); }
+  .gm-s label { display: block; margin-bottom: 7px; font-size: 11px; font-weight: 700; }
+  .gm-chips { display: flex; flex-wrap: wrap; gap: 4px; min-height: 22px; }
+  .gm-chips span { display: inline-flex; align-items: center; gap: 4px; height: 22px; padding: 0 8px; border-radius: 11px; background: #E7F0FF; color: #0B4FC2; font-size: 10.5px; font-weight: 600; white-space: nowrap; }
+  .gm-chips span em { font-style: normal; color: #65676B; font-weight: 500; }
+  .gm-chips span.pop { animation: amPop .3s cubic-bezier(.2, 1.4, .4, 1); }
+  .gm-in { margin-top: 6px; height: 26px; padding: 0 9px; border-radius: 6px; box-shadow: inset 0 0 0 1px #CED0D4; line-height: 26px; color: #A8ABAF; white-space: nowrap; overflow: hidden; }
+  .gm-in.typing { color: #1C2B33; }
+  .gm-age { display: flex; align-items: center; gap: 8px; font-variant-numeric: tabular-nums; }
+  .gm-age b { width: 26px; font-weight: 700; }
+  .gm-rg { position: relative; flex: 1; height: 5px; border-radius: 3px; background: #E4E6EB; --a: 0; --b: 1; }
+  .gm-rg .f { position: absolute; top: 0; bottom: 0; left: calc(var(--a) * 100%); right: calc((1 - var(--b)) * 100%); border-radius: 3px; background: #0866FF; }
+  .gm-rg .k { position: absolute; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 1px #CED0D4, 0 1px 3px rgb(0 0 0 / .2); }
+  .gm-rg .k0 { left: calc(var(--a) * 100%); } .gm-rg .k1 { left: calc(var(--b) * 100%); }
+  .gm-seg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  .gm-seg b { display: grid; place-items: center; height: 24px; border-radius: 6px; box-shadow: inset 0 0 0 1px #CED0D4; font-size: 10.5px; font-weight: 600; transition: background .2s, color .2s, box-shadow .2s; }
+  .gm-seg b.on { background: #E7F0FF; color: #0866FF; box-shadow: inset 0 0 0 1.5px #0866FF; }
+  .gm-adv { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+  .gm-mapw { position: relative; overflow: hidden; }
+  .gm-map { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .gm-lbl text { font: 600 11px Satoshi, system-ui, sans-serif; fill: #4B5A44; }
+  .gm-circle { position: absolute; left: 52.5%; top: 45%; width: calc(var(--r, 90) * 2px); height: calc(var(--r, 90) * 2px); margin: calc(var(--r, 90) * -1px) 0 0 calc(var(--r, 90) * -1px); border-radius: 50%;
+    background: rgb(8 102 255 / .12); box-shadow: inset 0 0 0 2px rgb(8 102 255 / .7); }
+  .gm-circle::after { content: ""; position: absolute; right: -6px; top: 50%; width: 12px; height: 12px; margin-top: -6px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 2px #0866FF; }
+  .gm-pin { position: absolute; width: 14px; height: 14px; margin: -14px 0 0 -7px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: #0866FF; box-shadow: 0 2px 4px rgb(0 0 0 / .3); }
+  .gm-pin.main { width: 20px; height: 20px; margin: -20px 0 0 -10px; background: #1C2B33; }
+  .gm-pin.pop { animation: gmPin .35s cubic-bezier(.2, 1.5, .4, 1); }
+  @keyframes gmPin { from { transform: rotate(-45deg) scale(0); } }
+  .gm-aud { position: absolute; right: 12px; top: 12px; width: 190px; padding: 10px 12px 12px; border-radius: 8px; background: #fff; box-shadow: 0 0 0 1px #E4E6EB, 0 8px 18px -10px rgb(0 0 0 / .25); }
+  .gm-aud label { display: block; font-size: 11px; font-weight: 700; }
+  .gm-gauge { position: relative; margin: 6px 0 8px; }
+  .gm-gauge svg { display: block; width: 120px; margin: 0 auto; }
+  .gm-gf { stroke-dasharray: var(--g, 50) 100; transition: stroke-dasharray .5s; }
+  .gm-nd { transform-origin: 60px 60px; transform: rotate(calc((var(--g, 50) - 50) * 1.8deg)); transition: transform .5s; }
+  .gm-gauge span { position: absolute; bottom: -2px; font-size: 9.5px; color: #8A8D91; }
+  .gm-gauge span:first-of-type { left: 0; } .gm-gauge span:last-of-type { right: 0; }
+  .gm-k { margin-top: 6px; font-size: 10px; color: #65676B; }
+  .gm-aud b { display: block; font-size: 12.5px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .gm-bar { flex: none; display: flex; align-items: center; gap: 6px; height: 46px; padding: 0 14px; background: #1C1E21; color: rgb(255 255 255 / .7); white-space: nowrap; }
+  .gm-bar b { color: #fff; font-variant-numeric: tabular-nums; }
+  .gm-bar i { font-style: normal; }
+  .gm-ava { display: flex; margin-right: 4px; }
+  .gm-ava i { width: 16px; height: 16px; margin-left: -4px; border: 2px solid #1C1E21; border-radius: 50%; }
+  .gm-prog { position: relative; flex: 1; height: 4px; margin: 0 12px; border-radius: 2px; background: rgb(255 255 255 / .14); overflow: hidden; }
+  .gm-prog i { position: absolute; left: 0; top: 0; bottom: 0; width: var(--p, 0%); background: #3ECF8E; transition: width .3s; }
+  .gm-pub { position: relative; display: grid; place-items: center; height: 30px; padding: 0 16px; border-radius: 6px; background: #0866FF; color: #fff; font-weight: 700; overflow: hidden; transition: transform .12s, background .3s; }
+  .gm-pub .fill { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: rgb(255 255 255 / .28); }
+  .gm-pub.busy .fill { width: 100%; transition: width 1.1s cubic-bezier(.4, 0, .2, 1); }
+  .gm-pub.press { transform: scale(.95); }
+  .gm-pub.live { background: #19803A; }
+  .gm-pub .lbl { position: relative; }
+  .gm-layer { position: absolute; inset: 0; z-index: 5; pointer-events: none; }
+  .gm-mini { position: absolute; left: 0; top: 0; will-change: transform; }
+  .gm-mini svg { display: block; width: 12px; height: 13px; filter: drop-shadow(0 1px 2px rgb(0 0 0 / .25)); }
+  .gm-sel { position: absolute; left: 0; top: 0; border: 1.5px solid var(--c); pointer-events: none; animation: gmSel 1.3s ease forwards; }
+  .gm-sel::before, .gm-sel::after { content: ""; position: absolute; width: 6px; height: 6px; background: #fff; box-shadow: 0 0 0 1.5px var(--c); }
+  .gm-sel::before { left: -4px; top: -4px; } .gm-sel::after { right: -4px; bottom: -4px; }
+  .gm-sel b { position: absolute; left: 50%; bottom: -19px; transform: translateX(-50%); padding: 1px 5px; border-radius: 3px; background: var(--c); color: #fff; font-size: 9.5px; font-weight: 700; white-space: nowrap; }
+  @keyframes gmSel { 0% { opacity: 0; transform: var(--t) scale(.92); } 15% { opacity: 1; transform: var(--t); } 75% { opacity: 1; transform: var(--t); } 100% { opacity: 0; transform: var(--t); } }
+
+  /* 5. Jev: the dashboard from Ira's posts — a dark screen in three columns on a colourful frame; the strip is taller */
+  .jv { grid-template-columns: clamp(280px, 30%, 380px) minmax(0, 1fr); padding: 36px 36px 36px 44px; }
+  .jv-sw { position: relative; min-width: 0; padding: 12px; border-radius: 12px;
+    background: radial-gradient(60% 80% at 0% 0%, #F2994A 0%, transparent 60%), radial-gradient(60% 80% at 100% 100%, #7B61FF 0%, transparent 60%), radial-gradient(70% 90% at 100% 0%, #2BB6A8 0%, transparent 65%), #E2567A; }
+  .jv-sw::before { content: ""; position: absolute; inset: 0; border-radius: inherit; background: radial-gradient(circle, rgb(0 0 0 / .22) 1px, transparent 1.4px) 0 0 / 5px 5px; }
+  .jd { position: relative; width: 760px; transform-origin: 0 0; border-radius: 8px; background: #0C0D0F; color: #fff; font-size: 11px; line-height: 1.3; overflow: hidden; box-shadow: 0 20px 40px -20px rgb(0 0 0 / .6); }
+  .jd-top { display: flex; align-items: center; gap: 8px; height: 34px; padding: 0 12px; border-bottom: 1px solid rgb(255 255 255 / .08); white-space: nowrap; }
+  .jd-sq { width: 8px; height: 8px; border-radius: 2px; background: #D6F25B; }
+  .jd-top b { font-weight: 700; }
+  .jd-d { color: rgb(255 255 255 / .45); overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+  .jd-run { margin-left: auto; display: flex; align-items: center; gap: 4px; color: rgb(255 255 255 / .55); font-variant-numeric: tabular-nums; }
+  .jd-run i { width: 6px; height: 6px; border-radius: 50%; background: #D6F25B; animation: jdBlink 1.2s infinite; }
+  @keyframes jdBlink { 50% { opacity: .3; } }
+  .jd-run b { color: #fff; font-weight: 600; }
+  .jd-ry { display: flex; align-items: center; gap: 5px; margin-left: 10px; font-weight: 700; }
+  .jd-ry img { width: 13px; height: 13px; filter: invert(1); }
+  .jd-cols { display: grid; grid-template-columns: 1fr 1.15fr 1fr; gap: 1px; background: rgb(255 255 255 / .07); }
+  .jd-c { padding: 10px 12px 12px; background: #0C0D0F; min-width: 0; }
+  .jd-c h4 { display: flex; gap: 6px; margin: 0 0 8px; font-size: 11px; font-weight: 600; color: rgb(255 255 255 / .8); }
+  .jd-c h4 em { font-style: normal; color: #D6F25B; }
+  .jd-k { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 9px; }
+  .jd-k b { display: block; font-size: 21px; font-weight: 600; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+  .jd-k span { display: block; margin-top: 2px; font-size: 9.5px; color: rgb(255 255 255 / .45); }
+  .jd-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+  .jd-grid i { position: relative; aspect-ratio: 4 / 5; border-radius: 3px; background: var(--th, #1A1C20); opacity: .25; transition: opacity .3s; }
+  .jd-grid i.in { opacity: 1; }
+  .jd-grid i b { position: absolute; left: 3px; bottom: 3px; padding: 0 3px; border-radius: 2px; background: rgb(0 0 0 / .6); font-size: 8.5px; font-weight: 600; }
+  .jd-grid i.pv { box-shadow: 0 0 0 1.5px #D6F25B; }
+  .jd-scw { position: relative; height: 128px; margin-bottom: 8px; border-radius: 4px; background: rgb(255 255 255 / .03); }
+  .jd-scw canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .jd-pv { position: absolute; right: 6px; top: 5px; padding: 1px 5px; border-radius: 3px; background: #D6F25B; color: #0C0D0F; font-size: 9px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .jd-ax { position: absolute; left: 6px; bottom: 4px; font-size: 8.5px; color: rgb(255 255 255 / .35); }
+  .jd-pt div { display: grid; grid-template-columns: 1fr 64px 28px; align-items: center; gap: 6px; height: 19px; font-size: 10px; color: rgb(255 255 255 / .7); }
+  .jd-pt i { height: 5px; border-radius: 3px; background: linear-gradient(90deg, #D6F25B calc(var(--v) * var(--k, 0) * 100%), rgb(255 255 255 / .1) 0); transition: --k .6s; }
+  .jd-pt b { text-align: right; font-weight: 700; color: #D6F25B; font-variant-numeric: tabular-nums; opacity: var(--k, 0); transition: opacity .4s; }
+  .jd-pt div.lo b { color: #FF6B5B; }
+  .jd-pt div.lo i { background: linear-gradient(90deg, #FF6B5B calc(var(--v) * var(--k, 0) * 100%), rgb(255 255 255 / .1) 0); }
+  .jd-br { display: flex; flex-direction: column; gap: 5px; height: 252px; overflow: hidden; }
+  .jd-bf { flex: none; display: grid; grid-template-columns: 1fr 34px; gap: 2px 8px; padding: 7px 8px; border-radius: 5px; background: rgb(255 255 255 / .05); }
+  .jd-bf.pop { animation: jdIn .4s cubic-bezier(.2, .9, .3, 1); }
+  @keyframes jdIn { from { opacity: 0; transform: translateY(-10px); } }
+  .jd-bf small { font-size: 9px; color: rgb(255 255 255 / .45); }
+  .jd-bf q { grid-column: 1; font-size: 10.5px; color: #fff; quotes: "“" "”"; }
+  .jd-bf > b { grid-column: 2; grid-row: 1 / span 3; align-self: center; text-align: right; font-size: 18px; font-weight: 600; color: #D6F25B; }
+  .jd-bf .bars { grid-column: 1; display: flex; gap: 4px; margin-top: 3px; }
+  .jd-bf .bars i { flex: 1; height: 3px; border-radius: 2px; background: linear-gradient(90deg, rgb(255 255 255 / .75) var(--v), rgb(255 255 255 / .12) 0); }
+  @property --k { syntax: "<number>"; inherits: true; initial-value: 0; }
+
+  /* ---------- v84 (Sasha, 23.11) ---------- */
+  /* no lines between the sections */
+  body.nb .article section.card.pad + section.card.pad { border-top: 0; }
+  /* the campaign-edit screen in the black block: from 44 px below the top to the bottom and right edges; one rounded corner */
+  .mxb .hx-frame { left: 0; right: 0; top: 44px; bottom: 0; border-radius: 10px 0 0 0; box-shadow: none; }
+  .mxb .hx { border-radius: 10px 0 0 0; }
+
+  /* ---------- v85 (Sasha, 23.11) ---------- */
+  /* 1. the agents block: the screen inside, 44 px from every edge, rounded all round; the cursors fly over its edges */
+  .mxb .hx-frame { left: 0; right: 44px; top: 44px; bottom: 44px; overflow: visible; border-radius: 10px; box-shadow: none; }
+  .mxb .hx { border-radius: 10px; overflow: hidden; box-shadow: 0 0 0 1px rgb(255 255 255 / .1), 0 30px 60px -30px rgb(0 0 0 / .7); }
+  .mxb .hx-layer { z-index: 5; }
+  /* more air inside the screen */
+  .mxb .hx-chrome { height: 36px; }
+  .mxb .hx-app { grid-template-columns: 42px 196px minmax(0, 1fr); }
+  .mxb .hx-tree { padding: 14px 10px; }
+  .mxb .hx-n { height: 29px; }
+  .mxb .hx-form { gap: 11px; padding: 14px 18px 0; }
+  .mxb .hx-sec, .mxb .hx-sec.two > div { padding: 11px 14px 12px; }
+  .mxb .hx-sec.two { gap: 12px; padding: 0; }
+  .mxb .hx-sec label { margin-bottom: 8px; }
+  .mxb .hx-crumb { height: 32px; }
+  .mxb .hx-ths { gap: 10px; }
+  .mxb .hx-ths i { height: 64px; }
+  .mxb .hx-foot { height: 52px; margin: auto -18px 0; padding: 0 18px; }
+
+  /* 2. Jev: our offset glass under the dashboard instead of the dotted colourful frame; a black button */
+  .jv-sw { padding: 0; border-radius: 8px; background: none; margin: 0 var(--g-size) var(--g-size) 0; isolation: isolate; }
+  .jv-sw::before { inset: var(--g-size) calc(-1 * var(--g-size)) calc(-1 * var(--g-size)) var(--g-size); z-index: -1; border-radius: 10px;
+    background: linear-gradient(140deg, rgb(255 255 255 / calc(var(--g-fill) * 1.3)) 0%, rgb(255 255 255 / calc(var(--g-fill) * .45)) 45%, rgb(255 255 255 / calc(var(--g-fill) * .85)) 100%),
+      linear-gradient(135deg, rgb(102 205 191 / calc(var(--g-tint) * .42)) 0%, rgb(141 216 243 / calc(var(--g-tint) * .38)) 55%, rgb(225 181 168 / calc(var(--g-tint) * .42)) 100%);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / var(--g-hl)), inset 1px 0 0 rgb(255 255 255 / calc(var(--g-hl) * .8)), 0 22px 44px -26px rgb(28 52 48 / calc(var(--g-sh) * .55)); }
+  .jv .btn-cta, body.btn-wh .jv .btn-cta { background: var(--ink); color: #fff; }
+  .jv .btn-cta:hover, .jv .btn-cta.demo-press, body.btn-wh .jv .btn-cta:hover { background: #2A2A2A; color: #fff; }
+
+  /* 3. the short answer: plain text on the page, as the rest of the article */
+  body.nb .article #short-answer { padding: 48px 4px; background: transparent; }
+  body.nb.ll .article #short-answer::after { content: none; }
+
+  /* 4. «How to choose»: the Ryze rows — a plain blue line as the other rows */
+  body.ll .cq-r.ours { box-shadow: inset 0 0 0 1px var(--pl); }
+  body.ll .cq-r.ours::after { content: none; }
+
+  /* ---------- v86 (Sasha, 23.11) ---------- */
+  /* 2. the agents block: fewer parts, more air */
+  .mxb-h { margin-top: 14px; }
+  .mxb-p { margin: 22px 0 0; max-width: 400px; font-size: 17px; line-height: 1.5; color: rgb(255 255 255 / .72); }
+  .mxb-f { margin-top: 36px; }
+  .mxb-s { margin-top: 12px; }
+  .mxb-ico { gap: 18px; margin-top: 40px; }
+  /* Ryze presses «Start free trial»: it fills black from the left, then «✓ Ready in 2 min» */
+  .mxb-f button { position: relative; overflow: hidden; white-space: nowrap; justify-content: center; transition: transform .12s, background .3s; }
+  .mxb-f button .fill { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: var(--ink); }
+  .mxb-f button.busy .fill { width: 100%; transition: width 1.2s cubic-bezier(.4, 0, .2, 1); }
+  .mxb-f button .lbl, .mxb-f button svg { position: relative; }
+  .mxb-f button.ready { background: var(--ink); }
+  .mxb-f button.press { transform: scale(.96); }
+
+  /* ---------- v87 (Sasha, 23.11) ---------- */
+  body.ll { --c-lilac: #CDBDEB; }
+  /* 1–2. the big black blocks (agents, Jev): text at the top, a plate at the bottom, air between; our accent stroke */
+  .mxb::after { content: ""; position: absolute; inset: 0; z-index: 8; border-radius: inherit; padding: 2px; pointer-events: none; background: linear-gradient(in oklab 135deg, var(--c-orange) 0%, var(--c-rose) 12%, var(--c-lilac) 19%, var(--c-blue) 27%, var(--c-aqua) 36%, rgb(156 231 221 / .2) 52%, rgb(255 255 255 / 0) 100%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); }
+  .mxb-l { align-self: stretch; display: flex; flex-direction: column; justify-content: space-between; gap: 40px; padding: 48px 0; }
+  .mxb-t .mxb-k { display: block; }
+  .mxb-pl { padding: 20px; border-radius: 10px; background: rgb(255 255 255 / .06); box-shadow: inset 0 0 0 1px rgb(255 255 255 / .08); }
+  .mxb-pl .mxb-f { margin: 0; max-width: none; }
+  .mxb-pl .mxb-s { margin-top: 12px; }
+  .mxb-pl .mxb-ico { display: flex; justify-content: space-between; align-items: center; gap: 0; margin-top: 22px; padding: 0 2px; }
+  .mxb-pl .mxb-ico img { width: 30px; height: 30px; }
+  /* our offset glass under the screen */
+  .mxb .hx-frame::before { content: ""; position: absolute; z-index: -1; pointer-events: none; border-radius: 12px;
+    inset: var(--g-size) calc(-1 * var(--g-size)) calc(-1 * var(--g-size)) var(--g-size); background: linear-gradient(140deg, rgb(255 255 255 / calc(var(--g-fill) * 1.3)) 0%, rgb(255 255 255 / calc(var(--g-fill) * .45)) 45%, rgb(255 255 255 / calc(var(--g-fill) * .85)) 100%),
+      linear-gradient(135deg, rgb(102 205 191 / calc(var(--g-tint) * .42)) 0%, rgb(141 216 243 / calc(var(--g-tint) * .38)) 55%, rgb(225 181 168 / calc(var(--g-tint) * .42)) 100%);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / var(--g-hl)), inset 1px 0 0 rgb(255 255 255 / calc(var(--g-hl) * .8)), 0 22px 44px -26px rgb(28 52 48 / calc(var(--g-sh) * .55)); }
+  /* 2. Jev in the black block: the whole width, the dashboard on the right on glass, a black button in the white field */
+  #jev-wrap { margin-left: -282px; z-index: 3; }
+  .mxb.jvb { grid-template-columns: clamp(340px, 30%, 470px) minmax(0, 1fr); }
+  .mxb .jv-sw { position: absolute; left: 0; right: 44px; top: 44px; margin: 0; }
+  .mxb .jd { box-shadow: 0 0 0 1px rgb(255 255 255 / .12), 0 24px 48px -26px rgb(0 0 0 / .7); }
+  .jvb .mxb-f button { background: var(--ink); }
+  .jvb .mxb-f button:hover { background: #2A2A2A; }
+
+  /* 4–5. one fill for every scale: round 9 px dots on a 13 px step, as the score dots — orange for Ryze, grey for the others, pale for the rest of the scale */
+  body.ll .meter, body.ll .cmp tr.ours .meter, body.ll .bar, body.ll .pb-bar { height: 13px; border-radius: 0; box-shadow: none; overflow: hidden;
+    background: radial-gradient(circle, #ECE9E4 4.5px, transparent 5px) 0 50% / 13px 13px repeat-x;
+    -webkit-mask: linear-gradient(90deg, #000 round(down, 100%, 13px), transparent 0); mask: linear-gradient(90deg, #000 round(down, 100%, 13px), transparent 0); }
+  body.ll .meter i, body.ll .bar i, body.ll .pb-bar i { left: 0; top: 0; bottom: 0; height: auto;
+    width: max(13px, calc(100% * var(--v))); width: max(13px, round(down, calc(100% * var(--v)), 13px));
+    background: radial-gradient(circle, #A9A6A0 4.5px, transparent 5px) 0 50% / 13px 13px repeat-x; }
+  body.ll .cmp tr.ours .meter i, body.ll .tc.ours .meter i, body.ll .bar-row.ours .bar i, body.ll .pb.ours .pb-bar i { background: radial-gradient(circle, var(--cta) 4.5px, transparent 5px) 0 50% / 13px 13px repeat-x; }
+  .dots { gap: 4px; }
+  .dots i { width: 9px; height: 9px; background: #ECE9E4; }
+  .dots i.on { background: #A9A6A0; }
+  .fm.sc tr.ours .dots i.on { background: var(--cta); }
+
+  /* ---------- v88 (Sasha, 23.11): no plate under the form and icons in the black blocks — they sit straight on the black ---------- */
+  .mxb-pl { padding: 0; border-radius: 0; background: none; box-shadow: none; }
+
+  /* ---------- v89 (Sasha, 23.11): the Jev dashboard light, as Ira's «Jev for SEO/GEO» post; green for the numbers, the lime only on the «Proven» tag ---------- */
+  .jd { background: #fff; color: #1C2B33; box-shadow: 0 0 0 1px rgb(0 0 0 / .06), 0 24px 48px -26px rgb(0 0 0 / .55); }
+  .mxb .jd { box-shadow: 0 0 0 1px rgb(255 255 255 / .1), 0 24px 48px -26px rgb(0 0 0 / .6); }
+  .jd-top { border-bottom-color: #E8EAED; }
+  .jd-sq, .jd-run i { background: #1A9F5B; }
+  .jd-d { color: #8A8D91; }
+  .jd-run { color: #65676B; }
+  .jd-run b { color: #1C2B33; }
+  .jd-ry img { filter: none; }
+  .jd-cols { background: #E8EAED; }
+  .jd-c { background: #fff; }
+  .jd-c h4 { color: #1C2B33; }
+  .jd-c h4 em { color: #1A9F5B; }
+  .jd-k span { color: #8A8D91; }
+  .jd-grid i { opacity: .3; }
+  .jd-grid i.in { opacity: 1; }
+  .jd-grid i b { background: rgb(255 255 255 / .88); color: #1C2B33; }
+  .jd-grid i.pv { box-shadow: 0 0 0 2px #1A9F5B; }
+  .jd-scw { background: #F6F7F9; }
+  .jd-pv { background: #D6F25B; color: #1C2B33; }
+  .jd-ax { color: #A8ABAF; }
+  .jd-pt div { color: #4B4F56; }
+  .jd-pt i { background: linear-gradient(90deg, #1A9F5B calc(var(--v) * var(--k, 0) * 100%), #E8EAED 0); }
+  .jd-pt b { color: #1A9F5B; }
+  .jd-pt div.lo b { color: #E5484D; }
+  .jd-pt div.lo i { background: linear-gradient(90deg, #E5484D calc(var(--v) * var(--k, 0) * 100%), #E8EAED 0); }
+  .jd-bf { background: #F6F7F9; }
+  .jd-bf small { color: #8A8D91; }
+  .jd-bf q { color: #1C2B33; }
+  .jd-bf > b { color: #1A9F5B; }
+  .jd-bf .bars i { background: linear-gradient(90deg, rgb(28 43 51 / .7) var(--v), #E4E6EB 0); }
+
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
     .reveal, .fade { opacity: 1 !important; transform: none !important; }
@@ -1941,14 +2469,16 @@
   }
 </style>
 <script>if (window.top !== window) document.documentElement.classList.add('embed');</script>
+<script>(function(){window.ORK='tang';window.ORG='#FF7F32';var d=document.documentElement.style;d.setProperty('--cta','#FF7F32');d.setProperty('--cta-hover','#EC681C');window.HX=false;})();</script>
 <style>html.embed #cx-switch { display: none !important; }
   /* the card keeps «Показатели»; the switch of what is in the card goes */
   #gx-switch { display: none !important; }</style>
 </head>
 <body class="pl-black btn-wh cm-rot" data-cx="card">
+<script>document.body.classList.add('nb');</script>
 
 <svg class="sc-defs" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><defs><linearGradient id="sc-hill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F48852"/><stop offset=".45" stop-color="#E9673A"/><stop offset="1" stop-color="#C94F2A"/></linearGradient></defs></svg>
-<svg class="tm-defs" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><defs><linearGradient id="tm-line" gradientUnits="userSpaceOnUse" x1="0" y1="160" x2="0" y2="604"><stop offset="0" stop-color="#EC6B3E"/><stop offset=".45" stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#fff" stop-opacity=".06"/></linearGradient></defs></svg>
+<svg class="tm-defs" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><defs><linearGradient id="tm-line" gradientUnits="userSpaceOnUse" x1="0" y1="160" x2="0" y2="604"><stop offset="0" style="stop-color:var(--cta)"/><stop offset=".45" stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#fff" stop-opacity=".06"/></linearGradient></defs></svg>
 <header class="site-header">
   <a class="site-logo" href="#"><img src="assets/logo.webp" alt="">Ryze</a>
   <nav class="site-nav"><a href="#">AI Marketer</a><a href="#">MCP</a><a href="#">Muse</a><a href="#">SEO</a><a href="#">Shopify CRO</a><a href="#">About Us</a><a href="#">Pricing</a></nav>
@@ -1964,8 +2494,10 @@
       <img class="star" id="star" src="assets/logo.webp" alt="">
       <h1 class="eh-h1" aria-label="Best AI Tools for Google Ads Management 2026: Top 10"><span class="slot" data-i="0">Best</span> <span class="slot" data-i="1">AI Tools</span> for <span class="slot" data-i="2">Google Ads Management</span> <span class="slot" data-i="3">2026: Top&nbsp;10</span></h1>
       <p class="eh-answer"><b>Ryze AI</b> is the best AI for Google Ads in 2026 for teams that want changes applied automatically. Opteo fits if you approve by hand; OptyAds suits agencies that write their own rules. Ryze is our product.</p>
+
       <div class="eh-by"><span class="ava">IB</span><span>By <b>Ira Bodnar</b>, Founder, Ryze AI</span><span class="sp"></span><span>Published <time datetime="2026-03-25">Mar 25, 2026</time></span><span>Updated <time datetime="2026-11-08">Nov 8, 2026</time></span><span>18 min read</span></div>
     </div>
+
     <div class="hm-slot" id="hm-slot">
       <div class="win" id="win">
         <img class="win-bg" src="assets/hero.jpg" alt="">
@@ -2140,6 +2672,60 @@
         </div>
       </section>
 
+      <!-- v81: the big CTA in the middle of the article — six agents set up a Meta campaign inside an Ads Manager screen -->
+      <div class="xw" id="agents-wrap">
+        <section class="card mxb" id="agents" aria-label="Ryze AI agents set up a Meta campaign">
+          <div class="mxb-l">
+            <div class="mxb-t">
+            <span class="mxb-k">Ryze AI agents · Meta Ads</span>
+            <h3 class="mxb-h">12 agents set up your Meta campaign while you&nbsp;watch.</h3>
+            <p class="mxb-p">Audiences, budgets and creatives set up in minutes, then tuned every hour, day and&nbsp;night.</p>
+            </div>
+            <div class="mxb-pl">
+            <form class="joined mxb-f" onsubmit="return false"><input type="email" placeholder="Work email" aria-label="Work email"><button type="submit"><i class="fill"></i><span class="lbl">Start free trial</span><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></form>
+            <small class="mxb-s">7 days free. No credit card.</small>
+            </div>
+          </div>
+          <div class="mxb-r" id="am-r">
+            <div class="hx-frame" id="hx-frame">
+              <div class="hx" id="hx">
+                <div class="hx-chrome"><i></i><i></i><i></i><span class="hx-tab"><img src="assets/platforms/meta.webp" alt="">Ads Manager · Edit campaign</span><span class="hx-url">adsmanager / campaigns / edit</span></div>
+                <div class="hx-app">
+                  <div class="hx-rail"><img src="assets/platforms/meta.webp" alt=""><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
+                  <div class="hx-tree" id="hx-tree">
+                    <div class="hx-q">Search</div>
+                    <div class="hx-n c"><i></i><b>C01 | CBO | Leads | Spring sale</b></div>
+                    <div class="hx-n s"><i></i>Lookalike 3% · US</div>
+                    <div class="hx-n a"><i></i>UGC video · Hook A</div>
+                    <div class="hx-n s"><i></i>Broad 25–44</div>
+                    <div class="hx-n a"><i></i>Carousel · Best sellers</div>
+                    <div class="hx-n s"><i></i>Retargeting · 14 days</div>
+                    <div class="hx-n a"><i></i>Static · −20%</div>
+                  </div>
+                  <div class="hx-form">
+                    <div class="hx-crumb"><b id="hx-obj">C01 | CBO | Leads</b><span>3 ad sets · 4 ads</span><span class="hx-px" id="hx-px">Pixel</span><span class="hx-dr" id="hx-dr">In draft</span></div>
+                    <div class="hx-sec" data-s="bud"><label>Budget</label><div class="hx-row"><span class="hx-sel">Daily budget</span><span class="hx-inp" id="hx-bud">$80.00</span><em>USD</em></div></div>
+                    <div class="hx-sec" data-s="bid"><label>Campaign bid strategy</label><span class="hx-sel w" id="hx-bid">Highest volume</span></div>
+                    <div class="hx-sec hx-ab" data-s="ab" id="hx-ab"><label><i class="hx-rd"></i><span id="hx-abl">A/B test</span></label><p>Compare versions to see which strategy works best.</p></div>
+                    <div class="hx-sec" data-s="aud"><label>Audience</label><div class="hx-chips" id="hx-chips"><span>Skincare</span><span>Women 25–44</span></div></div>
+                    <div class="hx-sec two"><div data-s="geo"><label>Locations</label><span class="hx-inp w" id="hx-geo">United States</span></div><div data-s="cta"><label>Call to action</label><span class="hx-sel w" id="hx-cta">Learn more</span></div></div>
+                    <div class="hx-sec" data-s="copy"><label>Primary text</label><span class="hx-inp w" id="hx-copy">Glow in 7 days or your money back.</span></div>
+                    <div class="hx-sec" data-s="cr"><label>Creatives</label><div class="hx-ths" id="hx-ths"><i style="--th:linear-gradient(160deg,#F7C9B6,#E9967A)"><b>Hook 86</b></i><i style="--th:linear-gradient(160deg,#BFE3DA,#6CB8A4)"><b>Hook 79</b></i><i style="--th:linear-gradient(160deg,#F3E1A9,#D8A84A)"><b>Hook 91</b></i><i style="--th:linear-gradient(160deg,#C9D6F7,#7C97E6)"><b>Hook 82</b></i></div></div>
+                    <div class="hx-foot"><small>Changes go live after review.</small><span class="hx-dis">Discard draft</span><span class="hx-pub" id="hx-pub"><i class="fill"></i><span class="lbl">Publish</span></span></div>
+                  </div>
+                </div>
+                </div>
+              <div class="hx-layer" id="hx-layer"></div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section class="card pad art" id="more-tools">
+        <h2>8 more AI tools for Google Ads</h2><p class="intro">Not ranked: each covers one job well, so they sit next to the ranked 10 rather than replace them.</p>
+        <div class="mts"><div class="mt"><span class="ql">Built into Google Ads</span><h3>Google's own AI (Performance Max, AI Max for Search, Smart Bidding)</h3><p>Bidding, targeting and asset automation inside your campaigns</p></div><div class="mt"><span class="ql">Creative</span><h3>Lapis</h3><p>AI creatives for Display and Discovery, sized for Google and exported to Google Ads</p></div><div class="mt"><span class="ql">AI agent</span><h3>Adstudio</h3><p>Analyses the account and applies changes once you approve them</p></div><div class="mt"><span class="ql">Competitor intelligence</span><h3>Adthena</h3><p>Shows which competitors bid on your search terms and how their ads change</p></div><div class="mt"><span class="ql">Audits</span><h3>TrueClicks</h3><p>Account audits and monitoring for agencies running many accounts</p></div><div class="mt"><span class="ql">Enterprise</span><h3>Skai</h3><p>Bid and budget management across search, social and retail media</p></div><div class="mt"><span class="ql">Bid management</span><h3>Marin Software</h3><p>Cross-channel bid and budget management for large spenders</p></div><div class="mt"><span class="ql">Research</span><h3>SpyFu</h3><p>Competitor keyword and ad history research for Google Ads</p></div></div>
+      </section>
+
       <div class="hc-wrap" data-v="8">
         <section class="card hc v8 pre" aria-label="Free SEO and GEO audit">
           <div class="hc-txt"></div>
@@ -2147,11 +2733,6 @@
         </section>
         <div class="hc-layer"></div>
       </div>
-
-      <section class="card pad art" id="more-tools">
-        <h2>8 more AI tools for Google Ads</h2><p class="intro">Not ranked: each covers one job well, so they sit next to the ranked 10 rather than replace them.</p>
-        <div class="mts"><div class="mt"><span class="ql">Built into Google Ads</span><h3>Google's own AI (Performance Max, AI Max for Search, Smart Bidding)</h3><p>Bidding, targeting and asset automation inside your campaigns</p></div><div class="mt"><span class="ql">Creative</span><h3>Lapis</h3><p>AI creatives for Display and Discovery, sized for Google and exported to Google Ads</p></div><div class="mt"><span class="ql">AI agent</span><h3>Adstudio</h3><p>Analyses the account and applies changes once you approve them</p></div><div class="mt"><span class="ql">Competitor intelligence</span><h3>Adthena</h3><p>Shows which competitors bid on your search terms and how their ads change</p></div><div class="mt"><span class="ql">Audits</span><h3>TrueClicks</h3><p>Account audits and monitoring for agencies running many accounts</p></div><div class="mt"><span class="ql">Enterprise</span><h3>Skai</h3><p>Bid and budget management across search, social and retail media</p></div><div class="mt"><span class="ql">Bid management</span><h3>Marin Software</h3><p>Cross-channel bid and budget management for large spenders</p></div><div class="mt"><span class="ql">Research</span><h3>SpyFu</h3><p>Competitor keyword and ad history research for Google Ads</p></div></div>
-      </section>
 
       <section class="card pad art" id="levels">
         <h2>Google Ads automation vs. optimization tools: which do you need?</h2><p class="intro">“Google Ads automation tools” and “Google Ads optimization tools” get used interchangeably, but they describe three different levels of help. Optimization tools audit your account and recommend changes, you review and apply each one. Automation tools execute changes on the rules or schedules you define, the judgment is still yours, codified. Autonomous management decides and executes continuously, with approval controls if you want them.</p>
@@ -2164,14 +2745,6 @@
         <div class="cqs"><div class="cq"><span class="cq-n tabnum">01</span><h3>Do you want AI to act or suggest?</h3><div class="cq-rs"><div class="cq-r ours"><span>Act on its own: bids, budgets, optimizations</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8h10M9 4.5L12.5 8 9 11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Ryze AI</b></div><div class="cq-r"><span>Review and approve each change</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8h10M9 4.5L12.5 8 9 11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Opteo or OptyAds</b></div><div class="cq-r"><span>Analysis only, no changes</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8h10M9 4.5L12.5 8 9 11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Claude + MCP</b></div></div></div><div class="cq"><span class="cq-n tabnum">02</span><h3>What is your monthly ad spend?</h3><div class="cq-rs"><div class="cq-r"><span>Under $5K/month</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8h10M9 4.5L12.5 8 9 11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Adzooma (free plan) or the WordStream grader (free audit)</b></div><div class="cq-r"><span>$5K–$25K/month</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8h10M9 4.5L12.5 8 9 11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Opteo (from $129/mo) or Ryze AI ($89/mo flat)</b></div><div class="cq-r ours"><span>$25K–$100K/month</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8h10M9 4.5L12.5 8 9 11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Ryze AI (the flat fee wins here) or OptyAds</b></div><div class="cq-r ours"><span>Over $100K/month</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8h10M9 4.5L12.5 8 9 11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Ryze AI (the flat fee stays $89 while spend-tiered plans rise) with OptyAds for PMax-specific controls if needed</b></div></div></div><div class="cq"><span class="cq-n tabnum">03</span><h3>What is your team’s technical level?</h3><div class="cq-rs"><div class="cq-r ours"><span>Non-technical marketers</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8h10M9 4.5L12.5 8 9 11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Ryze AI, Opteo, or WordStream (all require minimal setup)</b></div><div class="cq-r"><span>Technical marketers</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8h10M9 4.5L12.5 8 9 11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Claude + MCP or OptyAds’s Rule Engine</b></div><div class="cq-r"><span>Developers</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8h10M9 4.5L12.5 8 9 11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Google Ads Scripts for niche automations plus a management tool</b></div></div></div></div>
       </section>
 
-      <div class="hc-wrap" data-v="4">
-        <section class="card hc v4 pre" aria-label="What a client says about Ryze AI">
-          <div class="hc-txt"></div>
-          <div class="hc-act"></div>
-        </section>
-        <div class="hc-layer"></div>
-      </div>
-
       <section class="card pad art" id="verdict">
         <h2>Final verdict: which AI tool should you pick?</h2>
         <p class="lead-rest v-lead">After testing all 10 tools on live accounts, <a href="https://www.get-ryze.ai/">Ryze AI</a> is the best overall pick for most advertisers: it applies changes instead of listing them, charges $89 a month flat, and documents the <a href="https://help.get-ryze.ai/ads/google-ads">Google Ads changes it makes</a> change type by change type. Its limits: less manual rule control than OptyAds, and a shorter track record than the older tools here.</p>
@@ -2181,6 +2754,14 @@
         <h3 class="art-h3">Public track record: what reviews and vendor pages say</h3><p class="art-note">Checked on September 23, 2026. Every item links to a source you can open.</p><div class="trs"><div class="tr-r"><div class="tr-h"><span class="ico"><img src="assets/tools/wordstream.png" alt=""></span><b>WordStream</b><span class="tr-s"><b>2.3</b>/5 on Trustpilot · 571 reviews</span></div><p>WordStream has a <a href="https://www.trustpilot.com/review/wordstream.com">Trustpilot score of 2.3 out of 5 across 571 reviews</a>. The 1-star reviews describe charges continuing after cancellation requests, slow support, and customers moved to a different platform after the LocaliQ acquisition. The free grader is not affected by any of this; the managed plans are.</p></div><div class="tr-r"><div class="tr-h"><span class="ico"><img src="assets/tools/adzooma.png" alt=""></span><b>Adzooma</b><span class="tr-s"><b>3.1</b>/5 on Trustpilot · 184 reviews</span></div><p>Adzooma has a <a href="https://www.trustpilot.com/review/adzooma.com">Trustpilot score of 3.1 out of 5 across 184 reviews</a>. Negative reviews say its recommendations repeat what Google and Microsoft already show for free, and one reports a refused refund two days after signing up.</p></div><div class="tr-r"><div class="tr-h"><span class="ico"><img src="assets/tools/adcreative.png" alt=""></span><b>AdCreative.ai</b><span class="tr-s"><b>3.4</b>/5 on Trustpilot · 4,538 reviews</span></div><p>AdCreative.ai has a <a href="https://www.trustpilot.com/review/adcreative.ai">Trustpilot score of 3.4 out of 5 across 4,538 reviews</a>; a third are 1-star. The recurring complaints from August and September 2026 are charges of $350 to $500 after a forgotten trial and refunds taking longer than promised. The company replies to many of them.</p></div><div class="tr-r"><div class="tr-h"><b>OptyAds, Opteo, Adalysis, Birch</b><span class="tr-s">documented limits</span></div><p>OptyAds and <a href="https://www.trustpilot.com/review/opteo.com">Opteo</a> have <a href="https://www.trustpilot.com/review/optmyzr.com">no Trustpilot reviews</a> (Opteo), so there is nothing negative to report there. Their documented limits: OptyAds starts at $209 a month and rises with spend per its <a href="https://www.optmyzr.com/pricing/">pricing page</a>; Opteo is Google Ads only and every change waits for a click. Adalysis does not publish its price as a number on its <a href="https://adalysis.com/pricing/">pricing page</a>. Birch supports Meta, Google, Snapchat and TikTok per its <a href="https://bir.ch/pricing">pricing page</a>, with Google depth below OptyAds's.</p></div></div>
         <details class="rm"><summary>What we removed from this edition</summary><ul><li>PPC Signal ranked #7 in earlier editions. On September 23, 2026 ppcsignal.com redirected to a domain-for-sale page, so it is no longer listed. AdCreative.ai takes its slot.</li><li>MadgicAds AI appeared in earlier versions of this ranking. Its site is built around Meta ads, and our August 2026 re-test put it outside the top 10 for Google Ads.</li><li>Two names still show up in older roundups. Qwaya has closed, and qwaya.com now redirects to Funnel, the marketing data platform from the same founders. Pattern89 was bought by Shutterstock in 2021 and became part of Shutterstock.AI, so there is no standalone product to sign up for.</li></ul></details>
       </section>
+
+      <div class="hc-wrap" data-v="4">
+        <section class="card hc v4 pre" aria-label="What a client says about Ryze AI">
+          <div class="hc-txt"></div>
+          <div class="hc-act"></div>
+        </section>
+        <div class="hc-layer"></div>
+      </div>
 
       <section class="card pad art" id="why">
         <h2>Why AI tools for Google Ads matter in 2026</h2>
@@ -2194,6 +2775,55 @@
         <p class="body-text art-p">The fourth category, creative, has two entries. AdCreative.ai generates new image and copy variants, and Adalysis is the one with a real creative testing engine, and it tests responsive search ad assets you already wrote rather than generating new ones. Copy generators such as Jasper or Copy.ai can draft headlines, but they never see performance data, which is why they are not ranked here.</p>
         <div class="note warn"><span class="ql">Avoid</span><p>A typical stack at $25K to $100K a month is one execution tool plus one analysis layer. Two execution tools on the same campaigns is the combination to avoid: rules from one will undo changes from the other, and neither log will explain why.</p></div>
       </section>
+
+      <!-- v81: Jev — the seven checks from Ira's LinkedIn posts, run on a screen -->
+      <div class="xw" id="jev-wrap">
+        <section class="card mxb jvb" id="jev" aria-label="Jev for Meta Ads">
+          <div class="mxb-l">
+            <div class="mxb-t">
+            <span class="mxb-k">Jev for Meta Ads</span>
+            <h3 class="mxb-h">Skyrocket your ads efficiency with&nbsp;Jev.</h3>
+            <p class="mxb-p">Jev reads the Ad Library, finds the ad patterns that keep running, and writes briefs for the winners. Most marketing workflows 30x faster, for under&nbsp;$3.</p>
+            </div>
+            <div class="mxb-pl">
+            <form class="joined mxb-f" onsubmit="return false"><input type="email" placeholder="Work email" aria-label="Work email"><button type="submit"><span class="lbl">Try Jev</span><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6 5h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></form>
+            <small class="mxb-s">Under $3 a run. No credit card.</small>
+            </div>
+          </div>
+          <div class="mxb-r" id="jv-r">
+          <div class="jv-sw" id="jv-sw" aria-hidden="true">
+            <div class="jd" id="jd">
+              <div class="jd-top"><i class="jd-sq"></i><b>Jev for Meta Ads</b><span class="jd-d">Scans the Ad Library, finds the ad patterns that survive, writes the briefs</span><span class="jd-run"><i></i>Simulated run <b id="jd-s">0.0</b> s elapsed · <b id="jd-usd">$0.00</b> spent</span><span class="jd-ry"><img src="assets/logo.webp" alt="">Ryze AI</span></div>
+              <div class="jd-cols">
+                <div class="jd-c">
+                  <h4><em>01</em>Jev scans the Ad Library</h4>
+                  <div class="jd-k"><div><b id="jd-a">0</b><span>ads scanned</span></div><div><b id="jd-r">0</b><span>ads read per second</span></div></div>
+                  <div class="jd-grid" id="jd-grid"></div>
+                </div>
+                <div class="jd-c">
+                  <h4><em>02</em>Jev analyses the longest running ads</h4>
+                  <div class="jd-k"><div><b id="jd-j">0</b><span>judgments · 2 per ad</span></div><div><b id="jd-sp">$0.00</b><span>spent so far</span></div></div>
+                  <div class="jd-scw"><canvas id="jd-sc"></canvas><span class="jd-pv" id="jd-pv">Proven · 0 ads</span><span class="jd-ax">Days live →</span></div>
+                  <div class="jd-pt" id="jd-pt">
+                    <div><span>Talking head demo</span><i style="--v:.79"></i><b>1.9x</b></div>
+                    <div><span>Myth-buster comparison</span><i style="--v:1"></i><b>2.4x</b></div>
+                    <div><span>Cartoon explainer</span><i style="--v:.96"></i><b>2.3x</b></div>
+                    <div><span>Quote static</span><i style="--v:.62"></i><b>1.5x</b></div>
+                    <div><span>Price anchor</span><i style="--v:.58"></i><b>1.4x</b></div>
+                    <div class="lo"><span>Product still</span><i style="--v:.08"></i><b>0.2x</b></div>
+                  </div>
+                </div>
+                <div class="jd-c">
+                  <h4><em>03</em>Jev helps write briefs for winning ads</h4>
+                  <div class="jd-k"><div><b id="jd-g">0</b><span>scores given</span></div><div><b id="jd-b">0</b><span>briefs written</span></div></div>
+                  <div class="jd-br" id="jd-br"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </section>
+      </div>
 
       <section class="card pad art" id="google-vs">
         <h2 class="long">AI for Google Ads in 2026: what Google's own automation sees and what a third-party layer adds</h2>
@@ -2226,7 +2856,7 @@
 
       <section class="card pad art" id="faq">
         <h2>Frequently asked questions</h2>
-        <div class="fqs"><details class="fq"><summary><span class="fq-n tabnum">01</span><span class="fq-q">What is the best AI for Google Ads?</span><span class="fq-i" aria-hidden="true"></span></summary><p>Ryze AI is the best AI for Google Ads in 2026 for teams that want bid, budget and negative keyword changes applied automatically. It has approval settings, costs a flat $89 a month and has a 7-day free trial. Other picks: Opteo if you want suggestions you approve by hand, OptyAds for agencies that write their own rules, and Adalysis for ad testing. Ryze AI publishes this guide.</p></details><details class="fq"><summary><span class="fq-n tabnum">02</span><span class="fq-q">Can AI run Google Ads?</span><span class="fq-i" aria-hidden="true"></span></summary><p>Yes, with limits. Google's own AI already automates parts of every account: Smart Bidding sets a bid for each auction, and Performance Max and AI Max for Search choose more of the queries, placements and ad text. Agents such as Ryze AI go further and apply bid, budget and negative keyword changes across campaigns, with approval settings for the changes you want to check first. People still set the goals, budgets, offers and conversion tracking, and review what the AI changed.</p></details><details class="fq"><summary><span class="fq-n tabnum">03</span><span class="fq-q">What AI does Google Ads use?</span><span class="fq-i" aria-hidden="true"></span></summary><p>Google Ads has its own AI built in. Smart Bidding uses Google AI to set bids at auction time. Performance Max uses Google AI to run one campaign across Search, YouTube, Gmail, Maps, Display and Discover. AI Max for Search matches more search terms and writes new headlines and descriptions for Search campaigns. Ads Advisor, built on Gemini models, answers questions inside Google Ads and applies changes after you approve them.</p></details><details class="fq"><summary><span class="fq-n tabnum">04</span><span class="fq-q">How much do AI tools for Google Ads cost?</span><span class="fq-i" aria-hidden="true"></span></summary><p>As of September 23, 2026: Google Ads Scripts, the Adzooma free plan and the WordStream grader are free. Ryze AI is $89 a month flat, Opteo $129 to $499, OptyAds from $209, Birch $49 to $99, AdCreative.ai $39 to $999 by credits. Adalysis prices by ad spend without listing the numbers. Spend-tiered tools cost more as the account grows; a flat fee does not.</p></details><details class="fq"><summary><span class="fq-n tabnum">05</span><span class="fq-q">What is the difference between AI tools and Google Ads Smart Bidding?</span><span class="fq-i" aria-hidden="true"></span></summary><p>Smart Bidding optimizes bids within a single campaign using Google's first-party data. Third-party AI tools go further: cross-campaign budget allocation, cross-platform optimization, negative keyword management, ad testing, anomaly detection, and reporting. They complement Smart Bidding rather than replace it.</p></details><details class="fq"><summary><span class="fq-n tabnum">06</span><span class="fq-q">Do AI Google Ads tools work with Performance Max campaigns?</span><span class="fq-i" aria-hidden="true"></span></summary><p>Yes, though depth varies. OptyAds offers the most granular PMax controls, asset-group analysis and audience signal management. Ryze AI includes automated PMax optimization inside its autonomous management. Recommendation tools like Opteo surface PMax improvements but leave the applying to you.</p></details><details class="fq"><summary><span class="fq-n tabnum">07</span><span class="fq-q">How long does it take to see results from an AI Google Ads tool?</span><span class="fq-i" aria-hidden="true"></span></summary><p>Plan for 30 days. Most tools need a 7–14 day learning period to analyze historical data before making significant changes, so measure ROAS, CPA and hours saved against your manual baseline over a full month. In our testing, Ryze AI made its first changes within hours of connecting.</p></details><details class="fq"><summary><span class="fq-n tabnum">08</span><span class="fq-q">What is the difference between optimization, automation, and autonomous tools?</span><span class="fq-i" aria-hidden="true"></span></summary><p>Optimization tools (Opteo, Adalysis, WordStream) recommend changes you review and apply. Automation tools (OptyAds, Birch, Google Ads Scripts) execute the rules you design. Autonomous management (Ryze AI) decides and executes on its own, 24/7, with approval controls optional. Each level removes more of the operator work.</p></details><details class="fq"><summary><span class="fq-n tabnum">09</span><span class="fq-q">Is autonomous AI safe to run on a real Google Ads account?</span><span class="fq-i" aria-hidden="true"></span></summary><p>Yes, with controls. Ryze AI ships approval mode, every proposed change can be held for review before it touches the account, plus change logs to audit what the agent did and why. Expect a 7–14 day learning period before autonomous changes hit their stride.</p></details><details class="fq"><summary><span class="fq-n tabnum">10</span><span class="fq-q">Are Google Ads Scripts better than paid AI tools?</span><span class="fq-i" aria-hidden="true"></span></summary><p>For developers automating specific niche tasks, weather-based bids, budget pacing alerts, Scripts are free and unbeatable. As a complete management system they are not practical for most teams: each script covers one task, there is no UI, and maintenance is real work. The common pattern is Scripts for niches plus a management platform for the rest.</p></details><details class="fq"><summary><span class="fq-n tabnum">11</span><span class="fq-q">Can one tool manage Google Ads and Meta Ads together?</span><span class="fq-i" aria-hidden="true"></span></summary><p>Yes. Ryze AI, Birch, OptyAds and Adzooma all cover both platforms, and cross-platform management matters because the two auctions compete for the same buyers. If social is your bigger channel, start with our top AI tools for Meta Ads management guide and pick a tool that covers both from one subscription.</p></details><details class="fq"><summary><span class="fq-n tabnum">12</span><span class="fq-q">Do these tools replace a PPC manager?</span><span class="fq-i" aria-hidden="true"></span></summary><p>No. AI tools replace the repetitive layer: bid checks, budget shifts, negative sweeps, and reporting. Strategy, offer design, and creative direction stay human. Teams using autonomous tools typically redeploy manager hours to landing pages and testing, the work that compounds, rather than cutting headcount.</p></details><details class="fq"><summary><span class="fq-n tabnum">13</span><span class="fq-q">Does flat pricing really matter versus spend-tiered pricing?</span><span class="fq-i" aria-hidden="true"></span></summary><p>At small budgets, not much. As spend grows, tiered tools move up a plan: Opteo goes from $129 to $249 a month once an account passes $25K in monthly spend, and OptyAds rises from $209 with managed spend. A flat fee such as Ryze AI's $89 stays the same.</p></details></div>
+        <div class="fqs"><details class="fq" open><summary><span class="fq-n tabnum">01</span><span class="fq-q">What is the best AI for Google Ads?</span><span class="fq-i" aria-hidden="true"></span></summary><p>Ryze AI is the best AI for Google Ads in 2026 for teams that want bid, budget and negative keyword changes applied automatically. It has approval settings, costs a flat $89 a month and has a 7-day free trial. Other picks: Opteo if you want suggestions you approve by hand, OptyAds for agencies that write their own rules, and Adalysis for ad testing. Ryze AI publishes this guide.</p></details><details class="fq"><summary><span class="fq-n tabnum">02</span><span class="fq-q">Can AI run Google Ads?</span><span class="fq-i" aria-hidden="true"></span></summary><p>Yes, with limits. Google's own AI already automates parts of every account: Smart Bidding sets a bid for each auction, and Performance Max and AI Max for Search choose more of the queries, placements and ad text. Agents such as Ryze AI go further and apply bid, budget and negative keyword changes across campaigns, with approval settings for the changes you want to check first. People still set the goals, budgets, offers and conversion tracking, and review what the AI changed.</p></details><details class="fq"><summary><span class="fq-n tabnum">03</span><span class="fq-q">What AI does Google Ads use?</span><span class="fq-i" aria-hidden="true"></span></summary><p>Google Ads has its own AI built in. Smart Bidding uses Google AI to set bids at auction time. Performance Max uses Google AI to run one campaign across Search, YouTube, Gmail, Maps, Display and Discover. AI Max for Search matches more search terms and writes new headlines and descriptions for Search campaigns. Ads Advisor, built on Gemini models, answers questions inside Google Ads and applies changes after you approve them.</p></details><details class="fq"><summary><span class="fq-n tabnum">04</span><span class="fq-q">How much do AI tools for Google Ads cost?</span><span class="fq-i" aria-hidden="true"></span></summary><p>As of September 23, 2026: Google Ads Scripts, the Adzooma free plan and the WordStream grader are free. Ryze AI is $89 a month flat, Opteo $129 to $499, OptyAds from $209, Birch $49 to $99, AdCreative.ai $39 to $999 by credits. Adalysis prices by ad spend without listing the numbers. Spend-tiered tools cost more as the account grows; a flat fee does not.</p></details><details class="fq"><summary><span class="fq-n tabnum">05</span><span class="fq-q">What is the difference between AI tools and Google Ads Smart Bidding?</span><span class="fq-i" aria-hidden="true"></span></summary><p>Smart Bidding optimizes bids within a single campaign using Google's first-party data. Third-party AI tools go further: cross-campaign budget allocation, cross-platform optimization, negative keyword management, ad testing, anomaly detection, and reporting. They complement Smart Bidding rather than replace it.</p></details><details class="fq"><summary><span class="fq-n tabnum">06</span><span class="fq-q">Do AI Google Ads tools work with Performance Max campaigns?</span><span class="fq-i" aria-hidden="true"></span></summary><p>Yes, though depth varies. OptyAds offers the most granular PMax controls, asset-group analysis and audience signal management. Ryze AI includes automated PMax optimization inside its autonomous management. Recommendation tools like Opteo surface PMax improvements but leave the applying to you.</p></details><details class="fq"><summary><span class="fq-n tabnum">07</span><span class="fq-q">How long does it take to see results from an AI Google Ads tool?</span><span class="fq-i" aria-hidden="true"></span></summary><p>Plan for 30 days. Most tools need a 7–14 day learning period to analyze historical data before making significant changes, so measure ROAS, CPA and hours saved against your manual baseline over a full month. In our testing, Ryze AI made its first changes within hours of connecting.</p></details><details class="fq"><summary><span class="fq-n tabnum">08</span><span class="fq-q">What is the difference between optimization, automation, and autonomous tools?</span><span class="fq-i" aria-hidden="true"></span></summary><p>Optimization tools (Opteo, Adalysis, WordStream) recommend changes you review and apply. Automation tools (OptyAds, Birch, Google Ads Scripts) execute the rules you design. Autonomous management (Ryze AI) decides and executes on its own, 24/7, with approval controls optional. Each level removes more of the operator work.</p></details><details class="fq"><summary><span class="fq-n tabnum">09</span><span class="fq-q">Is autonomous AI safe to run on a real Google Ads account?</span><span class="fq-i" aria-hidden="true"></span></summary><p>Yes, with controls. Ryze AI ships approval mode, every proposed change can be held for review before it touches the account, plus change logs to audit what the agent did and why. Expect a 7–14 day learning period before autonomous changes hit their stride.</p></details><details class="fq"><summary><span class="fq-n tabnum">10</span><span class="fq-q">Are Google Ads Scripts better than paid AI tools?</span><span class="fq-i" aria-hidden="true"></span></summary><p>For developers automating specific niche tasks, weather-based bids, budget pacing alerts, Scripts are free and unbeatable. As a complete management system they are not practical for most teams: each script covers one task, there is no UI, and maintenance is real work. The common pattern is Scripts for niches plus a management platform for the rest.</p></details><details class="fq"><summary><span class="fq-n tabnum">11</span><span class="fq-q">Can one tool manage Google Ads and Meta Ads together?</span><span class="fq-i" aria-hidden="true"></span></summary><p>Yes. Ryze AI, Birch, OptyAds and Adzooma all cover both platforms, and cross-platform management matters because the two auctions compete for the same buyers. If social is your bigger channel, start with our top AI tools for Meta Ads management guide and pick a tool that covers both from one subscription.</p></details><details class="fq"><summary><span class="fq-n tabnum">12</span><span class="fq-q">Do these tools replace a PPC manager?</span><span class="fq-i" aria-hidden="true"></span></summary><p>No. AI tools replace the repetitive layer: bid checks, budget shifts, negative sweeps, and reporting. Strategy, offer design, and creative direction stay human. Teams using autonomous tools typically redeploy manager hours to landing pages and testing, the work that compounds, rather than cutting headcount.</p></details><details class="fq"><summary><span class="fq-n tabnum">13</span><span class="fq-q">Does flat pricing really matter versus spend-tiered pricing?</span><span class="fq-i" aria-hidden="true"></span></summary><p>At small budgets, not much. As spend grows, tiered tools move up a plan: Opteo goes from $129 to $249 a month once an account passes $25K in monthly spend, and OptyAds rises from $209 with managed spend. A flat fee such as Ryze AI's $89 stays the same.</p></details></div>
       </section>
 
       <section class="card pad art" id="related">
@@ -2400,7 +3030,6 @@
     document.querySelectorAll('.logos [data-roll]').forEach(el => runRoll(el, 900));
   }, 60));
 
-
   // the Ryze star: half a turn with the title, then it turns after the cursor when the mouse is near
   const star = document.getElementById('star');
   if (!reduce) {
@@ -2430,7 +3059,6 @@
       requestAnimationFrame(tick);
     }
   }
-
 
   // hero: four agents rewrite a weak headline, then join the Ryze demo cursor and circle the sign-up field
   const EDITS = [
@@ -2504,17 +3132,24 @@
   const parkPoint = () => { if (typeof dockAim === 'function') return dockAim(); if (dockAim) { const r = dockAim.getBoundingClientRect(); return { x: r.left + r.width * .62, y: r.top + r.height * .58 }; } const P = document.querySelector('#dock .dk-park').getBoundingClientRect(); return { x: P.left + 40, y: P.top + 4 }; };
   function demoLoop(demo) {
     let px = 0, py = 0, cx, cy;
-    demo.style.transition = 'opacity .3s';
+    // v81: no flights across the screen. When the cursor changes its place (sidebar card ↔ a button in the text) it fades out where it is,
+    // jumps, and fades in a little off the new spot, then glides the last few pixels; it hides while the form flies to the sidebar
+    let op = 0, jAway = false, jT = -1e9, jSnapped = true;
+    demo.style.transition = 'none';
     const tick = t => {
-      const artTop = art.getBoundingClientRect().top + scrollY, p = clamp(scrollY / (artTop - STICK)), e = ease(p);
+      const artTop = art.getBoundingClientRect().top + scrollY, p = window.HX ? 1 : clamp(scrollY / (artTop - STICK)), e = ease(p);
       // ride on the flying window: blend the spot inside it from "at the field" to "parked in the card"
-      const Wf = win.getBoundingClientRect(), D = dockBox(), A = fieldPoint(), B = parkPoint();
+      const Wf = window.HX ? dockBox() : win.getBoundingClientRect(), D = dockBox(), A = fieldPoint(), B = parkPoint();
       const ax = (A.x - Wf.left) / Wf.width, ay = (A.y - Wf.top) / Wf.height, bx = (B.x - D.left) / D.width, by = (B.y - D.top) / D.height;
       const R = p >= 1 ? D : Wf;
       const gx = R.left + lerp(ax, bx, e) * R.width, gy = R.top + lerp(ay, by, e) * R.height;
       if (cx === undefined) { cx = gx; cy = gy; }
       const kf = demoSnap ? .6 : .2;
-      cx += (gx - cx) * kf; cy += (gy - cy) * kf;
+      const away = typeof dockAim === 'function';
+      if (away !== jAway) { jAway = away; jT = t; jSnapped = false; }
+      let hold = false;
+      if (!jSnapped) { if (t - jT < 170) hold = true; else { jSnapped = true; cx = gx + 18; cy = gy + 22; } }
+      if (!hold) { cx += (gx - cx) * kf; cy += (gy - cy) * kf; }
       const x = cx, y = cy;
       let tx = 0, ty = 0;
       if (mouse) {
@@ -2523,9 +3158,10 @@
       }
       px += (tx - px) * .12; py += (ty - py) * .12;
       // v40: on the orange hill the orange Ryze demo label would vanish, so there it turns black
-      demo.classList.toggle('ink', typeof dockAim !== 'function' && ((document.body.classList.contains('dk-or') && p > .45) || (typeof gxSt !== 'undefined' && gxSt === 'a' && !document.body.classList.contains('cm-num') && !building && p < .3)));
+      demo.classList.toggle('ink', (typeof dockAim === 'function' && !!dockAim.ink) || typeof dockAim !== 'function' && ((document.body.classList.contains('dk-or') && p > .45) || (typeof gxSt !== 'undefined' && gxSt === 'a' && !document.body.classList.contains('cm-num') && !building && p < .3)));
       demo.style.transform = `translate(${x + px}px, ${y + py}px)`;
-      demo.style.opacity = p > .03 || typeof dockAim === 'function' ? 1 : 0;
+      op += ((((away || (p >= 1 && !document.body.classList.contains('side-hide'))) && !hold) ? 1 : 0) - op) * .28;
+      demo.style.opacity = op;
       requestAnimationFrame(tick);
     };
     requestAnimationFrame(tick);
@@ -2680,10 +3316,10 @@
   async function heroIntro() {
     const demo = document.createElement('div');
     demo.className = 'agent demo-cur';
-    demo.innerHTML = CURSOR('#EC6B3E') + '<span style="background:#EC6B3E">Ryze demo</span>';
+    demo.innerHTML = CURSOR(window.ORG) + `<span style="background:${window.ORG}">Ryze demo</span>`;
     demo.style.opacity = 0;
     document.body.append(demo);
-    const agents = EDITS.map(e => makeCursor(e.who, e.c));
+    const agents = [];   // v81 (Ira): no agents in the first screen
     swarm = agents;
     building = true; win.classList.add('build');
     const fieldReady = Promise.resolve(); fieldIn();
@@ -2696,24 +3332,21 @@
       // Numbers does not edit the headline here: as soon as the card is up it flies over and draws the hill, while the others rewrite the headline
       3: async (a, c) => { await landed; a.style.transition = 'transform .55s cubic-bezier(.2,.8,.2,1), opacity .3s'; a.style.opacity = 1; if (building) await (cm === 'num' ? drawNum(a, c) : drawChart(a, c)); startRot(0); },
     };
-    rewriting = true;
-    // an agent whose layer is done leaves at once, off the right edge, so only the ones still at work stay on screen
-    const leave = a => {
-      a._gone = true;
-      a.style.transition = 'transform .9s cubic-bezier(.55,0,.75,.3), opacity .6s ease .15s';
-      place(a, a._x + 260 + Math.random() * 60, a._y - 50 - Math.random() * 70); a.style.opacity = 0;
-      setTimeout(() => a.remove(), 1100);
-    };
-    await rewrite(agents, async (k, a) => { if (building && JOBS[k]) await JOBS[k](a, EDITS[k].c); await sleep(180); leave(a); }, new Set([3]));
-    rewriting = false;
-    await sleep(350);
+    // v81 (Ira, 23.11): no cursors in the first screen — the card comes up and the hill draws itself
+    const ghost = makeCursor('Numbers', 'transparent'); ghost.style.display = 'none';
+    await landed;
+    if (building) await drawChart(ghost, 'transparent');
+    ghost.remove(); startRot(0);
     finishBuild();
-    await sleep(250);
-    flyAway(agents.filter(a => !a._gone && !a._ctl));
     // if a scroll cut the build short, the numbers still start
     if (!rotT) startRot(400);
   }
-  document.fonts.ready.then(() => { if (!reduce) heroIntro(); });
+  function heroDemoOnly() {
+    const demo = document.createElement('div'); demo.className = 'agent demo-cur';
+    demo.innerHTML = CURSOR(window.ORG) + `<span style="background:${window.ORG}">Ryze demo</span>`; demo.style.opacity = 0;
+    document.body.append(demo); demoLoop(demo);
+  }
+  document.fonts.ready.then(() => { if (reduce) return; if (window.HX) heroDemoOnly(); else heroIntro(); });
 
   // scroll: the hero window shrinks and flies into the sticky card in the sidebar
   const wor = document.getElementById('win-or');
@@ -2723,6 +3356,7 @@
   const lerp = (a, b, t) => a + (b - a) * t, ease = t => t * t * (3 - 2 * t), clamp = t => Math.max(0, Math.min(1, t));
   // every frame: start = the slot in the hero, end = the dock in the sticky sidebar, both measured live
   function frame() {
+    if (window.HX) { setDockOpen(1); dock.classList.add('show'); return; }
     const y = scrollY, artTop = art.getBoundingClientRect().top + y;
     const p = clamp(y / (artTop - STICK));
     setDockOpen(p);
@@ -2819,7 +3453,7 @@
   const demoCur = () => document.querySelector('.demo-cur');
   async function demoTake(id) { while (demoLock) await hs(150, id); demoLock = true; hcDemo = true; }
   function demoFree() { if (!hcDemo) return; hcDemo = false; dockAim = null; demoSnap = false; demoLock = false; demoCur()?.classList.remove('tap'); }
-  const demoAt = (el, fx, fy, ox = 0, oy = 0) => () => { const r = el.getBoundingClientRect(); return { x: r.left + r.width * fx + ox, y: r.top + r.height * fy + oy }; };
+  const demoAt = (el, fx, fy, ox = 0, oy = 0) => Object.assign(() => { const r = el.getBoundingClientRect(); return { x: r.left + r.width * fx + ox, y: r.top + r.height * fy + oy }; }, { ink: !!el.closest('.hco, .hc.v4, .mxb.c-or') });
   async function demoTap(id) { const d = demoCur(); d?.classList.add('tap'); await hs(130, id); d?.classList.remove('tap'); }
 
   // physics for versions 6 and 7: Matter.js loads only when one of them plays
@@ -2831,7 +3465,7 @@
     s.integrity = 'sha384-T6Gykt/nqEBFlEDmZhgxpfIoQQknX2tjPhIC9ZShkefS1BJQd2tOqC9+Ve3evUrX'; s.crossOrigin = 'anonymous';
     s.onload = res; s.onerror = rej; document.head.append(s);
   }));
-  const PAL = ['#C47A66', '#23A08E', '#2E97C9', '#33A85A', '#EC6B3E'];
+  const PAL = ['#C47A66', '#23A08E', '#2E97C9', '#33A85A', window.ORG];
   const TRI = [{ x: 2, y: 2 }, { x: 17.5, y: 10 }, { x: 7.2, y: 19.2 }];   // the cursor arrow as a triangle body
   // a world the size of the strip: floor and walls inside the rounded card, an open top that closes once a body is in
   function hcWorld(id) {
@@ -2887,9 +3521,9 @@
     1: {
       render() {
         hcTxt.innerHTML = `<span class="hc-k hc-t">Ryze AI, free for 7 days</span><h3 class="hc-h hc-t">Stop comparing tools. Let&nbsp;one run your account tonight.</h3>`;
-        hcAct.innerHTML = `<a class="btn-cta hc-b" href="#"><span class="lbl">Start free trial</span>${ARROW}</a><small class="hc-s late">No credit card. Cancel anytime.</small>`;
+        hcAct.innerHTML = `<a class="btn-cta hc-b" href="#" style="clip-path:circle(0px at 50% 50%)"><span class="lbl">Start free trial</span>${ARROW}</a><small class="hc-s late">No credit card. Cancel anytime.</small>`;
       },
-      final() { hcAct.querySelector('.late').classList.add('on'); },
+      final() { hcAct.querySelector('.hc-b').style.clipPath = ''; hcAct.querySelector('.late').classList.add('on'); },
       async play(id) {
         const b = hcAct.querySelector('.hc-b'), lbl = b.querySelector('.lbl'), small = hcAct.querySelector('.late');
         const B = hr(b), W = hr(hc), cx = B.x + B.w / 2, cy = B.y + B.h / 2, LABEL = lbl.textContent;
@@ -3041,6 +3675,11 @@
         await hs(900, id); hc.classList.add('ul-on');
         await hs(600, id);
         for (const s of hcTxt.querySelectorAll('.hc-stars i')) { s.classList.add('on'); setTimeout(() => s.classList.add('set'), 260); await hs(90, id); }
+        // v81: Ryze demo comes to the button and presses it
+        const bt = hcAct.querySelector('.hc-j button'); await hs(500, id);
+        await demoTake(id);
+        try { dockAim = demoAt(bt, .7, .62); await hs(900, id); await demoTap(id); bt.classList.add('demo-press'); await hs(170, id); bt.classList.remove('demo-press'); await hs(900, id); }
+        finally { demoFree(); }
       },
     },
 
@@ -3267,6 +3906,30 @@
         } finally { demoFree(); }
       },
     },
+    // 9. v81: the first strip without the cursor show — Ryze demo appears at the button and presses it
+    9: {
+      render() {
+        hcTxt.innerHTML = `<span class="hc-k hc-t">Ryze AI, free for 7 days</span><h3 class="hc-h hc-t">Stop comparing tools. Let&nbsp;one run your account tonight.</h3>`;
+        hcAct.innerHTML = `<a class="btn-cta hc-b hc-t" href="#"><i class="fill"></i><span class="lbl">Start free trial</span>${ARROW}</a><small class="hc-s hc-t">No credit card. Cancel anytime.</small>`;
+      },
+      final() {},
+      async play(id) {
+        const b = hcAct.querySelector('.hc-b'), lbl = b.querySelector('.lbl');
+        const hint = async () => {
+          if (!hcVisible || id !== hcRun) return;
+          await demoTake(id);
+          try {
+            dockAim = demoAt(b, .7, .62); await hs(900, id);
+            await demoTap(id); b.classList.add('press'); await hs(140, id); b.classList.remove('press');
+            b.classList.add('busy'); lbl.textContent = 'Starting…'; await hs(1250, id);
+            b.classList.remove('busy'); b.classList.add('ready'); lbl.textContent = '✓ Ready in 2 min'; await hs(1700, id);
+            b.classList.remove('ready'); lbl.textContent = 'Start free trial';
+          } finally { demoFree(); }
+        };
+        await hs(600, id); await hint();
+        hcTimers.push(setInterval(() => hint().catch(() => {}), 12000));
+      },
+    },
   };
 
   function hcStop() { hcRun++; hcTimers.forEach(clearInterval); hcTimers = []; hcClean.forEach(f => f()); hcClean = []; hcLayer.innerHTML = ''; demoFree(); stripBusy = false; }
@@ -3327,7 +3990,7 @@
 
   // ---------- v76: hover a button in the text and Ryze demo leaves the sidebar card, flies over and shows the click ----------
   (function () {
-    const SEL = '.article .see-also, .article .btn-cta, .article .h2h a, .article .rg, .article .hc-j button, .article .sl-k, .article .fq summary';
+    const SEL = '.article .see-also, .article .btn-cta, .article .hc-j button, .article .sl-k';
     let hov = null, run = 0;
     document.addEventListener('pointerover', e => {
       const b = e.target.closest(SEL); if (!b || b === hov || b.closest('.dock')) return;
@@ -3345,25 +4008,6 @@
     });
   })();
 
-  // ---------- v78: when the FAQ comes into view, Ryze demo flies over and opens the first question (again each time it is closed) ----------
-  (function () {
-    const fq = document.querySelector('#faq .fq'); if (!fq) return;
-    const wait = ms => new Promise(r => setTimeout(r, ms));
-    let busyFq = false;
-    async function openFirst() {
-      if (busyFq || fq.open) return;
-      if (demoLock || stripBusy || !dock.classList.contains('show')) { setTimeout(() => { if (fqVisible) openFirst(); }, 700); return; }
-      busyFq = true; demoLock = true; demoSnap = false;
-      dockAim = demoAt(fq.querySelector('.fq-i'), .5, .5, 6, 6);
-      await wait(1000);
-      const d = demoCur(); d?.classList.add('tap'); await wait(150); d?.classList.remove('tap');
-      fq.open = true;
-      await wait(1300);
-      dockAim = null; demoLock = false; busyFq = false;
-    }
-    let fqVisible = false;
-    new IntersectionObserver(([e]) => { fqVisible = e.isIntersecting; if (fqVisible) openFirst(); }, { rootMargin: '0px 0px -35% 0px' }).observe(fq);
-  })();
   // pick a version (or replay the current one); the page scrolls to the strip if it is not in view
   const HC_ORDER = [1, 4, 5, 6, 7];
   function hcGo(v) {
@@ -3705,7 +4349,7 @@
       // thousands of circles, so the drawing and the change of numbers no longer hold frames
       const gx = document.getElementById('gx'), cdc = document.createElement('canvas'), cdx = cdc.getContext('2d');
       cdc.className = 'gx-dith'; gx.insertBefore(cdc, gx.querySelector('.gx-l'));
-      const CELL = 5, KD = .6, C_BEFORE = '#E1B5A8', C_AFTER = '#EC6B3E', DPR = Math.min(2, devicePixelRatio || 1);
+      const CELL = 5, KD = .6, C_BEFORE = '#E1B5A8', C_AFTER = window.ORG, DPR = Math.min(2, devicePixelRatio || 1);
       let strips = null, stripsH = 0;
       function makeStrips(H) {
         const mk = (col, cap, k) => {
@@ -3775,6 +4419,590 @@
     for (let i = 0; i < 3; i++) setTimeout(addEntry, 300 + i * 500);
     if (!reduce) setInterval(addEntry, 2800);
   }
+
+  // ---------- v81: the switch panel — the orange (restarts the page), the article on white blocks or not, the colour of the agents block ----------
+  (function () {
+    const B = document.body, vp = document.getElementById('vp'); if (!vp) return;
+    const get = (k, d) => { try { return sessionStorage.getItem(k) ?? d; } catch (e) { return d; } };
+    const set = (k, v) => { try { sessionStorage.setItem(k, v); } catch (e) {} };
+    const mxb = document.getElementById('agents');
+    const apply = () => {
+      const nb = get('ryze-nb', '1'), mx = get('ryze-mx', 'ink');
+      B.classList.toggle('nb', nb === '1');
+      if (mxb) { mxb.classList.toggle('c-blue', mx === 'blue'); mxb.classList.toggle('c-or', mx === 'or'); }
+      vp.querySelectorAll('[data-nb]').forEach(b => b.classList.toggle('on', b.dataset.nb === nb));
+      vp.querySelectorAll('[data-mx]').forEach(b => b.classList.toggle('on', b.dataset.mx === mx));
+      vp.querySelectorAll('[data-hx]').forEach(b => b.classList.toggle('on', b.dataset.hx === (window.HX ? '1' : '0')));
+    };
+    apply();
+    vp.addEventListener('click', e => {
+      const b = e.target.closest('button'); if (!b) return;
+      if (b.dataset.hx) { if (b.dataset.hx === (window.HX ? '1' : '0')) return; set('ryze-hx', b.dataset.hx); scrollTo(0, 0); location.reload(); return; }
+      if (b.dataset.nb) set('ryze-nb', b.dataset.nb);
+      if (b.dataset.mx) set('ryze-mx', b.dataset.mx);
+      apply();
+    });
+  })();
+
+  // ---------- v81: the big CTA — six agents set up a Meta campaign inside the Ads Manager screen, all at once and fast; Ryze publishes ----------
+  (function () {
+    const sec = document.getElementById('agents'), am = document.getElementById('am'), R = document.getElementById('am-r'); if (!sec || !am) return;
+    const $ = id => document.getElementById(id);
+    const layer = $('am-layer'), nameIn = $('am-name').firstElementChild, tiles = [...$('am-obj').children], chips = $('am-chips'), add = chips.querySelector('.am-add'),
+      reach = $('am-reach'), bud = $('am-bud'), sl = $('am-sl'), knob = sl.querySelector('.k'), tgs = [...$('am-tgs').querySelectorAll('.tg')], ths = [...$('am-ths').children],
+      pub = $('am-pub'), pubL = pub.querySelector('.lbl'), st = $('am-st'), logEl = $('am-log'), nEl = $('am-n'), roas = $('am-roas'), fc = roas.parentElement,
+      who = $('am-who'), steps = [...am.querySelectorAll('.am-step')], cards = n => am.querySelector('.am-c-' + n);
+    // the screen is drawn at 700 px and scaled to the room on the right
+    // the screen fills the right column to its right and bottom edges: its scale follows the room, its width and height fill the rest
+    const left = sec.querySelector('.mxb-l');
+    function fit() {
+      const avail = R.clientWidth, s = Math.max(.86, Math.min(1.25, avail / 680));
+      am.style.width = avail / s + 'px'; am.style.height = 'auto';
+      const H = Math.ceil(Math.max(left.offsetHeight, 44 + am.offsetHeight * s));
+      sec.style.height = H + 'px'; am.style.height = (H - 44) / s + 'px'; am.style.transform = `scale(${s})`;
+    }
+    fit(); addEventListener('resize', fit); document.fonts.ready.then(fit);
+    // a point inside the screen, in its own (unscaled) pixels
+    const pos = el => { let x = 0, y = 0, e = el; while (e && e !== am) { x += e.offsetLeft; y += e.offsetTop; e = e.offsetParent; } return { x, y, w: el.offsetWidth, h: el.offsetHeight }; };
+    const at = (el, fx = .5, fy = .5, ox = 0, oy = 0) => { const p = pos(el); return [p.x + p.w * fx + ox, p.y + p.h * fy + oy]; };
+
+    const STOP2 = Symbol('stop');
+    let run = 0, playing = false;
+    const w = (ms, id) => new Promise((res, rej) => setTimeout(() => id === run ? res() : rej(STOP2), ms));
+    const live = id => { if (id !== run) throw STOP2; };
+    const mk = (n, c) => { const a = document.createElement('div'); a.className = 'am-cur'; a.innerHTML = `<i>${CURSOR(c)}</i><span style="background:${c}">${n}</span>`; layer.append(a); return a; };
+    const put = (a, x, y) => { a._x = x; a._y = y; a.style.transform = `translate(${x}px, ${y}px)`; };
+    function fly(a, [x, y], ms = 380, bend = 0) {
+      const x0 = a._x, y0 = a._y, dx = x - x0, dy = y - y0, L = Math.hypot(dx, dy) || 1, mx = x0 + dx / 2 - dy / L * bend, my = y0 + dy / 2 + dx / L * bend, fr = [];
+      for (let i = 0; i <= 12; i++) { const t = i / 12, u = 1 - t; fr.push({ transform: `translate(${u * u * x0 + 2 * u * t * mx + t * t * x}px, ${u * u * y0 + 2 * u * t * my + t * t * y}px)` }); }
+      put(a, x, y);
+      return a.animate(fr, { duration: ms, easing: 'cubic-bezier(.3, .7, .2, 1)', fill: 'backwards' }).finished.catch(() => {});
+    }
+    const tap = async (a, id) => { a.classList.add('tap'); await w(100, id); a.classList.remove('tap'); };
+    const tween = (ms, f, id) => new Promise((res, rej) => {
+      const t0 = performance.now();
+      const step = now => { if (id !== run) return rej(STOP2); const k = Math.min(1, (now - t0) / ms), e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2; f(e); if (k < 1) requestAnimationFrame(step); else res(); };
+      requestAnimationFrame(step);
+    });
+    const sel = (card, c, on) => { card.style.setProperty('--sc', c); card.classList.toggle('sel', on); };
+    let nChanges = 0;
+    const log = (c, n, what) => {
+      nChanges++; nEl.textContent = nChanges;
+      const r = document.createElement('div'); r.className = 'am-lr'; r.innerHTML = `<i style="background:${c}"></i><b>${n}</b>${what}`;
+      logEl.prepend(r); while (logEl.children.length > 1) logEl.lastElementChild.remove();
+    };
+    const fmtReach = v => v >= 1 ? v.toFixed(1) + 'M' : Math.round(v * 1000) + 'K';
+
+    const AG = [
+      { n: 'Copy', c: '#C47A66' }, { n: 'Strategy', c: '#2E97C9' }, { n: 'Audience', c: '#23A08E' },
+      { n: 'Budget', c: '#33A85A' }, { n: 'Placements', c: '#8E7AE6' }, { n: 'Creative', c: '#C9962E' },
+    ];
+    who.innerHTML = AG.map(a => `<i style="background:${a.c}"></i>`).join('');
+    const ROUNDS = [
+      { name: 'Spring sale · Lookalike 3%', obj: 3, chips: ['Skincare', 'Women 25–44', 'Lookalike 3%', 'US, CA'], reach: [.3, .8, 1.2, 1.6], bud: [40, 120], roas: 4.1,
+        th: [['linear-gradient(160deg, #F7C9B6, #E9967A)', '−30%', 'Hook 86'], ['linear-gradient(160deg, #BFE3DA, #6CB8A4)', 'New in', 'Hook 79'], ['linear-gradient(160deg, #F3E1A9, #D8A84A)', 'Best seller', 'Hook 91']] },
+      { name: 'New collection · Broad 18–54', obj: 3, chips: ['Fashion', 'All 18–54', 'Broad', 'US'], reach: [.9, 2.1, 3.4, 4.2], bud: [40, 180], roas: 3.7,
+        th: [['linear-gradient(160deg, #C9D6F7, #7C97E6)', 'Drop 02', 'Hook 82'], ['linear-gradient(160deg, #F5C6D6, #DE7FA0)', 'UGC', 'Hook 88'], ['linear-gradient(160deg, #D7EFC6, #8CC46A)', 'Try-on', 'Hook 77']] },
+      { name: 'Retargeting · Cart 14 days', obj: 3, chips: ['Added to cart', '14 days', 'Exclude buyers', 'US, UK'], reach: [.05, .12, .09, .14], bud: [40, 90], roas: 5.2,
+        th: [['linear-gradient(160deg, #FFD6C2, #F59A6E)', 'Still yours?', 'Hook 90'], ['linear-gradient(160deg, #CDEAF5, #74BCD9)', 'Free ship', 'Hook 84'], ['linear-gradient(160deg, #E6DAF7, #A88AE0)', '−15%', 'Hook 80']] },
+    ];
+    let round = 0;
+    const TG0 = [true, true, false, true];
+    function reset() {
+      layer.innerHTML = ''; nChanges = 0; nEl.textContent = '0'; logEl.innerHTML = '';
+      nameIn.textContent = ''; tiles.forEach(t => t.classList.remove('on', 'hov'));
+      chips.querySelectorAll('span:not(.am-add)').forEach(c => c.remove()); reach.textContent = '—';
+      sl.style.setProperty('--v', .2); bud.textContent = '$40';
+      tgs.forEach((t, i) => t.classList.toggle('on', TG0[i]));
+      ths.forEach(t => { t.className = ''; t.innerHTML = ''; t.style.removeProperty('--th'); });
+      pub.className = 'am-pub'; pubL.textContent = 'Publish'; st.className = 'am-st'; st.textContent = 'Draft';
+      roas.textContent = '2.4x'; fc.classList.remove('up'); steps.forEach(s => s.classList.remove('ok'));
+      am.querySelectorAll('.am-c').forEach(c => c.classList.remove('sel'));
+    }
+    function final(r) {
+      reset(); nameIn.textContent = r.name; tiles[r.obj].classList.add('on');
+      r.chips.forEach(t => add.insertAdjacentHTML('beforebegin', `<span>${t}</span>`)); reach.textContent = fmtReach(r.reach[3]);
+      sl.style.setProperty('--v', .2 + .6 * (r.bud[1] - 40) / 140); bud.textContent = '$' + r.bud[1];
+      tgs[2].classList.add('on'); tgs[3].classList.remove('on');
+      ths.forEach((t, k) => { t.className = 'in'; t.style.setProperty('--th', r.th[k][0]); t.innerHTML = `<em>${r.th[k][1]}</em><b>${r.th[k][2]}</b>`; });
+      roas.textContent = r.roas + 'x'; fc.classList.add('up'); steps.forEach(s => s.classList.add('ok'));
+    }
+    // an agent idles near its work until the crowd gathers at the button
+    async function idle(a, near, id, until) {
+      while (!until()) { live(id); const [x, y] = near; await fly(a, [x + (Math.random() - .5) * 44, y + (Math.random() - .5) * 26], 300 + Math.random() * 260, (Math.random() - .5) * 30); await w(160 + Math.random() * 340, id); }
+    }
+    const step = k => steps[k].classList.add('ok');
+
+    async function playRound(id) {
+      const r = ROUNDS[round++ % ROUNDS.length];
+      reset();
+      const cur = AG.map(g => mk(g.n, g.c));
+      // they all come in from the right edge and the bottom, at once
+      const EW = am.offsetWidth + 20; cur.forEach((a, k) => { put(a, EW + k * 14, 60 + k * 70); a.style.opacity = 0; });
+      await w(60, id); cur.forEach(a => { a.style.opacity = 1; });
+      let gather = false; const done = new Set(); const gathered = () => gather;
+      const fin = async (k, near) => { done.add(k); if (done.size === AG.length) gather = true; await idle(cur[k], near, id, gathered); };
+      const jobs = [
+        // Copy names the campaign
+        async (a, g) => {
+          const card = cards('name'); await fly(a, at(nameIn.parentElement, .08, .55, 4, 4), 420, -40); live(id); await tap(a, id); sel(card, g.c, true);
+          let t = ''; for (const ch of r.name) { t += ch; nameIn.innerHTML = t + `<i class="am-caret" style="--c:${g.c}"></i>`; put(a, pos(nameIn).x + nameIn.offsetWidth + 14, a._y); await w(24, id); }
+          nameIn.textContent = r.name; sel(card, g.c, false); log(g.c, g.n, ' named the campaign'); step(0);
+          await fin(0, [a._x, a._y]);
+        },
+        // Strategy picks the objective: hovers Leads, then Sales
+        async (a, g) => {
+          await w(120, id); const card = cards('obj'); sel(card, g.c, true);
+          await fly(a, at(tiles[2], .5, .6, 6, 6), 380, 50); tiles[2].classList.add('hov'); await w(260, id); tiles[2].classList.remove('hov');
+          await fly(a, at(tiles[r.obj], .5, .6, 6, 6), 220); await tap(a, id); tiles[r.obj].classList.add('on'); sel(card, g.c, false); log(g.c, g.n, ' set the objective to Sales');
+          await w(500, id);
+          await fly(a, at(steps[1], .3, .6, 4, 4), 420, -30); await tap(a, id); step(1);
+          await fin(1, [a._x, a._y]);
+        },
+        // Audience adds four chips, the reach counts up
+        async (a, g) => {
+          await w(240, id); const card = cards('aud'); sel(card, g.c, true);
+          for (let k = 0; k < r.chips.length; k++) {
+            await fly(a, at(add, .5, .6, 4, 4), k ? 240 : 420, k ? 20 : -60); await tap(a, id); add.classList.add('press'); setTimeout(() => add.classList.remove('press'), 140);
+            add.insertAdjacentHTML('beforebegin', `<span class="pop">${r.chips[k]}</span>`); reach.textContent = fmtReach(r.reach[k]); await w(150, id);
+          }
+          sel(card, g.c, false); log(g.c, g.n, ` built the audience, ${fmtReach(r.reach[3])} people`);
+          await fin(2, [a._x, a._y]);
+        },
+        // Budget drags the slider
+        async (a, g) => {
+          await w(420, id); const card = cards('bud'); sel(card, g.c, true);
+          await fly(a, at(knob, .5, .5, 2, 4), 440, 70); await tap(a, id);
+          const S = pos(sl), v0 = .2, v1 = .2 + .6 * (r.bud[1] - 40) / 140;
+          await tween(900, e => { const v = v0 + (v1 - v0) * e; sl.style.setProperty('--v', v); bud.textContent = '$' + Math.round(40 + (v - .2) / .6 * 140); put(a, S.x + S.w * v + 2, S.y + 7); }, id);
+          bud.textContent = '$' + r.bud[1]; sel(card, g.c, false); log(g.c, g.n, ` set $${r.bud[1]} a day`);
+          await tween(600, e => { roas.textContent = (2.4 + (r.roas - 2.4) * e).toFixed(1) + 'x'; }, id); fc.classList.add('up');
+          await fin(3, [a._x, a._y]);
+        },
+        // Placements: Reels on, Audience Network off
+        async (a, g) => {
+          await w(300, id); const card = cards('pl'); sel(card, g.c, true);
+          await fly(a, at(tgs[2], .6, .6, 2, 4), 420, -50); await tap(a, id); tgs[2].classList.add('on'); await w(180, id);
+          await fly(a, at(tgs[3], .6, .6, 2, 4), 260, 30); await tap(a, id); tgs[3].classList.remove('on');
+          sel(card, g.c, false); log(g.c, g.n, ' turned on Reels, off Messenger');
+          await fin(4, [a._x, a._y]);
+        },
+        // Creative drops three ads into the slots, each gets a hook score
+        async (a, g) => {
+          await w(180, id); const card = cards('cr'); sel(card, g.c, true);
+          for (let k = 0; k < 3; k++) {
+            const d = document.createElement('div'); d.className = 'am-drag'; d.style.background = r.th[k][0]; layer.append(d);
+            put(a, EW + 20, 330 + k * 30); put(d, EW, 300 + k * 30);
+            const [tx, ty] = at(ths[k], .5, .5);
+            const go = fly(a, [tx + 10, ty + 10], 460, k % 2 ? 40 : -40);
+            put(d, tx - 29, ty - 29); d.animate([{ transform: `translate(${EW}px, ${300 + k * 30}px) rotate(8deg)` }, { transform: `translate(${tx - 29}px, ${ty - 29}px) rotate(-3deg)` }], { duration: 460, easing: 'cubic-bezier(.3, .7, .2, 1)' });
+            await go; live(id); await tap(a, id); d.remove();
+            ths[k].style.setProperty('--th', r.th[k][0]); ths[k].className = 'in'; ths[k].innerHTML = `<em>${r.th[k][1]}</em>`;
+            setTimeout(() => { if (id === run) ths[k].insertAdjacentHTML('beforeend', `<b>${r.th[k][2]}</b>`); }, 320);
+            await w(120, id);
+          }
+          sel(card, g.c, false); log(g.c, g.n, ' added 3 ads, best hook score ' + Math.max(...r.th.map(t => +t[2].slice(5))));
+          step(2);
+          await fin(5, [a._x, a._y]);
+        },
+      ];
+      await Promise.all(jobs.map((j, k) => j(cur[k], AG[k])));
+      live(id);
+      // the crowd rushes at Publish; Ryze presses it
+      const [px, py] = at(pub, .5, .5);
+      await Promise.all(cur.map((a, k) => { const ang = Math.PI * (.95 + k * .21); return fly(a, [px + Math.cos(ang) * (54 + (k % 2) * 16), py + Math.sin(ang) * 26 - 6], 380 + k * 40, (k % 2 ? 30 : -30)); }));
+      const ry = mk('Ryze', window.ORG || '#EC6B3E'); put(ry, EW + 20, py + 30);
+      await fly(ry, [px + 6, py + 4], 520, -40); live(id);
+      await tap(ry, id); pub.classList.add('press'); await w(120, id); pub.classList.remove('press');
+      pub.classList.add('busy'); pubL.textContent = 'Publishing…'; await w(1250, id);
+      pub.classList.remove('busy'); pub.classList.add('live'); pubL.textContent = '✓ Live'; st.classList.add('live'); st.textContent = 'Active';
+      log(window.ORG || '#EC6B3E', 'Ryze', ' published the campaign · 2 min 41 s');
+      // everyone scatters off the screen
+      await w(500, id);
+      [...cur, ry].forEach((a, k) => { fly(a, [px + (k - 3) * 140, am.offsetHeight + 60 + (k % 3) * 40], 520 + k * 40, (k % 2 ? 80 : -80)); a.classList.add('out'); });
+      await w(2200, id);
+    }
+    async function loop() {
+      if (playing) return; playing = true;
+      const id = ++run;
+      try { while (id === run) { await playRound(id); } } catch (e) { if (e !== STOP2) console.error(e); }
+      finally { if (id === run) playing = false; }
+    }
+    function stop() { run++; playing = false; layer.innerHTML = ''; }
+    if (reduce) { final(ROUNDS[0]); return; }
+    final(ROUNDS[0]);
+    new IntersectionObserver(([e]) => { if (e.isIntersecting) loop(); else { stop(); final(ROUNDS[(round + ROUNDS.length - 1) % ROUNDS.length]); } }, { threshold: .35 }).observe(sec);
+  })();
+
+  // ---------- v81: Jev — the seven workflows run one after another when the strip comes into view; time and cost add up ----------
+  (function () {
+    const jv = document.getElementById('jev'); if (!jv || !document.getElementById('jv-t')) return;
+    const rows = [...jv.querySelectorAll('.jv-row')], tEl = document.getElementById('jv-t'), cEl = document.getElementById('jv-c');
+    const fmt = s => Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
+    const total = { c: rows.reduce((s, r) => s + +r.dataset.c, 0), t: rows.reduce((s, r) => s + +r.dataset.t, 0) };
+    const final = () => { rows.forEach(r => { r.className = 'jv-row done'; }); tEl.textContent = fmt(total.t); cEl.textContent = '$' + total.c.toFixed(2); jv.classList.add('fin'); };
+    let run = 0;
+    async function play() {
+      const id = ++run, wait = ms => new Promise(r => setTimeout(r, ms));
+      rows.forEach(r => { r.className = 'jv-row'; }); jv.classList.remove('fin'); tEl.textContent = '0:00'; cEl.textContent = '$0.00';
+      let c = 0, t = 0;
+      await wait(350);
+      for (const r of rows) {
+        if (id !== run) return;
+        r.classList.add('run');
+        const c1 = c + +r.dataset.c, t1 = t + +r.dataset.t, t0 = performance.now(), ms = 420 + Math.random() * 240;
+        await new Promise(res => { const st = now => { if (id !== run) return res(); const k = Math.min(1, (now - t0) / ms); tEl.textContent = fmt(Math.round(t + (t1 - t) * k)); cEl.textContent = '$' + (c + (c1 - c) * k).toFixed(2); if (k < 1) requestAnimationFrame(st); else res(); }; requestAnimationFrame(st); });
+        if (id !== run) return;
+        c = c1; t = t1; r.classList.remove('run'); r.classList.add('done');
+      }
+      jv.classList.add('fin');
+    }
+    if (reduce) return final();
+    final();
+    new IntersectionObserver(([e]) => { if (e.isIntersecting) play(); else run++; }, { threshold: .4 }).observe(jv);
+  })();
+
+  // ---------- v82: the first screen — twelve agents work in the Ads Manager screen at once, fast; now and then Ryze publishes ----------
+  (function () {
+    const frameEl = document.getElementById('hx-frame'), hx = document.getElementById('hx'), layer = document.getElementById('hx-layer'); if (!hx) return;
+    const $ = id => document.getElementById(id);
+    // drawn at 640 px wide, scaled to the column; it fills the frame to its edges
+    function fit() {
+      const sec = document.getElementById('agents'), left = sec.querySelector('.mxb-l'), W = frameEl.clientWidth, PAD = 44;
+      sec.style.height = '';
+      // the block fits in the window: the screen scales down if it would make the block taller than the window
+      const maxH = Math.max(620, Math.min(820, innerHeight - 130));
+      let s = Math.max(.8, Math.min(1.1, W / 800));
+      hx.style.width = W / s + 'px'; hx.style.height = 'auto';
+      if (PAD * 2 + hx.offsetHeight * s > maxH) { s = Math.max(.7, (maxH - PAD * 2) / hx.offsetHeight); hx.style.width = W / s + 'px'; }
+      const Hs = Math.ceil(Math.max(left.offsetHeight, PAD * 2 + hx.offsetHeight * s));
+      sec.style.height = Hs + 'px'; hx.style.height = (Hs - PAD * 2) / s + 'px'; hx.style.transform = `scale(${s})`;
+      Object.assign(layer.style, { inset: 'auto', left: '0px', top: '0px', width: hx.style.width, height: hx.style.height, transform: hx.style.transform, transformOrigin: '0 0' });
+    }
+    fit(); addEventListener('resize', fit); document.fonts.ready.then(fit);
+    const pos = el => { let x = 0, y = 0, e = el; while (e && e !== hx) { x += e.offsetLeft; y += e.offsetTop; e = e.offsetParent; } return { x, y, w: el.offsetWidth, h: el.offsetHeight }; };
+    const at = (el, fx = .5, fy = .6, ox = 0, oy = 0) => { const p = pos(el); return [p.x + p.w * fx + ox, p.y + p.h * fy + oy]; };
+    const rnd = (a, b) => a + Math.random() * (b - a);
+    const STOP3 = Symbol('stop');
+    let run = 0;
+    const w = (ms, id) => new Promise((res, rej) => setTimeout(() => id === run ? res() : rej(STOP3), ms));
+    const live = id => { if (id !== run) throw STOP3; };
+    const mk = (n, c) => { const a = document.createElement('div'); a.className = 'am-cur'; a.innerHTML = `<i>${CURSOR(c)}</i><span style="background:${c}">${n}</span>`; layer.append(a); return a; };
+    const put = (a, x, y) => { a._x = x; a._y = y; a.style.transform = `translate(${x}px, ${y}px)`; };
+    function fly(a, [x, y], ms, bend = 0) {
+      const x0 = a._x, y0 = a._y, dx = x - x0, dy = y - y0, L = Math.hypot(dx, dy) || 1, mx = x0 + dx / 2 - dy / L * bend, my = y0 + dy / 2 + dx / L * bend, fr = [];
+      for (let i = 0; i <= 10; i++) { const t = i / 10, u = 1 - t; fr.push({ transform: `translate(${u * u * x0 + 2 * u * t * mx + t * t * x}px, ${u * u * y0 + 2 * u * t * my + t * t * y}px)` }); }
+      put(a, x, y);
+      return a.animate(fr, { duration: ms, easing: 'cubic-bezier(.3, .7, .2, 1)', fill: 'backwards' }).finished.catch(() => {});
+    }
+    const tap = async (a, id) => { a.classList.add('tap'); await w(90, id); a.classList.remove('tap'); };
+    const selOn = (el, c) => { const s = el.closest('.hx-sec.two > div') || el.closest('.hx-sec'); if (!s) return () => {}; s.style.setProperty('--sc', c); s.classList.add('sel'); return () => s.classList.remove('sel'); };
+    const flash = el => { el.classList.remove('hx-flash'); void el.offsetWidth; el.classList.add('hx-flash'); };
+    async function type(a, el, text, c, id) {
+      let t = ''; el.textContent = '';
+      for (const ch of text) { t += ch; el.innerHTML = t + `<i class="am-caret" style="--c:${c}"></i>`; const p = pos(el.lastElementChild); put(a, p.x + 5, a._y); await w(16, id); }
+      el.textContent = text;
+    }
+    const cycle = (el, list) => { const i = (list.indexOf(el.textContent) + 1) % list.length; el.textContent = list[i]; flash(el); };
+    const tree = $('hx-tree'), rows = () => [...tree.querySelectorAll('.hx-n')];
+    const chipsEl = $('hx-chips'), thsEl = $('hx-ths'), bud = $('hx-bud'), pub = $('hx-pub'), pubL = pub.querySelector('.lbl'), dr = $('hx-dr'), px = $('hx-px');
+    const TH = ['linear-gradient(160deg,#F7C9B6,#E9967A)', 'linear-gradient(160deg,#BFE3DA,#6CB8A4)', 'linear-gradient(160deg,#F3E1A9,#D8A84A)', 'linear-gradient(160deg,#C9D6F7,#7C97E6)', 'linear-gradient(160deg,#F5C6D6,#DE7FA0)', 'linear-gradient(160deg,#D7EFC6,#8CC46A)', 'linear-gradient(160deg,#E6DAF7,#A88AE0)'];
+    const CHIPS = ['Lookalike 3%', 'Skincare', 'Women 25–44', 'Engaged shoppers', 'Cart 14 days', 'Beauty', 'Exclude buyers', 'Broad'];
+    const GEO = ['United States', 'US, Canada', 'US, UK, Australia', 'California + Texas', 'United States'];
+    const COPY = ['Glow in 7 days or your money back.', 'Your skin, 30% off this week only.', 'Dermatologist-made. 12,000 reviews.', 'Free shipping on the spring set.'];
+    let added = 0;
+    const AG = [
+      { n: 'Strategist', c: '#E0567A', acts: [{ el: () => $('hx-bid'), go: async () => cycle($('hx-bid'), ['Highest volume', 'Cost per result goal', 'ROAS goal', 'Bid cap']) }] },
+      { n: 'Pixel', c: '#E46A5E', acts: [{ el: () => px, go: async () => { px.classList.add('on'); px.textContent = 'Pixel ✓'; } }, { el: () => rows()[0], fx: .3 }] },
+      { n: 'QA', c: '#2B2B2B', acts: [{ el: () => { const r = rows(); return r[Math.floor(rnd(0, r.length))]; }, fx: .85, go: async (a, id, el) => { el.classList.add('ok'); } }] },
+      { n: 'Copy', c: '#20A68C', acts: [{ el: () => $('hx-copy'), fx: .12, go: async (a, id, el, c) => { const off = selOn(el, c); await type(a, el, COPY[(COPY.indexOf(el.textContent) + 1) % COPY.length], c, id); off(); } }] },
+      { n: 'Structure', c: '#22A06B', acts: [{ el: () => rows()[Math.min(rows().length - 1, 3)], fx: .6, go: async () => {
+        const r = rows(), isSet = added % 2 === 0, txt = isSet ? 'New ad set…' : 'New ad…';
+        const n = document.createElement('div'); n.className = 'hx-n pop ' + (isSet ? 's' : 'a'); n.innerHTML = `<i></i>${txt}`; n.dataset.add = 1; r[Math.min(r.length - 1, 4)].after(n); added++;
+        const extra = tree.querySelectorAll('[data-add]'); if (extra.length > 3) extra[0].remove();
+      } }] },
+      { n: 'Objective', c: '#E39A2D', acts: [{ el: () => $('hx-obj'), fx: .7, go: async () => cycle($('hx-obj'), ['C01 | CBO | Leads', 'C01 | CBO | Sales', 'C01 | CBO | Traffic']) }] },
+      { n: 'Audience', c: '#7C6CF0', acts: [{ el: () => chipsEl, fx: .2, go: async (a, id, el, c) => {
+        const off = selOn(el, c), have = [...chipsEl.children].map(s => s.textContent), next = CHIPS.find(t => !have.includes(t)) || CHIPS[0];
+        chipsEl.insertAdjacentHTML('beforeend', `<span class="pop">${next}</span>`); if (chipsEl.children.length > 4) chipsEl.firstElementChild.remove(); await w(250, id); off();
+      } }] },
+      { n: 'Geo', c: '#3D6FE0', acts: [{ el: () => $('hx-geo'), fx: .15, go: async (a, id, el, c) => { const off = selOn(el, c); await type(a, el, GEO[(GEO.indexOf(el.textContent) + 1) % GEO.length], c, id); off(); } }] },
+      { n: 'Creative', c: '#3FAF5A', acts: [{ el: () => thsEl.children[Math.floor(rnd(0, 4))], go: async (a, id, el) => { el.classList.remove('pop'); void el.offsetWidth; el.style.setProperty('--th', TH[Math.floor(rnd(0, TH.length))]); el.firstElementChild.textContent = 'Hook ' + Math.round(rnd(76, 95)); el.classList.add('pop'); } }] },
+      { n: 'Budget', c: '#1E8FD6', acts: [{ el: () => bud, fx: .4, go: async (a, id, el, c) => {
+        const off = selOn(el, c), v0 = parseFloat(bud.textContent.slice(1)), v1 = [80, 95, 120, 140, 110][Math.floor(rnd(0, 5))], t0 = performance.now();
+        await new Promise(res => { const st = now => { if (id !== run) return res(); const k = Math.min(1, (now - t0) / 420); bud.textContent = '$' + (v0 + (v1 - v0) * k).toFixed(2); if (k < 1) requestAnimationFrame(st); else res(); }; requestAnimationFrame(st); });
+        off();
+      } }] },
+      { n: 'CTA', c: '#C2499F', acts: [{ el: () => $('hx-cta'), go: async () => cycle($('hx-cta'), ['Learn more', 'Shop now', 'Sign up', 'Get offer']) }] },
+      { n: 'Testing', c: '#B8862B', acts: [{ el: () => $('hx-ab').querySelector('.hx-rd'), fx: .5, fy: .5, go: async () => { const ab = $('hx-ab'); ab.classList.toggle('on'); $('hx-abl').textContent = ab.classList.contains('on') ? 'A/B test · 2 versions' : 'A/B test'; } }] },
+    ];
+    async function agent(a, g, id) {
+      await w(rnd(0, 900), id);
+      let i = 0;
+      for (;;) {
+        live(id);
+        const A = g.acts[i++ % g.acts.length], el = A.el(); if (!el) { await w(300, id); continue; }
+        await fly(a, at(el, A.fx ?? .5, A.fy ?? .62, rnd(-8, 8), rnd(-3, 6)), rnd(240, 480), rnd(-50, 50)); live(id);
+        if (A.go) { await tap(a, id); await A.go(a, id, el, g.c); }
+        await w(rnd(160, 900), id);
+        // now and then a short wander, so the crowd never stands still
+        if (Math.random() < .35) { await fly(a, [a._x + rnd(-60, 60), a._y + rnd(-40, 40)], rnd(220, 380), rnd(-30, 30)); await w(rnd(100, 400), id); }
+      }
+    }
+    async function ryze(id) {
+      const ry = mk('Ryze', window.ORG || '#FF7F32'); const W = hx.offsetWidth; put(ry, W + 160, hx.offsetHeight - 40);
+      const sec = document.getElementById('agents'), cta = sec.querySelector('.mxb-f button'), ctaL = cta.querySelector('.lbl');
+      // a point on the page, in the screen's own (unscaled) pixels: Ryze can leave the screen for the form on the left
+      const toHx = (el, fx, fy) => { const H = hx.getBoundingClientRect(), k = H.width / hx.offsetWidth, r = el.getBoundingClientRect(); return [(r.left + r.width * fx - H.left) / k, (r.top + r.height * fy - H.top) / k]; };
+      const resetAll = () => { pub.className = 'hx-pub'; pubL.textContent = 'Publish'; dr.classList.remove('live'); dr.textContent = 'In draft'; cta.classList.remove('busy', 'ready', 'press'); ctaL.textContent = 'Start free trial'; };
+      resetAll();
+      for (;;) {
+        await w(rnd(5500, 7000), id);
+        put(ry, W + 160, hx.offsetHeight - 40);
+        await fly(ry, at(pub, .55, .6), 620, -40); live(id);
+        await tap(ry, id); pub.classList.add('press'); await w(110, id); pub.classList.remove('press');
+        pub.classList.add('busy'); pubL.textContent = 'Publishing…'; await w(1100, id);
+        pub.classList.remove('busy'); pub.classList.add('live'); pubL.textContent = '✓ Published'; dr.classList.add('live'); dr.textContent = 'Active';
+        await w(800, id);
+        // the campaign is live: Ryze crosses to the form on the left and presses «Start free trial»
+        cta.style.minWidth = cta.offsetWidth + 'px';
+        await fly(ry, toHx(cta, .62, .84), 950, -70); live(id);
+        await tap(ry, id); cta.classList.add('press'); await w(120, id); cta.classList.remove('press');
+        cta.classList.add('busy'); ctaL.textContent = 'Starting…'; await w(1250, id);
+        cta.classList.remove('busy'); cta.classList.add('ready'); ctaL.textContent = '✓ Ready in 2 min'; await w(1700, id);
+        // off the bottom of the block, and everything back for the next round
+        const [ox, oy] = toHx(sec, .25, 1); await fly(ry, [ox, oy + 140], 700, 40);
+        resetAll(); tree.querySelectorAll('.ok').forEach(r => r.classList.remove('ok'));
+      }
+    }
+    function start() {
+      const id = ++run; layer.innerHTML = '';
+      const W = hx.offsetWidth, H = hx.offsetHeight;
+      AG.forEach((g, k) => { const a = mk(g.n, g.c); put(a, rnd(W * .3, W * .9), rnd(H * .2, H * .85)); agent(a, g, id).catch(e => { if (e !== STOP3) console.error(e); }); });
+      ryze(id).catch(e => { if (e !== STOP3) console.error(e); });
+    }
+    if (reduce) return;
+    let on = false;
+    new IntersectionObserver(([e]) => { if (e.isIntersecting && !on) { on = true; start(); } else if (!e.isIntersecting && on) { on = false; run++; layer.innerHTML = ''; } }, { threshold: .15 }).observe(hx);
+  })();
+
+  // ---------- v83: the agents block in the middle is wide: the sidebar steps aside while it is next to it ----------
+  (function () {
+    const ws = ['agents-wrap', 'jev-wrap'].map(id => document.getElementById(id)).filter(Boolean), side = document.querySelector('.article .side'); if (!ws.length || !side) return;
+    let hid = false;
+    const check = () => {
+      const top = 86, bottom = top + side.offsetHeight + 30;
+      const on = ws.some(w => { const a = w.getBoundingClientRect(); return a.top < bottom && a.bottom > top - 20; });
+      if (on !== hid) { hid = on; document.body.classList.toggle('side-hide', on); }
+    };
+    addEventListener('scroll', check, { passive: true }); addEventListener('resize', check); check();
+  })();
+
+  // ---------- v83: the screen of the agents block — the ad set in Ads Manager: a map with the radius, age, gender, targeting;
+  // eight named agents and thirty small ones work at once, layers count up, Ryze publishes when they are done (as in the reels) ----------
+  (function () {
+    const sec = document.getElementById('agents'), gm = document.getElementById('gm'), R = document.getElementById('am-r'); if (!sec || !gm) return;
+    const $ = id => document.getElementById(id);
+    const left = sec.querySelector('.mxb-l'), mapw = $('gm-mapw'), layer = $('gm-layer');
+    function fit() {
+      const avail = R.clientWidth, s = Math.max(.86, Math.min(1.3, avail / 760));
+      gm.style.width = avail / s + 'px'; gm.style.height = 'auto';
+      const H = Math.ceil(Math.max(left.offsetHeight, 44 + Math.max(gm.offsetHeight, 520) * s));
+      sec.style.height = H + 'px'; gm.style.height = (H - 44) / s + 'px'; gm.style.transform = `scale(${s})`;
+      placeMap();
+    }
+    const pos = el => { let x = 0, y = 0, e = el; while (e && e !== gm) { x += e.offsetLeft; y += e.offsetTop; e = e.offsetParent; } return { x, y, w: el.offsetWidth, h: el.offsetHeight }; };
+    const at = (el, fx = .5, fy = .6, ox = 0, oy = 0) => { const p = pos(el); return [p.x + p.w * fx + ox, p.y + p.h * fy + oy]; };
+    // the map is an SVG that covers its box: a point of the drawing → a point of the box
+    const mp = (x, y) => { const W = mapw.offsetWidth, H = mapw.offsetHeight, k = Math.max(W / 520, H / 470); return [x * k + (W - 520 * k) / 2, y * k + (H - 470 * k) / 2]; };
+    const AUSTIN = [262, 212];
+    const PLACES = [['Round Rock', 300, 140], ['Georgetown', 236, 86], ['Pflugerville', 352, 250], ['San Marcos', 314, 392], ['Lakeway', 92, 202], ['Dripping Springs', 196, 326]];
+    const circle = $('gm-circle'), pins = $('gm-pins'), mainPin = pins.querySelector('.main');
+    let rad = 70;
+    function placeMap() { const [x, y] = mp(...AUSTIN); [circle, mainPin].forEach(e => { e.style.left = x + 'px'; e.style.top = y + 'px'; }); circle.style.setProperty('--r', rad); pins.querySelectorAll('[data-p]').forEach(p => { const pl = PLACES[+p.dataset.p], [px, py] = mp(pl[1], pl[2]); p.style.left = px + 'px'; p.style.top = py + 'px'; }); }
+    fit(); addEventListener('resize', fit); document.fonts.ready.then(fit);
+
+    const rnd = (a, b) => a + Math.random() * (b - a);
+    const STOP4 = Symbol('stop');
+    let run = 0;
+    const w = (ms, id) => new Promise((res, rej) => setTimeout(() => id === run ? res() : rej(STOP4), ms));
+    const live = id => { if (id !== run) throw STOP4; };
+    const put = (a, x, y) => { a._x = x; a._y = y; a.style.transform = `translate(${x}px, ${y}px)`; };
+    function fly(a, [x, y], ms, bend = 0) {
+      const x0 = a._x, y0 = a._y, dx = x - x0, dy = y - y0, L = Math.hypot(dx, dy) || 1, mx = x0 + dx / 2 - dy / L * bend, my = y0 + dy / 2 + dx / L * bend, fr = [];
+      for (let i = 0; i <= 8; i++) { const t = i / 8, u = 1 - t; fr.push({ transform: `translate(${u * u * x0 + 2 * u * t * mx + t * t * x}px, ${u * u * y0 + 2 * u * t * my + t * t * y}px)` }); }
+      put(a, x, y);
+      return a.animate(fr, { duration: ms, easing: 'cubic-bezier(.3, .7, .2, 1)', fill: 'backwards' }).finished.catch(() => {});
+    }
+    const tween = (ms, f, id) => new Promise((res, rej) => { const t0 = performance.now(); const st = now => { if (id !== run) return rej(STOP4); const k = Math.min(1, (now - t0) / ms), e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2; f(e); if (k < 1) requestAnimationFrame(st); else res(); }; requestAnimationFrame(st); });
+    const mkNamed = (n, c) => { const a = document.createElement('div'); a.className = 'am-cur'; a.innerHTML = `<i>${CURSOR(c)}</i><span style="background:${c}">${n}</span>`; layer.append(a); return a; };
+    const mkMini = c => { const a = document.createElement('div'); a.className = 'gm-mini'; a.innerHTML = CURSOR(c); layer.append(a); return a; };
+    const tap = async (a, id) => { a.classList.add('tap'); await w(90, id); a.classList.remove('tap'); };
+    const sel = (el, c) => { const s = el.closest('.gm-s'); if (!s) return () => {}; s.style.setProperty('--sc', c); s.classList.add('sel'); return () => s.classList.remove('sel'); };
+    function frameAt(x, y, fw, fh, c) {
+      const f = document.createElement('div'); f.className = 'gm-sel'; f.style.setProperty('--c', c); f.style.setProperty('--t', `translate(${x}px, ${y}px)`);
+      f.style.width = fw + 'px'; f.style.height = fh + 'px'; f.innerHTML = `<b>${Math.round(fw)} × ${Math.round(fh)}</b>`; layer.prepend(f); setTimeout(() => f.remove(), 1350);
+    }
+    // the layers bar
+    let layers = 0, total = 292;
+    const lEl = $('gm-l'), ltEl = $('gm-lt'), pEl = $('gm-p'), pub = $('gm-pub'), pubL = pub.querySelector('.lbl'), stEl = $('gm-st');
+    const bump = (n = 1) => { layers = Math.min(total, layers + n); lEl.textContent = layers; pEl.style.setProperty('--p', layers / total * 100 + '%'); };
+    const PAL5 = ['#E0567A', '#E46A5E', '#20A68C', '#22A06B', '#E39A2D', '#7C6CF0', '#3D6FE0', '#3FAF5A', '#1E8FD6', '#C2499F', '#B8862B', '#F07A3E'];
+    $('gm-ava').innerHTML = PAL5.slice(0, 6).map(c => `<i style="background:${c}"></i>`).join('');
+    // the state of the ad set
+    const loc = $('gm-loc'), inp = sec.querySelector('.gm-in'), rg = $('gm-rg'), a0 = $('gm-a0'), a1 = $('gm-a1'), gen = [...$('gm-gen').children], intr = $('gm-int'), adv = $('gm-adv');
+    const gf = $('gm-gf').parentElement, size = $('gm-size'), reach = $('gm-reach');
+    let ra = 0, rb = 1, g = 50, placeK = 0;
+    const ages = () => { a0.textContent = Math.round(18 + ra * 47); a1.textContent = rb > .98 ? '65+' : Math.round(18 + rb * 47); rg.style.setProperty('--a', ra); rg.style.setProperty('--b', rb); };
+    const setG = v => { g = Math.max(15, Math.min(85, v)); gf.style.setProperty('--g', g); const lo = Math.round(g * 18) * 1000, hi = Math.round(lo * 1.55 / 1000) * 1000; size.textContent = lo.toLocaleString('en-US') + '–' + hi.toLocaleString('en-US'); reach.textContent = (g / 24).toFixed(1) + 'K–' + (g / 8).toFixed(1) + 'K'; };
+    const INT = ['Skincare', 'Beauty', 'Online shopping', 'Engaged shoppers', 'Yoga', 'Organic food'];
+    function reset() {
+      rad = 70; circle.style.setProperty('--r', rad); pins.querySelectorAll('[data-p]').forEach(p => p.remove()); loc.innerHTML = '<span>Austin, Texas <em>+25 km</em></span>'; placeK = 0;
+      ra = 0; rb = 1; ages(); gen.forEach((b, i) => b.classList.toggle('on', i === 0)); intr.innerHTML = ''; adv.classList.remove('on'); setG(50);
+      layers = 0; total = Math.round(rnd(280, 320)); ltEl.textContent = total; bump(0);
+      pub.className = 'gm-pub'; pubL.textContent = 'Publish'; stEl.className = 'gm-st'; stEl.textContent = 'In draft';
+    }
+    const NAMED = [
+      { n: 'Geo', c: '#3D6FE0', go: async (a, id) => {
+        const k = placeK++ % PLACES.length, pl = PLACES[k], off = sel(inp, '#3D6FE0');
+        await fly(a, at(inp, .12, .6), rnd(260, 380)); await tap(a, id); inp.classList.add('typing');
+        let t = ''; for (const ch of pl[0]) { t += ch; inp.textContent = t; await w(22, id); }
+        await w(120, id); inp.classList.remove('typing'); inp.textContent = 'Add locations…'; off();
+        loc.insertAdjacentHTML('beforeend', `<span class="pop">${pl[0]} <em>+10 km</em></span>`); if (loc.children.length > 4) loc.children[1].remove();
+        const [px, py] = mp(pl[1], pl[2]), [mx, my] = at(mapw, 0, 0);
+        await fly(a, [mx + px + 4, my + py - 6], rnd(300, 420), rnd(-40, 40));
+        const pin = document.createElement('i'); pin.className = 'gm-pin pop'; pin.dataset.p = k; pin.style.left = px + 'px'; pin.style.top = py + 'px'; pins.append(pin);
+        const ps = pins.querySelectorAll('[data-p]'); if (ps.length > 4) ps[0].remove();
+        bump(3);
+      } },
+      { n: 'Radius', c: '#0866FF', go: async (a, id) => {
+        const [mx, my] = at(mapw, 0, 0), [cx, cy] = mp(...AUSTIN), r0 = rad, r1 = rad < 110 ? rad + rnd(18, 34) : rnd(60, 80);
+        await fly(a, [mx + cx + r0 + 2, my + cy + 2], rnd(280, 400), 30); await tap(a, id);
+        await tween(560, e => { rad = r0 + (r1 - r0) * e; circle.style.setProperty('--r', rad); put(a, mx + cx + rad + 2, my + cy + 2); }, id);
+        loc.firstElementChild.innerHTML = `Austin, Texas <em>+${Math.round(rad / 2.8)} km</em>`; setG(g + (r1 - r0) / 3); bump(2);
+      } },
+      { n: 'Age', c: '#E39A2D', go: async (a, id) => {
+        const R0 = pos(rg), which = Math.random() < .5 ? 0 : 1, v0 = which ? rb : ra, v1 = which ? rnd(.45, .7) : rnd(.08, .24), off = sel(rg, '#E39A2D');
+        await fly(a, [R0.x + R0.w * v0 + 2, R0.y + 4], rnd(260, 380), -30); await tap(a, id);
+        await tween(420, e => { const v = v0 + (v1 - v0) * e; if (which) rb = v; else ra = v; ages(); put(a, R0.x + R0.w * v + 2, R0.y + 4); }, id);
+        off(); setG(g - 4); bump(2);
+      } },
+      { n: 'Gender', c: '#C2499F', go: async (a, id) => {
+        const k = Math.random() < .5 ? 2 : 0, b = gen[k]; await fly(a, at(b), rnd(260, 360)); await tap(a, id);
+        gen.forEach(x => x.classList.toggle('on', x === b)); setG(k ? g - 6 : g + 6); bump(1);
+      } },
+      { n: 'Interests', c: '#20A68C', go: async (a, id) => {
+        const off = sel(intr, '#20A68C'); await fly(a, at(intr, .2, .5), rnd(260, 380)); await tap(a, id);
+        const have = [...intr.children].map(x => x.textContent), t = INT.find(x => !have.includes(x)) || INT[0];
+        intr.insertAdjacentHTML('beforeend', `<span class="pop">${t}</span>`); if (intr.children.length > 4) intr.firstElementChild.remove();
+        await w(200, id); off(); setG(g + 3); bump(2);
+      } },
+      { n: 'Audience', c: '#7C6CF0', go: async (a, id) => { await fly(a, at(gf, .5, .7), rnd(280, 400)); await tap(a, id); setG(g + rnd(-10, 10)); bump(1); } },
+      { n: 'Exclusions', c: '#E0567A', go: async (a, id) => { await fly(a, at(adv, .5, .5), rnd(260, 380)); await tap(a, id); adv.classList.toggle('on'); setG(g + (adv.classList.contains('on') ? 8 : -8)); bump(1); } },
+      { n: 'QA', c: '#2B2B2B', go: async (a, id) => {
+        const s = [...sec.querySelectorAll('.gm-s')][Math.floor(rnd(0, 5))], p = pos(s);
+        await fly(a, [p.x + p.w - 14, p.y + 10], rnd(260, 380)); frameAt(p.x - 3, p.y - 3, p.w + 6, p.h + 6, '#2B2B2B'); bump(1);
+      } },
+    ];
+    let publishing = false;
+    async function named(a, g0, id) {
+      await w(rnd(0, 700), id);
+      for (;;) { live(id); if (!publishing) await g0.go(a, id); await w(rnd(150, 700), id); }
+    }
+    async function mini(a, c, id) {
+      await w(rnd(0, 900), id);
+      for (;;) {
+        live(id);
+        const W = gm.offsetWidth, H = gm.offsetHeight, x = rnd(20, W - 30), y = rnd(50, H - 70);
+        await fly(a, [x, y], rnd(260, 620), rnd(-60, 60)); live(id);
+        if (Math.random() < .28) { frameAt(x - rnd(20, 90), y - rnd(14, 60), rnd(40, 150), rnd(26, 96), c); bump(1); }
+        await w(rnd(60, 500), id);
+      }
+    }
+    async function ryze(id) {
+      const ry = mkNamed('Ryze', window.ORG || '#FF7F32'); put(ry, gm.offsetWidth + 30, gm.offsetHeight - 30);
+      for (;;) {
+        // the layers are done: Ryze publishes, then a new ad set starts
+        while (layers < total) { await w(120, id); bump(Math.random() < .5 ? 1 : 0); }
+        publishing = true;
+        await fly(ry, at(pub, .55, .55), 520, -40); live(id);
+        await tap(ry, id); pub.classList.add('press'); await w(110, id); pub.classList.remove('press');
+        pub.classList.add('busy'); pubL.textContent = 'Publishing…'; await w(1050, id);
+        pub.classList.remove('busy'); pub.classList.add('live'); pubL.textContent = '✓ Live'; stEl.classList.add('live'); stEl.textContent = 'Active';
+        await w(1900, id);
+        await fly(ry, [gm.offsetWidth + 30, gm.offsetHeight - 30], 500, 30);
+        reset(); publishing = false;
+      }
+    }
+    function start() {
+      const id = ++run; layer.innerHTML = ''; reset();
+      const W = gm.offsetWidth, H = gm.offsetHeight;
+      NAMED.forEach(n => { const a = mkNamed(n.n, n.c); put(a, rnd(W * .2, W * .9), rnd(H * .2, H * .8)); named(a, n, id).catch(e => { if (e !== STOP4) console.error(e); }); });
+      for (let k = 0; k < 30; k++) { const c = PAL5[k % PAL5.length], a = mkMini(c); put(a, rnd(0, W), rnd(40, H - 50)); mini(a, c, id).catch(e => { if (e !== STOP4) console.error(e); }); }
+      ryze(id).catch(e => { if (e !== STOP4) console.error(e); });
+    }
+    reset();
+    if (reduce) return;
+    let on = false;
+    new IntersectionObserver(([e]) => { if (e.isIntersecting && !on) { on = true; start(); } else if (!e.isIntersecting && on) { on = false; run++; layer.innerHTML = ''; publishing = false; } }, { threshold: .2 }).observe(sec);
+  })();
+
+  // ---------- v83: Jev — the «Jev for Meta Ads» dashboard from Ira's posts: the library fills, the dots of the longest running ads pile up,
+  // the patterns get their multipliers, briefs come in with their scores; time and money count up ----------
+  (function () {
+    const jd = document.getElementById('jd'), sw = document.getElementById('jv-sw'); if (!jd) return;
+    const $ = id => document.getElementById(id);
+    // the dashboard fills the right column; the block is as tall as the taller of the text and the dashboard, the dashboard centred
+    function fit() {
+      const sec = document.getElementById('jev'), left = sec.querySelector('.mxb-l'); sec.style.height = '';
+      const s = Math.max(.6, Math.min(1.25, sw.clientWidth / 760)); jd.style.transform = `scale(${s})`;
+      const h = Math.ceil(jd.offsetHeight * s), H = Math.max(left.offsetHeight, h + 88);
+      sw.style.height = h + 'px'; sw.style.top = Math.round((H - h) / 2) + 'px'; sec.style.height = H + 'px';
+    }
+    const grid = $('jd-grid'), TH = ['#F7C9B6,#E9967A', '#BFE3DA,#6CB8A4', '#F3E1A9,#D8A84A', '#C9D6F7,#7C97E6', '#F5C6D6,#DE7FA0', '#D7EFC6,#8CC46A', '#E6DAF7,#A88AE0', '#2A2D33,#5B606A', '#FFD6C2,#F59A6E', '#CDEAF5,#74BCD9'];
+    const tile = () => `linear-gradient(160deg, ${TH[Math.floor(Math.random() * TH.length)]})`;
+    grid.innerHTML = Array.from({ length: 16 }, () => `<i style="--th:${tile()}"><b>${Math.round(4 + Math.random() * 90)}d</b></i>`).join('');
+    const tiles = [...grid.children];
+    const cv = $('jd-sc'), ctx = cv.getContext('2d'), DPR = Math.min(2, devicePixelRatio || 1);
+    let dots = [];
+    const sizeCv = () => { cv.width = cv.offsetWidth * DPR; cv.height = cv.offsetHeight * DPR; draw(); };
+    function draw() {
+      const W = cv.width, H = cv.height; ctx.clearRect(0, 0, W, H);
+      ctx.strokeStyle = 'rgba(26,159,91,.6)'; ctx.setLineDash([3 * DPR, 3 * DPR]); ctx.strokeRect(W * .62, H * .08, W * .36, H * .72); ctx.setLineDash([]);
+      for (const d of dots) { ctx.fillStyle = d.p ? '#1A9F5B' : `rgba(28,43,51,${d.a * .5})`; ctx.beginPath(); ctx.arc(d.x * W, d.y * H, (d.p ? 1.8 : 1.4) * DPR, 0, 6.283); ctx.fill(); }
+    }
+    const BRIEFS = [['talking head demo', 'I stopped paying $180 to hide two inches of roots.', 94], ['myth-buster comparison', 'Box dye will not fix gray. Plants will.', 91], ['quote static', 'My colorist asked what I switched to.', 90],
+      ['cartoon explainer', 'Ammonia walks into a bathroom.', 79], ['price anchor', '17 shades. One price. $12.98.', 81], ['myth-buster comparison', 'Read the label. Then read ours.', 85], ['talking head demo', 'Covered my gray completely, and my hair feels healthier.', 88], ['quote static', 'Henna turns orange. This does not.', 86]];
+    const br = $('jd-br'), pts = [...$('jd-pt').children];
+    const num = n => Math.round(n).toLocaleString('en-US');
+    let run = 0;
+    async function play() {
+      const id = ++run; let t0 = performance.now(), last = t0, ads = 0, nb = 0, k = 0, nextBrief = 600, nextTile = 0;
+      dots = []; br.innerHTML = ''; pts.forEach(p => p.style.setProperty('--k', 0)); tiles.forEach(t => t.classList.remove('in', 'pv'));
+      const step = now => {
+        if (id !== run) return;
+        const el = (now - t0) / 1000, dt = Math.min(.1, (now - last) / 1000); last = now;
+        const rate = 290 + Math.sin(el * 3) * 25 + Math.random() * 15;
+        ads += rate * dt;
+        $('jd-a').textContent = num(ads); $('jd-r').textContent = num(rate); $('jd-j').textContent = num(ads * 2.9);
+        const usd = ads * 2.9 * .000147; $('jd-sp').textContent = '$' + usd.toFixed(2); $('jd-usd').textContent = '$' + usd.toFixed(2); $('jd-s').textContent = el.toFixed(1);
+        if (el * 1000 > nextTile) { nextTile += 140; const t = tiles[k % 16]; if (k >= 16) { t.style.setProperty('--th', tile()); t.querySelector('b').textContent = Math.round(4 + Math.random() * 90) + 'd'; t.classList.remove('in'); void t.offsetWidth; } t.classList.add('in'); t.classList.toggle('pv', Math.random() < .2); k++; }
+        for (let i = 0; i < 6 && dots.length < 900; i++) { const x = Math.random(), y = .12 + Math.pow(Math.random(), 1.6) * .8; dots.push({ x, y, a: .25 + Math.random() * .5, p: x > .62 && y < .8 && Math.random() < .55 }); }
+        $('jd-pv').textContent = 'Proven · ' + dots.filter(d => d.p).length + ' ads'; draw();
+        pts.forEach((p, i) => { if (el > .8 + i * .55) p.style.setProperty('--k', 1); });
+        if (el * 1000 > nextBrief) { nextBrief += 1100; const b = BRIEFS[nb % BRIEFS.length]; nb++; const sc = b[2];
+          br.insertAdjacentHTML('afterbegin', `<div class="jd-bf pop"><small>Brief ${String(nb).padStart(2, '0')} · ${b[0]}</small><q>${b[1]}</q><b>${sc}</b><div class="bars"><i style="--v:${sc - 6}%"></i><i style="--v:${sc - 14}%"></i><i style="--v:${sc - 3}%"></i></div></div>`);
+          while (br.children.length > 6) br.lastElementChild.remove();
+          $('jd-g').textContent = num(nb * 3); $('jd-b').textContent = num(nb); }
+        if (el > 24) { t0 = now; ads = 0; nb = 0; dots = []; br.innerHTML = ''; pts.forEach(p => p.style.setProperty('--k', 0)); nextBrief = 600; nextTile = 0; k = 0; }
+        requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }
+    fit(); sizeCv(); addEventListener('resize', () => { fit(); sizeCv(); }); document.fonts.ready.then(() => { fit(); sizeCv(); });
+    if (reduce) { tiles.forEach(t => t.classList.add('in')); pts.forEach(p => p.style.setProperty('--k', 1)); return; }
+    new IntersectionObserver(([e]) => { if (e.isIntersecting) play(); else run++; }, { threshold: .3 }).observe(jd);
+  })();
 </script>
 </body>
 </html>
