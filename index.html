@@ -3333,9 +3333,13 @@
       3: async (a, c) => { await landed; a.style.transition = 'transform .55s cubic-bezier(.2,.8,.2,1), opacity .3s'; a.style.opacity = 1; if (building) await (cm === 'num' ? drawNum(a, c) : drawChart(a, c)); startRot(0); },
     };
     // v81 (Ira, 23.11): no cursors in the first screen — the card comes up and the hill draws itself
+    // v90: the hill draws while the card comes up (no wait for a cursor)
     const ghost = makeCursor('Numbers', 'transparent'); ghost.style.display = 'none';
-    await landed;
-    if (building) await drawChart(ghost, 'transparent');
+    const live = () => building;
+    chartReset(); gc.style.visibility = 'visible';
+    await sleep(40);
+    if (building) { await sweep(ghost, X0, MARK, 520, live); await sleep(120); }
+    if (building) { await sweep(ghost, MARK, gxSt === 'c' ? XC : XA, 1000, live); chartFinal(); }
     ghost.remove(); startRot(0);
     finishBuild();
     // if a scroll cut the build short, the numbers still start
@@ -3541,7 +3545,6 @@
         const cur = team.map(t => { const a = hcCursor(t.n, t.c); hcPut(a, ...t.from); return a; });
         const [seo, kw, num, copy] = cur;
         kw.classList.add('flip');
-        await hs(150, id);
         await Promise.all(team.map((t, k) => hcFly(cur[k], ...t.to, { dur: 640, bend: t.bend, delay: k * 70 })));
         alive(id);
         // SEO and Keywords pull the corners of a selection frame out to the size of the button
@@ -3949,7 +3952,7 @@
     stripBusy = true;
     try {
       await hs(40, id); hc.classList.add('open'); hc.classList.remove('pre');
-      await hs(380, id); hc.classList.add('show');
+      await hs(+hcV === 1 ? 140 : 380, id); hc.classList.add('show');
       await HC[hcV].play(id);
     } catch (e) { if (e !== STOP) console.error(e); }
     finally { if (id === hcRun) stripBusy = false; }
@@ -5003,6 +5006,9 @@
     if (reduce) { tiles.forEach(t => t.classList.add('in')); pts.forEach(p => p.style.setProperty('--k', 1)); return; }
     new IntersectionObserver(([e]) => { if (e.isIntersecting) play(); else run++; }, { threshold: .3 }).observe(jd);
   })();
+
+  // v90: the hill stays hidden until it draws (the card switch above shows it whole on start)
+  if (!reduce && !window.HX && !building) chartReset();
 </script>
 </body>
 </html>
