@@ -3545,6 +3545,33 @@
     .fxo-d { display: none !important; }
   }
 
+  /* ---------- v109: the phone ---------- */
+  @media (max-width: 759px) {
+    /* 1. «Ryze connected»: on the left of the line, in the empty dark part, clear of the numbers */
+    #win .gx .gx-mark { display: block !important; left: auto !important; right: calc(58.1% + 8px) !important; top: 44% !important; text-align: right; white-space: nowrap; font-size: 12px !important; line-height: 16px !important; }
+    /* 2. the logo card: no lines round the label */
+    .card.logos.mq > :first-child { box-shadow: none !important; border: 0 !important; background: none !important; }
+    /* 3, 4. buttons in the text take the whole width */
+    .article .content .btn-2, .article .content .see-also { width: 100% !important; max-width: none !important; margin-left: 0 !important; margin-right: 0 !important; }
+    .article .content .btn-2 { justify-content: center !important; }
+    .article .content .see-also { justify-content: space-between !important; }
+    /* 5. the price list has no numbers: it runs the whole width */
+    .pbs { padding-left: 0 !important; padding-right: 0 !important; }
+    .pbs > * { margin-left: 0 !important; margin-right: 0 !important; }
+    /* 6. the Ryze end of the slider is see-through, so the arrows read */
+    .sl .sl-end { opacity: .3; }
+  }
+
+  /* ---------- v110: the phone ---------- */
+  @media (max-width: 759px) {
+    .article .content .btn-cta:not(.hc-b) { width: 100% !important; max-width: none !important; margin-left: 0 !important; margin-right: 0 !important; }
+    .tr-h .tr-s { flex-basis: 100%; margin: 8px 0 0 !important; text-align: left !important; }
+  }
+
+  /* ---------- v111 ---------- */
+  @media (max-width: 759px) { .fq > p { margin-left: 4px !important; } }
+  #win .fx-h .ga-line { display: block !important; }
+
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
     .reveal, .fade { opacity: 1 !important; transform: none !important; }
@@ -3610,7 +3637,7 @@
           <div class="gx-dots" id="gx-dots"><i></i><i></i><i></i><i></i></div>
         </div>
         <div class="win-full" id="win-full">
-          <h2 class="fx-h">Let AI run your Google Ads</h2>
+          <h2 class="fx-h">Let AI run your <span class="ga-line">Google Ads</span></h2>
           <p class="fx-p">Ryze fixes bids, budgets and keywords while you&nbsp;sleep.</p>
           <div class="mx" id="mx">
             <div class="mx-k" id="mx-k">ROAS after 6 weeks</div>
@@ -7017,12 +7044,12 @@
   // ---------- v96: no short word left hanging at the end of a line: a, the, to, of, for… are tied to the next word ----------
   (function () {
     const W = '([A-Za-z]{1,3}|vs\\.?|with|from|into|over|than|that|your|&|—|–)';
-    const RX = new RegExp('(^|[\\s(])' + W + '\\s+(?=\\S)', 'gi'), END = new RegExp('(^|\\s)' + W + '\\s+$', 'i');
+    const RX = new RegExp('(?<=^|[\\s(])' + W + '\\s+(?=\\S)', 'gi'), END = new RegExp('(^|\\s)' + W + '\\s+$', 'i');
     const SKIP = 'script, style, textarea, input, svg, .v92p, .am-cur, .roll, .hv-layer';
     window.noHang = root => {
       const tw = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, { acceptNode: n => n.parentElement.closest(SKIP) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT });
       const ns = []; for (let n; (n = tw.nextNode());) ns.push(n);
-      ns.forEach(n => { const v = n.nodeValue; let w = v.replace(RX, (m, a, b) => a + b + ' ').replace(RX, (m, a, b) => a + b + ' ');
+      ns.forEach(n => { const v = n.nodeValue; let w = v.replace(RX, (m, b) => b + '\u00A0');
         if (n.nextSibling) w = w.replace(END, (m, a, b) => a + b + ' '); if (w !== v) n.nodeValue = w; });
     };
     window.noHang(document.body);
@@ -7255,7 +7282,7 @@
       const a = getComputedStyle(e, '::after'); return a.content !== 'none' && a.backgroundImage !== 'none' && a.position === 'absolute'; };
     let cards = null;
     function pad() {
-      if (!cards) { cards = []; art.querySelectorAll('section *').forEach(e => { if (e.closest('.bleed, .band, .au, .hc-wrap, table, .tbl-x, button, summary, a, input, .fxo')) return; const w = e.offsetWidth; if (w && w < 200) return; if (isCard(e)) cards.push(e); }); }
+      if (!cards) { cards = []; art.querySelectorAll('section *').forEach(e => { if (e.closest('.bleed, .band, .au, .hc-wrap, table, .tbl-x, button, summary, a, input, .fxo') || e.matches('.pbs')) return; const w = e.offsetWidth; if (w && w < 200) return; if (isCard(e)) cards.push(e); }); }
       const mob = innerWidth < 760;
       cards.forEach(e => { e.style.removeProperty('padding'); e.style.removeProperty('margin-top'); });
       if (!mob) return;
@@ -7283,6 +7310,20 @@
       const t = document.createElement('div'); t.className = 'mq-track'; items.forEach(i => t.append(i)); items.forEach(i => { const k = i.cloneNode(true); k.setAttribute('aria-hidden', 'true'); t.append(k); });
       c.append(t); c.classList.add('mq');
     });
+  })();
+
+  // ---------- v110: on a phone the «Ryze connected» line starts 16 px below the dash markers instead of crossing them ----------
+  (function () {
+    const lower = () => {
+      if (innerWidth >= 760) return;
+      const ln = document.querySelector('#win line.gxa-mark'), mk = document.querySelector('#win .gx-mark'); if (!ln || !mk || !mk.offsetHeight) return;
+      const svg = ln.ownerSVGElement, sr = svg.getBoundingClientRect(), vb = svg.viewBox && svg.viewBox.baseVal;
+      const k = vb && vb.height ? vb.height / sr.height : 1, want = (mk.getBoundingClientRect().top - sr.top) * k + (vb ? vb.y : 0);
+      const a = +ln.getAttribute('y1'), b = +ln.getAttribute('y2'), top = a < b ? 'y1' : 'y2';
+      if (Math.abs(+ln.getAttribute(top) - want) > .5) ln.setAttribute(top, want.toFixed(1));
+    };
+    lower(); let n = 0; const t = setInterval(() => { lower(); if (++n > 20) clearInterval(t); }, 300);
+    addEventListener('resize', () => setTimeout(lower, 300));
   })();
 </script>
 </body>
