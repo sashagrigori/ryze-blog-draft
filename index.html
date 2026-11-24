@@ -3572,6 +3572,21 @@
   @media (max-width: 759px) { .fq > p { margin-left: 4px !important; } }
   #win .fx-h .ga-line { display: block !important; }
 
+  /* ---------- v112: the phone ---------- */
+  @media (max-width: 759px) {
+    /* the score of a tool on one line: 7.9/10, the dots, «Editorial score» */
+    .tc .tc-score { display: flex !important; flex-direction: row !important; align-items: center !important; justify-content: flex-start !important; gap: 12px !important; flex-wrap: nowrap !important; text-align: left !important; grid-column: 1 / -1 !important; width: auto !important; max-width: none !important; margin: 12px 0 0 !important; }
+    .tc .tc-sv b { font-size: 24px !important; line-height: 32px !important; }
+    .tc .tc-sv small { font-size: 12px !important; }
+    .tc .tc-score .meter { flex: none; margin: 0 !important; }
+    .tc .tc-score em { margin: 0 !important; white-space: nowrap; }
+    /* «Stop comparing tools»: one height whether the logos stand in a row or fold into Ryze */
+    .hc.v1.open { min-height: var(--cmh, 0px); }
+    /* no margins between the parts of the article that could fold into each other: the rhythm script sets the gaps */
+    .article .content > * { margin-bottom: 0 !important; }
+    .article .content > section { margin-top: 0 !important; }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
     .reveal, .fade { opacity: 1 !important; transform: none !important; }
@@ -7324,6 +7339,43 @@
     };
     lower(); let n = 0; const t = setInterval(() => { lower(); if (++n > 20) clearInterval(t); }, 300);
     addEventListener('resize', () => setTimeout(lower, 300));
+  })();
+
+  // ---------- v112: on a phone the gaps between blocks follow one rhythm: 48 before a section heading, 32 round a full-width strip or block and where a new part starts without a heading ----------
+  (function () {
+    const art = document.querySelector('.article .content'); if (!art) return;
+    const strip = e => e.matches('.bleed, .hc-wrap, .xw, .band, .au');
+    let touched = [];
+    function even() {
+      touched.forEach(e => e.style.removeProperty('margin-top')); touched = [];
+      if (innerWidth >= 760) return;
+      const list = [];
+      art.querySelectorAll(':scope > section > *, :scope > .bleed, :scope > .xw').forEach(e => { if (e.offsetHeight > 1 && getComputedStyle(e).display !== 'none' && getComputedStyle(e).position !== 'absolute') list.push(e); });
+      // positions from the layout itself: the sections slide in on scroll, and a slide (a transform) must not count as a gap
+      const top = e => { let y = 0; for (let x = e; x; x = x.offsetParent) y += x.offsetTop; return y; };
+      const box = e => { const t = top(e); return { top: t, bottom: t + e.offsetHeight }; };
+      list.sort((a, b) => top(a) - top(b));
+      // every gap is measured on the same layout first (moving one block moves the next pair together, so the gaps do not depend on each other), then all are set at once
+      const rs = list.map(box), jobs = [];
+      for (let i = 1; i < list.length; i++) {
+        const A = list[i - 1], B = list[i];
+        let want = null;
+        if (B.matches('h2')) want = 48;
+        else if (strip(A) || strip(B)) want = 32;
+        else if (A.closest('section') !== B.closest('section')) want = 32;
+        if (want == null) continue;
+        const gap = rs[i].top - rs[i - 1].bottom; if (Math.abs(gap - want) < 1) continue;
+        jobs.push([B, (parseFloat(getComputedStyle(B).marginTop) || 0) + want - gap]);
+      }
+      jobs.forEach(([B, m]) => { B.style.setProperty('transition', 'none'); B.style.setProperty('margin-top', m.toFixed(1) + 'px', 'important'); touched.push(B); });
+    }
+    // «Stop comparing tools»: remember the height with all the logos, keep it when they fold
+    function cmh() { document.querySelectorAll('.hc.v1 .cm-tools').forEach(t => { if (innerWidth >= 760) return; const h = t.closest('.hc'); if (h.classList.contains('open')) { const was = parseFloat(h.style.getPropertyValue('--cmh')) || 0; if (h.offsetHeight > was) h.style.setProperty('--cmh', h.offsetHeight + 'px'); } }); }
+    const go = () => { even(); cmh(); };
+    (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => setTimeout(go, 400));
+    addEventListener('resize', () => { clearTimeout(go._t); go._t = setTimeout(go, 300); });
+    let q = 0; const soon = () => { if (q || innerWidth >= 760) return; q = requestAnimationFrame(() => { q = 0; cmh(); }); };
+    document.querySelectorAll('.hc-wrap.bleed').forEach(w => new MutationObserver(soon).observe(w, { subtree: true, childList: true, attributes: true, attributeFilter: ['class'] }));
   })();
 </script>
 </body>
