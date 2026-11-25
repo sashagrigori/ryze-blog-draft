@@ -3480,7 +3480,7 @@
   /* ---------- v106: the phone ---------- */
   @media (max-width: 759px) {
     .page { width: calc(100% - 40px) !important; }
-    .eh-h1, .hm-l .eh-h1 { font-size: 36px !important; line-height: 40px !important; letter-spacing: -.01em; }
+    .eh-h1, .hm-l .eh-h1 { font-size: 44px !important; line-height: 48px !important; letter-spacing: -.01em; }
     /* rhythm: sections 64 apart, heading → text 16, paragraph → paragraph 12, text → card 24, subheading 32 above and 12 below, cards 12 apart */
     .article .content > section { padding-top: 32px !important; padding-bottom: 32px !important; }
     .article .content > section > :not(.bleed):not(.band):not(.au):not(.hc-wrap) { margin-top: 24px !important; }
@@ -3748,16 +3748,36 @@
     .hc.v7:not(.calm) { padding-bottom: 200px !important; }
     .hc.v6:not(.calm) { padding-bottom: 120px !important; }
     .hc.v1 .cm-tools { align-content: flex-start; }
-    .ss-sum { min-height: 52px; align-content: flex-start; }
   }
 
   /* ---------- v122: the phone ---------- */
   @media (max-width: 759px) {
     #win .gx .gx-mark { left: calc(39.8% + 8px) !important; right: auto !important; top: 42% !important; text-align: left !important; }
-    .ss-sum::after { content: ""; flex-basis: 100%; height: 0; order: 2; }
-    .ss-sum > :nth-child(-n+4) { order: 1; }
-    .ss-sum > :nth-child(n+5) { order: 3; }
   }
+
+  /* ---------- v123 ---------- */
+  .ss-sum span { opacity: 1 !important; }
+  .ss-sum b { font-size: 24px; line-height: 32px; font-weight: 500; }
+  .ss-sum span { font-size: 16px; line-height: 24px; }
+  /* the marquee images never grow past the line, whatever the width */
+  .mq-track img { height: 22px !important; width: auto !important; max-width: none; }
+  @media (max-width: 759px) {
+    /* 1. landscape screens for Meta and Jev */
+    .band-shell { height: clamp(230px, 64vw, 320px) !important; margin-bottom: -24px !important; }
+    /* 2. the audit summary on one line */
+    .ss-sum { flex-wrap: nowrap !important; white-space: nowrap; gap: 0 6px !important; align-items: baseline; }
+    .ss-sum b { font-size: 20px; line-height: 28px; }
+    .ss-sum span { margin-right: 6px !important; font-size: min(12px, 3.2vw); line-height: 16px; }
+    /* 3. tighter round the comparison table */
+    .article .content > section { padding-top: 24px !important; }
+    .tbl-x > table { margin-top: 0 !important; }
+  }
+
+  /* ---------- v124: the kit scale on every width ---------- */
+  @media (min-width: 760px) and (max-width: 1023px) { .eh-h1, .hm-l .eh-h1 { font-size: 44px !important; line-height: 48px !important; } }
+  @media (min-width: 1024px) and (max-width: 1279px) { .eh-h1, .hm-l .eh-h1 { font-size: 68px !important; line-height: 72px !important; } }
+  .cx h3 { font-size: 28px !important; line-height: 36px !important; }
+  @media (max-width: 759px) { .card.logos.mq > :first-child { margin-bottom: 24px !important; } .card.logos.mq { padding-bottom: 20px !important; } }
 
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -5320,7 +5340,7 @@
       final() {},
       async play(id) {
         await loadMatter(); alive(id);
-        const P = hcWorld(id), { M, W } = P, b = hcAct.querySelector('.hc-b'), world = P.engine.world, Bb = hr(b);
+        const P = hcWorld(id), { M, W } = P, b = hcAct.querySelector('.hc-b'), world = P.engine.world, Bb = hr(b); P.engine.enableSleeping = true;   // v125: once the pile has settled, it rests
         if (innerWidth >= 760) P.solid(Bb, 6);
         const pills = [];
         // drag and throw: a spring from the pointer to the grabbed task
@@ -5334,7 +5354,7 @@
         }));
         const rel = e => { const R = hcWrap.getBoundingClientRect(); return { x: e.clientX - R.left, y: e.clientY - R.top }; };
         const down = e => {
-          const p = rel(e), hit = M.Query.point(pills, p)[0]; if (!hit) return;
+          const p = rel(e), hit = M.Query.point(pills, p)[0]; if (!hit) return; M.Sleeping.set(hit, false);
           e.preventDefault(); moved = false;
           grab = M.Constraint.create({ pointA: p, bodyB: hit, pointB: { x: p.x - hit.position.x, y: p.y - hit.position.y }, stiffness: .18, damping: .1, length: 0 });
           M.Composite.add(world, grab); hcWrap.style.cursor = 'grabbing';
@@ -5350,41 +5370,13 @@
           hcLayer.append(el);
           const w = el.offsetWidth, h = el.offsetHeight;
           // they drop to the left of the button, so none of them lands on it
-          const body = M.Bodies.rectangle(innerWidth < 760 ? 20 + w / 2 + Math.random() * Math.max(0, W.w - w - 40) : 40 + w / 2 + Math.random() * (Bb.x - w - 80), -40 - Math.random() * 160, w, h, { chamfer: { radius: 4 }, restitution: .3, friction: .5, frictionAir: .01, density: .002 });
+          const body = M.Bodies.rectangle(innerWidth < 760 ? 20 + w / 2 + Math.random() * Math.max(0, W.w - w - 40) : 40 + w / 2 + Math.random() * (Bb.x - w - 80), -40 - Math.random() * 160, w, h, { chamfer: { radius: 4 }, restitution: .2, friction: .9, frictionStatic: 1.2, frictionAir: .015, density: .002 });
           M.Body.setAngle(body, (Math.random() - .5) * 1.2);
           M.Body.setAngularVelocity(body, (Math.random() - .5) * .08);
           P.add(body, el, w / 2, h / 2); pills.push(body);
           await hs(110, id);
         }
         await hs(1600, id);
-        // Ryze demo comes over from the sidebar card, picks up a task and throws it
-        await demoTake(id);
-        try {
-          const toView = p => { const R = hcWrap.getBoundingClientRect(); return { x: R.left + p.x, y: R.top + p.y }; };
-          const pick = pills.reduce((a, c) => Math.abs(c.position.x - W.w * .45) < Math.abs(a.position.x - W.w * .45) ? c : a);
-          dockAim = () => toView({ x: pick.position.x - 2, y: pick.position.y - 4 }); await hs(850, id);
-          const d = demoCur(); d?.classList.add('tap'); demoSnap = true;
-          const hand = { x: pick.position.x, y: pick.position.y }, s0 = { ...hand };
-          held = M.Constraint.create({ pointA: { ...hand }, bodyB: pick, pointB: { x: 0, y: 0 }, stiffness: .2, damping: .1, length: 0 });
-          M.Composite.add(world, held);
-          dockAim = () => toView({ x: hand.x - 2, y: hand.y - 4 });
-          // lift slowly, then a quick swing up and to the right, and let go
-          const t0 = performance.now();
-          await new Promise(res => {
-            const step = now => {
-              if (id !== hcRun) return res();
-              const p = Math.min(1, (now - t0) / 900);
-              if (p < .6) { const q = p / .6; hand.x = s0.x - 40 * q; hand.y = s0.y - 80 * q * (2 - q); }
-              else { const q = (p - .6) / .4; hand.x = s0.x - 40 + 230 * q * q; hand.y = s0.y - 80 - 50 * q; }
-              held.pointA = { ...hand };
-              p < 1 ? requestAnimationFrame(step) : res();
-            };
-            requestAnimationFrame(step);
-          });
-          alive(id);
-          M.Composite.remove(world, held); held = null; d?.classList.remove('tap'); demoSnap = false;
-          await hs(600, id);
-        } finally { demoFree(); }
       },
     },
     // 8. v75, the free SEO/GEO audit: Ryze demo types a site and presses the button, a scan line sweeps the strip, the findings count up
@@ -7415,7 +7407,7 @@
       ],
       body: 20, ui: 16, ink: '#111111', ink2: '#555555', white: '#FFFFFF', accent: '#FF7F32'
     };
-    const SKIP = '#win, .band-shell, #ss, .ss, .gx, .ab, .jb, .am-cur, .agent, .v92p, .hv-layer, .fxo, .site-header, .eh-h1, .score, .roll, .tabnum, .cx, script, style, svg, input, textarea';
+    const SKIP = '#win, .band-shell, #ss, .ss, .gx, .ab, .jb, .am-cur, .agent, .v92p, .hv-layer, .fxo, .site-header, .eh-h1, .score, .roll, .tabnum, .cx, .ss-sum, script, style, svg, input, textarea';
     const FLOW = '.content > section > p, .content > section > ul, .content > section > ol, .content > section > h2, .content > section > h3, .content > section > blockquote, .lead, .lead-rest, .v-lead, .eh-answer, .hm-l, .band-txt, .au-txt, .hc-txt, .dock';
     const PARA = 'p, li, dd, summary, blockquote';
     const rgb = c => { const v = (c.match(/[\d.]+/g) || []).map(Number); return c.startsWith('color(') ? v.map((x, i) => i < 3 ? x * 255 : x) : v; };
@@ -7434,15 +7426,16 @@
       let to = null, lh = null;
       if (innerWidth < 760) {
         const flow = !!e.closest(FLOW), head = !!e.closest('h1, h2, h3, h4, h5');
-        if (px >= 36) { to = 40; lh = '44px'; }
-        else if (flow && e.closest('h2')) { to = 28; lh = '32px'; }
-        else if (flow && e.closest('h3, .hc-h, .band-h, .au-h')) { to = 24; lh = '32px'; }
+        if (px >= 36 && !e.closest('.band-h, .au-h')) { to = 44; lh = '48px'; }
+        else if (flow && e.closest('h2')) { to = 28; lh = '36px'; }
+        else if (flow && e.closest('h3, .hc-h, .band-h, .au-h')) { to = 28; lh = '36px'; }
         else if (head) { to = 20; lh = '28px'; }
         else if (px >= 13) { to = 16; lh = '24px'; }
         else { to = 12; lh = '16px'; }
       } else if (e.closest(FLOW)) {
         // the article flow and the CTA words: the full scale
         for (const [a, b, s, l] of KIT.type) if (px >= a && px < b) { to = s; lh = l; }
+        if (e.closest('.band-h, .hc-h')) { to = 28; lh = '36px'; }
         if (px >= 14 && px < 19 && !para) { to = KIT.ui; lh = '24px'; }
         if (px >= 14 && px < 25 && para) { if (e.closest('.band-txt, .au-txt, .hc-txt, .dock')) { to = KIT.ui; lh = '24px'; } else { to = KIT.body; lh = '32px'; } }
       } else {
@@ -7576,12 +7569,17 @@
     if (meta && p) { const w = meta.closest('.bleed') && meta.closest('.bleed') !== meta ? meta.closest('.bleed') : meta; (p.closest('.content > section') || p).before(w); dispatchEvent(new Event('resize')); }
     // the empty head left over the chart (its labels were not on the original page)
     document.querySelectorAll('.chart-head').forEach(h => { if (!h.textContent.trim()) h.remove(); });
-    // 2. on a phone the logos run as a line
-    if (innerWidth < 760) document.querySelectorAll('.card.logos').forEach(c => {
+    // 2. on a phone the logos run as a line; it follows the width (a phone browser can report a desktop width at first)
+    const mqSet = () => document.querySelectorAll('.card.logos').forEach(c => {
+      const narrow = matchMedia('(max-width: 759px)').matches;
+      if (!narrow) { if (c.classList.contains('mq')) { c.innerHTML = c._orig; c.classList.remove('mq'); } return; }
+      if (c.classList.contains('mq')) return;
+      c._orig = c.innerHTML;
       let items = [...c.children].slice(1); if (items.length === 1 && items[0].children.length > 2) { const g = items[0]; items = [...g.children]; g.remove(); } if (!items.length) return;
       const t = document.createElement('div'); t.className = 'mq-track'; items.forEach(i => t.append(i)); items.forEach(i => { const k = i.cloneNode(true); k.setAttribute('aria-hidden', 'true'); t.append(k); });
       c.append(t); c.classList.add('mq');
     });
+    mqSet(); matchMedia('(max-width: 759px)').addEventListener('change', mqSet); addEventListener('load', mqSet);
   })();
 
   // ---------- v110: on a phone the «Ryze connected» line starts 16 px below the dash markers instead of crossing them ----------
@@ -7617,7 +7615,7 @@
       for (let i = 1; i < list.length; i++) {
         const A = list[i - 1], B = list[i];
         let want = null;
-        if (B.matches('h2')) want = 48;
+        if (B.matches('h2')) want = 40;
         else if (strip(A) || strip(B)) want = 32;
         else if (A.closest('section') !== B.closest('section')) want = 32;
         if (want == null) continue;
