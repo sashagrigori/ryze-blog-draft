@@ -3779,6 +3779,22 @@
   .cx h3 { font-size: 28px !important; line-height: 36px !important; }
   @media (max-width: 759px) { .card.logos.mq > :first-child { margin-bottom: 24px !important; } .card.logos.mq { padding-bottom: 20px !important; } }
 
+  /* ---------- v126: the phone ---------- */
+  @media (max-width: 759px) {
+    .hm-slot { height: clamp(460px, 128vw, 500px) !important; }
+    #win .gx .gx-mark { top: 248px !important; }
+    .band-shell { height: clamp(210px, 58vw, 280px) !important; }
+  }
+
+  /* ---------- v128: the phone shows the whole Meta screen, as on the desktop ---------- */
+  @media (max-width: 759px) {
+    .ab:not(.narrow) .ab-body { grid-template-columns: minmax(0, 1fr) 284px !important; }
+    .ab:not(.narrow) .ab-side { display: flex !important; }
+    /* the dash markers sit level with the big «after» number, clear of its caption */
+    .gx-dots { top: 190px !important; gap: 6px !important; }
+    .gx-dots i { width: 14px !important; }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
     .reveal, .fade { opacity: 1 !important; transform: none !important; }
@@ -6622,7 +6638,7 @@
     function fit() {
       const W = win.clientWidth, H = win.clientHeight; if (!W) return;
       const mob = innerWidth < 1280;
-      K = mob ? Math.max(.56, Math.min(1, W / 660)) : Math.max(.8, Math.min(1.06, W / 1000));
+      K = innerWidth < 760 ? W / 1000 : mob ? Math.max(.56, Math.min(1, W / 660)) : Math.max(.8, Math.min(1.06, W / 1000));
       ab.classList.toggle('narrow', W / K < (mob ? 780 : 860));
       Object.assign(ab.style, { width: W / K + 'px', height: H / K + 'px', transform: `scale(${K})` });
       const b = band.getBoundingClientRect(), m = main.getBoundingClientRect(); visH = Math.max(240, (b.bottom - m.top) / K);
@@ -6822,7 +6838,7 @@
     function fit() {
       const W = win.clientWidth, H = win.clientHeight; if (!W) return;
       const mob = innerWidth < 1280;
-      K = mob ? Math.max(.5, Math.min(1, W / 700)) : Math.max(.8, Math.min(1.06, W / 980));
+      K = innerWidth < 760 ? W / 1000 : mob ? Math.max(.5, Math.min(1, W / 700)) : Math.max(.8, Math.min(1.06, W / 980));
       jb.classList.toggle('narrow', mob && W / K < 900);
       Object.assign(jb.style, { width: W / K + 'px', height: H / K + 'px', transform: `scale(${K})` });
       cv.width = Math.round(cv.offsetWidth * DPR * K); cv.height = Math.round(cv.offsetHeight * DPR * K); draw();
@@ -7748,7 +7764,7 @@
     [['line', 'Линия'], ['scroll', '1 Прокрутка'], ['select', '2 Выделения'], ['heat', '3 Тепловая карта']].forEach(([k, t]) => { const b = document.createElement('button'); b.type = 'button'; b.textContent = t; b.dataset.k = k; sw.append(b); });
     const set = (k, go) => { au.dataset.sx = k; sw.querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.k === k)); try { sessionStorage.setItem('ryze-sx', k); } catch (e) {} if (go) { clean(); window.auRestart && window.auRestart(); } };
     sw.addEventListener('click', e => { const b = e.target.closest('button'); if (b) set(b.dataset.k, true); });
-    set('scroll', false);
+    set('line', false);
   })();
 
   // ---------- v122: on a phone the «Ryze connected» line always starts at the top of its label, whatever the chart does to it ----------
@@ -7763,6 +7779,21 @@
     };
     new MutationObserver(fix).observe(ln, { attributes: true, attributeFilter: ['y1', 'y2'] });
     fix(); addEventListener('resize', () => setTimeout(fix, 300)); document.fonts && document.fonts.ready.then(fix);
+  })();
+
+  // ---------- v126: on a phone the card is lower: the «before» number follows the squeezed chart (its place was counted for a 600 px tall card) ----------
+  (function () {
+    const g = document.querySelector('#win .gx'), b = g && g.querySelector('.gx-before'); if (!b) return;
+    const fit = () => {
+      if (innerWidth >= 760) { if (b._mine != null) { b.style.top = b._raw != null ? b._raw + 'px' : ''; b._mine = null; } return; }
+      const sy = g.offsetHeight / 600; if (!sy) return;
+      const cur = b.style.top ? parseFloat(b.style.top) : parseFloat(getComputedStyle(b).top);
+      if (b._mine != null && Math.abs(cur - b._mine) < .5) return;
+      const dots = document.getElementById('gx-dots'), floor = dots ? dots.offsetTop + dots.offsetHeight + 20 : 0;
+      b._raw = cur; b._mine = Math.max(floor, (cur + 66) * sy - 66); b.style.top = b._mine.toFixed(1) + 'px';
+    };
+    new MutationObserver(fit).observe(b, { attributes: true, attributeFilter: ['style'] });
+    fit(); addEventListener('resize', () => { b._mine = null; if (b._raw != null) b.style.top = b._raw + 'px'; setTimeout(fit, 50); });
   })();
 </script>
 </body>
