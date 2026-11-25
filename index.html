@@ -7195,7 +7195,7 @@
       BG.forEach(k => B.classList.toggle('bg-' + k, st.bg === k)); bandPx();
       ['white', 'rose', 'mist'].forEach(k => B.classList.toggle('pg-' + k, st.pg === k));
       B.classList.toggle('fx-grain', st.fx === 'grain'); B.classList.toggle('fx-dots', st.fx === 'dots'); window.fxDress && window.fxDress(); window.fx2Dress && window.fx2Dress();
-      window.CALM_USER = st.calm === '1'; window.CALM = window.CALM_USER || lite();
+      window.CALM_USER = st.calm === '1'; window.CALM = false;
       const a = document.getElementById('audit'); if (a && window.auSet) window.auSet(st.au); else if (a) a.dataset.k = st.au;
       p.querySelectorAll('[data-g]').forEach(g => g.querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.v === st[g.dataset.g])));
       if (!first) {
@@ -7205,7 +7205,7 @@
         window.auRestart && window.auRestart();
       }
     };
-    window.CALM_USER = st.calm === '1'; window.CALM = window.CALM_USER || lite();
+    window.CALM_USER = st.calm === '1'; window.CALM = false;
     p.addEventListener('click', e => {
       const b = e.target.closest('button'); if (!b) return;
       if (b.classList.contains('t')) { p.classList.toggle('min'); set('ryze-pmin', p.classList.contains('min') ? '1' : '0'); b.lastElementChild.textContent = p.classList.contains('min') ? '+' : '–'; return; }
